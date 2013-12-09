@@ -31,3 +31,11 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'vim-scripts/UltiSnips'
 Bundle 'walialu/vimpressive'
+
+" Enable airline powerline fonts
+let g:airline_powerline_fonts=1
+" Max height of the OnmiCompletionPopup
+let g:ctrlp_max_height = 30
+" UltiSnips configuration
+let g:UltiSnipsSnippetsDir = '~/.vim/snippets/'
+let g:UltiSnipsSnippetDirectories = ['UltiSnips', 'snippets']
