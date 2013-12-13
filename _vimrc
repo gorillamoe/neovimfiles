@@ -30,6 +30,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'vim-scripts/UltiSnips'
 Bundle 'jlanzarotta/bufexplorer'
+Bundle 'Keithbsmiley/investigate.vim'
 
 " Do as Vundle pleases
 filetype plugin indent on
