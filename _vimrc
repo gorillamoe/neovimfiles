@@ -8,12 +8,15 @@ set ff=unix
 set nocompatible
 filetype off
 
+" Disable backups
+set nobackup
+
 " Enable Vundle
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " let Vundle manage Vundle
-" " required! 
+" " required!
 Bundle 'gmarik/vundle'
 
 " My bundles
@@ -31,6 +34,7 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'vim-scripts/UltiSnips'
 Bundle 'jlanzarotta/bufexplorer'
 Bundle 'Keithbsmiley/investigate.vim'
+Bundle 'google/maktaba'
 
 " Do as Vundle pleases
 filetype plugin indent on
@@ -39,11 +43,6 @@ filetype plugin indent on
 
 " Enable hidden buffers, so we can switch buffers without saving them.
 set hidden
-
-
-
-" I mostly use this in a terminal, so this will make things look pretty :)
-set background=dark
 
 
 
@@ -111,20 +110,8 @@ let &t_AF="\e[38;5;%dm"
 
 
 
-" Color schemes / themes 
+" Color schemes / themes
 " =============================================================================
-
-""" Wombat
-""" ----------------------------------------------------
-""" http://www.vim.org/scripts/script.php?script_id=2465
-""" ===================================================
-""" I can't really decide which one I like better.
-""" Sometimes I go for wombat and be like: oh wtf.. this is the best
-""" theme I can think of .. and then.. suddenly .. I just need a change..
-""" .... and then I switch back to molokai .. which is also really good
-""" mkdir -p ~/.vim/colors && cd ~/.vim/colors
-""" wget -O wombat256mod.vim http://www.vim.org/scripts/download_script.php?src_id=13400
-""" colorscheme wombat256mod
 
 """ Molokai
 """ ----------------------------------------------------
@@ -132,7 +119,30 @@ let &t_AF="\e[38;5;%dm"
 """ ===================================================
 """ I really like this theme too and I think powerline / airline
 """ just looks awesome with it!
-colorscheme molokai
+set background=dark
+let g:background="dark"
+let g:solarized_termcolors=256
+colors molokai
+
+" Quickly toggle colors (molokai/solarized)
+function! g:ToggleBackgroundColor()
+    if(g:background == "dark")
+        let g:background="light"
+        set background=light
+        colors solarized
+    else
+        let g:background="dark"
+        set background=dark
+        colors molokai
+    endif
+    echo &background
+endfunc
+map <F9> :call g:ToggleBackgroundColor()<CR>
+
+
+
+" Reload .vimrc without leaving vim.
+map <F8> :so ~/.vimrc<CR>
 
 
 
@@ -245,7 +255,6 @@ if exists('+relativenumber')
 endif
 
 
-
 " NERD Tree Binding
 nnoremap <leader>k :NERDTreeToggle<CR>
 
@@ -275,3 +284,4 @@ let g:ctrlp_max_height = 30
 " UltiSnips configuration
 let g:UltiSnipsSnippetsDir = '~/.vim/snippets/'
 let g:UltiSnipsSnippetDirectories = ['UltiSnips', 'snippets']
+
