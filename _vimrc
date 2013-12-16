@@ -4,6 +4,12 @@ set encoding=utf-8
 " Use Unix as the standard file type
 set ff=unix
 
+" Real men don't need backups and swap files
+" that is how we roll, baby!
+set nobackup
+set nowritebackup
+set noswapfile
+
 " Necesary for lots of cool vim things
 set nocompatible
 filetype off
