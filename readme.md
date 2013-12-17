@@ -7,9 +7,9 @@ They consist of my *.vimrc* and my *.vim* directory.
 
 Install instructions
 ----------------------
-Make sure you have git installed.
+Make sure you have *git* and *wget* installed.
 
-    cd && mkdir git-repos && cd git-repos && git clone https://github.com/walialu/vimfiles.git walialu-vimfiles && cd walialu-vimfiles && chmod +x firstrun.sh && sh firstrun.sh
+    wget -qO- https://raw.github.com/walialu/vimfiles/master/install.sh | sh
 
 The above script will change the current working directory to your home folder
 and create a folder *git-repos* then change to that directory and clone my
