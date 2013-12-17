@@ -40,6 +40,7 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'vim-scripts/UltiSnips'
 Bundle 'jlanzarotta/bufexplorer'
 Bundle 'Keithbsmiley/investigate.vim'
+Bundle 'mamut/vim-css-hex'
 Bundle 'google/maktaba'
 
 " Do as Vundle pleases
