@@ -53,10 +53,14 @@ ln -s ~/git-repos/walialu-vimfiles/_vimrc ~/.vimrc
 echo ""
 
 echo ""
-echo "Installing Bundles"
-vim +BundleInstall +qall
-echo ""
-echo ""
 echo "==========================================="
 echo "You are now set. Good job, bro!"
+echo "There is just one last thing for us to do..."
+echo "We need to let Vundle take of our bundles now..."
+echo "... just sit back and relax ..."
 echo "==========================================="
+echo ""
+
+echo ""
+echo "Installing Bundles"
+vim +BundleInstall +qall
