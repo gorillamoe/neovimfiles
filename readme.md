@@ -9,7 +9,7 @@ Install instructions
 ----------------------
 Make sure you have git installed.
 
-    cd && mkdir git-repos && cd git-repos && git clone https://github.com/walialu/vimfiles.git && cd vimfiles && chmod +x firstrun.sh && sh firstrun.sh
+    cd && mkdir git-repos && cd git-repos && git clone https://github.com/walialu/vimfiles.git walialu-vimfiles && cd vimfiles && chmod +x firstrun.sh && sh firstrun.sh
 
 The above script will change the current working directory to your home folder
 and create a folder *git-repos* then change to that directory and clone my
