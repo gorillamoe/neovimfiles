@@ -19,7 +19,7 @@ vimfiles and executes the firstrun.sh shell script.
 The firstrun.sh script clones Vundle as my prefered ViM package management tool
 and creates the following symlinks:
 
-- ~/.vim -> ~/git-repos/\_vim
-- ~/.vimrc -> ~/git-repos/\_vimrc
+- ~/.vim -> ~/git-repos/walialu-vimfiles/\_vim
+- ~/.vimrc -> ~/git-repos/walialu-vimfiles\_vimrc
 
 All said and done.
