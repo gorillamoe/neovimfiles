@@ -34,24 +34,19 @@ if [ -d $GITREPOS_DIR ]; then
         echo "(r)emove it, or"
         echo "(a)bort the proccess of getting the best vimfiles on earth?"
         read -n1 USER_INPUT
+        echo ""
 
-        if [ $USER_INPUT = "a" ]; then
-            echo ""
+        if [ "$USER_INPUT" = "a" ]; then
             exit
-            echo ""
         fi
 
-        if [ $USER_INPUT = "r" ]; then
-            echo ""
+        if [ "$USER_INPUT" = "r" ]; then
             rm -rf $FULL_PATH
-            echo ""
         fi
 
-        if [ $USER_INPUT = "c" ]; then
-            echo ""
+        if [ "$USER_INPUT" = "c" ]; then
             echo "Enter a fully qualified path (w/o trailing slash) and press enter"
             read -n FULL_PATH
-            echo ""
         fi
     fi
 else
@@ -60,6 +55,7 @@ fi
 
 
 
+echo ""
 cd $GITREPOS_DIR
 
 
