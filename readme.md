@@ -9,7 +9,7 @@ Install instructions
 ----------------------
 Make sure you have *git* and *wget* installed.
 
-    wget -O /tmp/walialu-vimfiles-installer.sh https://raw.github.com/walialu/vimfiles/master/install.sh && sh /tmp/walialu-vimfiles-installer.s
+    wget -O /tmp/walialu-vimfiles-installer.sh https://raw.github.com/walialu/vimfiles/master/install.sh && sh /tmp/walialu-vimfiles-installer.sh
 
 The above script will change the current working directory to your home folder
 and create a folder *git-repos* then change to that directory and clone my
