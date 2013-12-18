@@ -1,7 +1,7 @@
 #!/bin/sh
 
 FALLBACK_MODE=0
-FALLBACK_MODE_TAR_ARCHIVE_URL="http://vimlove.com/users/marco/vimfiles.tar.gz"
+FALLBACK_MODE_TAR_ARCHIVE_URL="http://vimlove.com/user/marco/vimfiles.tar.gz"
 
 echo "Walialus ViM-files EaZymode Install Script."
 echo "==========================================="
