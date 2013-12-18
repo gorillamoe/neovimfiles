@@ -35,15 +35,15 @@ if [ -d $GITREPOS_DIR ]; then
         echo "(a)bort the proccess of getting the best vimfiles on earth?"
         read -n1 $USER_INPUT
 
-        if [ $USER_INPUT = a ]; then
+        if [ $USER_INPUT == a ]; then
             exit
         fi
 
-        if [ $USER_INPUT = r ]; then
+        if [ $USER_INPUT == r ]; then
             rm -rf $FULL_PATH
         fi
 
-        if [ $USER_INPUT = c ]; then
+        if [ $USER_INPUT == c ]; then
             echo "Enter a fully qualified path (w/o trailing slash) and press enter"
             read -n $FULL_PATH
         fi
