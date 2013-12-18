@@ -33,19 +33,22 @@ if [ -d $GITREPOS_DIR ]; then
         echo "(c)hange the directory"
         echo "(r)emove it, or"
         echo "(a)bort the proccess of getting the best vimfiles on earth?"
-        read -n1 $USER_INPUT
+        read -n1 USER_INPUT
 
-        if [ $USER_INPUT == a ]; then
+        if [ $USER_INPUT = "a" ]; then
+            echo ""
             exit
         fi
 
-        if [ $USER_INPUT == r ]; then
+        if [ "$USER_INPUT" == "r" ]; then
+            echo ""
             rm -rf $FULL_PATH
         fi
 
-        if [ $USER_INPUT == c ]; then
+        if [ "$USER_INPUT" == "c" ]; then
+            echo ""
             echo "Enter a fully qualified path (w/o trailing slash) and press enter"
-            read -n $FULL_PATH
+            read -n FULL_PATH
         fi
     fi
 else
@@ -82,11 +85,13 @@ fi
 
 
 if [ -f ~/.vim ] || [ -d ~/.vim ]; then
-    cp ~/.vim ~/_vim-backup-$(date +"%Y-%m-%d--%H-%M-%S")
+    cp -rf ~/.vim/. ~/_vim-backup-$(date +"%Y-%m-%d--%H-%M-%S")
+    rm -rf ~/.vim
 fi
 
 if [ -f ~/.vimrc ]; then
     cp ~/.vimrc ~/_vimrc-backup-$(date +"%Y-%m-%d--%H-%M-%S")
+    rm -rf ~/.vimrc
 fi
 
 
@@ -101,11 +106,13 @@ echo "You are now set. Good job, bro!"
 
 if [ $FALLBACK_MODE -eq 1 ]; then # Git is not available
     echo "==========================================="
+    echo "";
+    exit;
 else # Git is available
     echo "There is just one last thing for us to do..."
     echo "We need to let Vundle take of our bundles now..."
     echo "... just sit back and relax ..."
     echo "==========================================="
     echo "Installing Bundles"
-    vim +BundleInstall +qall
 fi
+vim +BundleInstall +qall
