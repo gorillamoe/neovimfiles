@@ -38,17 +38,20 @@ if [ -d $GITREPOS_DIR ]; then
         if [ $USER_INPUT = "a" ]; then
             echo ""
             exit
+            echo ""
         fi
 
-        if [ "$USER_INPUT" == "r" ]; then
+        if [ $USER_INPUT = "r" ]; then
             echo ""
             rm -rf $FULL_PATH
+            echo ""
         fi
 
-        if [ "$USER_INPUT" == "c" ]; then
+        if [ $USER_INPUT = "c" ]; then
             echo ""
             echo "Enter a fully qualified path (w/o trailing slash) and press enter"
             read -n FULL_PATH
+            echo ""
         fi
     fi
 else
@@ -108,6 +111,7 @@ if [ $FALLBACK_MODE -eq 1 ]; then # Git is not available
     echo "==========================================="
     echo "";
     exit;
+    echo ""
 else # Git is available
     echo "There is just one last thing for us to do..."
     echo "We need to let Vundle take of our bundles now..."
