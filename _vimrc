@@ -52,6 +52,11 @@ set hidden
 
 
 
+" File extension based highlighting
+au BufRead,BufNewFile *.md set filetype=markdown
+
+
+
 " Better copy & paste
 " When you want to paste large blocks of code into vim, press F2 before you
 " paste. At the bottom you should see ``-- INSERT (paste) --``.
