@@ -12,6 +12,11 @@ GITREPOS_DIR=~/git-repos
 VIMFILES_DIR=walialu-vimfiles
 FULL_PATH=$GITREPOS_DIR/$VIMFILES_DIR
 
+echo ""
+echo ""
+echo ""
+echo ""
+echo "==========================================="
 echo "Walialus ViM-files EaZymode Install Script."
 echo "==========================================="
 
