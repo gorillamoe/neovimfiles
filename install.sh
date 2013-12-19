@@ -1,5 +1,11 @@
 #!/bin/sh
 
+if [ "$1" = "--no-hero" ]; then
+    HERO_MODE=0
+else
+    HERO_MODE=1
+fi
+
 FALLBACK_MODE=0
 FALLBACK_MODE_TAR_ARCHIVE_URL="http://vimlove.com/user/marco/vimfiles.tar.gz"
 GITREPOS_DIR=~/git-repos
@@ -29,24 +35,29 @@ cd
 if [ -d $GITREPOS_DIR ]; then
     if [ -d $FULL_PATH ]; then
         echo "$FULL_PATH already exists..."
-        echo "Do you want to:"
-        echo "(c)hange the directory"
-        echo "(r)emove it, or"
-        echo "(a)bort the proccess of getting the best vimfiles on earth?"
-        read -n1 USER_INPUT
-        echo ""
 
-        if [ "$USER_INPUT" = "a" ]; then
-            exit
-        fi
+        if [ $HERO_MODE -eq 0 ]; then
+            echo "Do you want to:"
+            echo "(c)hange the directory"
+            echo "(r)emove it, or"
+            echo "(a)bort the proccess of getting the best vimfiles on earth?"
+            read -n1 USER_INPUT
+            echo ""
 
-        if [ "$USER_INPUT" = "r" ]; then
+            if [ "$USER_INPUT" = "a" ]; then
+                exit
+            fi
+
+            if [ "$USER_INPUT" = "r" ]; then
+                rm -rf $FULL_PATH
+            fi
+
+            if [ "$USER_INPUT" = "c" ]; then
+                echo "Enter a fully qualified path (w/o trailing slash) and press enter"
+                read -n FULL_PATH
+            fi
+        else
             rm -rf $FULL_PATH
-        fi
-
-        if [ "$USER_INPUT" = "c" ]; then
-            echo "Enter a fully qualified path (w/o trailing slash) and press enter"
-            read -n FULL_PATH
         fi
     fi
 else
@@ -84,12 +95,16 @@ fi
 
 
 if [ -f ~/.vim ] || [ -d ~/.vim ]; then
-    cp -rf ~/.vim/. ~/_vim-backup-$(date +"%Y-%m-%d--%H-%M-%S")
+    if [ $HERO_MODE -eq 0 ]; then
+        cp -rf ~/.vim/. ~/_vim-backup-$(date +"%Y-%m-%d--%H-%M-%S")
+    fi
     rm -rf ~/.vim
 fi
 
 if [ -f ~/.vimrc ]; then
-    cp ~/.vimrc ~/_vimrc-backup-$(date +"%Y-%m-%d--%H-%M-%S")
+    if [ $HERO_MODE -eq 0 ]; then
+        cp ~/.vimrc ~/_vimrc-backup-$(date +"%Y-%m-%d--%H-%M-%S")
+    fi
     rm -rf ~/.vimrc
 fi
 
