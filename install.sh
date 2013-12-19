@@ -130,4 +130,5 @@ else # Git is available
     echo "==========================================="
     echo "Installing Bundles"
 fi
-vim +BundleInstall +qall
+vim "+BundleInstall" "+qall"
+echo ""
