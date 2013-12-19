@@ -19,7 +19,10 @@ echo ""
 echo "==========================================="
 echo "Walialus ViM-files EaZymode Install Script."
 echo "==========================================="
-
+echo ""
+echo ""
+echo ""
+echo ""
 
 
 echo "Checking if git is installed..."
