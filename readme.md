@@ -33,8 +33,8 @@ let you decide what to do. It is pretty fail-safe and does stuff like this:
 
 - If the default install dir exists
     - Asks if you want to delete, rename or cancel
-- if a .vimrc file exists, creates a backup (with timestamp appendix)
-- If a .vim dir exists, creates a backup (with timestamp appendix)
+- if a `.vimrc` file exists, creates a backup (with timestamp appendix)
+- If a `.vim` dir exists, creates a backup (with timestamp appendix)
 
 
 License agreement:
