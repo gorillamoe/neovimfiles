@@ -82,7 +82,7 @@ cd $FULL_PATH
 if [ $FALLBACK_MODE -eq 1 ]; then # Git is not available
     echo "Downloading and extracting unversioned, non-rolling-release archive version as fallback..."
     wget $FALLBACK_MODE_TAR_ARCHIVE_URL
-    tar xf vimfiles.tar.gz > /dev/null
+    tar xfm vimfiles.tar.gz
     rm vimfiles.tar.gz
 else # Git is available
     echo "Cloning my vimfiles to walialu-vimfiles"
