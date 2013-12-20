@@ -25,13 +25,22 @@ call vundle#rc()
 " " required!
 Bundle 'gmarik/vundle'
 
+" Check if ctags is installed:
+" http://stackoverflow.com/questions/10068078/how-to-detect-os-type-and-set-ctags-path-in-vimrc
+if executable('exctags')
+    let ctagsInstalled = 1
+elseif executable('ctags')
+    let ctagsInstalled = 1
+else
+    let ctagsInstalled = 0
+endif
+
 " My bundles
+Bundle 'google/maktaba'
 Bundle 'kien/ctrlp.vim'
 Bundle 'vim-scripts/matchit.zip'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
-Bundle 'majutsushi/tagbar'
-Bundle 'vim-scripts/taglist.vim'
 Bundle 'bling/vim-airline'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-repeat'
@@ -40,7 +49,11 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'vim-scripts/UltiSnips'
 Bundle 'jlanzarotta/bufexplorer'
 Bundle 'Keithbsmiley/investigate.vim'
-Bundle 'google/maktaba'
+if (ctagsInstalled ==1)
+    Bundle 'majutsushi/tagbar'
+    Bundle 'vim-scripts/taglist.vim'
+endif
+
 
 " Do as Vundle pleases
 filetype plugin indent on
@@ -61,7 +74,6 @@ au BufRead,BufNewFile *.md set filetype=markdown
 " When you want to paste large blocks of code into vim, press F2 before you
 " paste. At the bottom you should see ``-- INSERT (paste) --``.
 set pastetoggle=<F2>
-set clipboard=unnamed
 
 
 
@@ -124,31 +136,15 @@ let &t_AF="\e[38;5;%dm"
 " Color schemes / themes
 " =============================================================================
 
-""" Molokai
+""" Wombat256mod
 """ ----------------------------------------------------
-""" https://github.com/tomasr/molokai"
+""" http://www.vim.org/scripts/script.php?script_id=2465
 """ ===================================================
 """ I really like this theme too and I think powerline / airline
 """ just looks awesome with it!
 set background=dark
-let g:background="dark"
-let g:solarized_termcolors=256
-colors molokai
+colors wombat256mod
 
-" Quickly toggle colors (molokai/solarized)
-function! g:ToggleBackgroundColor()
-    if(g:background == "dark")
-        let g:background="light"
-        set background=light
-        colors solarized
-    else
-        let g:background="dark"
-        set background=dark
-        colors molokai
-    endif
-    echo &background
-endfunc
-map <F9> :call g:ToggleBackgroundColor()<CR>
 
 
 
