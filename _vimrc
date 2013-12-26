@@ -1,4 +1,3 @@
-
 " Setting very basic, but important stuff first
 " =============================================================================
 " There can be only one encoding and it's called UTF8
@@ -168,11 +167,15 @@ let g:UltiSnipsSnippetDirectories = ['UltiSnips', 'snippets']
 
 
 
-" File extension based highlighting
+" Autocommands
 " =============================================================================
 "
 au BufRead,BufNewFile *.md set filetype=markdown
 
+" Let eclim take care of autocomplete
+autocmd Filetype * runtime! autoload/eclim/<amatch>/complete.vim
+\ | let s:cfunc = 'eclim#'.expand('<amatch>').'#complete#CodeComplete'
+\ | if exists('*'.s:cfunc) | let &l:omnifunc=s:cfunc | endif
 
 
 
