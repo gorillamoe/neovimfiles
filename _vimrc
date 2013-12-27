@@ -94,12 +94,6 @@ else
     let external_lib_is_available_ctags = 0
 endif
 
-if executable('clang')
-    let external_lib_is_available_clang = 1
-else
-    let external_lib_is_available_clang = 0
-endif
-
 if executable('npm')
     let external_lib_is_available_npm = 1
 else
@@ -126,20 +120,19 @@ Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-unimpaired'
-Bundle 'vim-scripts/UltiSnips'
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "garbas/vim-snipmate"
+Bundle "honza/vim-snippets"
 Bundle 'jlanzarotta/bufexplorer'
-Bundle 'mattn/gist-vim'
+
 
 
 " This plugins depend on external libs, therefore I include them conditionally
 "
-if ( external_lib_is_available_npm == 1 )
-    Bundle 'marijnh/tern_for_vim'
-endif
-
-if ( external_lib_is_available_clang == 1 )
-    Bundle 'Valloric/YouCompleteMe'
-endif
+" if ( external_lib_is_available_npm == 1 )
+"    Bundle 'marijnh/tern_for_vim'
+" endif
 
 if ( external_lib_is_available_ctags == 1 )
     Bundle 'majutsushi/tagbar'
@@ -161,22 +154,12 @@ let g:airline_powerline_fonts=1
 " Max height of the OnmiCompletionPopup
 let g:ctrlp_max_height = 30
 
-" UltiSnips configuration
-let g:UltiSnipsSnippetsDir = '~/.vim/snippets/'
-let g:UltiSnipsSnippetDirectories = ['UltiSnips', 'snippets']
-
 
 
 " Autocommands
 " =============================================================================
 "
 au BufRead,BufNewFile *.md set filetype=markdown
-
-" Let eclim take care of autocomplete
-autocmd Filetype * runtime! autoload/eclim/<amatch>/complete.vim
-\ | let s:cfunc = 'eclim#'.expand('<amatch>').'#complete#CodeComplete'
-\ | if exists('*'.s:cfunc) | let &l:omnifunc=s:cfunc | endif
-
 
 
 " Keymappings
@@ -210,9 +193,3 @@ if ( external_lib_is_available_ctags == 1 )
     " Toogle Tagbar plugin
     nnoremap <silent> <Leader>j :TagbarToggle<CR>
 endif
-
-
-" Remap UltiSnips so it doesn't interfere with YouCompleteMe
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
