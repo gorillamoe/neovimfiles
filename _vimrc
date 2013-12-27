@@ -125,14 +125,14 @@ Bundle "tomtom/tlib_vim"
 Bundle "garbas/vim-snipmate"
 Bundle "honza/vim-snippets"
 Bundle 'jlanzarotta/bufexplorer'
-
+Bundle 'ervandew/ag'
 
 
 " This plugins depend on external libs, therefore I include them conditionally
 "
-" if ( external_lib_is_available_npm == 1 )
-"    Bundle 'marijnh/tern_for_vim'
-" endif
+if ( external_lib_is_available_npm == 1 )
+    Bundle 'marijnh/tern_for_vim'
+endif
 
 if ( external_lib_is_available_ctags == 1 )
     Bundle 'majutsushi/tagbar'
