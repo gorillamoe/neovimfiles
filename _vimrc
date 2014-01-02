@@ -41,6 +41,9 @@ set hidden
 " Rebind <Leader> key
 let mapleader = ","
 
+" Allow saving of files as sudo when I forgot to start vim using sudo.
+cmap w!! w !sudo tee > /dev/null %
+
 " Fix for ViM Airline Plugin
 set laststatus=2
 
