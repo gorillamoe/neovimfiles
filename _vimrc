@@ -145,14 +145,35 @@
         let g:ctrlp_max_height = 30
 
 " Auto-Commands
-
-    " This autocmd changes the window-local current directory to be the same as
-    " the directory of the current file, except if the file is in the /tmp
-    " directory
-    autocmd BufEnter * if expand("%:p:h") !~ '^/tmp' | silent! lcd %:p:h | endif
-
+if !exists("my_auto_commands_loaded")
+  let my_auto_commands_loaded = 1
     " Sets filetype to markdown for .md files
     au BufRead,BufNewFile *.md set filetype=markdown
+
+    " Large files > 10M
+    let g:LargeFile = 1024 * 1024 * 10
+    augroup LargeFile
+        autocmd BufReadPre * let f=expand("<afile>") | if getfsize(f) > g:LargeFile | setlocal noswapfile bufhidden=unload buftype=nowrite undolevels=-1 | endif
+    augroup END
+endif
+
+" Protect large files from sourcing and other overhead.
+" Files become read only
+if !exists("my_auto_commands_loaded")
+  let my_auto_commands_loaded = 1
+  " Large files are > 10M
+  " Set options:
+  " eventignore+=FileType (no syntax highlighting etc
+  " assumes FileType always on)
+  " noswapfile (save copy of file)
+  " bufhidden=unload (save memory when other file is viewed)
+  " buftype=nowritefile (is read-only)
+  " undolevels=-1 (no undo possible)
+  let g:LargeFile = 1024 * 1024 * 10
+  augroup LargeFile
+    autocmd BufReadPre * let f=expand("<afile>") | if getfsize(f) > g:LargeFile | set eventignore+=FileType | setlocal noswapfile bufhidden=unload buftype=nowrite undolevels=-1 | else | set eventignore-=FileType | endif
+    augroup END
+  endif
 
 
 " Keymappings
@@ -170,6 +191,9 @@
     " Indentation
         vnoremap < <gv
         vnoremap > >gv
+
+    " Change CWD to the current file
+    nnoremap <leader>cwd :cd %:p:h<CR>
 
     " Quickly switch between the actual and the last file in the buffer.
         nnoremap <leader>, :b#<CR>
