@@ -118,8 +118,8 @@ fi
 
 
 
-ln -s $FULL_PATH/_vim ~/.vim
-ln -s $FULL_PATH/_vimrc ~/.vimrc
+ln -s $FULL_PATH/.vim ~/.vim
+ln -s $FULL_PATH/.vimrc ~/.vimrc
 
 
 
