@@ -94,7 +94,7 @@ if [ $FALLBACK_MODE -eq 1 ]; then # Git is not available
     rm vimfiles.tar.gz
 else # Git is available
     echo "Cloning my vimfiles to walialu-vimfiles"
-    git clone https://github.com/walialu/vimfiles.git .
+    git clone https://github.com/walialu/walialu-vimfiles.git .
 
     echo "Clonde Vundle"
     git clone https://github.com/gmarik/vundle.git _vim/bundle/vundle
