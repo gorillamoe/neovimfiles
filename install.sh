@@ -97,7 +97,7 @@ else # Git is available
     git clone https://github.com/walialu/walialu-vimfiles.git .
 
     echo "Clonde Vundle"
-    git clone https://github.com/gmarik/vundle.git _vim/bundle/vundle
+    git clone https://github.com/gmarik/vundle.git .vim/bundle/vundle
 fi
 
 
