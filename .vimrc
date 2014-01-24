@@ -123,6 +123,8 @@
     Bundle "honza/vim-snippets"
     Bundle 'jlanzarotta/bufexplorer'
 
+    " do not change working directory each time I invoke ctrlp
+    let g:ctrlp_working_path_mode = 0
 
 " This plugins depend on external libs, therefore I include them conditionally
     if ( external_lib_is_available_npm == 1 )
@@ -191,9 +193,6 @@ if !exists("my_auto_commands_loaded")
     " Indentation
         vnoremap < <gv
         vnoremap > >gv
-
-    " Change CWD to the current file
-    nnoremap <leader>cwd :cd %:p:h<CR>
 
     " Quickly switch between the actual and the last file in the buffer.
         nnoremap <leader>, :b#<CR>
