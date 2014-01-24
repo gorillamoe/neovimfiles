@@ -1,4 +1,76 @@
-" There can be only one encoding and it's called UTF8
+" We don't want to be in compliance mode with Vi
+    set nocompatible
+    filetype off
+
+" Enable Vundle
+    set rtp+=~/.vim/bundle/vundle/
+    call vundle#rc()
+    Bundle 'gmarik/vundle'
+
+" My bundles
+    Bundle 'kien/ctrlp.vim'
+    Bundle 'vim-scripts/matchit.zip'
+    Bundle 'scrooloose/nerdtree'
+    Bundle 'scrooloose/syntastic'
+    Bundle 'bling/vim-airline'
+    Bundle 'tpope/vim-commentary'
+    Bundle 'tpope/vim-repeat'
+    Bundle 'tpope/vim-surround'
+    Bundle 'tpope/vim-unimpaired'
+    Bundle "SirVer/ultisnips"
+    Bundle 'jlanzarotta/bufexplorer'
+
+" Check if various external libraries / apps / programs are available
+" =============================================================================
+" http://stackoverflow.com/questions/10068078/how-to-detect-os-type-and-set-ctags-path-in-vimrc
+" Because some plugins rely on them ..
+" Also some of my key mappings to these plugins are then not needed anymore.
+" This is heavily inspired by a great answer I found on stackoverflow:
+    if executable('exctags')
+        let external_lib_is_available_ctags = 1
+    elseif executable('ctags')
+        let external_lib_is_available_ctags = 1
+    else
+        let external_lib_is_available_ctags = 0
+    endif
+
+    if executable('npm')
+        let external_lib_is_available_npm = 1
+    else
+        let external_lib_is_available_npm = 0
+    endif
+
+" This plugins depend on external libs, therefore I include them conditionally
+    if ( external_lib_is_available_npm == 1 )
+        Bundle 'marijnh/tern_for_vim'
+    endif
+
+    if ( external_lib_is_available_ctags == 1 )
+        Bundle 'majutsushi/tagbar'
+        Bundle 'vim-scripts/taglist.vim'
+    endif
+
+
+" Bundle specific settings
+    " do not change working directory each time I invoke ctrlp
+        let g:ctrlp_working_path_mode = 0
+
+    " Define UltiSnips directories
+        let g:UltiSnipsSnippetDirectories = ["bundle/ultisnips/UltiSnips","snippets"]
+        let g:UltiSnipsListSnippets = "<f9>"
+
+    " Settings for ctrlp
+        set runtimepath^=~/.vim/bundle/ctrlp.vim
+
+    " Enable airline powerline fonts
+        let g:airline_powerline_fonts=1
+
+    " Max height of the OnmiCompletionPopup
+        let g:ctrlp_max_height = 30
+
+
+
+" Set encoding
     set encoding=utf-8
 
 " Use Unix as the standard file type
@@ -26,9 +98,6 @@
     set nowritebackup
     set noswapfile
 
-" We don't want to be in compliance mode with Vi
-    set nocompatible
-    filetype off
 
 " Enable indentation
     filetype plugin indent on
@@ -80,71 +149,7 @@
     set listchars=tab:>-,trail:-
     set list
 
-" Check if various external libraries / apps / programs are available
-" =============================================================================
-" http://stackoverflow.com/questions/10068078/how-to-detect-os-type-and-set-ctags-path-in-vimrc
-" Because some plugins rely on them ..
-" Also some of my key mappings to these plugins are then not needed anymore.
-" This is heavily inspired by a great answer I found on stackoverflow:
-    if executable('exctags')
-        let external_lib_is_available_ctags = 1
-    elseif executable('ctags')
-        let external_lib_is_available_ctags = 1
-    else
-        let external_lib_is_available_ctags = 0
-    endif
 
-    if executable('npm')
-        let external_lib_is_available_npm = 1
-    else
-        let external_lib_is_available_npm = 0
-    endif
-
-
-
-" Enable Vundle
-    set rtp+=~/.vim/bundle/vundle/
-    call vundle#rc()
-    Bundle 'gmarik/vundle'
-
-" My bundles
-    Bundle 'kien/ctrlp.vim'
-    Bundle 'vim-scripts/matchit.zip'
-    Bundle 'scrooloose/nerdtree'
-    Bundle 'scrooloose/syntastic'
-    Bundle 'bling/vim-airline'
-    Bundle 'tpope/vim-commentary'
-    Bundle 'tpope/vim-repeat'
-    Bundle 'tpope/vim-surround'
-    Bundle 'tpope/vim-unimpaired'
-    Bundle "MarcWeber/vim-addon-mw-utils"
-    Bundle "tomtom/tlib_vim"
-    Bundle "garbas/vim-snipmate"
-    Bundle "honza/vim-snippets"
-    Bundle 'jlanzarotta/bufexplorer'
-
-    " do not change working directory each time I invoke ctrlp
-    let g:ctrlp_working_path_mode = 0
-
-" This plugins depend on external libs, therefore I include them conditionally
-    if ( external_lib_is_available_npm == 1 )
-        Bundle 'marijnh/tern_for_vim'
-    endif
-
-    if ( external_lib_is_available_ctags == 1 )
-        Bundle 'majutsushi/tagbar'
-        Bundle 'vim-scripts/taglist.vim'
-    endif
-
-" Plugin settings
-    " Settings for ctrlp
-        set runtimepath^=~/.vim/bundle/ctrlp.vim
-
-    " Enable airline powerline fonts
-        let g:airline_powerline_fonts=1
-
-    " Max height of the OnmiCompletionPopup
-        let g:ctrlp_max_height = 30
 
 " Auto-Commands
 if !exists("my_auto_commands_loaded")
@@ -158,6 +163,8 @@ if !exists("my_auto_commands_loaded")
         autocmd BufReadPre * let f=expand("<afile>") | if getfsize(f) > g:LargeFile | setlocal noswapfile bufhidden=unload buftype=nowrite undolevels=-1 | endif
     augroup END
 endif
+
+
 
 " Protect large files from sourcing and other overhead.
 " Files become read only
@@ -176,6 +183,7 @@ if !exists("my_auto_commands_loaded")
     autocmd BufReadPre * let f=expand("<afile>") | if getfsize(f) > g:LargeFile | set eventignore+=FileType | setlocal noswapfile bufhidden=unload buftype=nowrite undolevels=-1 | else | set eventignore-=FileType | endif
     augroup END
   endif
+
 
 
 " Keymappings
