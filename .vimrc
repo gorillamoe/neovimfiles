@@ -123,7 +123,7 @@
     let &t_AB="\e[48;5;%dm"
     let &t_AF="\e[38;5;%dm"
     set background=dark
-    colors wombat256mod
+    colors molokai
 
 " Enable syntax highlighting
     syntax on
