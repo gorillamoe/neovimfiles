@@ -208,6 +208,9 @@ if !exists("my_auto_commands_loaded")
     " NERD Tree Binding
         nnoremap <leader>k :NERDTreeToggle<CR>
 
+    " Quickcompile binding
+        nnoremap <F3> :source ~/.vim-quickcompile<CR>
+
     " Set mappings only if dependant libs are available
         if ( external_lib_is_available_ctags == 1 )
             " Search through cTags
