@@ -17,8 +17,12 @@
     Bundle 'tpope/vim-repeat'
     Bundle 'tpope/vim-surround'
     Bundle 'tpope/vim-unimpaired'
-    Bundle "SirVer/ultisnips"
+    Bundle 'MarcWeber/vim-addon-mw-utils'
+    Bundle 'tomtom/tlib_vim'
+    Bundle 'garbas/vim-snipmate'
     Bundle 'jlanzarotta/bufexplorer'
+    Bundle 'cfurrow/vim-l9'
+    Bundle 'othree/vim-autocomplpop'
 
 " Check if various external libraries / apps / programs are available
 " =============================================================================
@@ -118,12 +122,9 @@
     set bs=2 "
 
 " Colors
-    set term=xterm
     set t_Co=256
-    let &t_AB="\e[48;5;%dm"
-    let &t_AF="\e[38;5;%dm"
     set background=dark
-    colorscheme wombat256mod
+    colorscheme molokai
 
 " Enable syntax highlighting
     syntax on
@@ -137,7 +138,7 @@
     " Show bar for length
         if exists('+colorcolumn')
             set colorcolumn=80
-            highlight ColorColumn ctermbg=233
+            highlight ColorColumn ctermbg=234
         endif
 
     " Enable relative numbers by default if available
@@ -216,5 +217,6 @@ if !exists("my_auto_commands_loaded")
             " Search through cTags
             nnoremap <leader>g :CtrlPTag<CR>
             " Toogle Tagbar plugin
+            let g:tagbar_autofocus=1
             nnoremap <silent> <Leader>j :TagbarToggle<CR>
         endif
