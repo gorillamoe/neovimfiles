@@ -17,12 +17,9 @@
     Bundle 'tpope/vim-repeat'
     Bundle 'tpope/vim-surround'
     Bundle 'tpope/vim-unimpaired'
-    Bundle 'MarcWeber/vim-addon-mw-utils'
-    Bundle 'tomtom/tlib_vim'
-    Bundle 'garbas/vim-snipmate'
+    Bundle 'SirVer/ultisnips'
+    Bundle 'honza/vim-snippets'
     Bundle 'jlanzarotta/bufexplorer'
-    Bundle 'cfurrow/vim-l9'
-    Bundle 'othree/vim-autocomplpop'
 
 " Check if various external libraries / apps / programs are available
 " =============================================================================
@@ -38,17 +35,7 @@
         let external_lib_is_available_ctags = 0
     endif
 
-    if executable('npm')
-        let external_lib_is_available_npm = 1
-    else
-        let external_lib_is_available_npm = 0
-    endif
-
 " This plugins depend on external libs, therefore I include them conditionally
-    if ( external_lib_is_available_npm == 1 )
-        Bundle 'marijnh/tern_for_vim'
-    endif
-
     if ( external_lib_is_available_ctags == 1 )
         Bundle 'majutsushi/tagbar'
         Bundle 'vim-scripts/taglist.vim'
@@ -60,7 +47,7 @@
         let g:ctrlp_working_path_mode = 0
 
     " Define UltiSnips directories
-        let g:UltiSnipsSnippetDirectories = ["bundle/ultisnips/UltiSnips","snippets"]
+        let g:UltiSnipsSnippetDirectories = ["bundle/ultisnips/UltiSnips","UltiSnips"]
         let g:UltiSnipsListSnippets = "<f9>"
 
     " Settings for ctrlp
