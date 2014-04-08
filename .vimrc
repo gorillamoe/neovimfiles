@@ -20,6 +20,7 @@
     Bundle 'SirVer/ultisnips'
     Bundle 'honza/vim-snippets'
     Bundle 'jlanzarotta/bufexplorer'
+    Bundle 'sjl/gundo.vim'
 
 " Check if various external libraries / apps / programs are available
 " =============================================================================
@@ -179,6 +180,9 @@ if !exists("my_auto_commands_loaded")
     noremap <C-Z> :update<CR>
     vnoremap <C-Z> <C-C>:update<CR>
     inoremap <C-Z> <C-O>:update<CR>
+
+    " Gundo Mappings
+        nnoremap <F5> :GundoToggle<CR>
 
     " Window navigation
         map <c-j> <c-w>j
