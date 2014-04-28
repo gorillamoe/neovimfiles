@@ -21,6 +21,23 @@
     Bundle 'honza/vim-snippets'
     Bundle 'jlanzarotta/bufexplorer'
     Bundle 'sjl/gundo.vim'
+    Bundle 'violetyk/cake.vim'
+    Bundle 'Keithbsmiley/investigate.vim'
+    Bundle 'Shougo/neocomplete'
+    Bundle 'Shougo/neosnippet'
+    Bundle 'Shougo/neosnippet-snippets'
+    Bundle 'pangloss/vim-javascript'
+    Bundle 'heavenshell/vim-jsdoc'
+
+
+if has('win32') || has ('win64')
+  let $VIMHOME = $VIM."/vimfiles"
+else
+  let $VIMHOME = $HOME."/.vim"
+endif
+
+" Neocomplete Setup
+    let g:neocomplete#enable_at_startup = 1
 
 " Check if various external libraries / apps / programs are available
 " =============================================================================
@@ -42,26 +59,6 @@
         Bundle 'vim-scripts/taglist.vim'
     endif
 
-
-" Bundle specific settings
-    " do not change working directory each time I invoke ctrlp
-        let g:ctrlp_working_path_mode = 0
-
-    " Define UltiSnips directories
-        let g:UltiSnipsSnippetDirectories = ["bundle/ultisnips/UltiSnips","UltiSnips"]
-        let g:UltiSnipsListSnippets = "<f9>"
-
-    " Settings for ctrlp
-        set runtimepath^=~/.vim/bundle/ctrlp.vim
-
-    " Enable airline powerline fonts
-        let g:airline_powerline_fonts=1
-
-    " Max height of the OnmiCompletionPopup
-        let g:ctrlp_max_height = 30
-
-
-
 " Set encoding
     set encoding=utf-8
 
@@ -73,9 +70,9 @@
     set undolevels=700
 
 " Real programmers use spaces instead of tabs.
-    set tabstop=4
-    set shiftwidth=4
-    set softtabstop=4
+    set tabstop=2
+    set shiftwidth=2
+    set softtabstop=2
     set expandtab
 
 " Make search case insensitive
@@ -97,25 +94,14 @@
 " Enable hidden buffers, so we can switch buffers without saving them.
     set hidden
 
-" Rebind <Leader> key
-    let mapleader = ","
-
-" Allow saving of files as sudo when I forgot to start vim using sudo.
-    cmap w!! w !sudo tee > /dev/null %
-
 " Fix for ViM Airline Plugin
     set laststatus=2
 
 " Make backspace behave like normal again
     set bs=2 "
 
-" Colors
-    set t_Co=256
-    set background=dark
-    colorscheme wombat256mod
-
 " Enable syntax highlighting
-    syntax on
+    syntax enable
 
 " Showing line numbers and length
     set number " show line numbers
@@ -126,7 +112,7 @@
     " Show bar for length
         if exists('+colorcolumn')
             set colorcolumn=80
-            highlight ColorColumn ctermbg=234
+            highlight ColorColumn ctermbg=233
         endif
 
     " Enable relative numbers by default if available
@@ -138,13 +124,34 @@
     set listchars=tab:>-,trail:-
     set list
 
+" Colors
+    let g:solarized_termcolors=256
+    set t_Co=256
+    set background=light
+    colorscheme wombat256mod
+    highlight ColorColumn ctermbg=233
 
+    let g:current_colorscheme = 0
+    function! ToggleColorscheme()
+        if (g:current_colorscheme == 0)
+            set background=light
+            colorscheme solarized
+            let g:current_colorscheme=1
+        else
+            set background=dark
+            colorscheme wombat256mod
+            let g:current_colorscheme=0
+            highlight ColorColumn ctermbg=233
+        endif
+    endfunction
 
 " Auto-Commands
 if !exists("my_auto_commands_loaded")
-  let my_auto_commands_loaded = 1
+    let my_auto_commands_loaded = 1
     " Sets filetype to markdown for .md files
     au BufRead,BufNewFile *.md set filetype=markdown
+    au FileType php setlocal noexpandtab
+
 
     " Large files > 10M
     let g:LargeFile = 1024 * 1024 * 10
@@ -171,43 +178,11 @@ if !exists("my_auto_commands_loaded")
   augroup LargeFile
     autocmd BufReadPre * let f=expand("<afile>") | if getfsize(f) > g:LargeFile | set eventignore+=FileType | setlocal noswapfile bufhidden=unload buftype=nowrite undolevels=-1 | else | set eventignore-=FileType | endif
     augroup END
-  endif
+endif
 
 
-
-" Keymappings
-    " Quicksave command
-    noremap <C-Z> :update<CR>
-    vnoremap <C-Z> <C-C>:update<CR>
-    inoremap <C-Z> <C-O>:update<CR>
-
-    " Gundo Mappings
-        nnoremap <F5> :GundoToggle<CR>
-
-    " Window navigation
-        map <c-j> <c-w>j
-        map <c-k> <c-w>k
-        map <c-l> <c-w>l
-        map <c-h> <c-w>h
-
-    " Indentation
-        vnoremap < <gv
-        vnoremap > >gv
-
-    " Quickly switch between the actual and the last file in the buffer.
-        nnoremap <leader>, :b#<CR>
-
-    " NERD Tree Binding
-        nnoremap <leader>k :NERDTreeToggle<CR>
-
-    " Quickcompile binding
-        nnoremap <F3> :source ~/.vim-quickcompile<CR>
-
-    " Set mappings only if dependant libs are available
-        if ( external_lib_is_available_ctags == 1 )
-            " Search through cTags
-            nnoremap <leader>g :CtrlPTag<CR>
-            " Toogle Tagbar plugin
-            let g:tagbar_autofocus=1
-            nnoremap <silent> <Leader>j :TagbarToggle<CR>
-        endif
+source $VIMHOME/keymap.vim
+source $VIMHOME/conf/airline.vim
+source $VIMHOME/conf/ctrlp.vim
+source $VIMHOME/conf/syntastic.vim
+source $VIMHOME/conf/ultisnips.vim
