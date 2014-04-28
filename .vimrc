@@ -21,11 +21,7 @@
     Bundle 'honza/vim-snippets'
     Bundle 'jlanzarotta/bufexplorer'
     Bundle 'sjl/gundo.vim'
-    Bundle 'violetyk/cake.vim'
-    Bundle 'Keithbsmiley/investigate.vim'
-    Bundle 'Shougo/neocomplete'
-    Bundle 'Shougo/neosnippet'
-    Bundle 'Shougo/neosnippet-snippets'
+    Bundle 'Valloric/YouCompleteMe'
     Bundle 'pangloss/vim-javascript'
     Bundle 'heavenshell/vim-jsdoc'
 
