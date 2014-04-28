@@ -21,11 +21,11 @@ The default behaviour (quick install):
 
 ### Quick install:
 
-    wget -qO- https://raw.github.com/walialu/walialu-vimfiles/master/install.sh | sh
+    wget --no-check-certificate -qO- https://raw.github.com/walialu/walialu-vimfiles/master/install.sh | sh
 
 ### No hero mode:
 
-    wget -O /tmp/walialu-vimfiles-installer.sh https://raw.github.com/walialu/walialu-vimfiles/master/install.sh && sh /tmp/walialu-vimfiles-installer.sh --no-hero
+    wget --no-check-certificate -O /tmp/walialu-vimfiles-installer.sh https://raw.github.com/walialu/walialu-vimfiles/master/install.sh && sh /tmp/walialu-vimfiles-installer.sh --no-hero
 
 
 The difference is that the latter one will ask you about conflicting stuff and
