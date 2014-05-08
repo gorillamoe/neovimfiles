@@ -33,10 +33,12 @@
   function! CakePhpModeToggle()
     if g:CakePhpMode == 1
       let g:CakePhpMode = 0
-      set noexpandtab
+      set expandtab
+      let g:syntastic_php_phpcs_args = "--tab-width="
     else
       let g:CakePhpMode = 1
-      set expandtab
+      set noexpandtab
+      let g:syntastic_php_phpcs_args = "--standard=CakePHP --tab-width="
     endif
     echo "CakePhpMode: " . g:CakePhpMode
   endfunc
