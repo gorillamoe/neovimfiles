@@ -28,6 +28,22 @@
   inoremap <silent><C-j> <C-R>=OmniPopup('j')<CR>
   inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
 
+" Enable CakePHP Mode
+  let g:CakePhpMode = 0
+  function! CakePhpModeToggle()
+    if g:CakePhpMode == 1
+      let g:CakePhpMode = 0
+      set noexpandtab
+    else
+      let g:CakePhpMode = 1
+      set expandtab
+    endif
+    echo "CakePhpMode: " . g:CakePhpMode
+  endfunc
+
+  nnoremap <F3> :call CakePhpModeToggle()<CR>
+
+
 " Awesome line number magic
   function! NumberToggle()
     if(&relativenumber == 1)
@@ -91,9 +107,6 @@
 
 " NERD Tree Binding
   nnoremap <leader>k :NERDTreeToggle<CR>
-
-" Quickcompile binding
-  nnoremap <F3> :source ~/.vim-quickcompile<CR>
 
 " Set mappings only if dependant libs are available
   if ( external_lib_is_available_ctags == 1 )
