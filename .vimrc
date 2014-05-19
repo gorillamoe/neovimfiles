@@ -24,6 +24,7 @@
   Bundle 'Valloric/YouCompleteMe'
   Bundle 'marijnh/tern_for_vim'
 
+
 set tags=./tags
 set wildmode=list:longest " make TAB behave like in a shell
 set autoread " reload file when changes happen in other editors

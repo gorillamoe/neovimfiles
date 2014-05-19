@@ -5,13 +5,9 @@
   cmap w!! w !sudo tee > /dev/null %
 
 " UltiSnips
-  set runtimepath+=~/.vim/bundle/UltiSnips
-  set runtimepath+=~/.vim/snippets
-  let g:UltiSnipsSnippetsDir = "~/.vim/snippets/"
-  let g:UltiSnipsSnippetDirectories = ['UltiSnips', 'snippets']
-  let g:UltiSnipsExpandTrigger="<tab>"
-  let g:UltiSnipsJumpForwardTrigger="<tab>"
-  let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+  let g:UltiSnipsExpandTrigger="<C-Space>"
+  let g:UltiSnipsJumpForwardTrigger="<C-n>"
+  let g:UltiSnipsJumpBackwardTrigger="<C-p>"
 
 " found here: http://stackoverflow.com/a/2170800/70778
 " Navigate OmniPopup with j and k
@@ -90,6 +86,11 @@
   noremap <Leader>w :update<CR>
   vnoremap <Leader>w <C-C>:update<CR>
   inoremap <Leader>w <C-O>:update<CR>
+
+" Toggle Search Highlighting
+map  <F12> :set hls!<CR>
+imap <F12> <ESC>:set hls!<CR>a
+vmap <F12> <ESC>:set hls!<CR>gv
 
 " Gundo Mappings
   nnoremap <F5> :GundoToggle<CR>
