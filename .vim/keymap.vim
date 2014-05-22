@@ -59,7 +59,7 @@
   set relativenumber
 
 " Colors
-  let g:current_colorscheme = 0
+  let g:current_colorscheme = 1
 
   function! ToggleColorscheme()
       if (g:current_colorscheme == 0)
