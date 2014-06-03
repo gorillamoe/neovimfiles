@@ -4,26 +4,6 @@
 " Allow saving of files as sudo when I forgot to start vim using sudo.
   cmap w!! w !sudo tee > /dev/null %
 
-" UltiSnips
-  let g:UltiSnipsExpandTrigger="<C-Space>"
-  let g:UltiSnipsJumpForwardTrigger="<C-n>"
-  let g:UltiSnipsJumpBackwardTrigger="<C-p>"
-
-" found here: http://stackoverflow.com/a/2170800/70778
-" Navigate OmniPopup with j and k
-  function! OmniPopup(action)
-      if pumvisible()
-          if a:action == 'j'
-              return "\<C-N>"
-          elseif a:action == 'k'
-              return "\<C-P>"
-          endif
-      endif
-      return a:action
-  endfunction
-  inoremap <silent><C-j> <C-R>=OmniPopup('j')<CR>
-  inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
-
 " Enable CakePHP Mode
   let g:CakePhpMode = 0
   function! CakePhpModeToggle()
