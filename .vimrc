@@ -21,7 +21,6 @@
   Bundle 'honza/vim-snippets'
   Bundle 'jlanzarotta/bufexplorer'
   Bundle 'sjl/gundo.vim'
-  Bundle 'marijnh/tern_for_vim'
   Bundle 'terryma/vim-multiple-cursors'
   Bundle 'Raimondi/delimitMate'
 
