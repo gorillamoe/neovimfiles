@@ -23,7 +23,7 @@
   Bundle 'sjl/gundo.vim'
   Bundle 'terryma/vim-multiple-cursors'
   Bundle 'Raimondi/delimitMate'
-
+  Bundle 'kchmck/vim-coffee-script'
 
 set tags=./tags
 set wildmode=list:longest " make TAB behave like in a shell
