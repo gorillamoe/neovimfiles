@@ -75,12 +75,6 @@ vmap <F12> <ESC>:set hls!<CR>gv
 " Gundo Mappings
   nnoremap <F5> :GundoToggle<CR>
 
-" Window navigation
-  map <c-j> <c-w>j
-  map <c-k> <c-w>k
-  map <c-l> <c-w>l
-  map <c-h> <c-w>h
-
 " Indentation
   vnoremap < <gv
   vnoremap > >gv
