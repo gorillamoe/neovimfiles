@@ -91,10 +91,7 @@ vmap <F12> <ESC>:set hls!<CR>gv
 " NERD Tree Binding
   nnoremap <leader>k :NERDTreeToggle<CR>
 
-" Set mappings only if dependant libs are available
-  if ( external_lib_is_available_ctags == 1 )
-      " Toogle Tagbar plugin
-      let g:tagbar_autofocus=1
-      nnoremap <silent> <Leader>j :TagbarToggle<CR>
-  endif
+" Toogle Tagbar plugin
+  let g:tagbar_autofocus=1
+  nnoremap <silent> <Leader>j :TagbarToggle<CR>
 " vim:tabstop=2:expandtab
