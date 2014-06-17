@@ -27,8 +27,7 @@
   Plugin 'majutsushi/tagbar'
   Plugin 'vim-scripts/taglist.vim'
   Plugin 'Shougo/neocomplete'
-  Plugin 'Shougo/neosnippet'
-  Plugin 'Shougo/neosnippet-snippets'
+  Plugin 'Shougo/neosnippet.vim'
 call vundle#end()
 filetype plugin indent on
 
