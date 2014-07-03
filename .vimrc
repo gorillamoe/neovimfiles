@@ -31,6 +31,13 @@
 call vundle#end()
 filetype plugin indent on
 
+let g:EclimCompletionMethod = 'omnifunc'
+
+if !exists('g:neocomplcache_force_omni_patterns')
+  let g:neocomplcache_force_omni_patterns = {}
+endif
+let g:neocomplcache_force_omni_patterns.java = '\k\.\k*'
+
 set tags=./tags
 set wildmode=list:longest " make TAB behave like in a shell
 set autoread " reload file when changes happen in other editors
