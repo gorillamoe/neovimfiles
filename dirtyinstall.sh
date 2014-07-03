@@ -20,9 +20,10 @@ printf "
 
 "
 cd ~
-git clone https://github.com/walialu/walialu-vimfiles
-ln -s walialu-vimfiles/.vim
-ln -s walialu-vimfiles/.vimrc
+mkdir -p gitrepositories/walialu
+git clone https://github.com/walialu/vimfiles gitrepositories/walialu/vimfiles
+ln -s gitrepositories/walialu/vimfiles/.vim
+ln -s gitrepositories/walialu/vimfiles/.vimrc
 mkdir .vim/bundle
 cd .vim/bundle
 git clone https://github.com/gmarik/Vundle.vim
