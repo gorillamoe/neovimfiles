@@ -1,5 +1,24 @@
 #!/bin/sh
-echo "Quick and dirty setup tool :) I love to be dirty :D"
+printf "
+ +-------------------------------------------------+
+ |                                                 |
+ |         Quick and dirty Vim Setup Tool          |
+ |                                                 |
+ |=================================================|
+ |                                                 |
+ |          Copyright (c) 2012, 2013, 2014         |
+ |                                                 |
+ |                Twitter                          |
+ |              +-------------+                    |
+ |              |             |                    |
+ |          M E @ W A L I A L U . C O M            |
+ |                |                   |            |
+ |                +-------------------+            |
+ |                   Web                           |
+ |                                                 |
+ +-------------------------------------------------+
+
+"
 cd ~
 git clone https://github.com/walialu/walialu-vimfiles
 ln -s walialu-vimfiles/.vim
