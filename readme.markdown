@@ -18,6 +18,14 @@ The default behaviour (quick install):
 - Removes existing `~/.vimrc` and `~/.vim`
 - Symlinks ~/.vim and ~/.vimrc to my vimfiles
 
+### Really quick and dirty install
+
+I would recommend that you only do this on a freshly installed system,
+or if you really know what you are doing; otherwise it could screw up all of
+your vim configuration :)
+
+    wget --no-check-certificate -qO- https://raw.github.com/walialu/walialu-vimfiles/master/install-dirty.sh | sh
+
 
 ### Quick install:
 
