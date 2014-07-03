@@ -27,3 +27,6 @@ mkdir .vim/bundle
 cd .vim/bundle
 git clone https://github.com/gmarik/Vundle.vim
 vim "+PluginInstall" "+qall"
+# Hopefully this will fix the weird broken terminal
+printf "\ec" #\e is ESC in bash
+echo -en "\ec" #thanks @Jonathon Reinhart.
