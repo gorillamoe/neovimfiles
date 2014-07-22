@@ -24,7 +24,6 @@
   Plugin 'Raimondi/delimitMate'
   Plugin 'kchmck/vim-coffee-script'
   Plugin 'majutsushi/tagbar'
-  Plugin 'christoomey/vim-tmux-navigator'
   Plugin 'vim-scripts/taglist.vim'
   Plugin 'Shougo/neocomplete'
   Plugin 'Shougo/neosnippet.vim'
