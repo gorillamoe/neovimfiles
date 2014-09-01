@@ -39,7 +39,7 @@
   set relativenumber
 
 " Colors
-  let g:current_colorscheme = 1
+  let g:current_colorscheme = 0
 
   function! ToggleColorscheme()
       if (g:current_colorscheme == 0)
@@ -48,7 +48,7 @@
           let g:current_colorscheme=1
       else
           set background=dark
-          colorscheme wombat256mod
+          colorscheme wombat256i
           let g:current_colorscheme=0
           highlight ColorColumn ctermbg=235
       endif
