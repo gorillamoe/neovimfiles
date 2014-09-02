@@ -21,13 +21,13 @@
 
   function! g:WalialuUtils_encodeUmlauts()
       " Encodes ü ö ä Ä Ü Ö ß
-      :%s/\Cü/\&uuml;/g
-      :%s/\Cö/\&ouml;/g
-      :%s/\Cä/\&auml;/g
-      :%s/\CÄ/\&Auml;/g
-      :%s/\CÜ/\&Uuml;/g
-      :%s/\CÖ/\&Ouml;/g
-      :%s/ß/\&szlig;/g
+      :'<,'>s/\Cü/\&uuml;/g
+      :'<,'>s/\Cö/\&ouml;/g
+      :'<,'>s/\Cä/\&auml;/g
+      :'<,'>s/\CÄ/\&Auml;/g
+      :'<,'>s/\CÜ/\&Uuml;/g
+      :'<,'>s/\CÖ/\&Ouml;/g
+      :'<,'>s/ß/\&szlig;/g
   endfunc
 
   nnoremap <F3> :call CakePhpModeToggle()<CR>
