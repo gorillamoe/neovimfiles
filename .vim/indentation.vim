@@ -2,7 +2,7 @@
   set tabstop=4
   set shiftwidth=4
   set softtabstop=4
-  set expandtab
+  set noexpandtab
 
 " Showing line numbers and length
   set number " show line numbers
