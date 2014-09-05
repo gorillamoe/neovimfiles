@@ -16,7 +16,7 @@ I would recommend that you only do this on a freshly installed system,
 or if you really know what you are doing; otherwise it could screw up all of
 your vim configuration :)
 
-    wget --no-check-certificate -qO- https://raw.github.com/walialu/walialu-vimfiles/master/dirtyinstall.sh | sh
+    wget --no-check-certificate -qO- https://raw.github.com/walialu/vimfiles/master/dirtyinstall.sh | sh
 
 ### Manual installation
 
