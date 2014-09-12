@@ -9,11 +9,9 @@
   function! CakePhpModeToggle()
     if g:CakePhpMode == 1
       let g:CakePhpMode = 0
-      set expandtab
       let g:syntastic_php_phpcs_args = "--tab-width="
     else
       let g:CakePhpMode = 1
-      set noexpandtab
       let g:syntastic_php_phpcs_args = "--standard=CakePHP --tab-width="
     endif
     echo "CakePhpMode: " . g:CakePhpMode
@@ -59,7 +57,7 @@
           let g:current_colorscheme=1
       else
           set background=dark
-          colorscheme wombat256i
+          colorscheme wombat256mod
           let g:current_colorscheme=0
           highlight ColorColumn ctermbg=235
       endif
