@@ -1,8 +1,8 @@
 " Real programmers use spaces instead of tabs.
-  set tabstop=4
-  set shiftwidth=4
-  set softtabstop=4
-  set noexpandtab
+  set tabstop=2
+  set shiftwidth=2
+  set softtabstop=2
+  set expandtab
 
 " Showing line numbers and length
   set number " show line numbers
