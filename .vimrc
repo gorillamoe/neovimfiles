@@ -27,6 +27,7 @@
   Plugin 'vim-scripts/taglist.vim'
   Plugin 'Shougo/neocomplete'
   Plugin 'Shougo/neosnippet.vim'
+  Plugin 'tpope/vim-fugitive'
 call vundle#end()
 filetype plugin indent on
 
