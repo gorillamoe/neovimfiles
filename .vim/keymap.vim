@@ -81,9 +81,6 @@ map  <F12> :set hls!<CR>
 imap <F12> <ESC>:set hls!<CR>a
 vmap <F12> <ESC>:set hls!<CR>gv
 
-" Gundo Mappings
-  nnoremap <F5> :GundoToggle<CR>
-
 " Indentation
   vnoremap < <gv
   vnoremap > >gv

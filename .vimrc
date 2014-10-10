@@ -13,6 +13,7 @@
   Plugin 'scrooloose/nerdtree'
   Plugin 'scrooloose/syntastic'
   Plugin 'bling/vim-airline'
+  Plugin 'joonty/vdebug.git'
   Plugin 'tpope/vim-commentary'
   Plugin 'tpope/vim-repeat'
   Plugin 'tpope/vim-surround'
@@ -20,7 +21,6 @@
   Plugin 'SirVer/ultisnips'
   Plugin 'honza/vim-snippets'
   Plugin 'jlanzarotta/bufexplorer'
-  Plugin 'sjl/gundo.vim'
   Plugin 'Raimondi/delimitMate'
   Plugin 'kchmck/vim-coffee-script'
   Plugin 'majutsushi/tagbar'
@@ -46,7 +46,7 @@ set bs=2 " make backspace behave like normal again
 let $VIMHOME = $HOME."/.vim"
 
 " make yank copy to the global system clipboard
-  set clipboard=unnamed
+  set clipboard=unnamedplus
 
 " Neocomplete Setup
   let g:neocomplete#enable_at_startup = 1
