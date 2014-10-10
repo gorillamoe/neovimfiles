@@ -4,18 +4,22 @@
 " Allow saving of files as sudo when I forgot to start vim using sudo.
   cmap w!! w !sudo tee > /dev/null %
 
-" Enable CakePHP Mode
-  let g:CakePhpMode = 0
-  function! CakePhpModeToggle()
-    if g:CakePhpMode == 1
-      let g:CakePhpMode = 0
+" Switch Tab vs Spaces
+  let g:WalialuUtils_IndentationSwitch = 0
+  function! WalialuUtils_IndentationSwitch()
+    if g:WalialuUtils_IndentationSwitch == 1
+      set expandtab
+      let g:WalialuUtils_IndentationSwitch = 0
       let g:syntastic_php_phpcs_args = "--tab-width="
     else
-      let g:CakePhpMode = 1
+      set noexpandtab
+      let g:WalialuUtils_IndentationSwitch = 1
       let g:syntastic_php_phpcs_args = "--standard=CakePHP --tab-width="
     endif
-    echo "CakePhpMode: " . g:CakePhpMode
+    echo "Indent with Tabs? " . g:WalialuUtils_IndentationSwitch
   endfunc
+
+  nnoremap <F3> :call WalialuUtils_IndentationSwitch()<CR>
 
   function! g:WalialuUtils_encodeUmlauts()
       " Encodes ü ö ä Ä Ü Ö ß
@@ -28,7 +32,6 @@
       :'<,'>s/ß/\&szlig;/g
   endfunc
 
-  nnoremap <F3> :call CakePhpModeToggle()<CR>
 
 
 " Awesome line number magic
