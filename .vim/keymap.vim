@@ -75,10 +75,8 @@ let relativenumber = 1
   vnoremap <Leader>w <C-C>:update<CR>
   inoremap <Leader>w <C-O>:update<CR>
 
-" Toggle Search Highlighting
-map  <F12> :set hls!<CR>
-imap <F12> <ESC>:set hls!<CR>a
-vmap <F12> <ESC>:set hls!<CR>gv
+" Clear the search buffer when hitting return
+:nnoremap <CR> :nohlsearch<cr>
 
 " Indentation
   vnoremap < <gv
