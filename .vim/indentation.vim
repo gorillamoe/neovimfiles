@@ -16,11 +16,6 @@
     highlight ColorColumn ctermbg=233
   endif
 
-" Enable relative numbers by default if available
-  if exists('+relativenumber')
-    set rnu
-  endif
-
 " Show whitespace
   set listchars=tab:>-,trail:-
   set list

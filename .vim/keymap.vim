@@ -32,23 +32,19 @@
       :'<,'>s/ß/\&szlig;/g
   endfunc
 
-
+let relativenumber = 1
 
 " Awesome line number magic
   function! NumberToggle()
     if(&relativenumber == 1)
       set number
+      set norelativenumber
     else
       set relativenumber
     endif
   endfunc
 
   nnoremap <Leader>l :call NumberToggle()<cr>
-  :au FocusLost * set number
-  :au FocusGained * set relativenumber
-  autocmd InsertEnter * set number
-  autocmd InsertLeave * set relativenumber
-  set relativenumber
 
 " Colors
   let g:current_colorscheme = 0
