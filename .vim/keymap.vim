@@ -56,7 +56,7 @@ let relativenumber = 1
           let g:current_colorscheme=1
       else
           set background=dark
-          colorscheme wombat256mod
+          colorscheme molokaimproved
           let g:current_colorscheme=0
           highlight ColorColumn ctermbg=235
       endif
