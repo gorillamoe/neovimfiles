@@ -95,6 +95,7 @@ source $VIMHOME/conf/ctrlp.vim
 source $VIMHOME/conf/syntastic.vim
 source $VIMHOME/conf/ultisnips.vim
 source $VIMHOME/conf/neocomplete.vim
+source $VIMHOME/conf/tagbar.vim
 source $VIMHOME/indentation.vim
 source $VIMHOME/colors.vim
 source $VIMHOME/keymap.vim
