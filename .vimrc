@@ -29,6 +29,8 @@
   Plugin 'Shougo/neosnippet.vim'
   Plugin 'tpope/vim-fugitive'
   Plugin 'editorconfig/editorconfig-vim'
+  Plugin 'heavenshell/vim-jsdoc'
+  Plugin 'marijnh/tern_for_vim'
 call vundle#end()
 filetype plugin indent on
 
