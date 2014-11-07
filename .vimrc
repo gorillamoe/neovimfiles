@@ -34,8 +34,6 @@
 call vundle#end()
 filetype plugin indent on
 
-let g:EclimCompletionMethod = 'omnifunc'
-
 if !exists('g:neocomplcache_force_omni_patterns')
   let g:neocomplcache_force_omni_patterns = {}
 endif
