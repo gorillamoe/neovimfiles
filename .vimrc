@@ -12,7 +12,6 @@
   Plugin 'vim-scripts/matchit.zip'
   Plugin 'scrooloose/nerdtree'
   Plugin 'scrooloose/syntastic'
-  Plugin 'bling/vim-airline'
   Plugin 'joonty/vdebug.git'
   Plugin 'tpope/vim-commentary'
   Plugin 'tpope/vim-repeat'
@@ -22,7 +21,6 @@
   Plugin 'honza/vim-snippets'
   Plugin 'jlanzarotta/bufexplorer'
   Plugin 'Raimondi/delimitMate'
-  Plugin 'kchmck/vim-coffee-script'
   Plugin 'majutsushi/tagbar'
   Plugin 'vim-scripts/taglist.vim'
   Plugin 'Shougo/neocomplete'
@@ -96,6 +94,7 @@ source $VIMHOME/conf/syntastic.vim
 source $VIMHOME/conf/ultisnips.vim
 source $VIMHOME/conf/neocomplete.vim
 source $VIMHOME/conf/tagbar.vim
+source $VIMHOME/conf/tern.vim
 source $VIMHOME/indentation.vim
 source $VIMHOME/colors.vim
 source $VIMHOME/keymap.vim
