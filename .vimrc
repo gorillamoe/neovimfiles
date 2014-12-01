@@ -29,6 +29,7 @@
   Plugin 'editorconfig/editorconfig-vim'
   Plugin 'heavenshell/vim-jsdoc'
   Plugin 'marijnh/tern_for_vim'
+  Plugin 'atweiden/vim-betterdigraphs'
 call vundle#end()
 filetype plugin indent on
 
