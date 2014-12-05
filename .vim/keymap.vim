@@ -4,9 +4,6 @@
 " Allow saving of files as sudo when I forgot to start vim using sudo.
   cmap w!! w !sudo tee > /dev/null %
 
-" Vim global plugin for better digraph interactions...
-  inoremap <expr>  <C-K>   BDG_GetDigraph()
-
 " Switch Tab vs Spaces
   let g:WalialuUtils_IndentationSwitch = 0
   function! WalialuUtils_IndentationSwitch()
@@ -93,6 +90,13 @@ let relativenumber = 1
 
 " NERD Tree Binding
   nnoremap <leader>k :NERDTreeToggle<CR>
+
+" investigate.vim binding
+  nnoremap <leader>docs :call investigate#Investigate()<CR>
+
+" Vim global plugin for better digraph interactions...
+  inoremap <expr> <C-K> BDG_GetDigraph()
+
 
 " Toogle Tagbar plugin
   let g:tagbar_autofocus=1
