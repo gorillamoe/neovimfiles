@@ -29,8 +29,8 @@
 	Plugin 'editorconfig/editorconfig-vim'
 	Plugin 'heavenshell/vim-jsdoc'
 	Plugin 'marijnh/tern_for_vim'
-	Plugin 'atweiden/vim-betterdigraphs'
 	Plugin 'Keithbsmiley/investigate.vim'
+	Plugin 'bling/vim-airline'
 call vundle#end()
 filetype plugin indent on
 
