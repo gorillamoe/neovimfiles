@@ -28,9 +28,10 @@
 	Plugin 'tpope/vim-fugitive'
 	Plugin 'editorconfig/editorconfig-vim'
 	Plugin 'heavenshell/vim-jsdoc'
-	Plugin 'marijnh/tern_for_vim'
 	Plugin 'Keithbsmiley/investigate.vim'
 	Plugin 'bling/vim-airline'
+	Plugin 'Lokaltog/vim-easymotion'
+
 call vundle#end()
 filetype plugin indent on
 
