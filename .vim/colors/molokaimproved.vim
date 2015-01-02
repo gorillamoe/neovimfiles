@@ -7,6 +7,8 @@
 " by Wimer Hazenberg and its darker variant
 " by Hamish Stuart Macpherson
 "
+" Marco just did some minor modifications on the colors..
+"
 
 hi clear
 
