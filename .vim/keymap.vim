@@ -86,7 +86,7 @@ let relativenumber = 1
   vnoremap > >gv
 
 " Quickly switch between the actual and the last file in the buffer.
-  nnoremap <leader>, :b#<CR>
+  nnoremap <leader>. :b#<CR>
 
 " NERD Tree Binding
   nnoremap <leader>k :NERDTreeToggle<CR>
