@@ -46,24 +46,6 @@ let relativenumber = 1
 
   nnoremap <Leader>l :call NumberToggle()<cr>
 
-" Colors
-  let g:current_colorscheme = 0
-
-  function! ToggleColorscheme()
-      if (g:current_colorscheme == 0)
-          set background=light
-          colorscheme solarized
-          let g:current_colorscheme=1
-      else
-          set background=dark
-          colorscheme molokaimproved
-          let g:current_colorscheme=0
-          highlight ColorColumn ctermbg=235
-      endif
-  endfunction
-
-  nnoremap <F8> :call ToggleColorscheme()<CR>
-
 " PHP Crap
   nnoremap <F9> :! phpcs --standard=CakePHP %:p<CR>
 
@@ -86,17 +68,13 @@ let relativenumber = 1
   vnoremap > >gv
 
 " Quickly switch between the actual and the last file in the buffer.
-  nnoremap <leader>. :b#<CR>
+  nnoremap <tab> :b#<CR>
 
 " NERD Tree Binding
   nnoremap <leader>k :NERDTreeToggle<CR>
 
 " investigate.vim binding
   nnoremap <leader>docs :call investigate#Investigate()<CR>
-
-" Vim global plugin for better digraph interactions...
-  inoremap <expr> <C-K> BDG_GetDigraph()
-
 
 " Toogle Tagbar plugin
   let g:tagbar_autofocus=1
