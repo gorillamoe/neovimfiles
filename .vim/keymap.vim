@@ -58,9 +58,6 @@ let relativenumber = 1
   inoremap <Leader>w <C-O>:update<CR>
 
 " Clear the search buffer when hitting return
-:nnoremap <CR> :nohlsearch<CR>
-
-" Clear the search buffer when hitting return
 :nnoremap <Leader>bd :bd<CR>
 
 " Indentation
