@@ -71,7 +71,7 @@ let relativenumber = 1
   nnoremap <tab> :b#<CR>
 
 " NERD Tree Binding
-  nnoremap <leader>k :NERDTreeToggle<CR>
+nnoremap <SPACE> :NERDTreeToggle<CR>
 
 " investigate.vim binding
   nnoremap <leader>docs :call investigate#Investigate()<CR>

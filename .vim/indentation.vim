@@ -5,7 +5,7 @@
 	set noexpandtab
 
 " Showing line numbers and length
-	set nonumber " hide line numbers
+	set number
 	set tw=79 " width of document
 	set nowrap " don't automatically wrap on load
 	set fo-=t " don't automatically wrap text when typing
