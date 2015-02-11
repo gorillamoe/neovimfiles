@@ -72,8 +72,8 @@ let s:grey1  = { 'gui': '#1a1a1a', 'cterm': '0'  }
 let s:grey2  = { 'gui': '#212121', 'cterm': '8'  }
 let s:grey3  = { 'gui': '#2e2e2e', 'cterm': '6'  }
 let s:grey4  = { 'gui': '#303030', 'cterm': '13' }
-let s:grey5  = { 'gui': '#757475', 'cterm': '14' }
-let s:grey6  = { 'gui': '#858585', 'cterm': '12' }
+let s:grey5  = { 'gui': '#666666', 'cterm': '14' }
+let s:grey6  = { 'gui': '#999999', 'cterm': '12' }
 let s:red    = { 'gui': '#bd2a2a', 'cterm': '1'  }
 let s:brown1 = { 'gui': '#b56124', 'cterm': '5'  }
 let s:brown2 = { 'gui': '#947463', 'cterm': '3'  }
@@ -88,7 +88,7 @@ let s:white2 = { 'gui': '#ffffff', 'cterm': '15' }
 " Generate the highlight groups
 call s:r('Boolean',        { 'fg': s:green2 })
 call s:r('Character',      { 'fg': s:blue   })
-call s:r('Comment',        { 'fg': s:grey4  })
+call s:r('Comment',        { 'fg': s:grey5  })
 call s:r('Constant',       { 'fg': s:yellow })
 call s:r('Conditional',    { 'fg': s:red    })
 call s:r('Cursor',         { 'bg': s:blue,   'fg': s:grey1  })
@@ -107,7 +107,7 @@ call s:r('Keyword',        { 'fg': s:red    })
 call s:r('Label',          { 'fg': s:blue   })
 call s:r('LineNr',         { 'fg': s:grey3  })
 call s:r('MatchParen',     { 'fg': s:red    })
-call s:r('Normal',         { 'bg': s:grey1,  'fg': s:grey6  })
+call s:r('Normal',         { 'bg': s:grey1,  'fg': s:white2  })
 call s:r('NonText',        { 'fg': s:grey4  })
 call s:r('Number',         { 'fg': s:green1 })
 call s:r('Operator',       { 'fg': s:green2 })
@@ -117,7 +117,7 @@ call s:r('Search',         { 'bg': s:blue,   'fg': s:grey1  })
 call s:r('SignColumn',     { 'fg': s:yellow })
 call s:r('Statement',      { 'fg': s:red    })
 call s:r('Special',        { 'fg': s:grey5  })
-call s:r('SpecialComment', { 'fg': s:grey5  })
+call s:r('SpecialComment', { 'fg': s:grey6  })
 call s:r('SpecialChar',    { 'fg': s:grey6  })
 call s:r('SpecialKey',     { 'fg': s:green2 })
 call s:r('StatusLine',     { 'bg': s:grey2,  'fg': s:grey6  })
@@ -130,4 +130,4 @@ call s:r('Todo',           { 'fg': s:white1 })
 call s:r('Type',           { 'fg': s:blue   })
 call s:r('Underlined',     { 'bg': s:green1, 'fg': s:grey1  })
 call s:r('VertSplit',      { 'bg': s:grey2,  'fg': s:grey2  })
-call s:r('Visual',         { 'bg': s:grey5,  'fg': s:green1 })
+call s:r('Visual',         { 'bg': s:grey5,  'fg': s:white2 })
