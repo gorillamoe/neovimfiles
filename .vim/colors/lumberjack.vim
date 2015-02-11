@@ -130,5 +130,4 @@ call s:r('Todo',           { 'fg': s:white1 })
 call s:r('Type',           { 'fg': s:blue   })
 call s:r('Underlined',     { 'bg': s:green1, 'fg': s:grey1  })
 call s:r('VertSplit',      { 'bg': s:grey2,  'fg': s:grey2  })
-call s:r('Visual',         { 'bg': s:grey2,  'fg': s:green1 })
-
+call s:r('Visual',         { 'bg': s:grey5,  'fg': s:green1 })
