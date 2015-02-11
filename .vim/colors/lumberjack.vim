@@ -82,7 +82,7 @@ let s:green1 = { 'gui': '#5d875d', 'cterm': '2'  }
 let s:green2 = { 'gui': '#9acd32', 'cterm': '10' }
 let s:blue   = { 'gui': '#9bcbeb', 'cterm': '4'  }
 let s:yellow = { 'gui': '#f0e95d', 'cterm': '11' }
-let s:white1 = { 'gui': '#fffefc', 'cterm': '7'  }
+let s:white1 = { 'gui': '#dddddd', 'cterm': '7'  }
 let s:white2 = { 'gui': '#ffffff', 'cterm': '15' }
 
 " Generate the highlight groups
@@ -107,7 +107,7 @@ call s:r('Keyword',        { 'fg': s:red    })
 call s:r('Label',          { 'fg': s:blue   })
 call s:r('LineNr',         { 'fg': s:grey3  })
 call s:r('MatchParen',     { 'fg': s:red    })
-call s:r('Normal',         { 'bg': s:grey1,  'fg': s:white2  })
+call s:r('Normal',         { 'bg': s:grey1,  'fg': s:white1  })
 call s:r('NonText',        { 'fg': s:grey4  })
 call s:r('Number',         { 'fg': s:green1 })
 call s:r('Operator',       { 'fg': s:green2 })
