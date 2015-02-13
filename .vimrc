@@ -15,7 +15,6 @@
 	Plugin 'tpope/vim-repeat'
 	Plugin 'tpope/vim-surround'
 	Plugin 'tpope/vim-unimpaired'
-	Plugin 'tpope/vim-fugitive'
 	Plugin 'jlanzarotta/bufexplorer'
 	Plugin 'Raimondi/delimitMate'
 	Plugin 'majutsushi/tagbar'
