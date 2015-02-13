@@ -65,7 +65,10 @@ let relativenumber = 1
   vnoremap > >gv
 
 " NERD Tree Binding
-nnoremap <SPACE> :NERDTreeToggle<CR>
+nnoremap <LEADER><SPACE> :NERDTreeToggle<CR>
+
+" Switch buffers
+nnoremap <SPACE> :b#<CR>
 
 " investigate.vim binding
   nnoremap <leader>docs :call investigate#Investigate()<CR>
