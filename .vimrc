@@ -10,25 +10,18 @@
 " My bundles
 	Plugin 'kien/ctrlp.vim'
 	Plugin 'vim-scripts/matchit.zip'
-	Plugin 'scrooloose/nerdtree'
 	Plugin 'scrooloose/syntastic'
 	Plugin 'tpope/vim-commentary'
 	Plugin 'tpope/vim-repeat'
 	Plugin 'tpope/vim-surround'
 	Plugin 'tpope/vim-unimpaired'
 	Plugin 'tpope/vim-fugitive'
-	Plugin 'SirVer/ultisnips'
-	Plugin 'honza/vim-snippets'
 	Plugin 'jlanzarotta/bufexplorer'
 	Plugin 'Raimondi/delimitMate'
 	Plugin 'majutsushi/tagbar'
 	Plugin 'Shougo/neocomplete'
 	Plugin 'Shougo/neosnippet.vim'
 	Plugin 'editorconfig/editorconfig-vim'
-	Plugin 'Keithbsmiley/investigate.vim'
-	Plugin 'bling/vim-airline'
-	Plugin 'Lokaltog/vim-easymotion'
-	Plugin 'maksimr/vim-jsbeautify'
 
 call vundle#end()
 filetype plugin indent on
