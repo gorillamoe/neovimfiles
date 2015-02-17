@@ -24,10 +24,9 @@ mkdir -p gitrepositories/walialu
 git clone https://github.com/walialu/vimfiles gitrepositories/walialu/vimfiles
 ln -s gitrepositories/walialu/vimfiles/.vim
 ln -s gitrepositories/walialu/vimfiles/.vimrc
-mkdir .vim/bundle
-cd .vim/bundle
-git clone https://github.com/gmarik/Vundle.vim
-vim "+PluginInstall" "+qall"
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+vim "+PlugInstall" "+qall"
 # Hopefully this will fix the weird broken terminal
 printf "\ec" #\e is ESC in bash
 echo -en "\ec" #thanks @Jonathon Reinhart.

@@ -2,27 +2,24 @@
 	set nocompatible
 	filetype off
 
-" Enable Vundle
-	set rtp+=~/.vim/bundle/Vundle.vim/
-	call vundle#begin()
-	Plugin 'gmarik/Vundle.vim'
+call plug#begin('~/.vim/plugged')
 
-" My bundles
-	Plugin 'kien/ctrlp.vim'
-	Plugin 'vim-scripts/matchit.zip'
-	Plugin 'scrooloose/syntastic'
-	Plugin 'tpope/vim-commentary'
-	Plugin 'tpope/vim-repeat'
-	Plugin 'tpope/vim-surround'
-	Plugin 'tpope/vim-unimpaired'
-	Plugin 'jlanzarotta/bufexplorer'
-	Plugin 'Raimondi/delimitMate'
-	Plugin 'majutsushi/tagbar'
-	Plugin 'Shougo/neocomplete'
-	Plugin 'Shougo/neosnippet.vim'
-	Plugin 'editorconfig/editorconfig-vim'
+Plug 'kien/ctrlp.vim'
+Plug 'vim-scripts/matchit.zip'
+Plug 'scrooloose/syntastic'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'jlanzarotta/bufexplorer'
+Plug 'Raimondi/delimitMate'
+Plug 'majutsushi/tagbar'
+Plug 'Shougo/neocomplete'
+Plug 'Shougo/neosnippet.vim'
+Plug 'editorconfig/editorconfig-vim'
 
-call vundle#end()
+call plug#end()
+
 filetype plugin indent on
 
 if !exists('g:neocomplcache_force_omni_patterns')
