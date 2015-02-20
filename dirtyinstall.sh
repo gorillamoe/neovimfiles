@@ -20,12 +20,11 @@ printf "
 
 "
 cd ~
-mkdir -p gitrepositories/walialu
-git clone https://github.com/walialu/vimfiles gitrepositories/walialu/vimfiles
-ln -s gitrepositories/walialu/vimfiles/.vim
-ln -s gitrepositories/walialu/vimfiles/.vimrc
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+mkdir -p dev/walialu
+git clone https://github.com/walialu/vimfiles dev/walialu/vimfiles
+ln -s dev/walialu/vimfiles/.vim
+ln -s dev/walialu/vimfiles/.vimrc
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 vim "+PlugInstall" "+qall"
 # Hopefully this will fix the weird broken terminal
 printf "\ec" #\e is ESC in bash
