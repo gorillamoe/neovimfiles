@@ -17,6 +17,7 @@ Plug 'majutsushi/tagbar'
 Plug 'Shougo/neocomplete'
 Plug 'Shougo/neosnippet.vim'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'sjl/gundo.vim'
 
 call plug#end()
 
