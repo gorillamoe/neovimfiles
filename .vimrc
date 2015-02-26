@@ -19,6 +19,7 @@ Plug 'Shougo/neosnippet.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'sjl/gundo.vim'
 Plug 'Lokaltog/vim-easymotion'
+Plug 'bling/vim-airline'
 
 call plug#end()
 
