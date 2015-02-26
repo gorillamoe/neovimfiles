@@ -18,6 +18,7 @@ Plug 'Shougo/neocomplete'
 Plug 'Shougo/neosnippet.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'sjl/gundo.vim'
+Plug 'Lokaltog/vim-easymotion'
 
 call plug#end()
 
