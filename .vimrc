@@ -6,13 +6,19 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'kien/ctrlp.vim'
 Plug 'vim-scripts/matchit.zip'
+Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
 Plug 'scrooloose/syntastic'
+Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'Raimondi/delimitMate'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-easytags'
 Plug 'majutsushi/tagbar'
 Plug 'Shougo/neocomplete'
 Plug 'Shougo/neosnippet.vim'
@@ -20,6 +26,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'sjl/gundo.vim'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'bling/vim-airline'
+Plug 'wikitopian/hardmode'
 
 call plug#end()
 
