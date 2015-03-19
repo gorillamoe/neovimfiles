@@ -1,6 +1,6 @@
 " We don't want to be in compliance mode with Vi
-	set nocompatible
-	filetype off
+  set nocompatible
+  filetype off
 
 call plug#begin('~/.vim/plugged')
 
@@ -27,14 +27,17 @@ Plug 'sjl/gundo.vim'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'bling/vim-airline'
 Plug 'wikitopian/hardmode'
+Plug 'kchmck/vim-coffee-script'
+Plug 'Yggdroot/indentLine'
 
 call plug#end()
 
 filetype plugin indent on
 
 if !exists('g:neocomplcache_force_omni_patterns')
-	let g:neocomplcache_force_omni_patterns = {}
+  let g:neocomplcache_force_omni_patterns = {}
 endif
+
 let g:neocomplcache_force_omni_patterns.java = '\k\.\k*'
 
 set tags=./tags
@@ -46,47 +49,44 @@ set bs=2 " make backspace behave like normal again
 let $VIMHOME = $HOME."/.vim"
 
 " make yank copy to the global system clipboard
-	set clipboard=unnamedplus
+  set clipboard=unnamedplus
 
 " Neocomplete Setup
-	let g:neocomplete#enable_at_startup = 1
+  let g:neocomplete#enable_at_startup = 1
 
 " Set encoding
-	set encoding=utf-8
-
-" Use Unix as the standard file type
-	set ff=unix
+  set encoding=utf-8
 
 " Make history go insane, but safe my sanity
-	set history=700
-	set undolevels=700
+  set history=700
+  set undolevels=700
 
 " Make search case insensitive
-	set hlsearch
-	set incsearch
-	set ignorecase
-	set smartcase
+  set hlsearch
+  set incsearch
+  set ignorecase
+  set smartcase
 
 " Disable stupid backup and swap files - they trigger too many events
 " for file system watchers
-	set nobackup
-	set nowritebackup
-	set noswapfile
+  set nobackup
+  set nowritebackup
+  set noswapfile
 
 " Bind nohl
-	noremap <Leader>h :nohl<CR>
+  noremap <Leader>h :nohl<CR>
 
 " Enable hidden buffers, so we can switch buffers without saving them.
-	set hidden
+  set hidden
 
 " Fix for ViM Airline Plugin
-	set laststatus=2
+  set laststatus=2
 
 " Make backspace behave like normal again
-	set bs=2 "
+  set bs=2 "
 
 " Enable syntax highlighting
-	syntax enable
+  syntax enable
 
 source $VIMHOME/conf/airline.vim
 source $VIMHOME/conf/ctrlp.vim
