@@ -46,6 +46,9 @@ let relativenumber = 1
 
   nnoremap <Leader>l :call NumberToggle()<cr>
 
+" Toggle Vim Hardmode
+  nnoremap <Leader>h :call ToggleHardMode()<cr>
+
 " PHP Crap
   nnoremap <F9> :! phpcs --standard=CakePHP %:p<CR>
 
@@ -65,7 +68,7 @@ let relativenumber = 1
   vnoremap > >gv
 
 " NERD Tree Binding
-nnoremap <LEADER><SPACE> :NERDTreeToggle<CR>
+nnoremap <LEADER>t :NERDTreeToggle<CR>
 
 " Switch buffers
 nnoremap <SPACE> :b#<CR>
