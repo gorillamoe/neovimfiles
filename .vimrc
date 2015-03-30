@@ -26,7 +26,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'sjl/gundo.vim'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'bling/vim-airline'
-Plug 'kchmck/vim-coffee-script' , { 'for': 'coffeescript' }
+Plug 'kchmck/vim-coffee-script' , { 'for': 'coffee' }
 Plug 'Yggdroot/indentLine'
 
 call plug#end()
