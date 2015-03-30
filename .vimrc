@@ -20,6 +20,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'sjl/gundo.vim'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'bling/vim-airline'
+Plug 'kchmck/vim-coffee-script'
 
 call plug#end()
 
