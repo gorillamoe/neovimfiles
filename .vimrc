@@ -27,6 +27,7 @@ Plug 'sjl/gundo.vim'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'bling/vim-airline'
 Plug 'kchmck/vim-coffee-script' , { 'for': 'coffee' }
+Plug 'lukaszkorecki/CoffeeTags', { 'for': 'coffee' }
 Plug 'Yggdroot/indentLine'
 
 call plug#end()
@@ -89,6 +90,7 @@ let $VIMHOME = $HOME."/.vim"
 
 source $VIMHOME/conf/airline.vim
 source $VIMHOME/conf/ctrlp.vim
+source $VIMHOME/conf/indentLine.vim
 source $VIMHOME/conf/syntastic.vim
 source $VIMHOME/conf/ultisnips.vim
 source $VIMHOME/conf/neocomplete.vim
