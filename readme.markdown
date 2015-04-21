@@ -16,7 +16,7 @@ I would recommend that you only do this on a freshly installed system,
 or if you really know what you are doing; otherwise it could screw up all of
 your vim configuration :)
 
-    wget --no-check-certificate -qO- https://raw.github.com/walialu/vimfiles/master/dirtyinstall.sh | sh
+    wget --no-check-certificate -qO- https://raw.github.com/babbafresh/vimfiles/master/dirtyinstall.sh | sh
 
 ### Manual installation
 
@@ -26,23 +26,19 @@ Make sure you are in your home (~) directory.
 
 Clone this repository
 
-    git clone https://github.com/walialu/vimfiles
+    git clone https://github.com/babbafresh/vimfiles
 
 Symlink `.vim` directory and `.vimrc` file.
 
     ln -s vimfiles/.vim && ln -s vimfiles/.vimrc
 
-Create a directory for all Vim plugins
+Download VimPlug
 
-    mkdir .vim/bundle
-
-Clone **Vundle.vim**, which is my plugin manager of choice
-
-    git clone https://github.com/gmarik/Vundle.vim .vim/bundle/Vundle.vim
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 Install all other plugins
 
-    vim "+PluginInstall" "+qall"
+    vim "+PlugInstall" "+qall"
 
 License agreement:
 ------------------
@@ -61,8 +57,7 @@ Thanks to these guys:
 * [Tim Pope](http://tbaggery.com),
 * and the [Janus project](https://github.com/carlhuda/janus).
 
-My configuration uses [Pathogen](https://github.com/tpope/vim-pathogen) and git
-submodules.
+My configuration uses [VimPlug](https://github.com/junegunn/vim-plug)
 (But you don't need to care about any of that.)
 
 ## Installation:
