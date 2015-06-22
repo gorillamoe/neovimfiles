@@ -22,10 +22,10 @@ Plug 'xolox/vim-easytags'
 Plug 'majutsushi/tagbar'
 Plug 'Shougo/neocomplete'
 Plug 'Shougo/neosnippet.vim'
+Plug 'Shougo/neosnippet-snippets'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'sjl/gundo.vim'
 Plug 'Lokaltog/vim-easymotion'
-Plug 'bling/vim-airline'
 Plug 'kchmck/vim-coffee-script' , { 'for': 'coffee' }
 Plug 'lukaszkorecki/CoffeeTags', { 'for': 'coffee' }
 Plug 'Yggdroot/indentLine'
@@ -87,6 +87,8 @@ let $VIMHOME = $HOME."/.vim"
 
 " Enable syntax highlighting
   syntax enable
+
+autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
 
 source $VIMHOME/conf/airline.vim
 source $VIMHOME/conf/ctrlp.vim

@@ -55,6 +55,9 @@ let relativenumber = 1
 " Dont mess with paste stuff
   nnoremap <F2> :set paste!<CR>
 
+" Gundo toggle
+  nnoremap <F5> :GundoToggle<CR>
+
 " Quicksave command
   noremap <Leader>w :update<CR>
   vnoremap <Leader>w <C-C>:update<CR>
@@ -76,7 +79,11 @@ nnoremap <SPACE> :b#<CR>
 " investigate.vim binding
   nnoremap <leader>docs :call investigate#Investigate()<CR>
 
-" Toogle Tagbar plugin
+" Toggle Tagbar plugin
   let g:tagbar_autofocus=1
   nnoremap <silent> <Leader>j :TagbarToggle<CR>
+
+" Clear search highlighting when pressing Enter in command mode
+nnoremap <CR> :nohlsearch<CR>/<BS>
+
 " vim:tabstop=2:expandtab
