@@ -4,6 +4,7 @@
 
 call plug#begin('~/.vim/plugged')
 
+Plug 'bling/vim-airline'
 Plug 'kien/ctrlp.vim'
 Plug 'vim-scripts/matchit.zip'
 Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
@@ -16,6 +17,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'jlanzarotta/bufexplorer'
+Plug 'marijnh/tern_for_vim', { 'for': 'javascript' }
 Plug 'Raimondi/delimitMate'
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-easytags'
