@@ -31,6 +31,10 @@ Plug 'Lokaltog/vim-easymotion'
 Plug 'kchmck/vim-coffee-script' , { 'for': 'coffee' }
 Plug 'lukaszkorecki/CoffeeTags', { 'for': 'coffee' }
 Plug 'Yggdroot/indentLine'
+Plug 'groenewege/vim-less'
+Plug 'tpope/vim-haml'
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
 
 call plug#end()
 
@@ -92,6 +96,11 @@ let $VIMHOME = $HOME."/.vim"
 
 autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
 
+" For 'hail2u/vim-css3-syntax' Plugin
+augroup VimCSS3Syntax
+  autocmd!
+  autocmd FileType css setlocal iskeyword+=-
+augroup END
 source $VIMHOME/conf/airline.vim
 source $VIMHOME/conf/ctrlp.vim
 source $VIMHOME/conf/indentLine.vim

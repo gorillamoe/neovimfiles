@@ -73,8 +73,14 @@ let relativenumber = 1
 " NERD Tree Binding
 nnoremap <LEADER>t :NERDTreeToggle<CR>
 
+" BufExlorer
+nnoremap <LEADER>be :BufExplorer<CR>
+
 " Switch buffers
 nnoremap <SPACE> :b#<CR>
+
+" Switch buffers
+nnoremap <LEADER>nn :nohl<CR>
 
 " investigate.vim binding
   nnoremap <leader>docs :call investigate#Investigate()<CR>
@@ -82,8 +88,5 @@ nnoremap <SPACE> :b#<CR>
 " Toggle Tagbar plugin
   let g:tagbar_autofocus=1
   nnoremap <silent> <Leader>j :TagbarToggle<CR>
-
-" Clear search highlighting when pressing Enter in command mode
-nnoremap <CR> :nohlsearch<CR>/<BS>
 
 " vim:tabstop=2:expandtab
