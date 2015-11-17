@@ -35,6 +35,7 @@ Plug 'groenewege/vim-less'
 Plug 'tpope/vim-haml'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
+Plug 'keith/investigate.vim'
 
 call plug#end()
 

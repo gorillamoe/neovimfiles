@@ -83,7 +83,7 @@ nnoremap <SPACE> :b#<CR>
 nnoremap <LEADER>nn :nohl<CR>
 
 " investigate.vim binding
-  nnoremap <leader>docs :call investigate#Investigate()<CR>
+  nnoremap <leader>q :call investigate#Investigate()<CR>
 
 " Toggle Tagbar plugin
   let g:tagbar_autofocus=1
