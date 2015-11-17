@@ -101,14 +101,9 @@ augroup VimCSS3Syntax
   autocmd!
   autocmd FileType css setlocal iskeyword+=-
 augroup END
-source $VIMHOME/conf/airline.vim
-source $VIMHOME/conf/ctrlp.vim
-source $VIMHOME/conf/indentLine.vim
-source $VIMHOME/conf/syntastic.vim
-source $VIMHOME/conf/ultisnips.vim
-source $VIMHOME/conf/neocomplete.vim
-source $VIMHOME/conf/tagbar.vim
-source $VIMHOME/conf/tern.vim
+for f in split(glob("$VIMHOME/conf/*.vim"), '\n')
+  exe 'source' f
+endfor
 source $VIMHOME/indentation.vim
 source $VIMHOME/colors.vim
 source $VIMHOME/keymap.vim
