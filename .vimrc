@@ -15,6 +15,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-markdown'
 Plug 'airblade/vim-gitgutter'
 Plug 'jlanzarotta/bufexplorer'
 Plug 'marijnh/tern_for_vim', { 'for': 'javascript' }
@@ -28,14 +29,14 @@ Plug 'Shougo/neosnippet-snippets'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'sjl/gundo.vim'
 Plug 'Lokaltog/vim-easymotion'
-Plug 'kchmck/vim-coffee-script' , { 'for': 'coffee' }
-Plug 'lukaszkorecki/CoffeeTags', { 'for': 'coffee' }
+Plug 'kchmck/vim-coffee-script'
+Plug 'lukaszkorecki/CoffeeTags'
 Plug 'Yggdroot/indentLine'
 Plug 'groenewege/vim-less'
 Plug 'tpope/vim-haml'
 Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
 Plug 'keith/investigate.vim'
+Plug 'jwhitley/vim-literate-coffeescript'
 
 call plug#end()
 
@@ -96,6 +97,7 @@ let $VIMHOME = $HOME."/.vim"
   syntax enable
 
 autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
+autocmd FileType litcoffee runtime ftplugin/coffee.vim
 
 " For 'hail2u/vim-css3-syntax' Plugin
 augroup VimCSS3Syntax
