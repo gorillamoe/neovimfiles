@@ -205,17 +205,7 @@ let g:airline_theme='wombat'
       :'<,'>s/ß/\&szlig;/g
   endfunc
 
-let relativenumber = 1
-
-" Awesome line number magic
-  function! NumberToggle()
-    if(&relativenumber == 1)
-      set number
-      set norelativenumber
-    else
-      set relativenumber
-    endif
-  endfunc
+set relativenumber
 
   nnoremap <Leader>l :call NumberToggle()<cr>
 
