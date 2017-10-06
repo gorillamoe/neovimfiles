@@ -16,7 +16,7 @@ I would recommend that you only do this on a freshly installed system,
 or if you really know what you are doing; otherwise it could screw up all of
 your vim configuration :)
 
-    wget --no-check-certificate -qO- https://raw.github.com/babbafresh/vimfiles/master/dirtyinstall.sh | sh
+    wget --no-check-certificate -qO- https://raw.github.com/walialu/vimfiles/master/dirtyinstall.sh | sh
 
 ### Manual installation
 
@@ -26,7 +26,7 @@ Make sure you are in your home (~) directory.
 
 Clone this repository
 
-    git clone https://github.com/babbafresh/vimfiles
+    git clone https://github.com/walialu/vimfiles
 
 Symlink `.vim` directory and `.vimrc` file.
 
@@ -62,7 +62,7 @@ My configuration uses [VimPlug](https://github.com/junegunn/vim-plug)
 
 ## Installation:
 
-Prerequisites: ruby, git.
+Prerequisites: git.
 
 1. Move your existing configuration somewhere else:  
    `mv ~/.vim* ~/.gvim* my_backup`
