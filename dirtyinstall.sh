@@ -1,9 +1,9 @@
 #!/bin/sh
 cd ~
-mkdir -p Development/walialu
-git clone https://github.com/babbafresh/vimfiles Development/babbafresh/vimfiles
-ln -s Development/babbafresh/vimfiles/.vim
-ln -s Development/babbafresh/vimfiles/.vimrc
+mkdir -p Code/walialu
+git clone https://github.com/walialu/vimfiles Code/walialu/vimfiles
+ln -s Code/walialu/vimfiles/.vim
+ln -s Code/walialu/vimfiles/.vimrc
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 vim "+PlugInstall" "+qall"
 # Hopefully this will fix the weird broken terminal

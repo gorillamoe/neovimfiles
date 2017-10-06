@@ -1,11 +1,12 @@
-" We don't want to be in compliance mode with Vi
-  set nocompatible
-  filetype off
+let g:python_host_prog='/usr/bin/python2'
+let g:python_interpreter='python2'
 
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 
+Plug 'junegunn/goyo.vim'
 Plug 'bling/vim-airline'
-Plug 'kien/ctrlp.vim'
+Plug 'joshdick/onedark.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-scripts/matchit.zip'
 Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
 Plug 'scrooloose/syntastic'
@@ -15,55 +16,36 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-fugitive'
+Plug 'wincent/ferret'
+Plug 'godlygeek/tabular'
 Plug 'tpope/vim-markdown'
 Plug 'airblade/vim-gitgutter'
 Plug 'jlanzarotta/bufexplorer'
-Plug 'marijnh/tern_for_vim', { 'for': 'javascript' }
 Plug 'Raimondi/delimitMate'
 Plug 'xolox/vim-misc'
-Plug 'xolox/vim-easytags'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
 Plug 'majutsushi/tagbar'
-Plug 'Shougo/neocomplete'
-Plug 'Shougo/neosnippet.vim'
-Plug 'Shougo/neosnippet-snippets'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'sjl/gundo.vim'
 Plug 'Lokaltog/vim-easymotion'
-Plug 'kchmck/vim-coffee-script'
-Plug 'lukaszkorecki/CoffeeTags'
-Plug 'Yggdroot/indentLine'
-Plug 'groenewege/vim-less'
-Plug 'tpope/vim-haml'
-Plug 'godlygeek/tabular'
+Plug 'tpope/vim-dispatch'
 Plug 'keith/investigate.vim'
-Plug 'jwhitley/vim-literate-coffeescript'
+Plug 'ternjs/tern_for_vim'
 
 call plug#end()
 
-filetype plugin indent on
+let g:deoplete#enable_at_startup = 1
 
-if !exists('g:neocomplcache_force_omni_patterns')
-  let g:neocomplcache_force_omni_patterns = {}
-endif
-
-let g:neocomplcache_force_omni_patterns.java = '\k\.\k*'
-
-set tags=./tags
 set wildmode=list:longest " make TAB behave like in a shell
 set autoread " reload file when changes happen in other editors
 set mouse=a
 set bs=2 " make backspace behave like normal again
 
-let $VIMHOME = $HOME."/.vim"
+let $VIMHOME = $HOME."/.config/.nvim"
 
 " make yank copy to the global system clipboard
   set clipboard=unnamedplus
-
-" Neocomplete Setup
-  let g:neocomplete#enable_at_startup = 1
-
-" Set encoding
-  set encoding=utf-8
 
 " Make history go insane, but safe my sanity
   set history=700
@@ -81,17 +63,40 @@ let $VIMHOME = $HOME."/.vim"
   set nowritebackup
   set noswapfile
 
-" Bind nohl
-  noremap <Leader>h :nohl<CR>
+" TagBar CoffeeScript
+" @see: https://github.com/majutsushi/tagbar/wiki#coffeescript
+let g:tagbar_type_coffee = {
+    \ 'ctagstype': 'coffee',
+    \ 'kinds': [
+        \ 'c:classes',
+        \ 'm:methods',
+        \ 'f:functions',
+        \ 'v:variables',
+        \ 'f:fields',
+    \ ]
+\ }
+" TagBar Markdown
+" @see: https://github.com/majutsushi/tagbar/wiki#markdown
+let g:tagbar_type_markdown = {
+    \ 'ctagstype' : 'markdown',
+    \ 'kinds' : [
+        \ 'h:Heading_L1',
+        \ 'i:Heading_L2',
+        \ 'k:Heading_L3'
+    \ ]
+  \ }
 
 " Enable hidden buffers, so we can switch buffers without saving them.
   set hidden
 
-" Fix for ViM Airline Plugin
-  set laststatus=2
-
 " Make backspace behave like normal again
   set bs=2 "
+
+" Rebind <Leader> key
+  let mapleader = ","
+
+" Bind nohl
+  noremap <Leader>n :nohl<CR>
 
 " Enable syntax highlighting
   syntax enable
@@ -112,11 +117,7 @@ set wildignore+=*tmp/*,*.so,*.swp,*.zip
 
 " indentLine Plugin Configuration
 let g:indentLine_fileTypeExclude = ['json']
-
-" NeoComplete Plugin Configuration
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
+noremap <Leader>v :IndentLinesToggle<CR>
 
 " Syntastic Plugin Configuration
 let g:syntastic_javascript_checkers = ['jshint']
@@ -132,16 +133,9 @@ let g:tagbar_autofocus = 1
 " disable preview window for tern_for_vim
 set completeopt-=preview
 
-" UltiSnips Plugin Configuration
-let g:UltiSnipsSnippetsDir = "~/.vim/my_snippets"
-let g:UltiSnipsSnippetDirectories=["UltiSnips"]
-" let g:UltiSnipsListSnippets = "<c-k>"
-" let g:UltiSnipsExpandTrigger="<F6>"
-" let g:UltiSnipsJumpForwardTrigger="<c-n>"
-" let g:UltiSnipsJumpBackwardTrigger="<c-p>"
-
 " vim-markdown Plugin Configuration
-let g:vim_markdown_folding_disabled=1
+let g:vim_markdown_conceal = 0
+let g:markdown_syntax_conceal = 0
 
 " Real programmers use spaces instead of tabs.
   set tabstop=2
@@ -162,61 +156,29 @@ let g:vim_markdown_folding_disabled=1
   endif
 
 " Show whitespace
-  set listchars=tab:>-,nbsp:%,extends:>,precedes:<,trail:-
-  set list
+  function! Y_showWhitespace()
+    set listchars=tab:->,nbsp:%,extends:>,precedes:<,trail:-
+    set list
+  endfunction
+  function! Y_hideWhitespace()
+    set nolist
+  endfunction
+  function! Y_toggleWhitespace()
+    set list!
+  endfunction
 
-set t_Co=256
+
 set background=dark
 
-colorscheme wombat256i
-let g:airline_theme='wombat'
-
-" Rebind <Leader> key
-  let mapleader = ","
+colorscheme onedark
 
 " Allow saving of files as sudo when I forgot to start vim using sudo.
   command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 
-" Switch Tab vs Spaces
-  let g:WalialuUtils_IndentationSwitch = 0
-  function! WalialuUtils_IndentationSwitch()
-    if g:WalialuUtils_IndentationSwitch == 1
-      set expandtab
-      let g:WalialuUtils_IndentationSwitch = 0
-      let g:syntastic_php_phpcs_args = "--tab-width="
-    else
-      set noexpandtab
-      let g:WalialuUtils_IndentationSwitch = 1
-      let g:syntastic_php_phpcs_args = "--standard=CakePHP --tab-width="
-    endif
-    echo "Indent with Tabs? " . g:WalialuUtils_IndentationSwitch
-  endfunc
-
-  nnoremap <F3> :call WalialuUtils_IndentationSwitch()<CR>
-
-  function! g:WalialuUtils_encodeUmlauts()
-      " Encodes ü ö ä Ä Ü Ö ß
-      :'<,'>s/\Cü/\&uuml;/g
-      :'<,'>s/\Cö/\&ouml;/g
-      :'<,'>s/\Cä/\&auml;/g
-      :'<,'>s/\CÄ/\&Auml;/g
-      :'<,'>s/\CÜ/\&Uuml;/g
-      :'<,'>s/\CÖ/\&Ouml;/g
-      :'<,'>s/ß/\&szlig;/g
-  endfunc
-
 set relativenumber
-
-  nnoremap <Leader>l :call NumberToggle()<cr>
-
-" Toggle Vim Hardmode
-  nnoremap <Leader>h :call ToggleHardMode()<cr>
 
 " PHP Crap
   nnoremap <F9> :! phpcs --standard=CakePHP %:p<CR>
-
-" Dont mess with paste stuff
-  nnoremap <F2> :set paste!<CR>
 
 " Gundo toggle
   nnoremap <F5> :GundoToggle<CR>
@@ -226,8 +188,9 @@ set relativenumber
   vnoremap <Leader>w <C-C>:update<CR>
   inoremap <Leader>w <C-O>:update<CR>
 
-" Clear the search buffer when hitting return
-:nnoremap <Leader>bd :bd<CR>
+" Quick CTags generation command
+" see: https://github.com/mislav/cstags
+noremap <Leader>r :!cstags -f .git/tags %<CR><CR>
 
 " Indentation
   vnoremap < <gv
@@ -248,8 +211,20 @@ nnoremap <LEADER>nn :nohl<CR>
 " investigate.vim binding
   nnoremap <leader>q :call investigate#Investigate()<CR>
 
-" Toggle Tagbar plugin
-  let g:tagbar_autofocus=1
+" Show tags in CTRLP
   nnoremap <silent> <Leader>j :TagbarToggle<CR>
+  " nnoremap <silent> <Leader>j :TagbarToggle<CR>
+
+" The Silver Searcher
+if executable('ag')
+  " Use ag over grep
+  set grepprg=ag\ --nogroup\ --nocolor
+
+  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+
+  " ag is fast enough that CtrlP doesn't need to cache
+  let g:ctrlp_use_caching = 0
+endif
 
 " vim:tabstop=2:expandtab
