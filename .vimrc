@@ -1,7 +1,7 @@
 let g:python_host_prog='/usr/bin/python2'
 let g:python_interpreter='python2'
 
-call plug#begin('~/.config/nvim/plugged')
+call plug#begin('~/.vim/plugged')
 
 Plug 'junegunn/goyo.vim'
 Plug 'bling/vim-airline'
@@ -42,7 +42,7 @@ set autoread " reload file when changes happen in other editors
 set mouse=a
 set bs=2 " make backspace behave like normal again
 
-let $VIMHOME = $HOME."/.config/.nvim"
+let $VIMHOME = $HOME."/.vim"
 
 " make yank copy to the global system clipboard
   set clipboard=unnamedplus
