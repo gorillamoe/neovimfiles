@@ -24,6 +24,11 @@ get_packdir() {
         echo "$packdir"
 }
 
+get_packname() {
+        packname=$(basename "$1")
+        echo "$packname"
+}
+
 update_packs() {
         git submodule update --remote --merge
 }
@@ -31,14 +36,16 @@ update_packs() {
 add_pack() {
         repo_url="https://github.com/$1"
         packdir=$(get_packdir)
-        clonedir="$packdir/$2/$1"
+        packname=$(get_packname "$1")
+        clonedir="$packdir/$2/$packname"
         git submodule add "$repo_url" "$clonedir" && git add .gitmodules "$clonedir"
 }
 
 rm_pack() {
         repo_url="https://github.com/$1"
         packdir=$(get_packdir)
-        clonedir="$packdir/$2/$1"
+        packname=$(get_packname "$1")
+        clonedir="$packdir/$2/$packname"
         git submodule deinit "$clonedir" && git rm "$clonedir" && rm -rf .git/modules/"$clonedir"
 }
 
