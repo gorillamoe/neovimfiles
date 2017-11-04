@@ -1,40 +1,5 @@
 let g:python_host_prog='/usr/bin/python2'
 let g:python_interpreter='python2'
-
-call plug#begin('~/.vim/plugged')
-
-Plug 'junegunn/goyo.vim'
-Plug 'bling/vim-airline'
-Plug 'joshdick/onedark.vim'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'vim-scripts/matchit.zip'
-Plug 'jelera/vim-javascript-syntax', { 'for': 'javascript' }
-Plug 'scrooloose/syntastic'
-Plug 'scrooloose/nerdtree'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-fugitive'
-Plug 'wincent/ferret'
-Plug 'godlygeek/tabular'
-Plug 'tpope/vim-markdown'
-Plug 'airblade/vim-gitgutter'
-Plug 'jlanzarotta/bufexplorer'
-Plug 'Raimondi/delimitMate'
-Plug 'xolox/vim-misc'
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'tomtom/tlib_vim'
-Plug 'majutsushi/tagbar'
-Plug 'editorconfig/editorconfig-vim'
-Plug 'sjl/gundo.vim'
-Plug 'Lokaltog/vim-easymotion'
-Plug 'tpope/vim-dispatch'
-Plug 'keith/investigate.vim'
-Plug 'ternjs/tern_for_vim'
-
-call plug#end()
-
 let g:deoplete#enable_at_startup = 1
 
 set wildmode=list:longest " make TAB behave like in a shell
