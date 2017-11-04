@@ -1,90 +1,90 @@
-[submodule ".vim/pack/superevil/start/vim-airline"]
-	path = .vim/pack/superevil/start/vim-airline
+[submodule "vim/pack/superevil/start/vim-airline"]
+	path = vim/pack/superevil/start/vim-airline
 	url = https://github.com/vim-airline/vim-airline.git
-[submodule ".vim/pack/superevil/start/junegunn/goyo.vim"]
-	path = .vim/pack/superevil/start/junegunn/goyo.vim
+[submodule "vim/pack/superevil/start/junegunn/goyo.vim"]
+	path = vim/pack/superevil/start/junegunn/goyo.vim
 	url = https://github.com/junegunn/goyo.vim
-[submodule ".vim/pack/superevil/start/joshdick/onedark.vim"]
-	path = .vim/pack/superevil/start/joshdick/onedark.vim
+[submodule "vim/pack/superevil/start/joshdick/onedark.vim"]
+	path = vim/pack/superevil/start/joshdick/onedark.vim
 	url = https://github.com/joshdick/onedark.vim
-[submodule ".vim/pack/superevil/start/ctrlpvim/ctrlp.vim"]
-	path = .vim/pack/superevil/start/ctrlpvim/ctrlp.vim
+[submodule "vim/pack/superevil/start/ctrlpvim/ctrlp.vim"]
+	path = vim/pack/superevil/start/ctrlpvim/ctrlp.vim
 	url = https://github.com/ctrlpvim/ctrlp.vim
-[submodule ".vim/pack/superevil/start/vim-scripts/matchit.zip"]
-	path = .vim/pack/superevil/start/vim-scripts/matchit.zip
+[submodule "vim/pack/superevil/start/vim-scripts/matchit.zip"]
+	path = vim/pack/superevil/start/vim-scripts/matchit.zip
 	url = https://github.com/vim-scripts/matchit.zip
-[submodule ".vim/pack/superevil/start/jelera/vim-javascript-syntax"]
-	path = .vim/pack/superevil/start/jelera/vim-javascript-syntax
+[submodule "vim/pack/superevil/start/jelera/vim-javascript-syntax"]
+	path = vim/pack/superevil/start/jelera/vim-javascript-syntax
 	url = https://github.com/jelera/vim-javascript-syntax
-[submodule ".vim/pack/superevil/start/scrooloose/syntastic"]
-	path = .vim/pack/superevil/start/scrooloose/syntastic
+[submodule "vim/pack/superevil/start/scrooloose/syntastic"]
+	path = vim/pack/superevil/start/scrooloose/syntastic
 	url = https://github.com/scrooloose/syntastic
-[submodule ".vim/pack/superevil/start/scrooloose/nerdtree"]
-	path = .vim/pack/superevil/start/scrooloose/nerdtree
+[submodule "vim/pack/superevil/start/scrooloose/nerdtree"]
+	path = vim/pack/superevil/start/scrooloose/nerdtree
 	url = https://github.com/scrooloose/nerdtree
-[submodule ".vim/pack/superevil/start/tpope/vim-commentary"]
-	path = .vim/pack/superevil/start/tpope/vim-commentary
+[submodule "vim/pack/superevil/start/tpope/vim-commentary"]
+	path = vim/pack/superevil/start/tpope/vim-commentary
 	url = https://github.com/tpope/vim-commentary
-[submodule ".vim/pack/superevil/start/tpope/vim-repeat"]
-	path = .vim/pack/superevil/start/tpope/vim-repeat
+[submodule "vim/pack/superevil/start/tpope/vim-repeat"]
+	path = vim/pack/superevil/start/tpope/vim-repeat
 	url = https://github.com/tpope/vim-repeat
-[submodule ".vim/pack/superevil/start/tpope/vim-surround"]
-	path = .vim/pack/superevil/start/tpope/vim-surround
+[submodule "vim/pack/superevil/start/tpope/vim-surround"]
+	path = vim/pack/superevil/start/tpope/vim-surround
 	url = https://github.com/tpope/vim-surround
-[submodule ".vim/pack/superevil/start/tpope/vim-unimpaired"]
-	path = .vim/pack/superevil/start/tpope/vim-unimpaired
+[submodule "vim/pack/superevil/start/tpope/vim-unimpaired"]
+	path = vim/pack/superevil/start/tpope/vim-unimpaired
 	url = https://github.com/tpope/vim-unimpaired
-[submodule ".vim/pack/superevil/start/tpope/vim-fugitive"]
-	path = .vim/pack/superevil/start/tpope/vim-fugitive
+[submodule "vim/pack/superevil/start/tpope/vim-fugitive"]
+	path = vim/pack/superevil/start/tpope/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive
-[submodule ".vim/pack/superevil/start/wincent/ferret"]
-	path = .vim/pack/superevil/start/wincent/ferret
+[submodule "vim/pack/superevil/start/wincent/ferret"]
+	path = vim/pack/superevil/start/wincent/ferret
 	url = https://github.com/wincent/ferret
-[submodule ".vim/pack/superevil/start/godlygeek/tabular"]
-	path = .vim/pack/superevil/start/godlygeek/tabular
+[submodule "vim/pack/superevil/start/godlygeek/tabular"]
+	path = vim/pack/superevil/start/godlygeek/tabular
 	url = https://github.com/godlygeek/tabular
-[submodule ".vim/pack/superevil/start/tpope/vim-markdown"]
-	path = .vim/pack/superevil/start/tpope/vim-markdown
+[submodule "vim/pack/superevil/start/tpope/vim-markdown"]
+	path = vim/pack/superevil/start/tpope/vim-markdown
 	url = https://github.com/tpope/vim-markdown
-[submodule ".vim/pack/superevil/start/airblade/vim-gitgutter"]
-	path = .vim/pack/superevil/start/airblade/vim-gitgutter
+[submodule "vim/pack/superevil/start/airblade/vim-gitgutter"]
+	path = vim/pack/superevil/start/airblade/vim-gitgutter
 	url = https://github.com/airblade/vim-gitgutter
-[submodule ".vim/pack/superevil/start/jlanzarotta/bufexplorer"]
-	path = .vim/pack/superevil/start/jlanzarotta/bufexplorer
+[submodule "vim/pack/superevil/start/jlanzarotta/bufexplorer"]
+	path = vim/pack/superevil/start/jlanzarotta/bufexplorer
 	url = https://github.com/jlanzarotta/bufexplorer
-[submodule ".vim/pack/superevil/start/Raimondi/delimitMate"]
-	path = .vim/pack/superevil/start/Raimondi/delimitMate
+[submodule "vim/pack/superevil/start/Raimondi/delimitMate"]
+	path = vim/pack/superevil/start/Raimondi/delimitMate
 	url = https://github.com/Raimondi/delimitMate
-[submodule ".vim/pack/superevil/start/xolox/vim-misc"]
-	path = .vim/pack/superevil/start/xolox/vim-misc
+[submodule "vim/pack/superevil/start/xolox/vim-misc"]
+	path = vim/pack/superevil/start/xolox/vim-misc
 	url = https://github.com/xolox/vim-misc
-[submodule ".vim/pack/superevil/start/MarcWeber/vim-addon-mw-utils"]
-	path = .vim/pack/superevil/start/MarcWeber/vim-addon-mw-utils
+[submodule "vim/pack/superevil/start/MarcWeber/vim-addon-mw-utils"]
+	path = vim/pack/superevil/start/MarcWeber/vim-addon-mw-utils
 	url = https://github.com/MarcWeber/vim-addon-mw-utils
-[submodule ".vim/pack/superevil/start/tomtom/tlib_vim"]
-	path = .vim/pack/superevil/start/tomtom/tlib_vim
+[submodule "vim/pack/superevil/start/tomtom/tlib_vim"]
+	path = vim/pack/superevil/start/tomtom/tlib_vim
 	url = https://github.com/tomtom/tlib_vim
-[submodule ".vim/pack/superevil/start/majutsushi/tagbar"]
-	path = .vim/pack/superevil/start/majutsushi/tagbar
+[submodule "vim/pack/superevil/start/majutsushi/tagbar"]
+	path = vim/pack/superevil/start/majutsushi/tagbar
 	url = https://github.com/majutsushi/tagbar
-[submodule ".vim/pack/superevil/start/editorconfig/editorconfig-vim"]
-	path = .vim/pack/superevil/start/editorconfig/editorconfig-vim
+[submodule "vim/pack/superevil/start/editorconfig/editorconfig-vim"]
+	path = vim/pack/superevil/start/editorconfig/editorconfig-vim
 	url = https://github.com/editorconfig/editorconfig-vim
-[submodule ".vim/pack/superevil/start/sjl/gundo.vim"]
-	path = .vim/pack/superevil/start/sjl/gundo.vim
+[submodule "vim/pack/superevil/start/sjl/gundo.vim"]
+	path = vim/pack/superevil/start/sjl/gundo.vim
 	url = https://github.com/sjl/gundo.vim
-[submodule ".vim/pack/superevil/start/Lokaltog/vim-easymotion"]
-	path = .vim/pack/superevil/start/Lokaltog/vim-easymotion
+[submodule "vim/pack/superevil/start/Lokaltog/vim-easymotion"]
+	path = vim/pack/superevil/start/Lokaltog/vim-easymotion
 	url = https://github.com/Lokaltog/vim-easymotion
-[submodule ".vim/pack/superevil/start/tpope/vim-dispatch"]
-	path = .vim/pack/superevil/start/tpope/vim-dispatch
+[submodule "vim/pack/superevil/start/tpope/vim-dispatch"]
+	path = vim/pack/superevil/start/tpope/vim-dispatch
 	url = https://github.com/tpope/vim-dispatch
-[submodule ".vim/pack/superevil/start/keith/investigate.vim"]
-	path = .vim/pack/superevil/start/keith/investigate.vim
+[submodule "vim/pack/superevil/start/keith/investigate.vim"]
+	path = vim/pack/superevil/start/keith/investigate.vim
 	url = https://github.com/keith/investigate.vim
-[submodule ".vim/pack/superevil/start/ternjs/tern_for_vim"]
-	path = .vim/pack/superevil/start/ternjs/tern_for_vim
+[submodule "vim/pack/superevil/start/ternjs/tern_for_vim"]
+	path = vim/pack/superevil/start/ternjs/tern_for_vim
 	url = https://github.com/ternjs/tern_for_vim
-[submodule ".vim/pack/superevil/start/Shougo/denite.nvim"]
-	path = .vim/pack/superevil/start/Shougo/denite.nvim
+[submodule "vim/pack/superevil/start/Shougo/denite.nvim"]
+	path = vim/pack/superevil/start/Shougo/denite.nvim
 	url = https://github.com/Shougo/denite.nvim

@@ -15,12 +15,12 @@ get_vim_dir() {
 get_absolute_packdir() {
         user=$(whoami)
         vimdir=$(get_vim_dir)
-        packdir="$dir/.vim/pack/superevil"
+        packdir="$dir/vim/pack/superevil"
         echo "$packdir"
 }
 
 get_packdir() {
-        packdir=".vim/pack/superevil"
+        packdir="vim/pack/superevil"
         echo "$packdir"
 }
 
@@ -74,8 +74,8 @@ setup() {
         packdir="$vimdir/pack/superevil"
         mkdir -p "$dir"
         git clone "$repo_url" "$dir"
-        ln -s "$dir/.vim" "$HOME/.vim"
-        ln -s "$dir/.vimrc" "$HOME/.vimrc"
+        ln -s "$dir/vim" "$HOME/.vim"
+        ln -s "$dir/vimrc" "$HOME/.vimrc"
         mkdir -p "$packdir/start"
         mkdir -p "$packdir/opt"
 }
