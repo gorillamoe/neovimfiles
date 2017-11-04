@@ -82,6 +82,3 @@
 [submodule "vim/pack/superevil/start/tern_for_vim"]
 	path = vim/pack/superevil/start/tern_for_vim
 	url = https://github.com/ternjs/tern_for_vim
-[submodule "vim/pack/superevil/start/denite.nvim"]
-	path = vim/pack/superevil/start/denite.nvim
-	url = https://github.com/Shougo/denite.nvim
