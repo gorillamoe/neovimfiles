@@ -4,9 +4,6 @@
 [submodule "vim/pack/superevil/start/junegunn/goyo.vim"]
 	path = vim/pack/superevil/start/junegunn/goyo.vim
 	url = https://github.com/junegunn/goyo.vim
-[submodule "vim/pack/superevil/start/joshdick/onedark.vim"]
-	path = vim/pack/superevil/start/joshdick/onedark.vim
-	url = https://github.com/joshdick/onedark.vim
 [submodule "vim/pack/superevil/start/ctrlpvim/ctrlp.vim"]
 	path = vim/pack/superevil/start/ctrlpvim/ctrlp.vim
 	url = https://github.com/ctrlpvim/ctrlp.vim
