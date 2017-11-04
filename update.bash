@@ -24,6 +24,14 @@ get_packdir() {
         echo "$packdir"
 }
 
+get_initialized_submodules() {
+        git submodule foreach --quiet 'echo $name'
+}
+
+get_all_submodules() {
+        git config --file .gitmodules --get-regexp path | awk '{ print $2 }'
+}
+
 get_packname() {
         packname=$(basename "$1")
         echo "$packname"
@@ -56,19 +64,29 @@ main() {
                 if [ ! -d "$vimdir" ]; then
                         setup
                 else
-                        echo "Updating all packages"
+                        echo "Updating all packages."
                         update_packs
                 fi
         else
                 if [[ "$1" == "add" ]];
                 then
-                        echo "Add package $2 to $3 "
+                        printf "Add package %s to %s.\n\n" "$2" "$3"
                         add_pack "$2" "$3"
                 fi
                 if [[ "$1" == "rm" ]];
                 then
-                        echo "Remove package $2 from $3 "
+                        printf "Remove package %s from %s.\n\n" "$2" "$3"
                         rm_pack "$2" "$3"
+                fi
+                if [[ "$1" == "ls" ]] || [[ "$1" == "list" ]] ;
+                then
+                        printf "Listing all initialized packages.\n\n"
+                        get_initialized_submodules
+                fi
+                if [[ "$1" == "lsa" ]] || [[ "$1" == "listall" ]] ;
+                then
+                        printf "Listing all available packages.\n\n"
+                        get_all_submodules
                 fi
         fi
 }
@@ -85,6 +103,7 @@ setup() {
         ln -s "$dir/vimrc" "$HOME/.vimrc"
         mkdir -p "$packdir/start"
         mkdir -p "$packdir/opt"
+        update_packs
 }
 
 main "$@"
