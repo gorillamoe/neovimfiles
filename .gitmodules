@@ -1,6 +1,6 @@
-[submodule "vim/pack/superevil/start/vim-airline"]
-	path = vim/pack/superevil/start/vim-airline
-	url = https://github.com/vim-airline/vim-airline.git
+[submodule "vim/pack/superevil/start/vim-airline/vim-airline"]
+	path = vim/pack/superevil/start/vim-airline/vim-airline
+	url = https://github.com/vim-airline/vim-airline
 [submodule "vim/pack/superevil/start/junegunn/goyo.vim"]
 	path = vim/pack/superevil/start/junegunn/goyo.vim
 	url = https://github.com/junegunn/goyo.vim
