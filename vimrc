@@ -103,9 +103,9 @@ let g:vim_markdown_conceal = 0
 let g:markdown_syntax_conceal = 0
 
 " Real programmers use spaces instead of tabs.
-  set tabstop=2
-  set shiftwidth=2
-  set softtabstop=2
+  set tabstop=8
+  set shiftwidth=8
+  set softtabstop=8
   set expandtab
 
 " Showing line numbers and length
@@ -134,8 +134,6 @@ let g:markdown_syntax_conceal = 0
 
 
 set background=dark
-
-colorscheme onedark
 
 " Allow saving of files as sudo when I forgot to start vim using sudo.
   command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
@@ -192,4 +190,4 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 
-" vim:tabstop=2:expandtab
+" vim:tabstop=8:expandtab
