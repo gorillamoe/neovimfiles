@@ -134,6 +134,7 @@ let g:markdown_syntax_conceal = 0
 
 
 set background=dark
+colorscheme preto
 
 " Allow saving of files as sudo when I forgot to start vim using sudo.
   command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
