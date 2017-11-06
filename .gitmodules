@@ -82,9 +82,6 @@
 [submodule "vim/pack/superevil/start/tern_for_vim"]
 	path = vim/pack/superevil/start/tern_for_vim
 	url = https://github.com/ternjs/tern_for_vim
-[submodule "vim/pack/superevil/start/onedark.vim"]
-	path = vim/pack/superevil/start/onedark.vim
-	url = https://github.com/joshdick/onedark.vim
 [submodule "vim/pack/superevil/start/deoplete.nvim"]
 	path = vim/pack/superevil/start/deoplete.nvim
 	url = https://github.com/Shougo/deoplete.nvim
@@ -94,3 +91,6 @@
 [submodule "vim/pack/superevil/start/vim-hug-neovim-rpc"]
 	path = vim/pack/superevil/start/vim-hug-neovim-rpc
 	url = https://github.com/roxma/vim-hug-neovim-rpc
+[submodule "vim/pack/superevil/start/onedark.vim"]
+	path = vim/pack/superevil/start/onedark.vim
+	url = https://github.com/joshdick/onedark.vim
