@@ -133,10 +133,6 @@ let g:markdown_syntax_conceal = 0
   endfunction
 
 
-colorscheme onedark
-set background=dark
-let g:airline_theme='onedark'
-
 " Allow saving of files as sudo when I forgot to start vim using sudo.
   command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 
@@ -160,6 +156,7 @@ noremap <Leader>r :!cstags -f .git/tags %<CR><CR>
 " Indentation
   vnoremap < <gv
   vnoremap > >gv
+  set autoindent
 
 " NERD Tree Binding
 nnoremap <LEADER>t :NERDTreeToggle<CR>
@@ -191,5 +188,11 @@ if executable('ag')
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
 endif
+
+" Load all packages, because the onedark colorscheme depends on it
+  packloadall
+
+colorscheme onedark
+let g:airline_theme='onedark'
 
 " vim:tabstop=8:expandtab
