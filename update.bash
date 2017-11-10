@@ -96,11 +96,16 @@ setup() {
         user=$(whoami)
         vimdir=$(get_vim_dir)
         dir=$(get_self_repo_dir)
+        neovimdir="$dir/.config/nvim"
         packdir="$vimdir/pack/superevil"
         mkdir -p "$dir"
         git clone "$repo_url" "$dir"
         ln -s "$dir/vim" "$HOME/.vim"
         ln -s "$dir/vimrc" "$HOME/.vimrc"
+        if [ ! -d "$neovimdir" ]; then
+                ln -s "$dir/vim" "$neovimdir"
+                ln -s "$dir/vimrc" "$neovimdir/init.vim"
+        fi
         mkdir -p "$packdir/start"
         mkdir -p "$packdir/opt"
         update_packs
