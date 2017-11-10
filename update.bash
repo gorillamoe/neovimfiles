@@ -38,7 +38,7 @@ get_packname() {
 }
 
 update_packs() {
-        git submodule update --remote --merge
+        git submodule update --remote --merge --jobs 4
 }
 
 add_pack() {
