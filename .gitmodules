@@ -94,3 +94,6 @@
 [submodule "vim/pack/superevil/start/onedark.vim"]
 	path = vim/pack/superevil/start/onedark.vim
 	url = https://github.com/joshdick/onedark.vim
+[submodule "vim/pack/superevil/start/OpenUrl.nvim"]
+	path = vim/pack/superevil/start/OpenUrl.nvim
+	url = https://github.com/superevilmegaco/OpenUrl.nvim

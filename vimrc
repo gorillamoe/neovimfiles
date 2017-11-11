@@ -170,6 +170,9 @@ nnoremap <SPACE> :b#<CR>
 " Switch buffers
 nnoremap <LEADER>nn :nohl<CR>
 
+" OpenUrl.nvim binding
+  nnoremap <leader>b :call OpenUrl#UnderCursor()<CR>
+
 " investigate.vim binding
   nnoremap <leader>q :call investigate#Investigate()<CR>
 
