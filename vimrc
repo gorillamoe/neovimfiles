@@ -10,36 +10,24 @@ set bs=2 " make backspace behave like normal again
 let $VIMHOME = $HOME."/.vim"
 
 " make yank copy to the global system clipboard
-  set clipboard=unnamedplus
+set clipboard=unnamedplus
 
 " Make history go insane, but safe my sanity
-  set history=700
-  set undolevels=700
+set history=700
+set undolevels=700
 
 " Make search case insensitive
-  set hlsearch
-  set incsearch
-  set ignorecase
-  set smartcase
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
 
 " Disable stupid backup and swap files - they trigger too many events
 " for file system watchers
-  set nobackup
-  set nowritebackup
-  set noswapfile
+set nobackup
+set nowritebackup
+set noswapfile
 
-" TagBar CoffeeScript
-" @see: https://github.com/majutsushi/tagbar/wiki#coffeescript
-let g:tagbar_type_coffee = {
-    \ 'ctagstype': 'coffee',
-    \ 'kinds': [
-        \ 'c:classes',
-        \ 'm:methods',
-        \ 'f:functions',
-        \ 'v:variables',
-        \ 'f:fields',
-    \ ]
-\ }
 " TagBar Markdown
 " @see: https://github.com/majutsushi/tagbar/wiki#markdown
 let g:tagbar_type_markdown = {
@@ -52,22 +40,16 @@ let g:tagbar_type_markdown = {
   \ }
 
 " Enable hidden buffers, so we can switch buffers without saving them.
-  set hidden
-
-" Make backspace behave like normal again
-  set bs=2 "
+set hidden
 
 " Rebind <Leader> key
-  let mapleader = ","
+let mapleader = ","
 
 " Bind nohl
-  noremap <Leader>n :nohl<CR>
+noremap <Leader>n :nohl<CR>
 
 " Enable syntax highlighting
-  syntax enable
-
-autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
-autocmd FileType litcoffee runtime ftplugin/coffee.vim
+syntax enable
 
 " Airline Plugin Configuration
 let g:airline_powerline_fonts=1
@@ -75,10 +57,8 @@ let g:airline_powerline_fonts=1
 " CTRLP Plugin Configuration
 " do not change working directory each time I invoke ctrlp
 let g:ctrlp_working_path_mode = 0
-set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_max_height = 30
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|tmp\|dist'
-set wildignore+=*tmp/*,*.so,*.swp,*.zip
 
 " indentLine Plugin Configuration
 let g:indentLine_fileTypeExclude = ['json']
@@ -103,60 +83,44 @@ let g:vim_markdown_conceal = 0
 let g:markdown_syntax_conceal = 0
 
 " Real programmers use spaces instead of tabs.
-  set tabstop=8
-  set shiftwidth=8
-  set softtabstop=8
-  set expandtab
+set tabstop=8
+set shiftwidth=8
+set softtabstop=8
+set expandtab
 
 " Showing line numbers and length
-  set number
-  set tw=79 " width of document
-  set nowrap " don't automatically wrap on load
-  set fo-=t " don't automatically wrap text when typing
+set number
+set tw=79 " width of document
+set nowrap " don't automatically wrap on load
+set fo-=t " don't automatically wrap text when typing
 
 " Show bar for length
-  if exists('+colorcolumn')
-    set colorcolumn=80
-    highlight ColorColumn ctermbg=233
-  endif
-
-" Show whitespace
-  function! Y_showWhitespace()
-    set listchars=tab:->,nbsp:%,extends:>,precedes:<,trail:-
-    set list
-  endfunction
-  function! Y_hideWhitespace()
-    set nolist
-  endfunction
-  function! Y_toggleWhitespace()
-    set list!
-  endfunction
-
+if exists('+colorcolumn')
+        set colorcolumn=80
+        highlight ColorColumn ctermbg=233
+endif
 
 " Allow saving of files as sudo when I forgot to start vim using sudo.
-  command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
+command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 
 set relativenumber
 
-" PHP Crap
-  nnoremap <F9> :! phpcs --standard=CakePHP %:p<CR>
-
 " Gundo toggle
-  nnoremap <F5> :GundoToggle<CR>
+nnoremap <F5> :GundoToggle<CR>
 
 " Quicksave command
-  noremap <Leader>w :update<CR>
-  vnoremap <Leader>w <C-C>:update<CR>
-  inoremap <Leader>w <C-O>:update<CR>
+noremap <Leader>w :update<CR>
+vnoremap <Leader>w <C-C>:update<CR>
+inoremap <Leader>w <C-O>:update<CR>
 
 " Quick CTags generation command
 " see: https://github.com/mislav/cstags
 noremap <Leader>r :!cstags -f .git/tags %<CR><CR>
 
 " Indentation
-  vnoremap < <gv
-  vnoremap > >gv
-  set autoindent
+vnoremap < <gv
+vnoremap > >gv
+set autoindent
 
 " NERD Tree Binding
 nnoremap <LEADER>t :NERDTreeToggle<CR>
@@ -167,33 +131,32 @@ nnoremap <LEADER>be :BufExplorer<CR>
 " Switch buffers
 nnoremap <SPACE> :b#<CR>
 
-" Switch buffers
+" Disable highlighting
 nnoremap <LEADER>nn :nohl<CR>
 
 " OpenUrl.nvim binding
-  nnoremap <leader>b :call OpenUrl#UnderCursor()<CR>
+nnoremap <leader>e :call OpenUrl#UnderCursor()<CR>
 
 " investigate.vim binding
-  nnoremap <leader>q :call investigate#Investigate()<CR>
+nnoremap <leader>q :call investigate#Investigate()<CR>
 
 " Show tags in CTRLP
-  nnoremap <silent> <Leader>j :TagbarToggle<CR>
-  " nnoremap <silent> <Leader>j :TagbarToggle<CR>
+nnoremap <silent> <Leader>j :TagbarToggle<CR>
 
 " The Silver Searcher
 if executable('ag')
-  " Use ag over grep
-  set grepprg=ag\ --nogroup\ --nocolor
+        " Use ag over grep
+        set grepprg=ag\ --nogroup\ --nocolor
 
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+        " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+        let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
+        " ag is fast enough that CtrlP doesn't need to cache
+        let g:ctrlp_use_caching = 0
 endif
 
 " Load all packages, because the onedark colorscheme depends on it
-  packloadall
+packloadall
 
 colorscheme onedark
 let g:airline_theme='onedark'
