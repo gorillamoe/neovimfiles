@@ -135,10 +135,9 @@ nnoremap <SPACE> :b#<CR>
 nnoremap <LEADER>nn :nohl<CR>
 
 " OpenUrl.nvim binding
-nnoremap <leader>e :call OpenUrl#UnderCursor()<CR>
-
-" investigate.vim binding
-nnoremap <leader>q :call investigate#Investigate()<CR>
+nnoremap <leader>q :call OpenUrl#UnderCursor()<CR>
+" Use keith/investigate.vim as a fallback, if it's not an URL
+let g:OpenUrl_DarkInvestigate = 1
 
 " Show tags in CTRLP
 nnoremap <silent> <Leader>j :TagbarToggle<CR>
