@@ -97,3 +97,6 @@
 [submodule "vim/pack/superevil/start/OpenUrl.nvim"]
 	path = vim/pack/superevil/start/OpenUrl.nvim
 	url = https://github.com/superevilmegaco/OpenUrl.nvim
+[submodule "vim/pack/superevil/start/vim-highlightedyank"]
+	path = vim/pack/superevil/start/vim-highlightedyank
+	url = https://github.com/machakann/vim-highlightedyank
