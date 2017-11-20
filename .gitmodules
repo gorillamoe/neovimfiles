@@ -91,12 +91,12 @@
 [submodule "vim/pack/superevil/start/vim-hug-neovim-rpc"]
 	path = vim/pack/superevil/start/vim-hug-neovim-rpc
 	url = https://github.com/roxma/vim-hug-neovim-rpc
-[submodule "vim/pack/superevil/start/onedark.vim"]
-	path = vim/pack/superevil/start/onedark.vim
-	url = https://github.com/joshdick/onedark.vim
 [submodule "vim/pack/superevil/start/OpenUrl.nvim"]
 	path = vim/pack/superevil/start/OpenUrl.nvim
 	url = https://github.com/superevilmegaco/OpenUrl.nvim
 [submodule "vim/pack/superevil/start/vim-highlightedyank"]
 	path = vim/pack/superevil/start/vim-highlightedyank
 	url = https://github.com/machakann/vim-highlightedyank
+[submodule "vim/pack/superevil/opt/onedark.vim"]
+	path = vim/pack/superevil/opt/onedark.vim
+	url = https://github.com/joshdick/onedark.vim

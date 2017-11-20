@@ -154,8 +154,8 @@ if executable('ag')
         let g:ctrlp_use_caching = 0
 endif
 
-" Load all packages, because the onedark colorscheme depends on it
-packloadall
+" Load optional onedark.vim colorscheme
+packadd! onedark.vim
 
 colorscheme onedark
 let g:airline_theme='onedark'
