@@ -29,7 +29,30 @@ get_initialized_submodules() {
 }
 
 get_all_submodules() {
-        git config --file .gitmodules --get-regexp path | awk '{ print $2 }'
+        local paths
+        local urls
+        local path_array
+        local url_array
+        local path
+        local url
+        local i=0
+        local packname
+        local packloadtype
+        paths=$(git config --file .gitmodules --get-regexp path | awk '{ print $2 }')
+        urls=$(git config --file .gitmodules --get-regexp url | awk '{ print $2 }')
+        mapfile -t path_array <<< "$paths"
+        mapfile -t url_array <<< "$urls"
+        for path in "${path_array[@]}"; do
+                url="${url_array[i]}"
+                packname=$(basename "$path")
+                if [[ "$path" == *"/start/"* ]]; then
+                        packloadtype="start"
+                else
+                        packloadtype="opt"
+                fi
+                printf "%s\t%s\t%s\n" "$packname" "$packloadtype" "$url"
+                i=$((i+1))
+        done
 }
 
 get_packname() {
