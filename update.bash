@@ -54,7 +54,7 @@ rm_pack() {
         packdir=$(get_packdir)
         packname=$(get_packname "$1")
         clonedir="$packdir/$2/$packname"
-        git submodule deinit "$clonedir" && git rm "$clonedir" && rm -rf .git/modules/"$clonedir"
+        git submodule deinit -f "$clonedir" && git rm "$clonedir" && rm -rf .git/modules/"$clonedir"
 }
 
 main() {
