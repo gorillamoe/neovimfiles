@@ -97,3 +97,6 @@
 [submodule "vim/pack/superevil/start/vim-javascript"]
 	path = vim/pack/superevil/start/vim-javascript
 	url = https://github.com/pangloss/vim-javascript
+[submodule "vim/pack/superevil/start/vim-jsx"]
+	path = vim/pack/superevil/start/vim-jsx
+	url = https://github.com/mxw/vim-jsx
