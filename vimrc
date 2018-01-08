@@ -72,11 +72,6 @@ let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|tmp\|dist'
 let g:indentLine_fileTypeExclude = ['json']
 noremap <Leader>v :IndentLinesToggle<CR>
 
-" Syntastic Plugin Configuration
-let g:syntastic_javascript_checkers = ['jshint']
-let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
-let g:syntastic_java_javac_classpath = "src/:lib/"
-
 " TagBar Plugin Configuration
 let g:tagbar_foldlevel = 0 "close tagbar folds by default
 let g:tagbar_sort = 0 "tagbar shows tags in order of they created in file

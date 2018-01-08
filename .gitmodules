@@ -10,9 +10,6 @@
 [submodule "vim/pack/superevil/start/matchit.zip"]
 	path = vim/pack/superevil/start/matchit.zip
 	url = https://github.com/vim-scripts/matchit.zip
-[submodule "vim/pack/superevil/start/syntastic"]
-	path = vim/pack/superevil/start/syntastic
-	url = https://github.com/scrooloose/syntastic
 [submodule "vim/pack/superevil/start/nerdtree"]
 	path = vim/pack/superevil/start/nerdtree
 	url = https://github.com/scrooloose/nerdtree
@@ -103,3 +100,6 @@
 [submodule "vim/pack/superevil/start/emmet-vim"]
 	path = vim/pack/superevil/start/emmet-vim
 	url = https://github.com/mattn/emmet-vim
+[submodule "vim/pack/superevil/start/ale"]
+	path = vim/pack/superevil/start/ale
+	url = https://github.com/w0rp/ale
