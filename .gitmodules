@@ -10,9 +10,6 @@
 [submodule "vim/pack/superevil/start/matchit.zip"]
 	path = vim/pack/superevil/start/matchit.zip
 	url = https://github.com/vim-scripts/matchit.zip
-[submodule "vim/pack/superevil/start/vim-javascript-syntax"]
-	path = vim/pack/superevil/start/vim-javascript-syntax
-	url = https://github.com/jelera/vim-javascript-syntax
 [submodule "vim/pack/superevil/start/syntastic"]
 	path = vim/pack/superevil/start/syntastic
 	url = https://github.com/scrooloose/syntastic
@@ -97,3 +94,6 @@
 [submodule "vim/pack/superevil/opt/onedark.vim"]
 	path = vim/pack/superevil/opt/onedark.vim
 	url = https://github.com/joshdick/onedark.vim
+[submodule "vim/pack/superevil/start/vim-javascript"]
+	path = vim/pack/superevil/start/vim-javascript
+	url = https://github.com/pangloss/vim-javascript
