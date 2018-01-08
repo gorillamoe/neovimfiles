@@ -47,6 +47,12 @@ let g:user_emmet_settings = {
     \  },
   \}
 
+" Ale
+" Make it more pleasing to my eyes
+let g:ale_sign_error = '█' " Less aggressive than the default '>>'
+let g:ale_sign_warning = '.'
+let g:ale_lint_on_enter = 0 " Less distracting when opening a new file
+
 " Enable hidden buffers, so we can switch buffers without saving them.
 set hidden
 
