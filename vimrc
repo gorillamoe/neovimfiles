@@ -39,6 +39,14 @@ let g:tagbar_type_markdown = {
     \ ]
   \ }
 
+" Emmet
+" Also for React jsx files
+let g:user_emmet_settings = {
+    \  'javascript.jsx' : {
+    \      'extends' : 'jsx',
+    \  },
+  \}
+
 " Enable hidden buffers, so we can switch buffers without saving them.
 set hidden
 
