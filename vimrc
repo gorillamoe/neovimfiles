@@ -47,6 +47,9 @@ let g:user_emmet_settings = {
     \  },
   \}
 
+" Every time I save a JS file, (asynchronously) run `eslint --fix` on this file
+autocmd BufWritePost *.js AsyncRun -post=checktime ./node_modules/.bin/eslint --fix %
+
 " Ale
 " Make it more pleasing to my eyes
 let g:ale_sign_error = '█' " Less aggressive than the default '>>'

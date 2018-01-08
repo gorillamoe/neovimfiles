@@ -103,3 +103,6 @@
 [submodule "vim/pack/superevil/start/ale"]
 	path = vim/pack/superevil/start/ale
 	url = https://github.com/w0rp/ale
+[submodule "vim/pack/superevil/start/asyncrun.vim"]
+	path = vim/pack/superevil/start/asyncrun.vim
+	url = https://github.com/skywind3000/asyncrun.vim
