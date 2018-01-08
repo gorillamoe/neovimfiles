@@ -100,3 +100,6 @@
 [submodule "vim/pack/superevil/start/vim-jsx"]
 	path = vim/pack/superevil/start/vim-jsx
 	url = https://github.com/mxw/vim-jsx
+[submodule "vim/pack/superevil/start/emmet-vim"]
+	path = vim/pack/superevil/start/emmet-vim
+	url = https://github.com/mattn/emmet-vim
