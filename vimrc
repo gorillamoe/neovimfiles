@@ -55,6 +55,10 @@ autocmd BufWritePost *.js AsyncRun -post=checktime ./node_modules/.bin/eslint --
 let g:ale_sign_error = '∙' " Less aggressive than the default '>>'
 let g:ale_sign_warning = '.'
 let g:ale_lint_on_enter = 0 " Less distracting when opening a new file
+" Also specify linters
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\}
 
 " Enable hidden buffers, so we can switch buffers without saving them.
 set hidden
