@@ -53,8 +53,8 @@ autocmd BufWritePost *.js AsyncRun -post=checktime ./node_modules/.bin/eslint --
 " Ale
 " Make it more pleasing to my eyes
 let g:ale_sign_error = '●' " Less aggressive than the default '>>'
-let g:ale_sign_warning = '.'
-let g:ale_lint_on_enter = 0 " Less distracting when opening a new file
+let g:ale_sign_warning = '∙'
+let g:ale_lint_on_enter = 1 " Enforce linting on opening up a file
 " Also specify linters
 let g:ale_linters = {
 \   'javascript': ['eslint'],
