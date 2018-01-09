@@ -136,6 +136,7 @@ noremap <Leader>r :!cstags -f .git/tags %<CR><CR>
 vnoremap < <gv
 vnoremap > >gv
 set autoindent
+set smartindent
 
 " NERD Tree Binding
 nnoremap <LEADER>t :NERDTreeToggle<CR>
