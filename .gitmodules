@@ -82,9 +82,6 @@
 [submodule "vim/pack/superevil/start/nvim-yarp"]
 	path = vim/pack/superevil/start/nvim-yarp
 	url = https://github.com/roxma/nvim-yarp
-[submodule "vim/pack/superevil/start/vim-hug-neovim-rpc"]
-	path = vim/pack/superevil/start/vim-hug-neovim-rpc
-	url = https://github.com/roxma/vim-hug-neovim-rpc
 [submodule "vim/pack/superevil/start/OpenUrl.nvim"]
 	path = vim/pack/superevil/start/OpenUrl.nvim
 	url = https://github.com/superevilmegaco/OpenUrl.nvim
