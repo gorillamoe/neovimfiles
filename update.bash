@@ -2,25 +2,25 @@
 
 get_self_repo_dir() {
         user=$(whoami)
-        dir="$HOME/Code/$user/vimfiles"
+        dir="$HOME/Code/$user/neovimfiles"
         echo "$dir"
 }
 
-get_vim_dir() {
+get_nvim_dir() {
         user=$(whoami)
-        dir="$HOME/Code/$user/vimfiles/.vim"
+        dir="$HOME/Code/$user/neovimfiles/nvim"
         echo "$dir"
 }
 
 get_absolute_packdir() {
         user=$(whoami)
         vimdir=$(get_vim_dir)
-        packdir="$dir/vim/pack/superevil"
+        packdir="$dir/nvim/pack/superevil"
         echo "$packdir"
 }
 
 get_packdir() {
-        packdir="vim/pack/superevil"
+        packdir="nvim/pack/superevil"
         echo "$packdir"
 }
 
@@ -115,20 +115,14 @@ main() {
 }
 
 setup() {
-        repo_url="https://github.com/walialu/vimfiles"
+        repo_url="https://github.com/walialu/neovimfiles"
         user=$(whoami)
-        vimdir=$(get_vim_dir)
+        vimdir=$(get_nvim_dir)
         dir=$(get_self_repo_dir)
-        neovimdir="$dir/.config/nvim"
         packdir="$vimdir/pack/superevil"
         mkdir -p "$dir"
         git clone "$repo_url" "$dir"
-        ln -s "$dir/vim" "$HOME/.vim"
-        ln -s "$dir/vimrc" "$HOME/.vimrc"
-        if [ ! -d "$neovimdir" ]; then
-                ln -s "$dir/vim" "$neovimdir"
-                ln -s "$dir/vimrc" "$neovimdir/init.vim"
-        fi
+        ln -s "$dir/nvim" "$HOME/.config/nvim"
         mkdir -p "$packdir/start"
         mkdir -p "$packdir/opt"
         update_packs
