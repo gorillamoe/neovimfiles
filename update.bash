@@ -115,6 +115,11 @@ main() {
                         printf "Listing all available packages.\n\n"
                         get_all_submodules
                 fi
+                if [[ "$1" == "init" ]] || [[ "$1" == "initpacks" ]] ;
+                then
+                        printf "Init all packs (git submodules).\n\n"
+                        init_packs
+                fi
         fi
 }
 
