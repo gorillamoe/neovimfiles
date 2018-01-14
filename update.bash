@@ -135,7 +135,7 @@ setup() {
         packdir="$vimdir/pack/superevil"
         mkdir -p "$dir"
         git clone "$repo_url" "$dir"
-        ln -s "$dir/nvim" "$HOME/.config/nvim"
+        ln -s "$dir/nvim" "$HOME/.config"
         mkdir -p "$packdir/start"
         mkdir -p "$packdir/opt"
         init_packs "$dir"
