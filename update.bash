@@ -65,7 +65,11 @@ update_packs() {
 }
 
 init_packs() {
-        git submodule update --init --recursive --jobs 4
+        if [[ ! -z $1 ]];
+	then
+		cd "$1"
+	fi
+	git submodule update --init --recursive --jobs 4
 }
 
 add_pack() {
@@ -134,8 +138,7 @@ setup() {
         ln -s "$dir/nvim" "$HOME/.config/nvim"
         mkdir -p "$packdir/start"
         mkdir -p "$packdir/opt"
-	cd "$dir"
-        init_packs
+        init_packs "$dir"
 }
 
 main "$@"
