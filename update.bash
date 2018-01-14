@@ -134,6 +134,7 @@ setup() {
         ln -s "$dir/nvim" "$HOME/.config/nvim"
         mkdir -p "$packdir/start"
         mkdir -p "$packdir/opt"
+	cd "$dir"
         init_packs
 }
 
