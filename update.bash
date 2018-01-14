@@ -64,6 +64,10 @@ update_packs() {
         git submodule update --remote --merge --jobs 4
 }
 
+init_packs() {
+        git submodule update --init --recursive --jobs 4
+}
+
 add_pack() {
         repo_url="https://github.com/$1"
         packdir=$(get_packdir)
@@ -125,7 +129,7 @@ setup() {
         ln -s "$dir/nvim" "$HOME/.config/nvim"
         mkdir -p "$packdir/start"
         mkdir -p "$packdir/opt"
-        update_packs
+        init_packs
 }
 
 main "$@"
