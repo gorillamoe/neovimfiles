@@ -22,7 +22,7 @@ or if you really know what you are doing; otherwise it could screw up all of
 your vim configuration :)
 
 ```bash
-wget --no-check-certificate -qO- https://raw.github.com/walialu/neovimfiles/master/update.sh | bash
+wget --no-check-certificate -qO- https://raw.github.com/walialu/neovimfiles/master/update.bash | bash
 ```
 
 ### Manual installation
