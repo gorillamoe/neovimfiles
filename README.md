@@ -87,6 +87,6 @@ Don't drink and drive!
 
 [NeovimWebsite]: https://neovim.io/
 [AwkWebsite]: https://www.gnu.org/software/gawk/manual/gawk.html
-[wget]: https://www.gnu.org/software/wget/
-[git]: https://git-scm.com/
+[WgetWebsite]: https://www.gnu.org/software/wget/
+[GitWebsite]: https://git-scm.com/
 [update.bash]: #update-script-updatebash
