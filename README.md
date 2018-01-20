@@ -1,7 +1,7 @@
 # Neovim Configuration Files #
 These are my Neovim configuration files.
 
-They consist of my *nvim* directory and a *sophisticated* *wink*
+They consist of my *nvim* directory and a *sophisticated* \*wink\*
 [update script][update.bash].
 
 ## Install instructions ##
