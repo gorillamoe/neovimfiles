@@ -100,3 +100,12 @@
 [submodule "nvim/pack/superevil/start/asyncrun.vim"]
 	path = nvim/pack/superevil/start/asyncrun.vim
 	url = https://github.com/skywind3000/asyncrun.vim
+[submodule "nvim/pack/superevil/start/vim-tsx-pretty"]
+	path = nvim/pack/superevil/start/vim-tsx-pretty
+	url = https://github.com/aanari/vim-tsx-pretty
+[submodule "nvim/pack/superevil/start/typescript-vim"]
+	path = nvim/pack/superevil/start/typescript-vim
+	url = https://github.com/leafgarland/typescript-vim
+[submodule "nvim/pack/superevil/start/vim-jsx-typescript"]
+	path = nvim/pack/superevil/start/vim-jsx-typescript
+	url = https://github.com/peitalin/vim-jsx-typescript
