@@ -54,8 +54,15 @@ let g:ale_sign_error = '●' " Less aggressive than the default '>>'
 let g:ale_sign_warning = '∙'
 let g:ale_lint_on_enter = 1 " Enforce linting on opening up a file
 " Also specify linters
-" Needs `yarn global add eslint && yarn global add eslint-plugin-react`
-let g:ale_linters = {'javascript': ['eslint']}
+" Requires:
+" ```
+" yarn global add eslint && yarn global add eslint-plugin-react
+" yarn global add tslint
+" ```
+let g:ale_linters = {
+        \'javascript': ['eslint'],
+        \'typescript.jsx': ['tslint']
+\}
 
 " Enable hidden buffers, so we can switch buffers without saving them.
 set hidden
