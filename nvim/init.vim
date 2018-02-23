@@ -61,6 +61,7 @@ let g:ale_lint_on_enter = 1 " Enforce linting on opening up a file
 " ```
 let g:ale_linters = {
         \'javascript': ['eslint'],
+        \'typescript': ['tslint'],
         \'typescript.jsx': ['tslint']
 \}
 
