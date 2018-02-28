@@ -109,3 +109,6 @@
 [submodule "nvim/pack/superevil/start/vim-jsx-typescript"]
 	path = nvim/pack/superevil/start/vim-jsx-typescript
 	url = https://github.com/peitalin/vim-jsx-typescript
+[submodule "nvim/pack/superevil/start/vim-mustache-handlebars"]
+	path = nvim/pack/superevil/start/vim-mustache-handlebars
+	url = https://github.com/mustache/vim-mustache-handlebars
