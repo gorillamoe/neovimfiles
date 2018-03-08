@@ -112,3 +112,6 @@
 [submodule "nvim/pack/superevil/start/vim-mustache-handlebars"]
 	path = nvim/pack/superevil/start/vim-mustache-handlebars
 	url = https://github.com/mustache/vim-mustache-handlebars
+[submodule "nvim/pack/superevil/start/vim-db"]
+	path = nvim/pack/superevil/start/vim-db
+	url = https://github.com/tpope/vim-db
