@@ -65,10 +65,10 @@ update_packs() {
 
 init_packs() {
         if [[ ! -z $1 ]];
-	then
-		cd "$1"
-	fi
-	git submodule update --init --recursive --jobs 4
+        then
+                cd "$1"
+        fi
+        git submodule update --init --recursive --jobs 4
 }
 
 add_pack() {
