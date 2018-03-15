@@ -12,8 +12,7 @@ get_nvim_dir() {
         echo "$dir"
 }
 
-get_absolute_packdir() {
-        user=$(whoami)
+get_absolute_packdir() { user=$(whoami)
         vimdir=$(get_vim_dir)
         packdir="$dir/nvim/pack/superevil"
         echo "$packdir"
@@ -88,6 +87,26 @@ rm_pack() {
         git submodule deinit -f "$clonedir" && git rm "$clonedir" && rm -rf .git/modules/"$clonedir"
 }
 
+print_help() {
+        echo -ne "\n"
+        echo -ne "# install and/or update all plugins\n\n \
+                ./update.bash\n\n"
+        echo -ne "# add package https://github.com/tpope/vim-rails to opt plugins\n\n \
+                ./update.bash add \"tpope/vim-rails\" \"opt\"\n\n"
+        echo -ne "# add package https://github.com/tpope/vim-sensible to start plugins\n\n \
+                ./update.bash add \"tpope/vim-sensible\" \"start\"\n\n"
+        echo -ne "# remove package https://github.com/tpope/vim-rails from opt plugins\n\n \
+                ./update.bash rm \"tpope/vim-rails\" \"opt\"\n\n"
+        echo -ne "# list initialized packages (vim plugins)\n\n \
+                ./update.bash ls\n\n \
+                # or\n\n \
+                ./update.bash list\n\n"
+        echo -ne "# list all packages (vim plugins)\n \
+                ./update.bash lsa \n\n \
+                # or \n\n \
+                ./update.bash listall\n\n"
+}
+
 main() {
         if [[ -z $1 ]];
         then
@@ -118,6 +137,10 @@ main() {
                 then
                         printf "Listing all available packages.\n\n"
                         get_all_submodules
+                fi
+                if [[ "$1" == "help" ]];
+                then
+                        print_help
                 fi
                 if [[ "$1" == "init" ]] || [[ "$1" == "initpacks" ]] ;
                 then
