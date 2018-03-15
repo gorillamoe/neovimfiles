@@ -115,3 +115,6 @@
 [submodule "nvim/pack/superevil/start/vim-db"]
 	path = nvim/pack/superevil/start/vim-db
 	url = https://github.com/tpope/vim-db
+[submodule "nvim/pack/superevil/start/vim-go"]
+	path = nvim/pack/superevil/start/vim-go
+	url = https://github.com/fatih/vim-go
