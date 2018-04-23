@@ -121,3 +121,9 @@
 [submodule "nvim/pack/superevil/start/vim-toml"]
 	path = nvim/pack/superevil/start/vim-toml
 	url = https://github.com/cespare/vim-toml
+[submodule "nvim/pack/superevil/start/ultisnips"]
+	path = nvim/pack/superevil/start/ultisnips
+	url = https://github.com/SirVer/ultisnips
+[submodule "nvim/pack/superevil/start/vim-snippets"]
+	path = nvim/pack/superevil/start/vim-snippets
+	url = https://github.com/honza/vim-snippets
