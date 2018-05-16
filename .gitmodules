@@ -130,3 +130,6 @@
 [submodule "nvim/pack/superevil/start/deoplete-go"]
 	path = nvim/pack/superevil/start/deoplete-go
 	url = https://github.com/zchee/deoplete-go
+[submodule "nvim/pack/superevil/start/deoplete-ternjs"]
+	path = nvim/pack/superevil/start/deoplete-ternjs
+	url = https://github.com/carlitux/deoplete-ternjs
