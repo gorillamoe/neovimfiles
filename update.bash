@@ -2,13 +2,13 @@
 
 get_self_repo_dir() {
         user=$(whoami)
-        dir="$HOME/Code/$user/neovimfiles"
+        dir="$HOME/code/$user/neovimfiles"
         echo "$dir"
 }
 
 get_nvim_dir() {
         user=$(whoami)
-        dir="$HOME/Code/$user/neovimfiles/nvim"
+        dir="$HOME/code/$user/neovimfiles/nvim"
         echo "$dir"
 }
 
