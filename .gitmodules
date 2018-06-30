@@ -133,3 +133,6 @@
 [submodule "nvim/pack/superevil/start/deoplete-ternjs"]
 	path = nvim/pack/superevil/start/deoplete-ternjs
 	url = https://github.com/carlitux/deoplete-ternjs
+[submodule "nvim/pack/superevil/start/php.vim"]
+	path = nvim/pack/superevil/start/php.vim
+	url = https://github.com/StanAngeloff/php.vim
