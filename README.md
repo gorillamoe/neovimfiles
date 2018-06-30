@@ -1,10 +1,10 @@
-# Neovim Configuration Files #
+# Neovim Configuration Files
 These are my Neovim configuration files.
 
 They consist of my *nvim* directory and a *sophisticated* \*wink\*
 [update script][update.bash].
 
-## Install instructions ##
+## Install instructions
 Make sure you have at least `wget`, `awk` and `git` installed, if you happen to be
 bold and try the quick and dirty install.
 
@@ -22,7 +22,7 @@ or if you really know what you are doing; otherwise it could screw up all of
 your vim configuration :)
 
 ```bash
-wget --no-check-certificate -qO- https://raw.github.com/walialu/neovimfiles/master/update.bash | bash
+wget --no-check-certificate -qO- https://raw.github.com/gorillamoe/neovimfiles/master/update.bash | bash
 ```
 
 ### Manual installation
