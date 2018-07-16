@@ -81,16 +81,24 @@ autocmd BufWritePost *.js AsyncRun -post=checktime ./node_modules/.bin/eslint --
 let g:ale_sign_error = '●' " Less aggressive than the default '>>'
 let g:ale_sign_warning = '∙'
 let g:ale_lint_on_enter = 1 " Enforce linting on opening up a file
+let g:ale_fix_on_save = 1 " Force ale_fixers on save / :ALEFix
 " Also specify linters
 " Requires:
 " ```
-" yarn global add eslint && yarn global add eslint-plugin-react
-" yarn global add tslint
+" npm i -g eslint && npm i -g eslint-plugin-react
+" npm i -g prettier
+" npm i -g tslint
 " ```
 let g:ale_linters = {
         \'javascript': ['eslint'],
         \'typescript': ['tslint'],
         \'typescript.jsx': ['tslint']
+\}
+
+let g:ale_fixers = {
+\   'javascript': ['prettier', 'eslint'],
+\   'typescript': ['prettier', 'tslint'],
+\   'typescript.jsx': ['prettier', 'tslint'],
 \}
 
 " Enable hidden buffers, so we can switch buffers without saving them.
