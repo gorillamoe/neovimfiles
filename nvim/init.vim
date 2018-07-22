@@ -88,17 +88,24 @@ let g:ale_fix_on_save = 1 " Force ale_fixers on save / :ALEFix
 " npm i -g eslint && npm i -g eslint-plugin-react
 " npm i -g prettier
 " npm i -g tslint
+" npm i -g csslint
+" wget https://cs.sensiolabs.org/download/php-cs-fixer-v2.phar -O php-cs-fixer && \
+" sudo chmod a+x php-cs-fixer && \
+" sudo mv php-cs-fixer /usr/local/bin/php-cs-fixer
 " ```
 let g:ale_linters = {
         \'javascript': ['eslint'],
-        \'typescript': ['tslint'],
-        \'typescript.jsx': ['tslint']
+        \'typescript': ['tslint', 'tsserver'],
+        \'typescript.jsx': ['tslint', 'tsserver'],
+        \'csslint': ['csslint'],
 \}
 
 let g:ale_fixers = {
 \   'javascript': ['prettier', 'eslint'],
 \   'typescript': ['prettier', 'tslint'],
 \   'typescript.jsx': ['prettier', 'tslint'],
+\   'css': ['prettier'],
+\   'php': ['php_cs_fixer'],
 \}
 
 " Enable hidden buffers, so we can switch buffers without saving them.
