@@ -136,3 +136,6 @@
 [submodule "nvim/pack/superevil/start/php.vim"]
 	path = nvim/pack/superevil/start/php.vim
 	url = https://github.com/StanAngeloff/php.vim
+[submodule "nvim/pack/superevil/start/vim-eunuch"]
+	path = nvim/pack/superevil/start/vim-eunuch
+	url = https://github.com/tpope/vim-eunuch
