@@ -1,4 +1,59 @@
+call plug#begin('~/.config/nvim/plugged')
+
+Plug 'https://github.com/superevilmegaco/OpenUrl.nvim'
+Plug 'https://git.superevilmegaco.com/Neovim/AutoRemoteSync.nvim'
+Plug 'https://git.superevilmegaco.com/Neovim/Taskfile.nvim'
+Plug 'https://github.com/vim-airline/vim-airline'
+Plug 'https://github.com/vim-airline/vim-airline'
+Plug 'https://github.com/junegunn/goyo.vim'
+Plug 'https://github.com/ctrlpvim/ctrlp.vim'
+Plug 'https://github.com/vim-scripts/matchit.zip'
+Plug 'https://github.com/scrooloose/nerdtree'
+Plug 'https://github.com/tpope/vim-commentary'
+Plug 'https://github.com/tpope/vim-repeat'
+Plug 'https://github.com/tpope/vim-surround'
+Plug 'https://github.com/tpope/vim-unimpaired'
+Plug 'https://github.com/tpope/vim-fugitive'
+Plug 'https://github.com/wincent/ferret'
+Plug 'https://github.com/godlygeek/tabular'
+Plug 'https://github.com/tpope/vim-markdown'
+Plug 'https://github.com/airblade/vim-gitgutter'
+Plug 'https://github.com/jlanzarotta/bufexplorer'
+Plug 'https://github.com/Raimondi/delimitMate'
+Plug 'https://github.com/xolox/vim-misc'
+Plug 'https://github.com/MarcWeber/vim-addon-mw-utils'
+Plug 'https://github.com/tomtom/tlib_vim'
+Plug 'https://github.com/majutsushi/tagbar'
+Plug 'https://github.com/editorconfig/editorconfig-vim'
+Plug 'https://github.com/sjl/gundo.vim'
+Plug 'https://github.com/Lokaltog/vim-easymotion'
+Plug 'https://github.com/tpope/vim-dispatch'
+Plug 'https://github.com/keith/investigate.vim'
+Plug 'https://github.com/ternjs/tern_for_vim'
+Plug 'https://github.com/Shougo/deoplete.nvim'
+Plug 'https://github.com/joshdick/onedark.vim'
+Plug 'https://github.com/pangloss/vim-javascript'
+Plug 'https://github.com/mxw/vim-jsx'
+Plug 'https://github.com/mattn/emmet-vim'
+Plug 'https://github.com/w0rp/ale'
+Plug 'https://github.com/skywind3000/asyncrun.vim'
+Plug 'https://github.com/aanari/vim-tsx-pretty'
+Plug 'https://github.com/leafgarland/typescript-vim'
+Plug 'https://github.com/peitalin/vim-jsx-typescript'
+Plug 'https://github.com/mustache/vim-mustache-handlebars'
+Plug 'https://github.com/fatih/vim-go'
+Plug 'https://github.com/tpope/vim-dadbod'
+Plug 'https://github.com/cespare/vim-toml'
+Plug 'https://github.com/SirVer/ultisnips'
+Plug 'https://github.com/honza/vim-snippets'
+Plug 'https://github.com/zchee/deoplete-go'
+Plug 'https://github.com/carlitux/deoplete-ternjs'
+Plug 'https://github.com/StanAngeloff/php.vim'
+Plug 'https://github.com/tpope/vim-eunuch'
+
 let g:deoplete#enable_at_startup = 1
+
+call plug#end()
 
 set wildmode=list:longest " make TAB behave like in a shell
 set autoread " reload file when changes happen in other editors
@@ -251,9 +306,6 @@ if has('nvim')
         nnoremap <M-k> <c-w>k
         nnoremap <M-l> <c-w>l
 endif
-
-" Load optional onedark.vim colorscheme
-packadd! onedark.vim
 
 colorscheme onedark
 let g:airline_theme='onedark'
