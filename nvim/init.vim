@@ -161,6 +161,7 @@ let g:ale_fixers = {
 \   'typescript': ['prettier', 'tslint'],
 \   'typescript.jsx': ['prettier', 'tslint'],
 \   'css': ['prettier'],
+\   'scss': ['prettier'],
 \   'php': ['php_cs_fixer'],
 \}
 
@@ -310,5 +311,4 @@ endif
 
 colorscheme onedark
 let g:airline_theme='onedark'
-
 " vim:tabstop=8:expandtab
