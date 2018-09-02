@@ -16,7 +16,7 @@ Plug 'https://github.com/tpope/vim-unimpaired'
 Plug 'https://github.com/tpope/vim-fugitive'
 Plug 'https://github.com/wincent/ferret'
 Plug 'https://github.com/godlygeek/tabular'
-Plug 'https://github.com/tpope/vim-markdown'
+Plug 'https://github.com/tpope/vim-markdown', { 'for': 'markdown' }
 Plug 'https://github.com/airblade/vim-gitgutter'
 Plug 'https://github.com/jlanzarotta/bufexplorer'
 Plug 'https://github.com/Raimondi/delimitMate'
@@ -41,15 +41,16 @@ Plug 'https://github.com/aanari/vim-tsx-pretty'
 Plug 'https://github.com/leafgarland/typescript-vim'
 Plug 'https://github.com/peitalin/vim-jsx-typescript'
 Plug 'https://github.com/mustache/vim-mustache-handlebars'
-Plug 'https://github.com/fatih/vim-go'
+Plug 'https://github.com/fatih/vim-go', { 'for': 'go' }
 Plug 'https://github.com/tpope/vim-dadbod'
-Plug 'https://github.com/cespare/vim-toml'
+Plug 'https://github.com/cespare/vim-toml', { 'for': 'toml' }
 Plug 'https://github.com/SirVer/ultisnips'
 Plug 'https://github.com/honza/vim-snippets'
 Plug 'https://github.com/zchee/deoplete-go'
 Plug 'https://github.com/carlitux/deoplete-ternjs'
-Plug 'https://github.com/StanAngeloff/php.vim'
+Plug 'https://github.com/StanAngeloff/php.vim', { 'for': 'php' }
 Plug 'https://github.com/tpope/vim-eunuch'
+Plug 'https://github.com/chr4/nginx.vim'
 
 let g:deoplete#enable_at_startup = 1
 
