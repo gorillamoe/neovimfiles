@@ -3,6 +3,7 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'https://github.com/superevilmegaco/OpenUrl.nvim'
 Plug 'https://git.superevilmegaco.com/Neovim/AutoRemoteSync.nvim'
 Plug 'https://git.superevilmegaco.com/Neovim/Taskfile.nvim'
+Plug 'https://git.superevilmegaco.com/Neovim/Clipboard.nvim'
 Plug 'https://github.com/vim-airline/vim-airline'
 Plug 'https://github.com/vim-airline/vim-airline'
 Plug 'https://github.com/junegunn/goyo.vim'
@@ -232,6 +233,9 @@ endif
 command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 
 set relativenumber
+
+set synmaxcol=128
+syntax sync minlines=256
 
 " Gundo toggle
 nnoremap <F5> :GundoToggle<CR>
