@@ -5,6 +5,18 @@ These are my Neovim configuration files.
 Make sure you have at least `wget`, `awk` and `git` installed, if you happen to be
 bold and try the quick and dirty install.
 
+## Generate helptags
+
+```
+:call plug#helptags()
+```
+
+and check via
+
+```
+:help Screenshot
+```
+
 ## Prerequisites
 
 - [Neovim][NeovimWebsite]
