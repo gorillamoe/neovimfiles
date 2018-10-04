@@ -55,6 +55,8 @@ Plug 'https://github.com/StanAngeloff/php.vim', { 'for': 'php' }
 Plug 'https://github.com/tpope/vim-eunuch'
 Plug 'https://github.com/chr4/nginx.vim'
 Plug 'https://github.com/ludovicchabant/vim-gutentags'
+Plug 'https://github.com/HerringtonDarkholme/yats.vim'
+Plug 'https://github.com/mhartington/nvim-typescript', {'do': './install.sh'}
 
 let g:deoplete#enable_at_startup = 1
 
