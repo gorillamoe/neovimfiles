@@ -27,6 +27,7 @@ and check via
 - [Neovim][NeovimWebsite]
 - [git][GitWebsite]
 - [ruby][ruby]
+- [nodejs][nodejs]
 - [python2][python2]
 - [python3][python3]
 
@@ -88,4 +89,5 @@ Don't drink and drive!
 [ruby]: https://www.ruby-lang.org/
 [python2]: https://www.python.org/
 [python3]: https://www.python.org/
+[nodejs]: https://nodejs.org/en/
 
