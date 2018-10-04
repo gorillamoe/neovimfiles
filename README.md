@@ -1,7 +1,12 @@
-# Neovim Configuration Files
+Neovim Configuration Files
+==========================
+
+![](icon.png)
+
 These are my Neovim configuration files.
 
 ## Install instructions
+
 Make sure you have at least `wget`, `awk` and `git` installed, if you happen to be
 bold and try the quick and dirty install.
 
@@ -49,7 +54,7 @@ Clone this repository
 git clone git@git.superevilmegaco.com:marco/neovimfiles.git .
 ```
 
-Symlink `$HOME/.config/nvim` (or `~\AppData\Local\nvim\` for WindowsTM) to
+Symlink `$HOME/.config/nvim` (or `~\\AppData\\Local\\nvim\\` for WindowsTM) to
 where you cloned my `neomvimfiles` (`$HOME/Code/$USER/neovimfiles` ?).
 
 ```bash
@@ -83,3 +88,4 @@ Don't drink and drive!
 [ruby]: https://www.ruby-lang.org/
 [python2]: https://www.python.org/
 [python3]: https://www.python.org/
+
