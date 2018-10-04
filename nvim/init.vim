@@ -31,7 +31,7 @@ Plug 'https://github.com/sjl/gundo.vim'
 Plug 'https://github.com/Lokaltog/vim-easymotion'
 Plug 'https://github.com/tpope/vim-dispatch'
 Plug 'https://github.com/keith/investigate.vim'
-Plug 'https://github.com/ternjs/tern_for_vim'
+Plug 'https://github.com/ternjs/tern_for_vim', {'do': 'npm install'}
 Plug 'https://github.com/Shougo/deoplete.nvim'
 Plug 'https://github.com/Shougo/denite.nvim'
 Plug 'https://github.com/joshdick/onedark.vim'
