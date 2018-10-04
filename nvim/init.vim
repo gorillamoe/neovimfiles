@@ -18,7 +18,7 @@ Plug 'https://github.com/tpope/vim-unimpaired'
 Plug 'https://github.com/tpope/vim-fugitive'
 Plug 'https://github.com/wincent/ferret'
 Plug 'https://github.com/godlygeek/tabular'
-Plug 'https://github.com/tpope/vim-markdown', { 'for': 'markdown' }
+Plug 'https://github.com/plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'https://github.com/airblade/vim-gitgutter'
 Plug 'https://github.com/jlanzarotta/bufexplorer'
 Plug 'https://github.com/Raimondi/delimitMate'
@@ -204,7 +204,15 @@ set completeopt-=preview
 
 " vim-markdown Plugin Configuration
 let g:vim_markdown_conceal = 0
-let g:markdown_syntax_conceal = 0
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_fenced_languages = [
+                        \'javascript=javascript',
+                        \'c++=cpp',
+                        \'viml=vim',
+                        \'bash=sh',
+                        \'ini=dosini'
+                        \]
 
 " Real programmers use spaces instead of tabs.
 set tabstop=8
