@@ -38,7 +38,7 @@ or if you really know what you are doing; otherwise it could screw up all of
 your vim configuration :)
 
 ```bash
-wget --no-check-certificate -qO- https://git.superevilmegaco.com/marco/neovimfiles/blob/master/install.bash | bash
+wget --no-check-certificate -qO- https://git.superevilmegaco.com/marco/neovimfiles/raw/master/install.bash | bash
 ```
 
 ### Manual installation
