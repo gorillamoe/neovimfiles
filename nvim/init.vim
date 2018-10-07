@@ -241,10 +241,7 @@ endif
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 
-set relativenumber
-
-set synmaxcol=128
-syntax sync minlines=256
+set norelativenumber
 
 " Gundo toggle
 nnoremap <F5> :GundoToggle<CR>
