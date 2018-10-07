@@ -10,18 +10,6 @@ These are my Neovim configuration files.
 Make sure you have at least `wget`, `awk` and `git` installed, if you happen to be
 bold and try the quick and dirty install.
 
-## Generate helptags
-
-```
-:call plug#helptags()
-```
-
-and check via
-
-```
-:help Screenshot
-```
-
 ## Prerequisites
 
 - [Neovim][NeovimWebsite]
@@ -46,20 +34,20 @@ wget --no-check-certificate -qO- https://git.superevilmegaco.com/marco/neovimfil
 Create directory structure
 
 ```bash
-mkdir -p "$HOME/Code/$USER/neovimfiles" && cd "$_"
+mkdir -p ~/Code/$(whoami)/neovimfiles && cd "$_"
 ```
 
 Clone this repository
 
 ```bash
-git clone git@git.superevilmegaco.com:marco/neovimfiles.git .
+git clone https://git.superevilmegaco.com/marco/neovimfiles .
 ```
 
-Symlink `$HOME/.config/nvim` (or `~\\AppData\\Local\\nvim\\` for WindowsTM) to
-where you cloned my `neomvimfiles` (`$HOME/Code/$USER/neovimfiles` ?).
+Symlink `~/.config/nvim` (or `~\\AppData\\Local\\nvim\\` for WindowsTM) to
+where you cloned my `neomvimfiles` (`~/Code/$(whoami)/neovimfiles` ?).
 
 ```bash
-ln -s $HOME/Code/$USER/neovimfiles/nvim $HOME/.config
+ln -s ~/Code/$(whoami)/neovimfiles/nvim ~/.config
 ```
 
 Install all other (Neo)vim packages (plugins).
@@ -67,19 +55,20 @@ Install all other (Neo)vim packages (plugins).
 #### Neovim
 
 ```bash
-nvim +PlugInstall
+nvim +PlugInstall +UpdateRemotePlugins
 ```
 
-#### Vim
+## Generate helptags
 
-```bash
-vim +PlugInstall
+```
+:call plug#helptags()
 ```
 
-# License agreement #
-Don't do any harm to animals!
-Love your wife and your children!
-Don't drink and drive!
+and check via
+
+```
+:help Screenshot
+```
 
 
 
