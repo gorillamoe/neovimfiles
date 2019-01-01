@@ -167,6 +167,12 @@ let g:ale_fixers = {
 \   'php': ['php_cs_fixer'],
 \}
 
+" Toggle ALE Fixers on/off
+" Big shout out to zArubaru
+" See: https://github.com/w0rp/ale/issues/1353#issuecomment-424677810
+command! ALEToggleFixer execute "let g:ale_fix_on_save = get(g:, 'ale_fix_on_save', 0) ? 0 : 1"
+
+
 " Enable hidden buffers, so we can switch buffers without saving them.
 set hidden
 
