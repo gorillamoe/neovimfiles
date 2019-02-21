@@ -258,6 +258,9 @@ noremap <Leader>w :update<CR>
 vnoremap <Leader>w <C-C>:update<CR>
 inoremap <Leader>w <C-O>:update<CR>
 
+" Messages shortcut
+noremap <Leader>m :messages<CR>
+
 " Quick CTags generation command
 " see: https://github.com/mislav/cstags
 noremap <Leader>r :!cstags -f .git/tags %<CR><CR>
