@@ -8,7 +8,6 @@ Plug 'https://git.superevilmegaco.com/Neovim/Screenshot.nvim'
 Plug 'https://github.com/vim-airline/vim-airline'
 Plug 'https://github.com/vim-airline/vim-airline-themes'
 Plug 'https://github.com/junegunn/goyo.vim'
-Plug 'https://github.com/ctrlpvim/ctrlp.vim'
 Plug 'https://github.com/vim-scripts/matchit.zip'
 Plug 'https://github.com/scrooloose/nerdtree'
 Plug 'https://github.com/tpope/vim-commentary'
@@ -25,7 +24,6 @@ Plug 'https://github.com/Raimondi/delimitMate'
 Plug 'https://github.com/xolox/vim-misc'
 Plug 'https://github.com/MarcWeber/vim-addon-mw-utils'
 Plug 'https://github.com/tomtom/tlib_vim'
-Plug 'https://github.com/majutsushi/tagbar'
 Plug 'https://github.com/editorconfig/editorconfig-vim'
 Plug 'https://github.com/sjl/gundo.vim'
 Plug 'https://github.com/Lokaltog/vim-easymotion'
@@ -57,6 +55,8 @@ Plug 'https://github.com/chr4/nginx.vim'
 Plug 'https://github.com/ludovicchabant/vim-gutentags'
 Plug 'https://github.com/HerringtonDarkholme/yats.vim'
 Plug 'https://github.com/mhartington/nvim-typescript', {'do': './install.sh'}
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --no-bash' }
+Plug 'junegunn/fzf.vim'
 
 let g:deoplete#enable_at_startup = 1
 
@@ -87,45 +87,6 @@ set smartcase
 set nobackup
 set nowritebackup
 set noswapfile
-
-" TagBar Markdown
-" @see: https://github.com/majutsushi/tagbar/wiki#markdown
-let g:tagbar_type_markdown = {
-    \ 'ctagstype' : 'markdown',
-    \ 'kinds' : [
-        \ 'h:Heading_L1',
-        \ 'i:Heading_L2',
-        \ 'k:Heading_L3'
-    \ ]
-  \ }
-
-let g:tagbar_type_go = {
-        \ 'ctagstype' : 'go',
-        \ 'kinds'     : [
-                \ 'p:package',
-                \ 'i:imports:1',
-                \ 'c:constants',
-                \ 'v:variables',
-                \ 't:types',
-                \ 'n:interfaces',
-                \ 'w:fields',
-                \ 'e:embedded',
-                \ 'm:methods',
-                \ 'r:constructor',
-                \ 'f:functions'
-        \ ],
-        \ 'sro' : '.',
-        \ 'kind2scope' : {
-                \ 't' : 'ctype',
-                \ 'n' : 'ntype'
-        \ },
-        \ 'scope2kind' : {
-                \ 'ctype' : 't',
-                \ 'ntype' : 'n'
-        \ },
-        \ 'ctagsbin'  : 'gotags',
-        \ 'ctagsargs' : '-sort -silent'
-\ }
 
 " Emmet
 " Also for React jsx files
@@ -189,20 +150,9 @@ syntax enable
 " Airline Plugin Configuration
 let g:airline_powerline_fonts=1
 
-" CTRLP Plugin Configuration
-" do not change working directory each time I invoke ctrlp
-let g:ctrlp_working_path_mode = 0
-let g:ctrlp_max_height = 30
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|tmp\|dist'
-
 " indentLine Plugin Configuration
 let g:indentLine_fileTypeExclude = ['json']
 noremap <Leader>v :IndentLinesToggle<CR>
-
-" TagBar Plugin Configuration
-let g:tagbar_foldlevel = 0 "close tagbar folds by default
-let g:tagbar_sort = 0 "tagbar shows tags in order of they created in file
-let g:tagbar_autofocus = 1
 
 " Tern Plugin Configuration
 " disable preview window for tern_for_vim
@@ -261,10 +211,6 @@ inoremap <Leader>w <C-O>:update<CR>
 " Messages shortcut
 noremap <Leader>m :messages<CR>
 
-" Quick CTags generation command
-" see: https://github.com/mislav/cstags
-noremap <Leader>r :!cstags -f .git/tags %<CR><CR>
-
 " Indentation
 vnoremap < <gv
 vnoremap > >gv
@@ -291,45 +237,28 @@ nnoremap <leader>q :call OpenUrl#UnderCursor()<CR>
 " Use keith/investigate.vim as a fallback, if it's not an URL
 let g:OpenUrl_DarkInvestigate = 1
 
-" Show tags in CTRLP
-nnoremap <silent> <Leader>j :TagbarToggle<CR>
+" fzf config start
 
+" Show tags in fzf
+nnoremap <silent> <Leader>j :Tags<CR>
+
+" Show local tags in fzf
+nnoremap <silent> <Leader>t :BTags<CR>
+
+" Quickly switch to open buffer
+nnoremap <silent> <leader>b :Buffers<CR>
+
+" Replacement for ctrlp
+nnoremap <silent> <C-p> :Files<CR>
+" CTRL + ALT(meta) + p will open the fuzzy finder just for the directory containing the currently edited file
+nnoremap <silent> <C-M-p> :Files <C-r>=expand("%:h")<CR>/<CR>
+
+" fzf config end
+"
 " The Silver Searcher
 if executable('ag')
         " Use ag over grep
         set grepprg=ag\ --nogroup\ --nocolor
-
-        " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-        let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-
-        " ag is fast enough that CtrlP doesn't need to cache
-        let g:ctrlp_use_caching = 0
-endif
-
-if has('nvim')
-        " Terminal mode:
-        tnoremap <Esc> <C-\><C-n>
-        tnoremap <M-[> <Esc>
-        tnoremap <C-v><Esc> <Esc>
-        tnoremap <M-h> <c-\><c-n><c-w>h
-        tnoremap <M-j> <c-\><c-n><c-w>j
-        tnoremap <M-k> <c-\><c-n><c-w>k
-        tnoremap <M-l> <c-\><c-n><c-w>l
-        " Insert mode:
-        inoremap <M-h> <Esc><c-w>h
-        inoremap <M-j> <Esc><c-w>j
-        inoremap <M-k> <Esc><c-w>k
-        inoremap <M-l> <Esc><c-w>l
-        " Visual mode:
-        vnoremap <M-h> <Esc><c-w>h
-        vnoremap <M-j> <Esc><c-w>j
-        vnoremap <M-k> <Esc><c-w>k
-        vnoremap <M-l> <Esc><c-w>l
-        " Normal mode:
-        nnoremap <M-h> <c-w>h
-        nnoremap <M-j> <c-w>j
-        nnoremap <M-k> <c-w>k
-        nnoremap <M-l> <c-w>l
 endif
 
 colorscheme onedark
