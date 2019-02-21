@@ -6,6 +6,7 @@ Plug 'https://git.superevilmegaco.com/Neovim/Taskfile.nvim'
 Plug 'https://git.superevilmegaco.com/Neovim/Clipboard.nvim'
 Plug 'https://git.superevilmegaco.com/Neovim/Screenshot.nvim'
 Plug 'https://github.com/vim-airline/vim-airline'
+Plug 'https://github.com/vim-airline/vim-airline-themes'
 Plug 'https://github.com/junegunn/goyo.vim'
 Plug 'https://github.com/ctrlpvim/ctrlp.vim'
 Plug 'https://github.com/vim-scripts/matchit.zip'
@@ -326,5 +327,4 @@ if has('nvim')
 endif
 
 colorscheme onedark
-let g:airline_theme='onedark'
 " vim:tabstop=8:expandtab
