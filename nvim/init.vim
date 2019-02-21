@@ -280,6 +280,9 @@ nnoremap <LEADER>be :BufExplorer<CR>
 " Switch buffers
 nnoremap <SPACE> :b#<CR>
 
+" Buffer Delete
+nnoremap <Leader>x :bdelete<CR>
+
 " Disable highlighting
 nnoremap <LEADER>nn :nohl<CR>
 
