@@ -253,6 +253,18 @@ nnoremap <silent> <C-p> :Files<CR>
 " CTRL + ALT(meta) + p will open the fuzzy finder just for the directory containing the currently edited file
 nnoremap <silent> <C-M-p> :Files <C-r>=expand("%:h")<CR>/<CR>
 
+" Fuzzy search for Git commits. Requires tpope/vim-fugitive
+let g:fzf_commits_log_options = '--graph --color=always
+  \ --format="%C(yellow)%h%C(red)%d%C(reset)
+  \ - %C(bold green)(%ar)%C(reset) %s %C(blue)<%an>%C(reset)"'
+
+nnoremap <silent> <leader>c  :Commits<CR>
+nnoremap <silent> <leader>bc :BCommits<CR>
+
+" Ripgrep shorthand commands
+nnoremap <leader>rg :Rg<Space>
+nnoremap <leader>!  :Rg!<Space>
+
 " fzf config end
 "
 " The Silver Searcher
