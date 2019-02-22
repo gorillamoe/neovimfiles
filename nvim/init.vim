@@ -237,6 +237,12 @@ nnoremap <leader>q :call OpenUrl#UnderCursor()<CR>
 " Use keith/investigate.vim as a fallback, if it's not an URL
 let g:OpenUrl_DarkInvestigate = 1
 
+" vim-fugitive config start
+
+nnoremap <silent> <leader>g :G<CR>
+
+" vim-fugitive config end
+
 " fzf config start
 
 " Show tags in fzf
