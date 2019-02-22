@@ -1,6 +1,5 @@
 call plug#begin('~/.config/nvim/plugged')
 
-Plug 'https://github.com/superevilmegaco/OpenUrl.nvim'
 Plug 'https://git.superevilmegaco.com/Neovim/AutoRemoteSync.nvim'
 Plug 'https://git.superevilmegaco.com/Neovim/Taskfile.nvim'
 Plug 'https://git.superevilmegaco.com/Neovim/Clipboard.nvim'
@@ -201,9 +200,6 @@ command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 " Enable relative line numbers
 set relativenumber
 
-" Gundo toggle
-nnoremap <F5> :GundoToggle<CR>
-
 " Quicksave command
 noremap <Leader>w :update<CR>
 vnoremap <Leader>w <C-C>:update<CR>
@@ -218,9 +214,6 @@ vnoremap > >gv
 set autoindent
 set smartindent
 
-" NERD Tree Binding
-nnoremap <LEADER>t :NERDTreeToggle<CR>
-
 " BufExlorer
 nnoremap <LEADER>be :BufExplorer<CR>
 
@@ -229,14 +222,6 @@ nnoremap <SPACE> :b#<CR>
 
 " Buffer Delete
 nnoremap <Leader>x :bdelete<CR>
-
-" Disable highlighting
-nnoremap <LEADER>nn :nohl<CR>
-
-" OpenUrl.nvim binding
-nnoremap <leader>q :call OpenUrl#UnderCursor()<CR>
-" Use keith/investigate.vim as a fallback, if it's not an URL
-let g:OpenUrl_DarkInvestigate = 1
 
 " vim-fugitive config start
 
