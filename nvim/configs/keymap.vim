@@ -34,6 +34,9 @@ nnoremap <silent> <leader>g :G<CR>
 
 " vim-fugitive config end
 
+" Show tags in tagbar
+nnoremap <silent> <Leader>T :TagbarToggle<CR>
+
 " fzf config start
 
 " Show tags in fzf
