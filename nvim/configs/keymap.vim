@@ -19,6 +19,9 @@ vnoremap > >gv
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 
+" NERDTree
+nnoremap <LEADER>e :NERDTreeToggle<CR>
+
 " BufExlorer
 nnoremap <LEADER>be :BufExplorer<CR>
 
