@@ -22,8 +22,8 @@ nnoremap <LEADER>e :NERDTreeToggle<CR>
 " Buffer Delete
 nnoremap <Leader>x :bdelete<CR>
 
-" Quickly switch to open buffer
-nnoremap <silent> <leader>b :Buffers<CR>
+" === Ack.vim shorcuts === "
+nnoremap <Leader>g :Ack<Space>
 
 " === Denite shorcuts === "
 "   ;         - Browser currently open buffers
@@ -34,7 +34,6 @@ nnoremap <silent> <leader>b :Buffers<CR>
 nnoremap <leader>be :Denite buffer -split=floating -winrow=1<CR>
 nmap <c-p> :Denite file/rec -split=floating -winrow=1<CR>
 nnoremap <leader>t :Denite outline -split=floating -winrow=1<CR>
-nnoremap <leader>g :<C-u>Denite grep:. -no-empty -mode=normal<CR>
 nnoremap <leader>j :<C-u>DeniteCursorWord grep:. -mode=normal<CR>
 call denite#custom#map('insert', '<C-j>', '<denite:move_to_next_line>', 'noremap')
 call denite#custom#map('insert', '<C-k>', '<denite:move_to_previous_line>', 'noremap')

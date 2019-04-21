@@ -196,6 +196,9 @@ let g:vrc_curl_opts = {
   \ '-k': '',
 \}
 
-
+" === Ack.vim === "
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
 
 " vim:tabstop=8:expandtab
