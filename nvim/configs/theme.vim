@@ -1,5 +1,8 @@
-" Showing line numbers and length
-set number
+" disabling line numbers and length
+set nonumber
+" disabling relative line numbers
+set norelativenumber
+
 set tw=79 " width of document
 set nowrap " don't automatically wrap on load
 set fo-=t " don't automatically wrap text when typing
@@ -17,9 +20,10 @@ if exists('+colorcolumn')
         highlight ColorColumn ctermbg=233
 endif
 
-" Enable relative line numbers
-set relativenumber
+" Don't dispay mode in command line (airilne already shows it)
+set noshowmode
 
 colorscheme onedark
+
 
 " vim:tabstop=8:expandtab
