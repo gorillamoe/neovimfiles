@@ -28,17 +28,35 @@ nnoremap <Leader>x :bdelete<CR>
 " === Ack.vim shorcuts === "
 nnoremap <Leader>g :Ack<Space>
 
-" === Denite shorcuts === "
+" === fzf shorcuts === "
 "   <c-p>      - CtrlP replacment
 "   <leader>be - BufExplorer replacment
 "   <leader>t  - Browse list tags
-"   <leader>j  - Search current directory for occurences of word under cursor
-nnoremap <leader>be :Denite buffer<CR>
-nmap <c-p> :Denite file/rec<CR>
-nnoremap <leader>t :Denite outline<CR>
-nnoremap <leader>j :<C-u>DeniteCursorWord grep:. -mode=normal<CR>
-call denite#custom#map('insert', '<C-j>', '<denite:move_to_next_line>', 'noremap')
-call denite#custom#map('insert', '<C-k>', '<denite:move_to_previous_line>', 'noremap')
+
+" Show tags in fzf
+nnoremap <silent> <Leader>j :Tags<CR>
+
+" Show local tags in fzf
+nnoremap <silent> <Leader>t :BTags<CR>
+
+" Quickly switch to open buffer
+nnoremap <silent> <leader>be :Buffers<CR>
+
+" Replacement for ctrlp
+nnoremap <silent> <C-p> :Files<CR>
+" CTRL + ALT(meta) + p will open the fuzzy finder just for the directory containing the currently edited file
+nnoremap <silent> <C-M-p> :Files <C-r>=expand("%:h")<CR>/<CR>
+
+" Fuzzy search for Git commits. Requires tpope/vim-fugitive
+let g:fzf_commits_log_options = '--graph --color=always
+  \ --format="%C(yellow)%h%C(red)%d%C(reset)
+  \ - %C(bold green)(%ar)%C(reset) %s %C(blue)<%an>%C(reset)"'
+
+nnoremap <silent> <leader>c  :Commits<CR>
+nnoremap <silent> <leader>bc :BCommits<CR>
+
+" Ripgrep shorthand commands
+nnoremap <leader>rg :Rg<Space>
 
 " === Nerdtree shorcuts === "
 "  <leader>n - Toggle NERDTree on/off
