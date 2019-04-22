@@ -19,6 +19,9 @@ command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 " NERDTree
 nnoremap <LEADER>e :NERDTreeToggle<CR>
 
+" Quick buffer switiching with space bar
+nnoremap <space> :b#<CR>
+
 " Buffer Delete
 nnoremap <Leader>x :bdelete<CR>
 
@@ -26,14 +29,13 @@ nnoremap <Leader>x :bdelete<CR>
 nnoremap <Leader>g :Ack<Space>
 
 " === Denite shorcuts === "
-"   ;         - Browser currently open buffers
-"   <leader>t - Browse list of files in current directory
-"   <leader>g - Search current directory for occurences of given term and
-"   close window if no results
-"   <leader>j - Search current directory for occurences of word under cursor
-nnoremap <leader>be :Denite buffer -split=floating -winrow=1<CR>
-nmap <c-p> :Denite file/rec -split=floating -winrow=1<CR>
-nnoremap <leader>t :Denite outline -split=floating -winrow=1<CR>
+"   <c-p>      - CtrlP replacment
+"   <leader>be - BufExplorer replacment
+"   <leader>t  - Browse list tags
+"   <leader>j  - Search current directory for occurences of word under cursor
+nnoremap <leader>be :Denite buffer<CR>
+nmap <c-p> :Denite file/rec<CR>
+nnoremap <leader>t :Denite outline<CR>
 nnoremap <leader>j :<C-u>DeniteCursorWord grep:. -mode=normal<CR>
 call denite#custom#map('insert', '<C-j>', '<denite:move_to_next_line>', 'noremap')
 call denite#custom#map('insert', '<C-k>', '<denite:move_to_previous_line>', 'noremap')

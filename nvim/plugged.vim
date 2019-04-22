@@ -34,14 +34,16 @@ Plug 'Shougo/echodoc.vim'
 Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
 
-
-" ReactJS JSX syntax highlighting
-Plug 'mxw/vim-jsx'
-
 " Generate JSDoc commands based on function signature
 Plug 'heavenshell/vim-jsdoc'
 
 " === Syntax Highlighting === "
+
+" Typescript syntax highlighting
+Plug 'HerringtonDarkholme/yats.vim'
+
+" ReactJS JSX syntax highlighting
+Plug 'mxw/vim-jsx'
 
 " Syntax highlighting for nginx
 Plug 'chr4/nginx.vim'

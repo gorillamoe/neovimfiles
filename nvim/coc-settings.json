@@ -3,6 +3,7 @@
   "suggest.maxCompleteItemCount": 20,
   "coc.preferences.formatOnSaveFiletypes": ["javascript", "typescript", "typescriptreact", "json", "javascriptreact"],
   "eslint.filetypes": ["javascript", "typescript", "typescriptreact", "javascriptreact"],
+  "prettier.eslintIntegration": true,
   "diagnostic.errorSign": "•",
   "diagnostic.warningSign": "•",
   "languageserver": {

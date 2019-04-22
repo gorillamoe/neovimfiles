@@ -14,12 +14,6 @@ if exists('+termguicolors')
         set termguicolors
 endif
 
-" Show bar for length
-if exists('+colorcolumn')
-        set colorcolumn=80
-        highlight ColorColumn ctermbg=233
-endif
-
 " Don't dispay mode in command line (airilne already shows it)
 set noshowmode
 
