@@ -5,6 +5,8 @@ Plug 'https://git.superevilmegaco.com/Neovim/Taskfile.nvim'
 Plug 'https://git.superevilmegaco.com/Neovim/Clipboard.nvim'
 Plug 'https://git.superevilmegaco.com/Neovim/Screenshot.nvim'
 
+" BufExplorer - Buffers on steroids
+Plug 'jlanzarotta/bufexplorer'
 
 " Trailing whitespace highlighting & automatic fixing
 Plug 'ntpeters/vim-better-whitespace'

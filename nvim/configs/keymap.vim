@@ -30,7 +30,7 @@ nnoremap <Leader>g :Ack<Space>
 
 " === fzf shorcuts === "
 "   <c-p>      - CtrlP replacment
-"   <leader>be - BufExplorer replacment
+"   <c-m-p>      - CTRL + Alt/Meta + P - opens the fuzzy finder just for the directory containing the currently edited file
 "   <leader>t  - Browse list tags
 
 " Show tags in fzf
@@ -38,9 +38,6 @@ nnoremap <silent> <Leader>j :Tags<CR>
 
 " Show local tags in fzf
 nnoremap <silent> <Leader>t :BTags<CR>
-
-" Quickly switch to open buffer
-nnoremap <silent> <leader>be :Buffers<CR>
 
 " Replacement for ctrlp
 nnoremap <silent> <C-p> :Files<CR>
