@@ -22,6 +22,9 @@ nnoremap <LEADER>e :NERDTreeToggle<CR>
 " Quick buffer switiching with space bar
 nnoremap <space> :b#<CR>
 
+" Toggle BufExplorer
+nnoremap <silent> <leader>be :ToggleBufExplorer<CR>
+
 " Buffer Delete
 nnoremap <Leader>x :bdelete<CR>
 
