@@ -5,6 +5,9 @@ Plug 'https://git.superevilmegaco.com/Neovim/Taskfile.nvim'
 Plug 'https://git.superevilmegaco.com/Neovim/Clipboard.nvim'
 Plug 'https://git.superevilmegaco.com/Neovim/Screenshot.nvim'
 
+" UndoTree - The undo history visualizer for VIM
+Plug 'mbbill/undotree'
+
 " BufExplorer - Buffers on steroids
 Plug 'jlanzarotta/bufexplorer'
 
