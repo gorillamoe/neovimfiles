@@ -65,6 +65,7 @@ nmap <leader>n :NERDTreeToggle<CR>
 nmap <leader>. :NERDTreeFind<CR>
 
 " === coc.nvim === "
+nmap <silent> <leader>E :CocList diagnostics<CR>
 nmap <silent> <leader>dd <Plug>(coc-definition)
 nmap <silent> <leader>dr <Plug>(coc-references)
 nmap <silent> <leader>dj <Plug>(coc-implementation)
