@@ -36,8 +36,6 @@ Plug 'Shougo/neosnippet-snippets'
 Plug 'Shougo/echodoc.vim'
 
 " === Git Plugins === "
-" Enable git changes to be shown in sign column
-Plug 'mhinz/vim-signify'
 Plug 'tpope/vim-fugitive'
 
 " Generate JSDoc commands based on function signature
