@@ -49,7 +49,7 @@ try
 
 " === Vim airline ==== "
 " Enable extensions
-let g:airline_extensions = ['branch', 'hunks', 'coc']
+let g:airline_extensions = ['branch', 'coc']
 
 " Update section z to just have line number
 let g:airline_section_z = airline#section#create(['linenr'])
@@ -87,9 +87,6 @@ let g:airline_highlighting_cache = 1
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
-
-" Don't show git changes to current file in airline
-let g:airline#extensions#hunks#enabled=0
 
 catch
   echo 'Airline not installed. It should work after running :PlugInstall'
