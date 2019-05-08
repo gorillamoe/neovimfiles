@@ -29,7 +29,7 @@
           "shellcheck": {
             "command": "shellcheck",
             "debounce": 100,
-            "args": [ "--format=gcc", "-"],
+            "args": [ "--format=gcc", "-x", "-"],
             "offsetLine": 0,
             "offsetColumn": 0,
             "sourceName": "shellcheck",
