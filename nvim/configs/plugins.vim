@@ -18,6 +18,12 @@ hi! link CocInfoSign Type
 "Close preview window when completion is done.
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
+" === Markdown === "
+
+" Disable folding
+let g:vim_markdown_folding_disabled = 1
+
+
 " === NeoSnippet === "
 " Map <C-k> as shortcut to activate snippet if available
 imap <C-k> <Plug>(neosnippet_expand_or_jump)
