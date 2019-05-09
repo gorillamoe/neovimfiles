@@ -82,7 +82,6 @@ Plug 'https://github.com/tpope/vim-surround'
 Plug 'https://github.com/tpope/vim-unimpaired'
 Plug 'https://github.com/tpope/vim-fugitive'
 Plug 'https://github.com/plasticboy/vim-markdown', { 'for': 'markdown' }
-" Plug 'https://github.com/airblade/vim-gitgutter'
 Plug 'https://github.com/editorconfig/editorconfig-vim'
 Plug 'https://github.com/easymotion/vim-easymotion'
 Plug 'https://github.com/keith/investigate.vim'
