@@ -3,9 +3,7 @@ set nonumber
 " disabling relative line numbers
 set norelativenumber
 
-set tw=79 " width of document
-set nowrap " don't automatically wrap on load
-set fo-=t " don't automatically wrap text when typing
+set wrap " wrap text
 
 " Enable true color support
 if exists('+termguicolors')
@@ -18,6 +16,5 @@ endif
 set noshowmode
 
 colorscheme onedark
-
 
 " vim:tabstop=8:expandtab
