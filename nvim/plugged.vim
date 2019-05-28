@@ -11,6 +11,9 @@ Plug 'mbbill/undotree'
 " BufExplorer - Buffers on steroids
 Plug 'jlanzarotta/bufexplorer'
 
+" Tabularize - Aligning on steroids
+Plug 'godlygeek/tabular'
+
 " Trailing whitespace highlighting & automatic fixing
 Plug 'ntpeters/vim-better-whitespace'
 
