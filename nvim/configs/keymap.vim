@@ -13,6 +13,9 @@ noremap <Leader>m :messages<CR>
 vnoremap < <gv
 vnoremap > >gv
 
+" Terminal mapping weird key combo to Esc for command mode
+tnoremap <Esc> <C-\><C-n>
+
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 
