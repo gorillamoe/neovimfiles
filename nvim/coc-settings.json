@@ -19,6 +19,13 @@
   "diagnostic.errorSign": "•",
   "diagnostic.warningSign": "•",
   "languageserver": {
+    // luarocks install --server=http://luarocks.org/dev lua-lsp
+    // luarocks install luacheck
+    // luarocks install install lcf
+    "lua": {
+      "command": "lua-lsp",
+      "filetypes": ["lua"]
+    },
     // yarn global add diagnostic-languageserver
     "dls": {
       "command": "diagnostic-languageserver",
