@@ -19,6 +19,15 @@
   "diagnostic.errorSign": "•",
   "diagnostic.warningSign": "•",
   "languageserver": {
+    // https://github.com/saibing/tools
+    // git clone -b bingo https://github.com/saibing/tools.git
+    // cd tools/cmd/gopls
+    // go install
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
+      "filetypes": ["go"]
+    },
     // luarocks install --server=http://luarocks.org/dev lua-lsp
     // luarocks install luacheck
     // luarocks install install lcf
