@@ -5,6 +5,10 @@ Plug 'https://git.superevilmegaco.com/Neovim/Taskfile.nvim'
 Plug 'https://git.superevilmegaco.com/Neovim/Clipboard.nvim'
 Plug 'https://git.superevilmegaco.com/Neovim/Screenshot.nvim'
 
+" Fuck these fucking fuckers who want to hack our beautiful computers through
+" the fucked up modeline support
+Plug 'ciaranm/securemodelines'
+
 " UndoTree - The undo history visualizer for VIM
 Plug 'mbbill/undotree'
 
@@ -75,6 +79,9 @@ Plug 'vim-airline/vim-airline-themes'
 " Icons
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+
+" Tagbar replacement
+Plug 'liuchengxu/vista.vim'
 
 
 " Old stuff
