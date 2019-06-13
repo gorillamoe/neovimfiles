@@ -25,11 +25,17 @@ nnoremap <LEADER>e :NERDTreeToggle<CR>
 " Quick buffer switiching with space bar
 nnoremap <space> :b#<CR>
 
+" Bring up Fugitive Vim
+nnoremap <silent> <leader>G :G<CR>
+
+" Show Vista VIM / Tag Sidebar
+nnoremap <silent> <leader>T :Vista<CR>
+
 " Toggle BufExplorer
 nnoremap <silent> <leader>be :ToggleBufExplorer<CR>
 
 " Buffer Delete
-nnoremap <Leader>x :bdelete<CR>
+nnoremap <Leader>x :bdelete!<CR>
 
 " === Ack.vim shorcuts === "
 nnoremap <Leader>g :Ack<Space>
