@@ -15,6 +15,6 @@ endif
 " Don't dispay mode in command line (airilne already shows it)
 set noshowmode
 
-colorscheme onedark
+colorscheme monochrome
 
 " vim:tabstop=8:expandtab
