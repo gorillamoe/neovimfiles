@@ -15,6 +15,7 @@ endif
 " Don't dispay mode in command line (airilne already shows it)
 set noshowmode
 
-colorscheme monochrome
+colorscheme oldschool
+let g:airline_theme = "monochrome"
 
 " vim:tabstop=8:expandtab
