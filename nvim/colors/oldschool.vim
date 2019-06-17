@@ -13,19 +13,18 @@ endif
 
 let g:colors_name = 'oldschool'
 
-let s:white  = ['White', 15]
-let s:black  = ['#0e1111', 16]
-let s:bgray  = ['#181818', 233]
-let s:lgray  = ['LightGray', 255]
-let s:cgray  = ['#737373', 243]
-let s:dgray  = ['DarkGray', 248]
-let s:sblue  = ['#778899', 67]
-let s:yellow = ['Yellow', 226]
-let s:red    = ['#b6403a', 160]
-let s:green  = ['#478226', 28]
+let s:color_white  = ['#ffffff', 15]
+let s:color_black  = ['#000000', 0]
+let s:color_light_black  = ['#181818', 8]
+let s:color_light_gray  = ['#aaaaaa', 7]
+let s:color_gray  = ['#737373', 7]
+let s:color_blue  = ['#0ABDC6', 4]
+let s:color_yellow = ['#F7F26D', 2]
+let s:color_red    = ['#AF1B4D', 1]
+let s:color_green  = ['#19cf85', 3]
 
-let s:default_fg = s:lgray
-let s:default_bg = s:black
+let s:default_fg = s:color_light_gray
+let s:default_bg = s:color_black
 
 let s:italic    = 'italic'
 let s:bold      = 'bold'
@@ -72,41 +71,41 @@ endfunction
 "
 
 call s:hi('Normal')
-call s:hi('Cursor', s:black, s:lgray)
-call s:hi('CursorLine', s:default_lst, s:bgray, s:none)
-call s:hi('CursorLineNr', s:white, s:default_bg, s:bold)
-call s:hi('ColorColumn', s:default_fg, s:bgray)
-call s:hi('Search', s:white, s:sblue)
-call s:hi('Visual', s:white, s:sblue)
-call s:hi('ErrorMsg', s:white, s:red)
+call s:hi('Cursor', s:color_black, s:color_light_gray)
+call s:hi('CursorLine', s:default_lst, s:color_light_black, s:none)
+call s:hi('CursorLineNr', s:color_white, s:default_bg, s:bold)
+call s:hi('ColorColumn', s:default_fg, s:color_light_black)
+call s:hi('Search', s:color_white, s:color_blue)
+call s:hi('Visual', s:color_white, s:color_blue)
+call s:hi('ErrorMsg', s:color_white, s:color_red)
 
 " Tildes at the bottom of a buffer, etc.
-call s:hi('NonText', s:dgray)
+call s:hi('NonText', s:color_light_black)
 
 " Folding.
-call s:hi('FoldColumn', s:dgray)
+call s:hi('FoldColumn', s:color_light_black)
 call s:hi('Folded')
 
 " Line numbers gutter.
-call s:hi('LineNr', s:dgray)
+call s:hi('LineNr', s:color_light_black)
 
 " Small arrow used for tabs.
-call s:hi('SpecialKey', s:sblue, s:default_bg, s:bold)
+call s:hi('SpecialKey', s:color_blue, s:default_bg, s:bold)
 
 " File browsers.
-call s:hi('Directory', s:white, s:default_bg, s:bold)
+call s:hi('Directory', s:color_white, s:default_bg, s:bold)
 
 " Help.
 call s:hi('helpSpecial')
-call s:hi('helpHyperTextJump', s:sblue, s:default_bg, s:underline)
+call s:hi('helpHyperTextJump', s:color_blue, s:default_bg, s:underline)
 call s:hi('helpNote')
 
 " Popup menu.
-call s:hi('Pmenu', s:white, s:sblue)
-call s:hi('PmenuSel', s:sblue, s:white)
+call s:hi('Pmenu', s:color_white, s:color_light_black)
+call s:hi('PmenuSel', s:color_blue, s:color_white)
 
 " Notes.
-call s:hi('Todo', s:black, s:yellow, s:bold)
+call s:hi('Todo', s:color_black, s:color_red, s:bold)
 
 " Signs.
 call s:hi('SignColumn')
@@ -115,16 +114,16 @@ call s:hi('SignColumn')
 " --- Programming languages ----------------------------------------------------
 "
 
-call s:hi('Statement', s:white, s:default_bg, s:bold)
-call s:hi('PreProc', s:white, s:default_bg, s:bold)
-call s:hi('String', s:sblue)
-call s:hi('Comment', s:cgray, s:default_bg, s:comment_attr)
+call s:hi('Statement', s:color_green, s:default_bg, s:bold)
+call s:hi('PreProc', s:color_white, s:default_bg, s:bold)
+call s:hi('String', s:color_blue)
+call s:hi('Comment', s:color_gray, s:default_bg, s:comment_attr)
 call s:hi('Constant')
-call s:hi('Type', s:white, s:default_bg, s:bold)
-call s:hi('Function', s:white)
+call s:hi('Type', s:color_white, s:default_bg, s:bold)
+call s:hi('Function', s:color_yellow)
 call s:hi('Identifier')
 call s:hi('Special')
-call s:hi('MatchParen', s:black, s:lgray)
+call s:hi('MatchParen', s:color_black, s:color_light_gray)
 
 
 "
@@ -149,12 +148,12 @@ hi link vimCommentTitle Comment
 "
 
 call s:hi('rubyConstant')
-call s:hi('rubySharpBang', s:cgray)
-call s:hi('rubyStringDelimiter', s:sblue)
-call s:hi('rubyStringEscape', s:sblue)
-call s:hi('rubyRegexpEscape', s:sblue)
-call s:hi('rubyRegexpAnchor', s:sblue)
-call s:hi('rubyRegexpSpecial', s:sblue)
+call s:hi('rubySharpBang', s:color_gray)
+call s:hi('rubyStringDelimiter', s:color_blue)
+call s:hi('rubyStringEscape', s:color_blue)
+call s:hi('rubyRegexpEscape', s:color_blue)
+call s:hi('rubyRegexpAnchor', s:color_blue)
+call s:hi('rubyRegexpSpecial', s:color_blue)
 
 
 "
@@ -162,7 +161,7 @@ call s:hi('rubyRegexpSpecial', s:sblue)
 "
 
 call s:hi('elixirAlias', s:default_fg, s:default_bg, s:none)
-call s:hi('elixirDelimiter', s:sblue)
+call s:hi('elixirDelimiter', s:color_blue)
 call s:hi('elixirSelf', s:default_fg, s:default_bg, s:none)
 
 " For ||, ->, etc.
@@ -182,47 +181,47 @@ hi link elixirStringDelimiter String
 " --- Perl ---------------------------------------------------------------------
 "
 
-call s:hi('perlSharpBang', s:cgray)
-call s:hi('perlStringStartEnd', s:sblue)
-call s:hi('perlStringEscape', s:sblue)
-call s:hi('perlMatchStartEnd', s:sblue)
+call s:hi('perlSharpBang', s:color_gray)
+call s:hi('perlStringStartEnd', s:color_blue)
+call s:hi('perlStringEscape', s:color_blue)
+call s:hi('perlMatchStartEnd', s:color_blue)
 
 
 "
 " --- Python -------------------------------------------------------------------
 "
 
-call s:hi('pythonEscape', s:sblue)
+call s:hi('pythonEscape', s:color_blue)
 
 
 "
 " --- JavaScript ---------------------------------------------------------------
 "
 
-call s:hi('javaScriptFunction', s:white, s:default_bg, s:bold)
+call s:hi('javaScriptFunction', s:color_white, s:default_bg, s:bold)
 
 
 "
 " --- Diffs --------------------------------------------------------------------
 "
 
-call s:hi('diffFile', s:cgray)
-call s:hi('diffNewFile', s:cgray)
-call s:hi('diffIndexLine', s:cgray)
-call s:hi('diffLine', s:cgray)
-call s:hi('diffSubname', s:cgray)
-call s:hi('diffAdded', s:white, s:green)
-call s:hi('diffRemoved', s:white, s:red)
+call s:hi('diffFile', s:color_gray)
+call s:hi('diffNewFile', s:color_gray)
+call s:hi('diffIndexLine', s:color_gray)
+call s:hi('diffLine', s:color_gray)
+call s:hi('diffSubname', s:color_gray)
+call s:hi('diffAdded', s:color_white, s:color_green)
+call s:hi('diffRemoved', s:color_white, s:color_red)
 
 
 "
 " --- Markdown -----------------------------------------------------------------
 "
 
-call s:hi('Title', s:white, s:default_bg, s:bold)
-call s:hi('markdownHeadingDelimiter', s:white, s:default_bg, s:bold)
-call s:hi('markdownHeadingRule', s:white, s:default_bg, s:bold)
-call s:hi('markdownLinkText', s:sblue, s:default_bg, s:underline)
+call s:hi('Title', s:color_white, s:default_bg, s:bold)
+call s:hi('markdownHeadingDelimiter', s:color_white, s:default_bg, s:bold)
+call s:hi('markdownHeadingRule', s:color_white, s:default_bg, s:bold)
+call s:hi('markdownLinkText', s:color_blue, s:default_bg, s:underline)
 
 
 "
@@ -231,8 +230,8 @@ call s:hi('markdownLinkText', s:sblue, s:default_bg, s:underline)
 
 call s:hi('gitcommitComment', s:default_fg, s:default_bg, s:none)
 call s:hi('gitcommitOnBranch', s:default_fg, s:default_bg, s:none)
-call s:hi('gitcommitBranch', s:sblue, s:default_bg, s:none)
-call s:hi('gitcommitHeader', s:white, s:default_bg, s:bold)
+call s:hi('gitcommitBranch', s:color_blue, s:default_bg, s:none)
+call s:hi('gitcommitHeader', s:color_white, s:default_bg, s:bold)
 call s:hi('gitcommitSelected', s:default_fg, s:default_bg, s:none)
 call s:hi('gitcommitDiscarded', s:default_fg, s:default_bg, s:none)
 call s:hi('gitcommitSelectedType', s:default_fg, s:default_bg, s:none)
@@ -244,10 +243,10 @@ call s:hi('gitcommitDiscardedType', s:default_fg, s:default_bg, s:none)
 "
 
 call s:hi('NeomakeMessageSign')
-call s:hi('NeomakeWarningSign', s:sblue)
-call s:hi('NeomakeErrorSign', s:yellow)
+call s:hi('NeomakeWarningSign', s:color_blue)
+call s:hi('NeomakeErrorSign', s:color_yellow)
 call s:hi('NeomakeInfoSign')
-call s:hi('NeomakeError', s:yellow)
+call s:hi('NeomakeError', s:color_yellow)
 call s:hi('NeomakeInfo', s:default_fg, s:default_bg, s:bold)
 call s:hi('NeomakeMessage')
-call s:hi('NeomakeWarning', s:yellow)
+call s:hi('NeomakeWarning', s:color_yellow)
