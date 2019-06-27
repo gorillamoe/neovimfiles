@@ -86,6 +86,9 @@ Plug 'liuchengxu/vista.vim'
 " Briefly highlight yanked text
 Plug 'machakann/vim-highlightedyank'
 
+" Quickly swapping text with visual mode and motion command cx
+Plug 'tommcdo/vim-exchange'
+
 " Old stuff
 Plug 'https://github.com/diepm/vim-rest-console'
 Plug 'https://github.com/tpope/vim-commentary'
