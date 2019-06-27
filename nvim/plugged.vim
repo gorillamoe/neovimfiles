@@ -83,6 +83,8 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 " Tagbar replacement
 Plug 'liuchengxu/vista.vim'
 
+" Briefly highlight yanked text
+Plug 'machakann/vim-highlightedyank'
 
 " Old stuff
 Plug 'https://github.com/diepm/vim-rest-console'
