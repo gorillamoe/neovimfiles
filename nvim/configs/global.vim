@@ -37,11 +37,11 @@ let g:airline_powerline_fonts=1
 " disable preview window for tern_for_vim
 set completeopt-=preview
 
-" Real programmers use spaces instead of tabs.
+" Real programmers use tabs instead of spaces.
 set tabstop=8
 set shiftwidth=8
 set softtabstop=8
-set expandtab
+set noexpandtab
 
 
 set autoindent
