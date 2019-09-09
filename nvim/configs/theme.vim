@@ -3,7 +3,7 @@ set nonumber
 " disabling relative line numbers
 set norelativenumber
 
-set wrap " wrap text
+set nowrap " do not wrap text
 
 " Enable true color support
 if exists('+termguicolors')
