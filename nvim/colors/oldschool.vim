@@ -14,7 +14,7 @@ endif
 let g:colors_name = 'oldschool'
 
 let s:color_white  = ['#ffffff', 15]
-let s:color_black  = ['#000000', 0]
+let s:color_black  = ['#2F343F', 0]
 let s:color_light_black  = ['#181818', 8]
 let s:color_light_gray  = ['#aaaaaa', 7]
 let s:color_gray  = ['#737373', 7]
