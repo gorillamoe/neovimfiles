@@ -4,6 +4,7 @@ Plug 'https://git.superevilmegaco.com/Neovim/AutoRemoteSync.nvim'
 Plug 'https://git.superevilmegaco.com/Neovim/Taskfile.nvim'
 Plug 'https://git.superevilmegaco.com/Neovim/Clipboard.nvim'
 Plug 'https://git.superevilmegaco.com/Neovim/Screenshot.nvim'
+Plug 'https://git.superevilmegaco.com/Neovim/InsertSignature.nvim'
 
 " Fuck these fucking fuckers who want to hack our beautiful computers through
 " the fucked up modeline support
@@ -68,9 +69,6 @@ Plug 'othree/yajs.vim'
 " === UI === "
 " File explorer
 Plug 'scrooloose/nerdtree'
-
-" Colorscheme
-Plug 'mhartington/oceanic-next'
 
 " Customized vim status line
 Plug 'vim-airline/vim-airline'
