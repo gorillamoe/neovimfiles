@@ -19,9 +19,6 @@ tnoremap <Esc> <C-\><C-n>
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 
-" NERDTree
-nnoremap <LEADER>e :NERDTreeToggle<CR>
-
 " Quick buffer switiching with space bar
 nnoremap <space> :b#<CR>
 
@@ -75,6 +72,7 @@ nmap <leader>. :NERDTreeFind<CR>
 
 " === coc.nvim === "
 nmap <silent> <leader>E :CocList diagnostics<CR>
+nmap <silent> <leader>e :CocList diagnostics<CR>
 nmap <silent> <leader>dd <Plug>(coc-definition)
 nmap <silent> <leader>dr <Plug>(coc-references)
 nmap <silent> <leader>dj <Plug>(coc-implementation)
