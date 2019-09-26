@@ -16,6 +16,9 @@ vnoremap > >gv
 " Terminal mapping weird key combo to Esc for command mode
 tnoremap <Esc> <C-\><C-n>
 
+" Search for visually selected text by pressing // when in visual mode
+vnoremap // y/<C-R>"<CR>
+
 " Allow saving of files as sudo when I forgot to start vim using sudo.
 command W :execute ':silent w !sudo tee % > /dev/null' | :edit!
 
