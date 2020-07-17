@@ -80,14 +80,14 @@ call s:hi('Visual', s:color_white, s:color_blue)
 call s:hi('ErrorMsg', s:color_white, s:color_red)
 
 " Tildes at the bottom of a buffer, etc.
-call s:hi('NonText', s:color_light_black)
+call s:hi('NonText', s:color_gray)
 
 " Folding.
 call s:hi('FoldColumn', s:color_light_black)
 call s:hi('Folded')
 
 " Line numbers gutter.
-call s:hi('LineNr', s:color_light_black)
+call s:hi('LineNr', s:color_gray)
 
 " Small arrow used for tabs.
 call s:hi('SpecialKey', s:color_blue, s:default_bg, s:bold)
