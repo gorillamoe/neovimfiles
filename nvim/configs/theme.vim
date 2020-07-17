@@ -15,6 +15,9 @@ endif
 " Don't dispay mode in command line (airilne already shows it)
 set noshowmode
 
+" Highlight current line
+set cursorline
+
 colorscheme gruvbox
 let g:airline_theme = "monochrome"
 
