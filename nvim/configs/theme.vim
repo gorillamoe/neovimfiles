@@ -1,7 +1,7 @@
 " disabling line numbers and length
-set nonumber
+set number
 " disabling relative line numbers
-set norelativenumber
+set relativenumber
 
 set nowrap " do not wrap text
 
@@ -15,7 +15,7 @@ endif
 " Don't dispay mode in command line (airilne already shows it)
 set noshowmode
 
-colorscheme oldschool
+colorscheme gruvbox
 let g:airline_theme = "monochrome"
 
 " vim:tabstop=8:expandtab
