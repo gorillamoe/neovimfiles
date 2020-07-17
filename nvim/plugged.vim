@@ -6,6 +6,8 @@ Plug 'https://git.superevilmegaco.com/Neovim/Clipboard.nvim'
 Plug 'https://git.superevilmegaco.com/Neovim/Screenshot.nvim'
 Plug 'https://git.superevilmegaco.com/Neovim/InsertSignature.nvim'
 
+Plug 'superevilmegaco/editanywhere.nvim'
+
 " Fuck these fucking fuckers who want to hack our beautiful computers through
 " the fucked up modeline support
 Plug 'ciaranm/securemodelines'
@@ -83,6 +85,9 @@ Plug 'liuchengxu/vista.vim'
 
 " Quickly swapping text with visual mode and motion command cx
 Plug 'tommcdo/vim-exchange'
+
+" Gruvbox Theme
+Plug 'morhetz/gruvbox'
 
 " Old stuff
 Plug 'https://github.com/diepm/vim-rest-console'
