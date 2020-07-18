@@ -1,4 +1,5 @@
-set wildmode=list:longest " make TAB behave like in a shell
+set wildmenu
+set wildmode=longest:full,full
 set autoread " reload file when changes happen in other editors
 set mouse=a
 set bs=2 " make backspace behave like normal again
