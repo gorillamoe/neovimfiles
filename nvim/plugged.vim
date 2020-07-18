@@ -11,6 +11,10 @@ Plug 'superevilmegaco/editanywhere.nvim'
 " Project Management
 Plug 'mhinz/vim-startify'
 
+" Signify (or just Sy) uses the sign column to indicate added,
+" modified and removed lines in a file that is managed by a version control system (VCS).
+Plug 'mhinz/vim-signify'
+
 " Fuck these fucking fuckers who want to hack our beautiful computers through
 " the fucked up modeline support
 Plug 'ciaranm/securemodelines'
