@@ -8,6 +8,9 @@ Plug 'https://git.superevilmegaco.com/Neovim/InsertSignature.nvim'
 
 Plug 'superevilmegaco/editanywhere.nvim'
 
+" Project Management
+Plug 'mhinz/vim-startify'
+
 " Fuck these fucking fuckers who want to hack our beautiful computers through
 " the fucked up modeline support
 Plug 'ciaranm/securemodelines'
