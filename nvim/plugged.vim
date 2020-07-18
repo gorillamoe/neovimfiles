@@ -15,6 +15,9 @@ Plug 'mhinz/vim-startify'
 " modified and removed lines in a file that is managed by a version control system (VCS).
 Plug 'mhinz/vim-signify'
 
+" Interactive code
+Plug 'ChristianChiarulli/codi.vim'
+
 " Fuck these fucking fuckers who want to hack our beautiful computers through
 " the fucked up modeline support
 Plug 'ciaranm/securemodelines'

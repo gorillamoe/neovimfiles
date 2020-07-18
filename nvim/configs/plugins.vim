@@ -10,4 +10,5 @@ source $HOME/.config/nvim/configs/plugins/vim-javascript.vim
 source $HOME/.config/nvim/configs/plugins/vim-jsx.vim
 source $HOME/.config/nvim/configs/plugins/javascript-libraries-syntax.vim
 source $HOME/.config/nvim/configs/plugins/vim-signify.vim
+source $HOME/.config/nvim/configs/plugins/codi.vim
 
