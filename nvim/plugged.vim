@@ -8,9 +8,6 @@ Plug 'https://git.superevilmegaco.com/Neovim/InsertSignature.nvim'
 
 Plug 'superevilmegaco/editanywhere.nvim'
 
-" Project Management
-Plug 'mhinz/vim-startify'
-
 " Signify (or just Sy) uses the sign column to indicate added,
 " modified and removed lines in a file that is managed by a version control system (VCS).
 Plug 'mhinz/vim-signify'
@@ -100,22 +97,23 @@ Plug 'tommcdo/vim-exchange'
 Plug 'morhetz/gruvbox'
 
 " Old stuff
-Plug 'https://github.com/diepm/vim-rest-console'
-Plug 'https://github.com/tpope/vim-commentary'
-Plug 'https://github.com/tpope/vim-repeat'
-Plug 'https://github.com/tpope/vim-surround'
-Plug 'https://github.com/tpope/vim-unimpaired'
-Plug 'https://github.com/tpope/vim-fugitive'
-Plug 'https://github.com/plasticboy/vim-markdown', { 'for': 'markdown' }
-Plug 'https://github.com/editorconfig/editorconfig-vim'
-Plug 'https://github.com/easymotion/vim-easymotion'
-Plug 'https://github.com/keith/investigate.vim'
-Plug 'https://github.com/joshdick/onedark.vim'
-Plug 'https://github.com/mustache/vim-mustache-handlebars'
-Plug 'https://github.com/fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'https://github.com/cespare/vim-toml', { 'for': 'toml' }
-Plug 'https://github.com/StanAngeloff/php.vim', { 'for': 'php' }
-Plug 'https://github.com/ludovicchabant/vim-gutentags'
+Plug 'diepm/vim-rest-console'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
+Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+Plug 'editorconfig/editorconfig-vim'
+Plug 'easymotion/vim-easymotion'
+Plug 'keith/investigate.vim'
+Plug 'joshdick/onedark.vim'
+Plug 'mustache/vim-mustache-handlebars'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'cespare/vim-toml', { 'for': 'toml' }
+Plug 'StanAngeloff/php.vim', { 'for': 'php' }
+Plug 'ludovicchabant/vim-gutentags'
 
 " Initialize plugin system
 call plug#end()

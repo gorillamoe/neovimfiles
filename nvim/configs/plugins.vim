@@ -1,4 +1,3 @@
-source $HOME/.config/nvim/configs/plugins/startify.vim
 source $HOME/.config/nvim/configs/plugins/coc.vim
 source $HOME/.config/nvim/configs/plugins/nerdtree.vim
 source $HOME/.config/nvim/configs/plugins/airline.vim
