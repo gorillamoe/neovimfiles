@@ -35,14 +35,13 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'mileszs/ack.vim'
 
 " Intellisense Engine
-" Plug 'neoclide/coc.nvim', { 'do': 'yarn install' }
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Tmux/Neovim movement integration
 Plug 'christoomey/vim-tmux-navigator'
 
 " fzf - Fuzzy finding, buffer management
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --no-bash' }
+Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 
 " Snippet support
@@ -94,7 +93,7 @@ Plug 'liuchengxu/vista.vim'
 Plug 'tommcdo/vim-exchange'
 
 " Gruvbox Theme
-Plug 'morhetz/gruvbox'
+Plug 'gruvbox-community/gruvbox'
 
 " Old stuff
 Plug 'diepm/vim-rest-console'
