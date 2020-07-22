@@ -19,6 +19,5 @@ set noshowmode
 set cursorline
 
 colorscheme gruvbox
-let g:airline_theme = "monochrome"
 
 " vim:tabstop=8:expandtab
