@@ -45,8 +45,7 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 
 " Snippet support
-Plug 'Shougo/neosnippet'
-Plug 'Shougo/neosnippet-snippets'
+Plug 'honza/vim-snippets'
 
 " Print function signatures in echo area
 Plug 'Shougo/echodoc.vim'

@@ -1,4 +1,5 @@
 {
+  "snippets.userSnippetsDirectory": "~/.config/nvim/snippets",
   "suggest.echodocSupport": true,
   "suggest.maxCompleteItemCount": 20,
   "javascript.suggestionActions.enabled": false,
