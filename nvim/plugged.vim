@@ -22,9 +22,6 @@ Plug 'ciaranm/securemodelines'
 " UndoTree - The undo history visualizer for VIM
 Plug 'mbbill/undotree'
 
-" BufExplorer - Buffers on steroids
-Plug 'jlanzarotta/bufexplorer'
-
 " Tabularize - Aligning on steroids
 Plug 'godlygeek/tabular'
 
