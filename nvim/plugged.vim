@@ -12,6 +12,9 @@ Plug 'superevilmegaco/editanywhere.nvim'
 " modified and removed lines in a file that is managed by a version control system (VCS).
 Plug 'mhinz/vim-signify'
 
+" BufExplorer, Buffers management on steroids
+Plug 'jlanzarotta/bufexplorer'
+
 " Interactive code
 Plug 'ChristianChiarulli/codi.vim'
 

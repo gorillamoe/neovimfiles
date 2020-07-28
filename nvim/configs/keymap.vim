@@ -31,9 +31,6 @@ nnoremap <silent> <leader>G :G<CR>
 " Show Vista VIM / Tag Sidebar
 nnoremap <silent> <leader>T :Vista<CR>
 
-" Toggle Buffers Search via Coc.nvim
-nnoremap <silent> <leader>be :Buffers<CR>
-
 " Buffer Delete
 nnoremap <Leader>x :bdelete!<CR>
 
