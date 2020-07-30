@@ -29,7 +29,7 @@ nnoremap <space> :b#<CR>
 nnoremap <silent> <leader>G :G<CR>
 
 " Show Vista VIM / Tag Sidebar
-nnoremap <silent> <leader>T :Vista<CR>
+nnoremap <silent> <leader>t :Vista<CR>
 
 " Buffer Delete
 nnoremap <Leader>x :bdelete!<CR>
@@ -46,7 +46,7 @@ nnoremap <Leader>g :Ack<Space>
 nnoremap <silent> <Leader>j :Tags<CR>
 
 " Show local tags in fzf
-nnoremap <silent> <Leader>t :BTags<CR>
+nnoremap <silent> <Leader>T :BTags<CR>
 
 " Replacement for ctrlp
 nnoremap <silent> <C-p> :Files<CR>
