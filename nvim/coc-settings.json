@@ -1,120 +1,120 @@
 {
-  "snippets.userSnippetsDirectory": "~/.config/nvim/snippets",
-  "suggest.echodocSupport": true,
-  "suggest.maxCompleteItemCount": 20,
-  "javascript.suggestionActions.enabled": false,
-  "coc.preferences.formatOnSaveFiletypes": [
-    "javascript",
-    "typescript",
-    "typescriptreact",
-    "json",
-    "javascriptreact",
-    "php"
-  ],
-  "eslint.filetypes": [
-    "javascript",
-    "typescript",
-    "typescriptreact",
-    "javascriptreact"
-  ],
-  "prettier.eslintIntegration": true,
-  "diagnostic.errorSign": "•",
-  "diagnostic.warningSign": "•",
-  "languageserver": {
-    // https://github.com/saibing/tools
-    // git clone -b bingo https://github.com/saibing/tools.git
-    // cd tools/cmd/gopls
-    // go install
-    "golang": {
-      "command": "gopls",
-      "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
-      "filetypes": ["go"]
-    },
-    // luarocks install --server=http://luarocks.org/dev lua-lsp
-    // luarocks install luacheck
-    // luarocks install install lcf
-    "lua": {
-      "command": "lua-lsp",
-      "filetypes": ["lua"]
-    },
-    // yarn global add diagnostic-languageserver
-    "dls": {
-      "command": "diagnostic-languageserver",
-      "args": ["--stdio"],
-      "filetypes": [ "sh", "email", "dart" ],
-      "initializationOptions": {
-        "linters": {
-          "shellcheck": {
-            "command": "shellcheck",
-            "debounce": 100,
-            "args": [ "--format=gcc", "-x", "-"],
-            "offsetLine": 0,
-            "offsetColumn": 0,
-            "sourceName": "shellcheck",
-            "formatLines": 1,
-            "formatPattern": [
-              "^[^:]+:(\\d+):(\\d+):\\s+([^:]+):\\s+(.*)$",
-              {
-                "line": 1,
-                "column": 2,
-                "message": 4,
-                "security": 3
-              }
-            ],
-            "securities": {
-              "error": "error",
-              "warning": "warning",
-              "note": "info"
-            }
-          },
-          "languagetool": {
-            "command": "languagetool",
-            "debounce": 200,
-            "args": ["-"],
-            "offsetLine": 0,
-            "offsetColumn": 0,
-            "sourceName": "languagetool",
-            "formatLines": 2,
-            "formatPattern": [
-              "^\\d+?\\.\\)\\s+Line\\s+(\\d+),\\s+column\\s+(\\d+),\\s+([^\\n]+)\nMessage:\\s+(.*)$",
-              {
-                "line": 1,
-                "column": 2,
-                "message": [4, 3]
-              }
-            ]
-          }
-        },
-        "formatters": {
-          "dartfmt": {
-            "command": "dartfmt",
-            "args": [ "--fix" ]
-          }
-        },
-        "filetypes": {
-          "sh": "shellcheck",
-          "email": "languagetool"
-        },
-        "formatFiletypes": {
-          "dart": "dartfmt"
-        }
-      }
-    },
-    // yarn global add bash-language-server
-    "bash": {
-      "command": "bash-language-server",
-      "args": ["start"],
-      "filetypes": ["sh"],
-      "ignoredRootPaths": ["~"]
-    },
-    // yarn global add intelephense
-    "intelephense": {
-      "command": "intelephense",
-      "args": ["--stdio"],
-      "filetypes": ["php"],
-      "initializationOptions": {
-        "storagePath": "/tmp/intelephense"
-      }
-    }
-  }, "diagnostic.infoSign": "•"
+	"snippets.userSnippetsDirectory": "~/.config/nvim/snippets",
+	"suggest.echodocSupport": true,
+	"suggest.maxCompleteItemCount": 20,
+	"javascript.suggestionActions.enabled": false,
+	"coc.preferences.formatOnSaveFiletypes": [
+		"javascript",
+		"typescript",
+		"typescriptreact",
+		"json",
+		"javascriptreact",
+		"php"
+	],
+	"eslint.filetypes": [
+		"javascript",
+		"typescript",
+		"typescriptreact",
+		"javascriptreact"
+	],
+	"prettier.eslintIntegration": true,
+	"diagnostic.errorSign": "•",
+	"diagnostic.warningSign": "•",
+	"languageserver": {
+		// https://github.com/saibing/tools
+		// git clone -b bingo https://github.com/saibing/tools.git
+		// cd tools/cmd/gopls
+		// go install
+		"golang": {
+			"command": "gopls",
+			"rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
+			"filetypes": ["go"]
+		},
+		// luarocks install --server=http://luarocks.org/dev lua-lsp
+		// luarocks install luacheck
+		// luarocks install install lcf
+		"lua": {
+			"command": "lua-lsp",
+			"filetypes": ["lua"]
+		},
+		// yarn global add diagnostic-languageserver
+		"dls": {
+			"command": "diagnostic-languageserver",
+			"args": ["--stdio"],
+			"filetypes": [ "sh", "email", "dart" ],
+			"initializationOptions": {
+				"linters": {
+					"shellcheck": {
+						"command": "shellcheck",
+						"debounce": 100,
+						"args": [ "--format=gcc", "-x", "-"],
+						"offsetLine": 0,
+						"offsetColumn": 0,
+						"sourceName": "shellcheck",
+						"formatLines": 1,
+						"formatPattern": [
+							"^[^:]+:(\\d+):(\\d+):\\s+([^:]+):\\s+(.*)$",
+							{
+								"line": 1,
+								"column": 2,
+								"message": 4,
+								"security": 3
+							}
+						],
+						"securities": {
+							"error": "error",
+							"warning": "warning",
+							"note": "info"
+						}
+					},
+					"languagetool": {
+						"command": "languagetool",
+						"debounce": 200,
+						"args": ["-"],
+						"offsetLine": 0,
+						"offsetColumn": 0,
+						"sourceName": "languagetool",
+						"formatLines": 2,
+						"formatPattern": [
+							"^\\d+?\\.\\)\\s+Line\\s+(\\d+),\\s+column\\s+(\\d+),\\s+([^\\n]+)\nMessage:\\s+(.*)$",
+							{
+								"line": 1,
+								"column": 2,
+								"message": [4, 3]
+							}
+						]
+					}
+				},
+				"formatters": {
+					"dartfmt": {
+						"command": "dartfmt",
+						"args": [ "--fix" ]
+					}
+				},
+				"filetypes": {
+					"sh": "shellcheck",
+					"email": "languagetool"
+				},
+				"formatFiletypes": {
+					"dart": "dartfmt"
+				}
+			}
+		},
+		// yarn global add bash-language-server
+		"bash": {
+			"command": "bash-language-server",
+			"args": ["start"],
+			"filetypes": ["sh"],
+			"ignoredRootPaths": ["~"]
+		},
+		// yarn global add intelephense
+		"intelephense": {
+			"command": "intelephense",
+			"args": ["--stdio"],
+			"filetypes": ["php"],
+			"initializationOptions": {
+				"storagePath": "/tmp/intelephense"
+			}
+		}
+	}, "diagnostic.infoSign": "•"
 }
