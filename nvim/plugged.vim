@@ -8,6 +8,9 @@ Plug 'https://git.superevilmegaco.com/Neovim/InsertSignature.nvim'
 
 Plug 'superevilmegaco/editanywhere.nvim'
 
+" Jira integration
+Plug 'walialu/jira.nvim'
+
 " Signify (or just Sy) uses the sign column to indicate added,
 " modified and removed lines in a file that is managed by a version control system (VCS).
 Plug 'mhinz/vim-signify'
@@ -43,6 +46,9 @@ Plug 'christoomey/vim-tmux-navigator'
 " fzf - Fuzzy finding, buffer management
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+
+" Jump to any location specified by two characters.
+Plug 'justinmk/vim-sneak'
 
 " Snippet support
 Plug 'honza/vim-snippets'
@@ -100,11 +106,9 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-rhubarb'
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'editorconfig/editorconfig-vim'
-Plug 'easymotion/vim-easymotion'
 Plug 'keith/investigate.vim'
 Plug 'joshdick/onedark.vim'
 Plug 'mustache/vim-mustache-handlebars'
