@@ -1,11 +1,15 @@
 call plug#begin('~/.config/nvim/plugged')
 
-Plug 'https://git.superevilmegaco.com/Neovim/AutoRemoteSync.nvim'
+" sFTP / rsync upload on bufsave
+Plug 'superevilmegaco/AutoRemoteSync.nvim'
+
+" Taskfile support
 Plug 'https://git.superevilmegaco.com/Neovim/Taskfile.nvim'
-Plug 'https://git.superevilmegaco.com/Neovim/Clipboard.nvim'
-Plug 'https://git.superevilmegaco.com/Neovim/Screenshot.nvim'
+
+" Quickly insert you signature
 Plug 'https://git.superevilmegaco.com/Neovim/InsertSignature.nvim'
 
+" EditAnywhere client
 Plug 'superevilmegaco/editanywhere.nvim'
 
 " Jira integration
