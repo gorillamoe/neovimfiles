@@ -18,9 +18,15 @@
 		"javascriptreact"
 	],
 	"prettier.eslintIntegration": true,
-	"diagnostic.errorSign": "•",
-	"diagnostic.warningSign": "•",
+	"diagnostic.errorSign": "🤬",
+	"diagnostic.warningSign": "⚠️",
 	"languageserver": {
+		"terraform": {
+			"command": "terraform-lsp",
+			"filetypes": ["terraform", "tf"],
+			"initializationOptions": {},
+			"settings": {}
+		},
 		// https://github.com/saibing/tools
 		// git clone -b bingo https://github.com/saibing/tools.git
 		// cd tools/cmd/gopls
@@ -41,13 +47,17 @@
 		"dls": {
 			"command": "diagnostic-languageserver",
 			"args": ["--stdio"],
-			"filetypes": [ "sh", "email", "dart" ],
+			"filetypes": ["sh", "email", "dart"],
 			"initializationOptions": {
 				"linters": {
 					"shellcheck": {
 						"command": "shellcheck",
 						"debounce": 100,
-						"args": [ "--format=gcc", "-x", "-"],
+						"args": [
+							"--format=gcc",
+							"-x",
+							"-"
+						],
 						"offsetLine": 0,
 						"offsetColumn": 0,
 						"sourceName": "shellcheck",
@@ -80,7 +90,10 @@
 							{
 								"line": 1,
 								"column": 2,
-								"message": [4, 3]
+								"message": [
+									4,
+									3
+								]
 							}
 						]
 					}
@@ -88,7 +101,7 @@
 				"formatters": {
 					"dartfmt": {
 						"command": "dartfmt",
-						"args": [ "--fix" ]
+						"args": ["--fix"]
 					}
 				},
 				"filetypes": {
@@ -116,5 +129,6 @@
 				"storagePath": "/tmp/intelephense"
 			}
 		}
-	}, "diagnostic.infoSign": "•"
+	},
+	"diagnostic.infoSign": "•"
 }
