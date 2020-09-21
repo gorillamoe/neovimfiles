@@ -133,27 +133,9 @@
 	"diagnostic.infoSign": "ℹ️",
 	"yaml.trace.server": "verbose",
 	"yaml.schemas": {
-		"https://raw.githubusercontent.com/awslabs/goformation/master/schema/cloudformation.schema.json": "/*"
+		//"https://raw.githubusercontent.com/awslabs/goformation/master/schema/cloudformation.schema.json": "/*"
 	},
-	"yaml.customTags": [
-		"!Ref",
-		"!GetAtt",
-		"!fn",
-		"!And",
-		"!If",
-		"!Not",
-		"!Equals",
-		"!Or",
-		"!FindInMap sequence",
-		"!Base64",
-		"!Cidr",
-		"!Sub",
-		"!GetAZs",
-		"!ImportValue",
-		"!Select",
-		"!Split",
-		"!Join sequence"
-	],
+	"yaml.customTags": [],
 	"yaml.validate": true,
 	"yaml.completion": true
 }
