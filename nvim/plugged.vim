@@ -15,6 +15,9 @@ Plug 'superevilmegaco/editanywhere.nvim'
 " Jira integration
 Plug 'walialu/jira.nvim'
 
+" Easier browsing of the infamous linkz.txt file
+Plug 'walialu/linkztxt.nvim'
+
 " Signify (or just Sy) uses the sign column to indicate added,
 " modified and removed lines in a file that is managed by a version control system (VCS).
 Plug 'mhinz/vim-signify'
