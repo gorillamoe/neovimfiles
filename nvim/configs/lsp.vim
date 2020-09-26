@@ -45,4 +45,7 @@ nvim_lsp.pyls.setup{ on_attach=require'completion'.on_attach }
 -- :LspInstall jsonls
 nvim_lsp.jsonls.setup{ on_attach=require'completion'.on_attach }
 
+-- :LspInstall sqlls
+nvim_lsp.sqlls.setup{ on_attach=require'completion'.on_attach }
+
 EOF
