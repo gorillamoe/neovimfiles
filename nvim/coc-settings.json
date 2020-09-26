@@ -13,13 +13,12 @@
 	],
 	"eslint.filetypes": [
 		"javascript",
-		"typescript",
 		"typescriptreact",
 		"javascriptreact"
 	],
 	"prettier.eslintIntegration": true,
-	"diagnostic.errorSign": "🤬",
-	"diagnostic.warningSign": "⚠️",
+	"diagnostic.errorSign": "•",
+	"diagnostic.warningSign": "•",
 	"languageserver": {
 		"terraform": {
 			"command": "terraform-lsp",
@@ -27,23 +26,15 @@
 			"initializationOptions": {},
 			"settings": {}
 		},
-		// https://github.com/saibing/tools
-		// git clone -b bingo https://github.com/saibing/tools.git
-		// cd tools/cmd/gopls
-		// go install
 		"golang": {
 			"command": "gopls",
 			"rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
 			"filetypes": ["go"]
 		},
-		// luarocks install --server=http://luarocks.org/dev lua-lsp
-		// luarocks install luacheck
-		// luarocks install install lcf
 		"lua": {
 			"command": "lua-lsp",
 			"filetypes": ["lua"]
 		},
-		// yarn global add diagnostic-languageserver
 		"dls": {
 			"command": "diagnostic-languageserver",
 			"args": ["--stdio"],
@@ -113,14 +104,12 @@
 				}
 			}
 		},
-		// yarn global add bash-language-server
 		"bash": {
 			"command": "bash-language-server",
 			"args": ["start"],
 			"filetypes": ["sh"],
 			"ignoredRootPaths": ["~"]
 		},
-		// yarn global add intelephense
 		"intelephense": {
 			"command": "intelephense",
 			"args": ["--stdio"],
@@ -130,11 +119,9 @@
 			}
 		}
 	},
-	"diagnostic.infoSign": "ℹ️",
+	"diagnostic.infoSign": "•",
 	"yaml.trace.server": "verbose",
-	"yaml.schemas": {
-		//"https://raw.githubusercontent.com/awslabs/goformation/master/schema/cloudformation.schema.json": "/*"
-	},
+	"yaml.schemas": {},
 	"yaml.customTags": [],
 	"yaml.validate": true,
 	"yaml.completion": true
