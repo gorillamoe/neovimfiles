@@ -40,6 +40,6 @@ nvim_lsp.html.setup{ on_attach=require'completion'.on_attach }
 nvim_lsp.jdtls.setup{ on_attach=require'completion'.on_attach }
 
 -- pip install python-language-server
-nvim_lsp.jsonls.setup{ on_attach=require'completion'.on_attach }
+nvim_lsp.pyls.setup{ on_attach=require'completion'.on_attach }
 
 EOF
