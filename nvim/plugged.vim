@@ -1,5 +1,9 @@
 call plug#begin('~/.config/nvim/plugged')
 
+" Builtin Neovim LSP integration
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/completion-nvim'
+
 " sFTP / rsync upload on bufsave
 Plug 'superevilmegaco/AutoRemoteSync.nvim'
 
@@ -25,9 +29,6 @@ Plug 'mhinz/vim-signify'
 " BufExplorer, Buffers management on steroids
 Plug 'jlanzarotta/bufexplorer'
 
-" Interactive code
-Plug 'ChristianChiarulli/codi.vim'
-
 " Fuck these fucking fuckers who want to hack our beautiful computers through
 " the fucked up modeline support
 Plug 'ciaranm/securemodelines'
@@ -43,12 +44,6 @@ Plug 'ntpeters/vim-better-whitespace'
 
 " Ack vim / The silver surfer / Ag, ag
 Plug 'mileszs/ack.vim'
-
-" Intellisense Engine
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-" Tmux/Neovim movement integration
-Plug 'christoomey/vim-tmux-navigator'
 
 " fzf - Fuzzy finding, buffer management
 Plug 'junegunn/fzf'
