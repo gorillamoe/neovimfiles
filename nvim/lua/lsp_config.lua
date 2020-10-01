@@ -42,24 +42,22 @@ nvim_lsp.jsonls.setup{ on_attach=require'completion'.on_attach }
 -- :LspInstall sqlls
 nvim_lsp.sqlls.setup{ on_attach=require'completion'.on_attach }
 
--- :LspInstall eslintls
---nvim_lsp.eslintls.setup{}
-
 -- :LspInstall diagnosticls
 nvim_lsp.diagnosticls.setup{
-	filetypes = { "javascript", "javascript.jsx" },
+	filetypes = { "javascript", "javascript.jsx", "sh" },
 	init_options = {
 		filetypes = {
 			javascript = "eslint",
 			["javascript.jsx"] = "eslint",
 			javascriptreact = "eslint",
 			typescriptreact = "eslint",
+			sh = "shellcheck"
 		},
 		linters = {
 			eslint = {
 				sourceName = "eslint",
 				command = "./node_modules/.bin/eslint",
-				rootPatterns = { ".git" },
+				rootPatterns = { ".eslintrc", ".eslintrc.json", ".eslintrc.cjs", ".eslintrc.js", ".eslintrc.yml", ".eslintrc.yaml", "package.json" },
 				debounce = 100,
 				args = {
 					"--stdin",
@@ -76,11 +74,34 @@ nvim_lsp.diagnosticls.setup{
 					endColumn = "endColumn",
 					message = "${message} [${ruleId}]",
 					security = "severity",
-				};
+				},
 				securities = {
 					[2] = "error",
 					[1] = "warning"
 				}
+			},
+			shellcheck = {
+				sourceName = "shellcheck",
+				command = "shellcheck",
+				debounce = 100,
+				args = { "--format=gcc", "-" },
+				offsetLine = 0,
+				offsetColumn = 0,
+				formatLines = 1,
+				formatPattern = {
+					"^[^:]+:(\\d+):(\\d+):\\s+([^:]+):\\s+(.*)$",
+					{
+						line = 1,
+						column = 2,
+						message = 4,
+						security = 3
+					};
+				},
+				securities = {
+					error = "error",
+					warning = "warning",
+					note = "info"
+				};
 			}
 		}
 	}
