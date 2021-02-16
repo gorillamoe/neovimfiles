@@ -44,13 +44,14 @@ nvim_lsp.sqlls.setup{ on_attach=require'completion'.on_attach }
 
 -- :LspInstall diagnosticls
 nvim_lsp.diagnosticls.setup{
-	filetypes = { "javascript", "javascript.jsx", "sh" },
+	filetypes = { "javascript", "javascript.jsx", "typescript", "sh" },
 	init_options = {
 		filetypes = {
 			javascript = "eslint",
 			["javascript.jsx"] = "eslint",
 			javascriptreact = "eslint",
 			typescriptreact = "eslint",
+			typescript = "eslint",
 			sh = "shellcheck"
 		},
 		linters = {
