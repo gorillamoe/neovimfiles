@@ -62,8 +62,8 @@ return {
       sections = {
         lualine_a = { "mode" },
         lualine_b = {},
-        lualine_c = { "filename", "kulala" },
-        lualine_x = { "encoding", "fileformat", "branch", diff, diagnostics, filetype },
+        lualine_c = { "filename", diff, diagnostics, "kulala" },
+        lualine_x = { "branch", "encoding", "fileformat", filetype },
         lualine_y = { "progress" },
         lualine_z = { "location" },
       },
