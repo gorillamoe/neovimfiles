@@ -4,7 +4,7 @@ return {
   opts = {
     request_timeout = 20000,
     ui = {
-      display_mode = "float",
+      display_mode = "split",
     },
   },
 }
