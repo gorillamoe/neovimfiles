@@ -72,8 +72,6 @@ require("lazy").setup({
   require("plugins.config.nvim-treesitter"),
   -- Social Coding
   require("plugins.config.vim-wakatime"),
-  -- Hide 🙈 sensitive data
-  require("plugins.config.cloak-nvim"),
   -- Colorscheme
   require("plugins.config.retro-theme-nvim"),
   -- Color highlighting
