@@ -72,6 +72,8 @@ require("lazy").setup({
   require("plugins.config.nvim-treesitter"),
   -- Social Coding
   require("plugins.config.vim-wakatime"),
+  -- .. also flex on Discord
+  require("plugins.config.discord-nvim"),
   -- Colorscheme
   require("plugins.config.retro-theme-nvim"),
   -- Color highlighting
