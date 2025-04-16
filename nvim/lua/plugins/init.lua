@@ -85,6 +85,8 @@ require("lazy").setup({
   require("plugins.config.nvim-tree"),
   -- Cocconut oil 🥥 for neovim
   require("plugins.config.oil-nvim"),
+  -- Obsidian 📓 integration
+  require("plugins.config.obsidian-nvim"),
   -- Customized 🌈 vim status line
   require("plugins.config.lualine-nvim"),
   -- Repeat
