@@ -9,6 +9,9 @@ return {
       nvim_cmp = false,
       blink = true,
     },
+    ui = {
+      enable = false,
+    },
     workspaces = {
       {
         name = "personal",
