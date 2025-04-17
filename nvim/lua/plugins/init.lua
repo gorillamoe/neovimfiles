@@ -87,6 +87,8 @@ require("lazy").setup({
   require("plugins.config.oil-nvim"),
   -- Obsidian 📓 integration
   require("plugins.config.obsidian-nvim"),
+  -- Fancy Markdown rendering
+  require("plugins.config.render-markdown-nvim"),
   -- Customized 🌈 vim status line
   require("plugins.config.lualine-nvim"),
   -- Repeat
