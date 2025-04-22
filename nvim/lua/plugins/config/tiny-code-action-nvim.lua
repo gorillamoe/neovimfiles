@@ -5,9 +5,8 @@ return {
     "ibhagwan/fzf-lua",
   },
   event = "LspAttach",
-  config = function()
-    require("tiny-code-action").setup({
-      backend = "vim",
-    })
-  end,
+  opts = {
+    picker = "select",
+    backend = "vim",
+  },
 }
