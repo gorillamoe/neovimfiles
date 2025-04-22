@@ -66,6 +66,8 @@ require("lazy").setup({
   require("plugins.config.vim-better-whitespace"),
   -- Telescope
   require("plugins.config.telescope-nvim"),
+  -- FZF
+  require("plugins.config.fzf-lua"),
   -- Terraform 🌍
   require("plugins.config.vim-terraform"),
   -- Treesitter 🌳
