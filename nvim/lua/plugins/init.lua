@@ -64,10 +64,10 @@ require("lazy").setup({
   require("plugins.config.bafa-nvim"),
   -- Trailing whitespace highlighting & automatic fixing
   require("plugins.config.vim-better-whitespace"),
-  -- Telescope
-  require("plugins.config.telescope-nvim"),
   -- FZF
   require("plugins.config.fzf-lua"),
+  --Emoji and Gitmoji via fzf-lua
+  require("plugins.config.fzf-symbols"),
   -- Terraform 🌍
   require("plugins.config.vim-terraform"),
   -- Treesitter 🌳

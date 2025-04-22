@@ -1,7 +1,7 @@
 return {
   "mistweaverco/ndoo.nvim",
   dependencies = {
-    "nvim-telescope/telescope.nvim",
+    "ibhagwan/fzf-lua",
   },
   dir = "/home/marco/projects/personal/ndoo.nvim",
 }

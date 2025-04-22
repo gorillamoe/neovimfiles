@@ -17,9 +17,8 @@ map("n", "<leader>q", ":bd!<CR>")
 map("n", "<leader>x", ":wqall!<CR>")
 
 -- Replacement for ctrlp
-map("n", "<C-p>", ":Telescope find_files<CR>")
 vim.keymap.set("n", "<C-p>", function()
-  require("telescope.builtin").find_files({ find_command = { "rg", "--files", "--hidden", "-g", "!.git" } })
+  require("fzf-lua").files()
 end)
 
 map("n", "<leader>be", ':lua require("bafa.ui").toggle()<CR>', { desc = "Toggle bafa", noremap = true, silent = true })
@@ -31,14 +30,15 @@ map("n", "<space>", ":b#<CR>")
 map("n", "<leader>e", ":NvimTreeFindFileToggle<CR>")
 map("n", "<leader>E", ":NvimTreeToggle<CR>")
 
--- Telescope symbols
---https://github.com/nvim-telescope/telescope-symbols.nvim
+-- Emoji and Gitmoji via fzf-lua
+--https://github.com/mistweaverco/fzf-symbols.nvim
 vim.keymap.set("i", "<C-e>", function()
-  require("telescope.builtin").symbols({ sources = { "emoji", "gitmoji" } })
+  require("fzf-symbols").open()
 end)
--- Telescope lsp document symbols
+
+-- LSP document symbols
 vim.keymap.set("n", "<leader>t", function()
-  require("telescope.builtin").lsp_document_symbols()
+  require("fzf-lua").lsp_document_symbols()
 end)
 
 vim.keymap.set("n", "-", require("oil").open, { desc = "Open parent directory" })

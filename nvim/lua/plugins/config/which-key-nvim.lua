@@ -40,20 +40,19 @@ return {
       mode = { "n" },
       { "<leader>g", group = "Goto" },
       { "<leader>gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", desc = "Declaration" },
-      { "<leader>gd", "<Cmd>lua require('telescope.builtin').lsp_definitions()<CR>", desc = "Definitions" },
-      { "<leader>gg", "<Cmd>lua require('telescope.builtin').live_grep()<CR>", desc = "Live Grep" },
-      { "<leader>gi", "<Cmd>lua require('telescope.builtin').lsp_implementations()<CR>", desc = "Implementations" },
+      { "<leader>gd", "<Cmd>lua require('fzf-lua').lsp_definitions()<CR>", desc = "Definitions" },
+      { "<leader>gg", "<Cmd>lua require('fzf-lua').live_grep()<CR>", desc = "Live Grep" },
+      { "<leader>gi", "<Cmd>lua require('fzf-lua').lsp_implementations()<CR>", desc = "Implementations" },
       { "<leader>gk", "<Cmd>lua vim.lsp.buf.hover()<CR>", desc = "Show Function Docs" },
-      { "<leader>gr", "<Cmd>lua require('telescope.builtin').lsp_references()<CR>", desc = "References" },
+      { "<leader>gr", "<Cmd>lua require('fzf-lua').lsp_references()<CR>", desc = "References" },
       { "<leader>gR", "<Cmd>lua vim.lsp.buf.rename()<CR>", desc = "Rename" },
       { "<leader>gs", group = "Symbols" },
-      { "<leader>gsd", "<Cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>", desc = "Document Symbols" },
       {
         "<leader>gsw",
-        "<Cmd>lua require('telescope.builtin').lsp_workspace_symbols()<CR>",
+        "<Cmd>lua require('fzf-lua').lsp_workspace_symbols()<CR>",
         desc = "Workspace Symbols",
       },
-      { "<leader>gt", "<Cmd>lua require('telescope.builtin').lsp_type_definitions()<CR>", desc = "Type Definitions" },
+      { "<leader>gt", "<Cmd>lua require('fzf-lua').lsp_typedefs()<CR>", desc = "Type Definitions" },
     })
 
     wk.add({
