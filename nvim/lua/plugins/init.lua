@@ -14,6 +14,8 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Install Plugins
 require("lazy").setup({
+  -- Undotree
+  require("plugins.config.undotree"),
   -- Zana, the missing package manager for Neovim
   require("plugins.config.zana-nvim"),
   -- Zen mode

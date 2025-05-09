@@ -1,10 +1,6 @@
 return {
   "neovim/nvim-lspconfig",
   config = function()
-    local nvim_lsp = require("lspconfig")
-
-    local capabilities = vim.lsp.protocol.make_client_capabilities()
-
     -- List of LSP servers to configure
     local servers = {
       "bashls",
@@ -31,15 +27,7 @@ return {
 
     -- Configure each LSP server
     for _, lsp in ipairs(servers) do
-      if nvim_lsp[lsp] ~= nil then
-        if nvim_lsp[lsp].setup ~= nil then
-          nvim_lsp[lsp].setup({
-            capabilities = capabilities,
-          })
-        else
-          vim.notify("LSP server " .. lsp .. " does not have a setup function", vim.log.levels.ERROR)
-        end
-      end
+      vim.lsp.enable(lsp)
     end
 
     -- Custom linter configuration
@@ -47,25 +35,27 @@ return {
     local shellcheck_linter = require("config.linters.shellcheck")
 
     -- Set up diagnosticls for custom linters
-    nvim_lsp.diagnosticls.setup({
-      filetypes = {
-        "javascript",
-        "javascript.jsx",
-        "sh",
-        "typescript",
-      },
-      init_options = {
+    vim.lsp.config("diagnosticls", {
+      settings = {
         filetypes = {
-          ["javascript.jsx"] = "eslint",
-          javascript = "eslint",
-          javascriptreact = "eslint",
-          sh = "shellcheck",
-          typescript = "eslint",
-          typescriptreact = "eslint",
+          "javascript",
+          "javascript.jsx",
+          "sh",
+          "typescript",
         },
-        linters = {
-          eslint = eslint_linter,
-          shellcheck = shellcheck_linter,
+        init_options = {
+          filetypes = {
+            ["javascript.jsx"] = "eslint",
+            javascript = "eslint",
+            javascriptreact = "eslint",
+            sh = "shellcheck",
+            typescript = "eslint",
+            typescriptreact = "eslint",
+          },
+          linters = {
+            eslint = eslint_linter,
+            shellcheck = shellcheck_linter,
+          },
         },
       },
     })

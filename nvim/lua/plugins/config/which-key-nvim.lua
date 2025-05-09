@@ -3,6 +3,9 @@ return {
   config = function()
     local wk = require("which-key")
     wk.add({
+      { "<leader>u", "<cmd>lua require('undotree').toggle()<cr>", desc = "Toggle Undotree" },
+    })
+    wk.add({
       mode = { "n" },
       { "<leader>f", group = "Flash.nvim ⚡" },
       { "<leader>fT", "<Cmd>require('flash').toggle()<CR>", desc = "Toggle" },
