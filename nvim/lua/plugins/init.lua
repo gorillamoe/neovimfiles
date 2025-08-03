@@ -16,8 +16,6 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   -- Undotree
   require("plugins.config.undotree"),
-  -- Zana, the missing package manager for Neovim
-  require("plugins.config.zana-nvim"),
   -- Zen mode
   -- A distraction-free coding mode for Neovim
   require("plugins.config.zen-mode-nvim"),
