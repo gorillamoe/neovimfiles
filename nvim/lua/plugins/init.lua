@@ -103,4 +103,6 @@ require("lazy").setup({
   require("plugins.config.vim-dadbod"),
   -- Search on steroids with ripgrep
   require("plugins.config.grug-far-nvim"),
+  -- Neovim DAP (Debug Adapter Protocol)
+  require("plugins.config.nvim-dap"),
 })
