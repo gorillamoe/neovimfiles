@@ -3,16 +3,10 @@ return {
   config = function()
     local wk = require("which-key")
     wk.add({
-      { "<leader>u", "<cmd>lua require('undotree').toggle()<cr>", desc = "Toggle Undotree" },
-    })
-    wk.add({
       mode = { "n" },
       { "<leader>f", group = "Flash.nvim ⚡" },
-      { "<leader>fT", "<Cmd>require('flash').toggle()<CR>", desc = "Toggle" },
       { "<leader>ff", "<Cmd>lua require('flash').jump()<CR>", desc = "Jump ⚡" },
-      { "<leader>ft", "<Cmd>require('flash').treesitter()<CR>", desc = "Treesitter 🌳" },
     })
-
     wk.add({
       {
         mode = { "v" },
@@ -78,6 +72,38 @@ return {
         "<leader>dw",
         "<cmd>lua require('trouble').toggle({ mode = 'diagnostics' })<cr>",
         desc = "Workspace Diagnostics",
+      },
+      {
+        "<leader>db",
+        function()
+          require("dap").toggle_breakpoint()
+        end,
+        desc = "Toggle Breakpoint",
+        icon = "🔴",
+      },
+      {
+        "<leader>dc",
+        function()
+          require("dap").continue()
+        end,
+        desc = "Continue",
+        icon = "▶️",
+      },
+      {
+        "<leader>dC",
+        function()
+          require("dap").run_to_cursor()
+        end,
+        desc = "Run to Cursor",
+        icon = "🖱️",
+      },
+      {
+        "<leader>dT",
+        function()
+          require("dap").terminate()
+        end,
+        desc = "Terminate",
+        icon = "💀",
       },
     })
 
