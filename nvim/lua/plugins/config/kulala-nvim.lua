@@ -4,7 +4,9 @@ return {
   opts = {
     request_timeout = nil,
     ui = {
-      display_mode = "float",
-    }
+      win_opts = {
+        wo = { foldmethod = "manual" },
+      },
+    },
   },
 }
