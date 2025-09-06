@@ -44,6 +44,8 @@ return {
           end
         end
         lint.try_lint(names_override)
+        -- diagnostics are handled by tiny-inline-diagnostics
+        vim.diagnostic.config({ virtual_text = false })
       end,
     })
   end,

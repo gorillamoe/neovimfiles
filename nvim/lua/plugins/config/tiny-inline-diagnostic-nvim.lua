@@ -4,5 +4,15 @@ vim.diagnostic.config({ virtual_text = false })
 return {
   "rachartier/tiny-inline-diagnostic.nvim",
   event = "VeryLazy",
-  opts = {},
+  opts = {
+    options = {
+      show_source = {
+        enabled = true,
+      },
+      multilines = {
+        enabled = true,
+      },
+      add_messages = false,
+    },
+  },
 }
