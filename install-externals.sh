@@ -17,6 +17,8 @@ bun install --global \
   vscode-langservers-extracted \
   yaml-language-server
 
+sudo snap install --edge marksman
+
 # PHP Language Server - https://intelephense.com/faq.html
 # - put license key in ~/intelephense/licence.txt
 

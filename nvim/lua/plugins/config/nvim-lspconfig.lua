@@ -15,6 +15,7 @@ return {
       "jsonls",
       "kulala_ls",
       "lua_ls",
+      "marksman",
       "pyright",
       "rust_analyzer",
       "sqlls",
