@@ -35,6 +35,8 @@ require("lazy").setup({
   require("plugins.config.lsp_signature-nvim"),
   -- Code Actions (based on lsp)
   require("plugins.config.tiny-code-action-nvim"),
+  -- Show inline diagnostics
+  require("plugins.config.tiny-inline-diagnostic-nvim"),
   -- Show LSP diagnostics
   require("plugins.config.trouble-nvim"),
   -- Navigate code on steroids with flash.nvim ⚡
