@@ -41,6 +41,8 @@ require("lazy").setup({
   require("plugins.config.trouble-nvim"),
   -- Navigate code on steroids with flash.nvim ⚡
   require("plugins.config.flash-nvim"),
+  -- Navigate windows on steroids with nvim-window
+  require("plugins.config.nvim-window"),
   -- This is 🔥 github copilot
   require("plugins.config.copilot-vim"),
   -- blazingly fast ⚡ search 🔍
