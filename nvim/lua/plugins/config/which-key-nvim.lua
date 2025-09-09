@@ -19,6 +19,12 @@ return {
 
     wk.add({
       mode = { "n" },
+      { "<leader>w", group = "Window navigation" },
+      { "<leader>ww", "<cmd>lua require('nvim-window').pick()<cr>", desc = "Jump to window" },
+    })
+
+    wk.add({
+      mode = { "n" },
       { "<leader>a", group = "Git 🐙" },
       { "<leader>ab", "<Cmd>BlameToggle window<CR>", desc = "Blame 😠" },
       { "<leader>aa", "<Cmd>Neogit<CR>", desc = "Neogit 🥷" },
