@@ -34,3 +34,5 @@ cmd("colorscheme retro-theme")
 
 -- Remap leader key
 g.mapleader = ","
+-- Remap local leader key
+g.maplocalleader = ","
