@@ -18,6 +18,17 @@ return {
     })
 
     wk.add({
+      {
+        mode = { "n" },
+        { "<leader>u", group = "Time Machine" },
+        { "<leader>uu", "<cmd>TimeMachineToggle<CR>", desc = "[Time Machine] Toggle Tree" },
+        { "<leader>ux", "<cmd>TimeMachinePurgeCurrent<CR>", desc = "[Time Machine] Purge Current" },
+        { "<leader>uX", "<cmd>TimeMachinePurgeAll<CR>", desc = "[Time Machine] Purge All" },
+        { "<leader>ul", "<cmd>TimeMachineLogShow<CR>", desc = "[Time Machine] Show Log" },
+      },
+    })
+
+    wk.add({
       mode = { "n" },
       { "<leader>w", group = "Window navigation" },
       { "<leader>ww", "<cmd>lua require('nvim-window').pick()<cr>", desc = "Jump to window" },

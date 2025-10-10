@@ -17,6 +17,8 @@ require("lazy").setup({
   -- Zen mode
   -- A distraction-free coding mode for Neovim
   require("plugins.config.zen-mode-nvim"),
+  -- Undo. Redo. Time travel.
+  require("plugins.config.time-machine-nvim"),
   -- A tiny Neovim plugin that adds subtle animations to
   -- various operations.
   require("plugins.config.tiny-glimmer-nvim"),
