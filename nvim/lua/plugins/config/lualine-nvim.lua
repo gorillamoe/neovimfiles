@@ -4,7 +4,7 @@ return {
     "kyazdani42/nvim-web-devicons",
   },
   config = function()
-    local icon = require("retro-theme.icons")
+    local icon = require("vhs-era-theme.icons")
 
     local filetype = { "filetype", icon_only = true }
 
