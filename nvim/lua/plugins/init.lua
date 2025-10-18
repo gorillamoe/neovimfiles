@@ -82,7 +82,7 @@ require("lazy").setup({
   -- .. also flex on Discord
   require("plugins.config.discord-nvim"),
   -- Colorscheme
-  require("nvim.lua.plugins.config.vhs-era-theme-nvim"),
+  require("plugins.config.vhs-era-theme-nvim"),
   -- Color highlighting
   require("plugins.config.nvim-highlight-colors"),
   -- Comments
