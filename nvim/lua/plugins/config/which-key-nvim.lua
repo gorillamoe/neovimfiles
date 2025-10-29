@@ -55,7 +55,7 @@ return {
       { "<leader>g", group = "Goto" },
       { "<leader>gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", desc = "Declaration" },
       { "<leader>gd", "<Cmd>lua require('fzf-lua').lsp_definitions()<CR>", desc = "Definitions" },
-      { "<leader>gg", "<Cmd>lua require('fzf-lua').live_grep()<CR>", desc = "Live Grep" },
+      { "<leader>gg", "<Cmd>lua require('fzf-lua').live_grep({ resume = true })<CR>", desc = "Live Grep" },
       { "<leader>gi", "<Cmd>lua require('fzf-lua').lsp_implementations()<CR>", desc = "Implementations" },
       { "<leader>gk", "<Cmd>lua vim.lsp.buf.hover()<CR>", desc = "Show Function Docs" },
       { "<leader>gr", "<Cmd>lua require('fzf-lua').lsp_references()<CR>", desc = "References" },
