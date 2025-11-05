@@ -38,9 +38,15 @@ return {
       root_markers = { "deno.json" },
     })
 
+    local root_patterns = { ".git", "deno.json", "tsconfig.json", "package.json", "jsconfig.json", "pyproject.toml" }
+    local root_dir = vim.fs.dirname(vim.fs.find(root_patterns, { upward = true })[1])
+
     -- Configure each LSP server
     for _, lsp in ipairs(servers) do
-      vim.lsp.enable(lsp)
+      -- Skip ts_ls if deno.json is present in the project root
+      if not (lsp == "ts_ls" and vim.fn.filereadable(root_dir .. "/deno.json") == 1) then
+        vim.lsp.enable(lsp)
+      end
     end
   end,
 }
