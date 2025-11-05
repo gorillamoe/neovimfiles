@@ -39,7 +39,7 @@ return {
     })
 
     local root_patterns = { ".git", "deno.json", "tsconfig.json", "package.json", "jsconfig.json", "pyproject.toml" }
-    local root_dir = vim.fs.dirname(vim.fs.find(root_patterns, { upward = true })[1])
+    local root_dir = vim.fs.dirname(vim.fs.find(root_patterns, { upward = true })[1] or vim.loop.cwd())
 
     -- Configure each LSP server
     for _, lsp in ipairs(servers) do
