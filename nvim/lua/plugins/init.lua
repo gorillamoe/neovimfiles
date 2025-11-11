@@ -47,8 +47,6 @@ require("lazy").setup({
   require("plugins.config.nvim-window"),
   -- This is 🔥 github copilot
   require("plugins.config.copilot-vim"),
-  -- blazingly fast ⚡ search 🔍
-  require("plugins.config.tafuta-nvim"),
   -- Simple HTTP Client 🐼
   require("plugins.config.kulala-nvim"),
   -- Minimal session management
