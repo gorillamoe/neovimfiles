@@ -16,7 +16,7 @@ return {
       "lua_ls",
       "marksman",
       "pyright",
-      "roslyn_ls",
+      "csharp_ls",
       "rust_analyzer",
       "sqlls",
       "svelte",
