@@ -25,6 +25,7 @@ return {
       "ts_ls",
       "vimls",
       "yamlls",
+      "zls",
     }
 
     -- Avoid conflict with competing ts_ls and denols
