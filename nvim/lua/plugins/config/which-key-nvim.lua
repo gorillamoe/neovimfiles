@@ -135,5 +135,15 @@ return {
       { "<leader>z", group = "Zen" },
       { "<leader>zz", "<cmd>:ZenMode<CR>", desc = "ZenMode" },
     })
+
+    wk.add({
+      mode = { "n" },
+      { "<leader>y", group = "Yank buffer as..." },
+      {
+        "<leader>yh",
+        "<CMD>w !pandoc --standalone | xclip -target text/html -selection clip<CR>",
+        desc = "Yank as rich text",
+      },
+    })
   end,
 }
