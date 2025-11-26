@@ -34,9 +34,21 @@ return {
       workspace_required = true,
       root_markers = { "package.json" },
     })
+
     vim.lsp.config("denols", {
       workspace_required = true,
       root_markers = { "deno.json" },
+    })
+
+    -- Disable inlay hints for Lua LSP
+    -- Because this is now the default behavior neovim/nvim-lspconfig
+    -- See: https://github.com/neovim/nvim-lspconfig/blob/2be96a2d409f3d3e6f02e633627a56b620e7740d/lsp/lua_ls.lua
+    vim.lsp.config("lua_ls", {
+      settings = {
+        Lua = {
+          hint = { enable = false },
+        },
+      },
     })
 
     local root_patterns = { ".git", "deno.json", "tsconfig.json", "package.json", "jsconfig.json", "pyproject.toml" }
