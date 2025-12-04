@@ -22,7 +22,8 @@ return {
       "svelte",
       "tailwindcss",
       "terraformls",
-      "ts_ls",
+      -- "ts_ls", temporarily disabled, because of tsgo
+      "tsgo",
       "vimls",
       "yamlls",
       "zls",
