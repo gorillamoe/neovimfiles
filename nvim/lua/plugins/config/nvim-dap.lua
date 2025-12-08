@@ -4,20 +4,30 @@ return {
     { "theHamsta/nvim-dap-virtual-text" },
     {
       "microsoft/vscode-js-debug",
-      build = "npm install --legacy-peer-deps && npx gulp dapDebugServer && mv dist out",
+      version = "v1.105.0",
+      -- We reset any local changes to ensure a clean state before building.
+      pre_update = "git reset --hard HEAD",
+      -- Because vscode-js-debug comes with a postinstall script that
+      -- automatically downloads pre-built binaries, which may not be
+      -- compatible with the user's system, we remove it before building.
+      build = "jq 'del(.scripts.postinstall)' package.json > package.json.patch && mv package.json.patch package.json && npm install && gulp dapDebugServer",
     },
-    { "rcarriga/nvim-dap-ui", dependencies = { "nvim-neotest/nvim-nio" } },
+    {
+      "igorlfs/nvim-dap-view",
+      ---@module 'dap-view'
+      ---@type dapview.Config
+      opts = {},
+    },
   },
   config = function()
     local debugger_location = vim.fn.stdpath("data") .. "/lazy/vscode-js-debug"
-    local dap, dapui, vt = require("dap"), require("dapui"), require("nvim-dap-virtual-text")
-    dapui.setup()
+    local dap, dapview, vt = require("dap"), require("dap-view"), require("nvim-dap-virtual-text")
     vt.setup()
-    dap.listeners.before.attach.dapui_config = function()
-      dapui.open()
+    dap.listeners.before.attach.dapview_config = function()
+      dapview.open()
     end
-    dap.listeners.before.launch.dapui_config = function()
-      dapui.open()
+    dap.listeners.before.launch.dapview_config = function()
+      dapview.open()
     end
 
     if not dap.adapters["pwa-node"] then
@@ -27,7 +37,7 @@ return {
         port = "${port}",
         executable = {
           command = "node",
-          args = { debugger_location .. "/out/src/dapDebugServer.js", "${port}" },
+          args = { debugger_location .. "/dist/src/dapDebugServer.js", "${port}" },
         },
       }
     end
