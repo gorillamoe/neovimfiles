@@ -23,6 +23,13 @@ end)
 
 map("n", "<leader>be", ':lua require("bafa.ui").toggle()<CR>', { desc = "Toggle bafa", noremap = true, silent = true })
 
+map(
+  "n",
+  "<leader><leader>",
+  ':lua require("bafa.ui").toggle()<CR>',
+  { desc = "Toggle bafa", noremap = true, silent = true }
+)
+
 -- Quickly swap between two files
 map("n", "<space>", ":b#<CR>")
 
