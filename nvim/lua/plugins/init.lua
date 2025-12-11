@@ -26,6 +26,8 @@ require("lazy").setup({
   require("plugins.config.uzuri-nvim"),
   -- Visualize and work with indent scope
   require("plugins.config.mini-indentscope"),
+  -- Mustache and Handlebars support
+  require("plugins.config.vim-mustache-handlebars"),
   -- Neovim development for the lazy
   -- Causing issues for me at the moment
   -- require("plugins.config.lazydev-nvim"),
