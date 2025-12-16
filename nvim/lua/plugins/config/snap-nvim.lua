@@ -5,9 +5,13 @@ return {
   version = "v1.0.0",
   dir = get_dir_path_if_exists("/home/marco/projects/personal/snap.nvim"),
   opts = {
+    debug = {
+      backend = "bun",
+      log_level = "debug",
+    },
     font_settings = {
       size = 14,
-      line_height = 1.4,
+      line_height = 0.8,
       fonts = {
         default = {
           name = "FiraCode Nerd Font",
@@ -26,10 +30,6 @@ return {
           file = nil,
         },
       },
-    },
-    debug = {
-      backend = "bun",
-      log_level = "debug",
     },
   },
 }
