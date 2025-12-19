@@ -1,16 +1,29 @@
 local helper = {}
 
+--- NeovimConfigHelperMapKeyModes
+--- @enum { 'n', 'i', 't', 'v' }
+helper.MapKeyModes = {
+  NORMAL = "n",
+  INSERT = "i",
+  TERMINAL = "t",
+  VISUAL = "v",
+}
+
 --- Function to map keys in nvim with lua
---- @param mode 'n, i, t, v'
---- @param lhs  'Keybinding it should be'
---- @param rhs  'Command or keycombination it should execute'
---- @param opts 'Options'
+--- @param mode NeovimConfigHelperMapKeyModes The mode to map the key in
+--- @param lhs string The key to map
+--- @param rhs string|function What it should do
+--- @param opts table|nil Additional options
 function helper.mapKey(mode, lhs, rhs, opts)
   local options = { noremap = true }
   if opts then
     options = vim.tbl_extend("force", options, opts)
   end
-  vim.api.nvim_set_keymap(mode, lhs, rhs, options)
+  if type(rhs) == "function" then
+    vim.keymap.set(mode, lhs, rhs, options)
+  else
+    vim.api.nvim_set_keymap(mode, lhs, rhs, options)
+  end
 end
 
 --- Check if a file or directory exists
