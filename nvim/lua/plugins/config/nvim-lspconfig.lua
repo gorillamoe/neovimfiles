@@ -15,6 +15,7 @@ return {
       "kulala_ls",
       "lua_ls",
       "marksman",
+      "prismals",
       "pyright",
       "csharp_ls",
       "rust_analyzer",
@@ -54,7 +55,7 @@ return {
     })
 
     local root_patterns = { ".git", "deno.json", "tsconfig.json", "package.json", "jsconfig.json", "pyproject.toml" }
-    local root_dir = vim.fs.dirname(vim.fs.find(root_patterns, { upward = true })[1] or vim.loop.cwd())
+    local root_dir = vim.fs.dirname(vim.fs.find(root_patterns, { upward = true })[1] or vim.uv.cwd())
 
     -- Configure each LSP server
     for _, lsp in ipairs(servers) do
