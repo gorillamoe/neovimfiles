@@ -4,14 +4,17 @@ return {
   "mistweaverco/snap.nvim",
   version = "v1.0.0",
   dir = get_dir_path_if_exists("/home/marco/projects/personal/snap.nvim"),
+  ---@type SnapUserConfig
   opts = {
+    template = "linux",
     debug = {
       backend = "bun",
       log_level = "debug",
     },
+    filename_pattern = "snap",
     font_settings = {
       size = 14,
-      line_height = 0.8,
+      line_height = 12,
       fonts = {
         default = {
           name = "FiraCode Nerd Font",
