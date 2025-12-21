@@ -60,6 +60,7 @@ require("lazy").setup({
   require("plugins.config.nvim-lint"),
   -- Git Integration
   require("plugins.config.neogit"),
+  require("plugins.config.diffview-nvim"),
   require("plugins.config.gitsigns-nvim"),
   require("plugins.config.blame-nvim"),
   require("plugins.config.diffconflicts-nvim"),
@@ -110,6 +111,4 @@ require("lazy").setup({
   require("plugins.config.nvim-dap"),
   -- Minimal screenshot 📸 plugin for Neovim
   require("plugins.config.snap-nvim"),
-  -- 📸 Snapshot plugin with rich features that can make pretty code snapshots for Neovim
-  require("plugins.config.codesnap-nvim"),
 })
