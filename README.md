@@ -43,9 +43,18 @@ There are some **prerequisites** you need to have installed.
 - Neovim 0.11.5+ (tested, might work on older versions, but not guaranteed)
 - Node.js 22+ (for most LSP servers)
 
+1. Clone this repository to your local machine.
+
 ```sh
 mkdir -p ~/projects/personal
 git clone https://github.com/gorillamoe/neovimfiles ~/projects/personal/neovimfiles
+ln -s ~/projects/personal/neovimfiles ~/.config/nvim
+```
+
+I use [shazam.sh] to [symlink all my dotfiles][my-shazam],
+but you can just run this command manually:
+
+```sh
 ln -s ~/projects/personal/neovimfiles ~/.config/nvim
 ```
 
@@ -58,7 +67,6 @@ Zana works great for me, but your mileage may vary.
 
 You should see a _"Installing lazy.nvim.."_ and
 popup installing the plugins on the first run
-
 
 ## Features
 
@@ -140,6 +148,8 @@ which works great for JavaScript and TypeScript projects, IMHO.
 
 
 
+[my-shazam]: https://github.com/gorillamoe/dotfiles/blob/73f586c2a513139c68c31a0c1a7f961c07c5b4bf/shazam.yml?plain=1#L1
+[shazam.sh]: https://github.com/mistweaverco/shazam.sh
 [diffview.nvim]: https://github.com/sindrets/diffview.nvim
 [diffconflicts.nvim]: https://github.com/mistweaverco/diffconflicts.nvim
 [which-key.nvim]: https://github.com/folke/which-key.nvim
