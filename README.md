@@ -134,7 +134,8 @@ for treesitter that I use regularly.
 I [also use][supported-lsp-servers] some LSP servers for
 languages I use regularly.
 
-I also have the TypeScript preview LSP server configured,
+I also have the
+[TypeScript preview LSP server configured][typescript-preview-lsp],
 which works great for JavaScript and TypeScript projects, IMHO.
 
 
