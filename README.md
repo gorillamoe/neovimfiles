@@ -35,7 +35,6 @@ but these are my personal Neovim configuration files.
   Pretty much obsolete technology for storing and playing video cassettes.
   Mainly used in the 80s and 90s.
 
-
 ## Install
 
 There are some **prerequisites** you need to have installed.
@@ -43,13 +42,16 @@ There are some **prerequisites** you need to have installed.
 - Neovim 0.11.5+ (tested, might work on older versions, but not guaranteed)
 - Node.js 22+ (for most LSP servers)
 
-1. Clone this repository to your local machine.
+### Clone this repository
+
+Clone this repository to your local machine:
 
 ```sh
 mkdir -p ~/projects/personal
 git clone https://github.com/gorillamoe/neovimfiles ~/projects/personal/neovimfiles
-ln -s ~/projects/personal/neovimfiles ~/.config/nvim
 ```
+
+### Symlink the configuration
 
 I use [shazam.sh] to [symlink all my dotfiles][my-shazam],
 but you can just run this command manually:
@@ -58,12 +60,15 @@ but you can just run this command manually:
 ln -s ~/projects/personal/neovimfiles ~/.config/nvim
 ```
 
-I use [zana] to [manage most of my LSP servers][my-zana].
+### Install external dependencies
+
+I use [zana] to
+[manage most of my LSP servers, linters and formatters][my-zana].
 
 You should use whatever floats your boat.
 Zana works great for me, but your mileage may vary.
 
-2. Open Neovim.
+### Start neovim
 
 You should see a _"Installing lazy.nvim.."_ and
 popup installing the plugins on the first run
