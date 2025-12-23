@@ -14,6 +14,8 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Install Plugins
 require("lazy").setup({
+  -- Fidget for Neovim
+  require("plugins.config.fidget-nvim"),
   -- Zen mode
   -- A distraction-free coding mode for Neovim
   require("plugins.config.zen-mode-nvim"),

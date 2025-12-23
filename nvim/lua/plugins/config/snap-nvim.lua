@@ -14,7 +14,7 @@ return {
     filename_pattern = "snap",
     font_settings = {
       size = 14,
-      line_height = 12,
+      line_height = 1.0,
       fonts = {
         default = {
           name = "FiraCode Nerd Font",
