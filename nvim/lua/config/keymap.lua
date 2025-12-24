@@ -15,29 +15,8 @@ vim.keymap.set("n", "<C-p>", function()
   require("fzf-lua").files()
 end)
 
--- Quit kill all all floating windows first, even if not focused,
--- if no floating windows exist, just delete the buffer
-vim.keymap.set("n", "<leader>q", function()
-  local float_exists = false
-  for _, win in ipairs(vim.api.nvim_list_wins()) do
-    if vim.api.nvim_win_get_config(win).relative ~= "" then
-      float_exists = true
-      break
-    end
-  end
-  if float_exists then
-    for _, win in ipairs(vim.api.nvim_list_wins()) do
-      if vim.api.nvim_win_get_config(win).relative ~= "" then
-        vim.api.nvim_win_close(win, true)
-      end
-    end
-  else
-    vim.cmd("bd!")
-  end
-end)
-
-map("n", "<leader>be", ':lua require("bafa.ui").toggle()<CR>', { desc = "Toggle bafa", noremap = true, silent = true })
-
+-- Buffer management for the lazy 🦥
+-- bafa.nvim.forthelazy.dev
 map(
   "n",
   "<leader><leader>",
