@@ -25,7 +25,7 @@ require("lazy").setup({
   -- various operations.
   require("plugins.config.tiny-glimmer-nvim"),
   -- Uzuri 🦄 - beautiful ui inputs and notifications
-  require("plugins.config.uzuri-nvim"),
+  require("plugins.config.juu-nvim"),
   -- Visualize and work with indent scope
   require("plugins.config.mini-indentscope"),
   -- Mustache and Handlebars support
