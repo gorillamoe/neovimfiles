@@ -58,7 +58,8 @@ return {
       providers = {
         git = {
           enabled = function()
-            return vim.tbl_contains({ 'octo', 'gitcommit', 'markdown' }, vim.bo.filetype)
+            -- enable for gitcommit, gitrebase,
+            return vim.tbl_contains({ "gitcommit" }, vim.bo.filetype)
           end,
           module = "blink-cmp-git",
           name = "Git",
