@@ -14,8 +14,6 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Install Plugins
 require("lazy").setup({
-  -- Fidget for Neovim
-  require("plugins.config.fidget-nvim"),
   -- Zen mode
   -- A distraction-free coding mode for Neovim
   require("plugins.config.zen-mode-nvim"),
@@ -24,7 +22,7 @@ require("lazy").setup({
   -- A tiny Neovim plugin that adds subtle animations to
   -- various operations.
   require("plugins.config.tiny-glimmer-nvim"),
-  -- Uzuri 🦄 - beautiful ui inputs and notifications
+  -- Juu 🦄 - beautiful ui inputs and notifications
   require("plugins.config.juu-nvim"),
   -- Visualize and work with indent scope
   require("plugins.config.mini-indentscope"),
