@@ -9,7 +9,8 @@ opt.expandtab = true -- Use spaces instead of tabs
 opt.hidden = true -- Enable background buffers
 opt.ignorecase = true -- Ignore case
 opt.joinspaces = false -- No double spaces with join
-opt.list = true -- Show some invisible characters
+opt.list = false -- Don't show invisible characters by default
+-- thsese are enable locally in indent.lua, if mixed indentation is detected
 opt.number = true -- Show line numbers
 opt.relativenumber = false -- Relative line numbers off by default
 opt.scrolloff = 4 -- Lines of context
