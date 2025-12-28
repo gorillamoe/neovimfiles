@@ -37,7 +37,6 @@ vim.api.nvim_create_autocmd({ "BufEnter", "TextChanged", "TextChangedI" }, {
       })
       vim.notify("Mixed indentation detected at line " .. vim.fn.line("."), vim.log.levels.WARN)
     else
-      print("No mixed indentation in buffer " .. args.buf)
       vim.opt_local.list = false
     end
   end,
