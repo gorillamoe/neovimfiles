@@ -6,6 +6,9 @@ return {
   },
   config = function()
     require("oil").setup({
+      win_options = {
+        number = false,
+      },
       view_options = {
         show_hidden = true,
       },
