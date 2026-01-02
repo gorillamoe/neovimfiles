@@ -57,6 +57,10 @@ return {
         terraform = return_formatters_if_available({
           { name = "terraform_fmt", cmd = "terraform" },
         }),
+        svelte = return_formatters_if_available({
+          { name = "eslint", cmd = "eslint" },
+          { name = "prettier", cmd = "prettier" },
+        }),
         typescript = return_formatters_if_available({
           { name = "deno_fmt", cmd = "deno" },
           { name = "eslint", cmd = "eslint" },
