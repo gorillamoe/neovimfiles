@@ -1,0 +1,4 @@
+[tools]
+# 22 is the only one working with tree-sitter correctly right now
+node = "22"
+python = "3.14.0"

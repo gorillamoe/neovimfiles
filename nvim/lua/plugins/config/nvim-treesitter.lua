@@ -1,63 +1,64 @@
 return {
   "nvim-treesitter/nvim-treesitter",
-  build = function()
-    pcall(require("nvim-treesitter.install").update({ with_sync = true }))
-  end,
+  build = ":TSUpdate",
   config = function()
-    require("nvim-treesitter.configs").setup({
-      ensure_installed = {
-        "bash",
-        "c_sharp",
-        "caddy",
-        "css",
-        "csv",
-        "diff",
-        "gitattributes",
-        "gitcommit",
-        "gitignore",
-        "go",
-        "graphql",
-        "hcl",
-        "http",
-        "javascript",
-        "jsdoc",
-        "json",
-        "jsonc",
-        "lua",
-        "markdown",
-        "markdown_inline",
-        "mermaid",
-        "nginx",
-        "php",
-        "prisma",
-        "python",
-        "rust",
-        "scss",
-        "sql",
-        "svelte",
-        "terraform",
-        "toml",
-        "tsx",
-        "typescript",
-        "vhs",
-        "vim",
-        "vimdoc",
-        "xml",
-        "yaml",
-        "zig",
-      },
-
-      highlight = { enable = true },
-      indent = { enable = true, disable = { "python" } },
-      incremental_selection = {
-        enable = true,
-        keymaps = {
-          init_selection = "<c-space>",
-          node_incremental = "<c-space>",
-          scope_incremental = "<c-s>",
-          node_decremental = "<c-backspace>",
-        },
-      },
+    require("nvim-treesitter").install({
+      "bash",
+      "c_sharp",
+      "caddy",
+      "css",
+      "csv",
+      "diff",
+      "gitattributes",
+      "gitcommit",
+      "gitignore",
+      "go",
+      "graphql",
+      "hcl",
+      "http",
+      "javascript",
+      "jsdoc",
+      "json",
+      "lua",
+      "markdown",
+      "markdown_inline",
+      "mermaid",
+      "nginx",
+      "php",
+      "prisma",
+      "python",
+      "rust",
+      "scss",
+      "sql",
+      "svelte",
+      "terraform",
+      "toml",
+      "tsx",
+      "typescript",
+      "vhs",
+      "vim",
+      "vimdoc",
+      "xml",
+      "yaml",
+      "zig",
+    }, {
+      sync_install = false,
+      auto_install = true,
+      max_jobs = 4,
+    })
+    -- treesitter doesn't start automatically anymore,
+    -- so we need to start it manually on filetype detection
+    vim.api.nvim_create_autocmd("Filetype", {
+      callback = function(args)
+        local ok, treesitter = pcall(require, "nvim-treesitter")
+        if not ok or not treesitter then
+          return
+        end
+        if not vim.list_contains(treesitter.get_installed(), vim.treesitter.language.get_lang(args.match)) then
+          return
+        end
+        vim.treesitter.start(args.buf)
+      end,
     })
   end,
 }
