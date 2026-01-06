@@ -5,7 +5,7 @@ map("", "j", "gj")
 map("", "k", "gk")
 
 -- q for buffer delete, only if buffer is not modified
-map("n", "q", ":bd<CR>")
+map("n", "<leader>q", ":bd<CR>")
 
 -- Save
 map("n", "<leader>w", ":w<CR>")
