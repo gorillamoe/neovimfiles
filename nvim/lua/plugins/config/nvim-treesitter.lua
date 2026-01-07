@@ -15,6 +15,7 @@ return {
       "go",
       "graphql",
       "hcl",
+      "html",
       "http",
       "javascript",
       "jsdoc",
