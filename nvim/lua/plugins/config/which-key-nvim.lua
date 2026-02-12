@@ -67,6 +67,11 @@ return {
         "<Cmd>lua require('fzf-lua').lsp_workspace_symbols()<CR>",
         desc = "Workspace Symbols",
       },
+      {
+        "<leader>gsd",
+        "<Cmd>lua require('fzf-lua').lsp_document_symbols()<CR>",
+        desc = "Document Symbols",
+      },
       { "<leader>gt", "<Cmd>lua require('fzf-lua').lsp_typedefs()<CR>", desc = "Type Definitions" },
     })
 

@@ -4,7 +4,31 @@ return {
   "mistweaverco/kulala.nvim",
   dir = get_dir_path_if_exists("/home/marco/projects/personal/kulala.nvim"),
   opts = {
+    global_keymaps = {
+      ["Search requests"] = {
+        "<leader>t",
+        function()
+          require("kulala").search()
+        end,
+        ft = { "http", "rest" },
+      },
+      ["Toggle split/float"] = {
+        "<leader>T",
+        function()
+          require("kulala.ui").toggle_display_mode()
+        end,
+        prefix = false,
+        ft = { "http", "rest" },
+      },
+    },
     kulala_keymaps = {
+      ["Toggle headers/body"] = {
+        "<leader>T",
+        function()
+          require("kulala").toggle_view()
+        end,
+        ft = { "http", "rest" },
+      },
       ["Show headers"] = {
         "<leader>h",
         function()
@@ -29,7 +53,6 @@ return {
           require("kulala.ui").show_verbose()
         end,
       },
-
       ["Show script output"] = {
         "<leader>o",
         function()
@@ -92,13 +115,6 @@ return {
         function()
           require("kulala.ui").clear_responses_history()
         end,
-      },
-      ["Toggle split/float"] = {
-        "<leader>t",
-        function()
-          require("kulala.ui").toggle_display_mode()
-        end,
-        prefix = false,
       },
       ["Close"] = {
         "q",
