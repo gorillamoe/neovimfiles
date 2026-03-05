@@ -16,13 +16,13 @@ return {
       "marksman",
       "prismals",
       "pyright",
-      "csharp_ls",
+      "roslyn_ls", -- dotnet tool install -g roslyn-language-server --prerelease
       "rust_analyzer",
       "sqlls",
       "svelte",
       "tailwindcss",
       "terraformls",
-      -- "ts_ls", temporarily disabled, because of tsgo
+      -- "ts_ls", -- temporarily disabled because of tsgo
       "tsgo",
       "vimls",
       "yamlls",
@@ -51,6 +51,12 @@ return {
           hint = { enable = false },
         },
       },
+    })
+
+    vim.lsp.config("roslyn_ls", {
+      cmd = { "roslyn-language-server", "--stdio" },
+      filetypes = { "cs" },
+      root_dir = vim.fs.dirname(vim.fs.find({ "*.sln", "*.csproj", ".git" }, { upward = true })[1] or vim.uv.cwd()),
     })
 
     local root_patterns = { ".git", "deno.json", "tsconfig.json", "package.json", "jsconfig.json", "pyproject.toml" }
