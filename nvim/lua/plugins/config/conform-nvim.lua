@@ -44,6 +44,7 @@ return {
         javascript = return_formatters_if_available({
           { name = "deno_fmt", cmd = "deno" },
           { name = "eslint", cmd = "eslint" },
+          { name = "oxfmt", cmd = "oxfmt" },
           { name = "prettier", cmd = "prettier" },
         }),
         lua = return_formatters_if_available({
@@ -64,11 +65,13 @@ return {
         typescript = return_formatters_if_available({
           { name = "deno_fmt", cmd = "deno" },
           { name = "eslint", cmd = "eslint" },
+          { name = "oxfmt", cmd = "oxfmt" },
           { name = "prettier", cmd = "prettier" },
         }),
         typescriptreact = return_formatters_if_available({
           { name = "deno_fmt", cmd = "deno" },
           { name = "eslint", cmd = "eslint" },
+          { name = "oxfmt", cmd = "oxfmt" },
           { name = "prettier", cmd = "prettier" },
         }),
       },

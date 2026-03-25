@@ -14,6 +14,7 @@ return {
       "jsonls",
       "lua_ls",
       "marksman",
+      "oxlint",
       "prismals",
       "pyright",
       "roslyn_ls", -- dotnet tool install -g roslyn-language-server --prerelease
@@ -29,9 +30,7 @@ return {
       "zls",
     }
 
-    -- Avoid conflict with competing ts_ls and denols
-    -- deno.json is not present, use ts_ls instead of denols
-    vim.lsp.config("ts_ls", {
+    vim.lsp.config("tsgo", {
       single_file_support = false,
       workspace_required = true,
       root_markers = { "package.json" },
@@ -64,8 +63,13 @@ return {
 
     -- Configure each LSP server
     for _, lsp in ipairs(servers) do
-      -- Skip ts_ls if deno.json is present in the project root
-      if not (lsp == "ts_ls" and vim.fn.filereadable(root_dir .. "/deno.json") == 1) then
+      -- Skip tsgo if deno.json is present in the project root
+      if
+        -- Skip tsgo if deno.json is present in the project root
+        not (lsp == "tsgo" and vim.fn.filereadable(root_dir .. "/deno.json") == 1)
+        -- Skip eslint if .oxlintrc.json is present in the project root
+        and not (lsp == "eslint" and vim.fn.filereadable(root_dir .. "/.oxlintrc.json") == 1)
+      then
         vim.lsp.enable(lsp)
       end
     end

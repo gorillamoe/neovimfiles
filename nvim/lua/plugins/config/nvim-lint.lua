@@ -14,6 +14,29 @@ local function filename_or_stdin()
   return "-"
 end
 
+--- A function to check for available formatters
+--- @param formatters table A list of formatter definitions
+--- @return string[] available_formatters list of available formatter names or an empty list if none are available
+--- @usage
+--- local available = return_formatters_if_available({ "prettier", "oxlint", "eslint" })
+local return_formatters_if_available = function(formatters)
+  local available_formatters = {}
+  for _, formatter in pairs(formatters) do
+    if type(formatter) == "string" then
+      if vim.fn.executable(formatter) == 1 then
+        table.insert(available_formatters, formatter)
+      end
+    elseif type(formatter) == "table" and formatter.cmd and vim.fn.executable(formatter.cmd) == 1 then
+      table.insert(available_formatters, formatter.name)
+      print("Formatter " .. formatter.name .. " is available")
+    end
+  end
+  if #available_formatters == 0 then
+    return {}
+  end
+  return available_formatters
+end
+
 return {
   "mfussenegger/nvim-lint",
   config = function()
@@ -28,33 +51,36 @@ return {
     }
 
     lint.linters_by_ft = {
-      javascript = {
+      javascript = return_formatters_if_available({
+        "oxlint",
         "eslint",
-      },
-      lua = {
+      }),
+      lua = return_formatters_if_available({
         "luacheck",
-      },
-      markdown = {
+      }),
+      markdown = return_formatters_if_available({
         "vale",
-      },
-      php = {
+      }),
+      php = return_formatters_if_available({
         "phpcs",
-      },
-      python = {
+      }),
+      python = return_formatters_if_available({
         "pylint",
-      },
-      sh = {
+      }),
+      sh = return_formatters_if_available({
         "shellcheck",
-      },
-      typescript = {
+      }),
+      typescript = return_formatters_if_available({
+        "oxlint",
         "eslint",
-      },
-      typescriptreact = {
+      }),
+      typescriptreact = return_formatters_if_available({
+        "oxlint",
         "eslint",
-      },
-      yaml = {
+      }),
+      yaml = return_formatters_if_available({
         "yamllint",
-      },
+      }),
     }
     local js_filetypes = { "typescript", "javascript", "typescriptreact", "javascriptreact" }
     local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
