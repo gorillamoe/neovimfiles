@@ -42,6 +42,11 @@ return {
   config = function()
     local lint = require("lint")
 
+    if vim.fn.executable("oxlint") == 1 and vim.fn.executable("vp") == 1 then
+      lint.linters.oxlint.cmd = "vp"
+      lint.linters.oxlint.args = vim.list_extend({ "lint" }, lint.linters.oxlint.args)
+    end
+
     -- patch shellcheck to also follow sourced files
     lint.linters.shellcheck.args = {
       "-x",

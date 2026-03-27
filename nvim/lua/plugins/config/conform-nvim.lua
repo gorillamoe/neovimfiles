@@ -14,25 +14,35 @@ local cache_available_formatters = {}
 local return_formatters_if_available = function(formatters)
   local available_formatters = {}
   for _, formatter in pairs(formatters) do
-    if cache_available_formatters[formatter.name] ~= nil then
-      table.insert(available_formatters, formatter.name)
+    local name = formatter.name
+    if cache_available_formatters[name] ~= nil then
+      table.insert(available_formatters, cache_available_formatters[name])
     else
       if vim.fn.executable(formatter.cmd) == 1 then
-        table.insert(available_formatters, formatter.name)
-        table.insert(cache_available_formatters, formatter.name)
+        if name == "oxfmt" and vim.fn.executable("vp") == 1 then
+          table.insert(available_formatters, "vp")
+          cache_available_formatters[name] = "vp"
+        else
+          table.insert(available_formatters, name)
+          cache_available_formatters[name] = name
+        end
       end
     end
   end
-  if #available_formatters == 0 then
-    return nil
-  end
-  return available_formatters
+  return #available_formatters > 0 and available_formatters or nil
 end
 return {
   "stevearc/conform.nvim",
   config = function()
     local conform = require("conform")
     conform.setup({
+      formatters = {
+        vp = {
+          command = "vp",
+          args = { "fmt", "--stdin-filepath", "$FILENAME" },
+          stdin = true,
+        },
+      },
       formatters_by_ft = {
         http = return_formatters_if_available({
           { name = "kulala", cmd = "kulala-fmt" },
