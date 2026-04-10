@@ -4,8 +4,8 @@ return {
     local wk = require("which-key")
     wk.add({
       mode = { "n" },
-      { "<leader>f", group = "Flash.nvim ⚡" },
-      { "<leader>ff", "<Cmd>lua require('flash').jump()<CR>", desc = "Jump ⚡" },
+      { "<leader>f", group = "Jump ⚡" },
+      { "<leader>ff", "<Cmd>lua require('jump').start()<CR>", desc = "Jump ⚡" },
     })
     wk.add({
       {

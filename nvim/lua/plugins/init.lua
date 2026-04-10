@@ -43,8 +43,8 @@ require("lazy").setup({
   require("plugins.config.tiny-inline-diagnostic-nvim"),
   -- Show LSP diagnostics
   require("plugins.config.trouble-nvim"),
-  -- Navigate code on steroids with flash.nvim ⚡
-  require("plugins.config.flash-nvim"),
+  -- Navigate code on steroids with nvim-jump ⚡
+  require("plugins.config.nvim-jump"),
   -- Navigate windows on steroids with nvim-window
   require("plugins.config.nvim-window"),
   -- This is 🔥 github copilot
