@@ -127,7 +127,6 @@ but these are some of the main ones:
     (nice to have, if you're new to a project and want to quickly browse files)
 - **Git integration**:
   - [gitsigns.nvim] for git signs in gutter.
-  - [blame.nvim] to know who to blame 😏
   - [neogit] as git client.
   - [diffview.nvim] to view git diffs.
   - [diffconflicts.nvim] to resolve merge conflicts.
