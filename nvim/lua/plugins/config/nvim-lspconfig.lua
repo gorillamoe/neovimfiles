@@ -26,7 +26,6 @@ return {
       "prismals",
       "pyright",
       "roslyn_ls", -- dotnet tool install -g roslyn-language-server --prerelease
-      "rust_analyzer",
       "sqlls",
       "svelte",
       "tailwindcss",

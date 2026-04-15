@@ -37,6 +37,8 @@ require("lazy").setup({
   require("plugins.config.nvim-lspconfig"),
   -- Show Function Signature while entering parameters
   require("plugins.config.lsp_signature-nvim"),
+  -- Supercharge my Rust 🦀 experience
+  require("plugins.config.rustaceanvim"),
   -- Code Actions (based on lsp)
   require("plugins.config.tiny-code-action-nvim"),
   -- Show inline diagnostics
