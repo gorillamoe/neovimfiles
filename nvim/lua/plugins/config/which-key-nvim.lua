@@ -38,7 +38,6 @@ return {
       mode = { "n" },
       { "<leader>a", group = "Git 🐙" },
       { "<leader>ab", "<Cmd>BlameToggle window<CR>", desc = "Blame 😠" },
-      { "<leader>aa", "<Cmd>Neogit<CR>", desc = "Neogit 🥷" },
       { "<leader>ad", "<Cmd>:DiffConflicts<CR>", desc = "Diff Conflicts ⚔️" },
       { "<leader>as", group = "ndoo 🥷" },
       { "<leader>asO", "<Cmd>lua require('ndoo').open({ commit = true })<CR>", desc = "Open commit" },

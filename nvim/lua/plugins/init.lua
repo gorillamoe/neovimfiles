@@ -61,7 +61,6 @@ require("lazy").setup({
   require("plugins.config.conform-nvim"),
   require("plugins.config.nvim-lint"),
   -- Git Integration
-  require("plugins.config.neogit"),
   require("plugins.config.diffview-nvim"),
   require("plugins.config.gitsigns-nvim"),
   require("plugins.config.blame-nvim"),
