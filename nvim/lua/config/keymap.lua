@@ -28,7 +28,7 @@ map(
 )
 
 -- Quickly swap between two files
-map("n", "<space>", ":b#<CR>")
+map("n", "<space>", ":lua require('bafa.api').switch_to_buffer(2)<CR>")
 
 -- File Explorer
 map("n", "<leader>e", ":NvimTreeFindFileToggle<CR>")
