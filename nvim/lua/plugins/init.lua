@@ -77,8 +77,6 @@ require("lazy").setup({
   require("plugins.config.fzf-symbols"),
   -- Terraform 🌍
   require("plugins.config.vim-terraform"),
-  -- Treesitter 🌳
-  require("plugins.config.nvim-treesitter"),
   -- Social Coding
   require("plugins.config.vim-wakatime"),
   -- .. also flex on Discord
