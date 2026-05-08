@@ -1,6 +1,6 @@
--- Read from site/parsers*.so to get the list of installed parsers,
+-- Read from site/parsers/*.{so,dylib,dll} to get the list of installed parsers
 -- and remove the path and extension to get the parser names
-local installed_parsers = vim.fn.globpath(vim.fn.stdpath("data") .. "/site/parser", "*.so", true, true)
+local installed_parsers = vim.fn.globpath(vim.fn.stdpath("data") .. "/site/parser", "*.{so,dylib,dll}", true, true)
 for i, parser in ipairs(installed_parsers) do
   installed_parsers[i] = vim.fn.fnamemodify(parser, ":t:r")
 end
