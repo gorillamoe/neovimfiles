@@ -69,6 +69,7 @@ return {
           { name = "terraform_fmt", cmd = "terraform" },
         }),
         svelte = return_formatters_if_available({
+          { name = "oxfmt", cmd = "oxfmt" },
           { name = "eslint", cmd = "eslint" },
           { name = "prettier", cmd = "prettier" },
         }),
