@@ -6,8 +6,6 @@ if kulala_core_dir then
   kulala_core_path = kulala_core_dir .. "/packages/core/dist/kulala-core"
 end
 
-print("kulala_core_path:", kulala_core_path)
-
 return {
   "mistweaverco/kulala.nvim",
   dir = get_dir_path_if_exists(os.getenv("HOME") .. "/projects/personal/kulala.nvim"),
