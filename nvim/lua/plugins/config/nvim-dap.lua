@@ -5,8 +5,6 @@ return {
     {
       "microsoft/vscode-js-debug",
       version = "v1.105.0",
-      -- We reset any local changes to ensure a clean state before building.
-      pre_update = "git reset --hard HEAD",
       -- Because vscode-js-debug comes with a postinstall script that
       -- automatically downloads pre-built binaries, which may not be
       -- compatible with the user's system, we remove it before building.

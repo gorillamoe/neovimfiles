@@ -9,6 +9,7 @@ end
 return {
   "mistweaverco/kulala.nvim",
   dir = get_dir_path_if_exists(os.getenv("HOME") .. "/projects/personal/kulala.nvim"),
+  ft = { "http", "rest" },
   opts = {
     kulala_core_path = kulala_core_path,
     global_keymaps = {
