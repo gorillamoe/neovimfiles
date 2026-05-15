@@ -16,7 +16,7 @@ local M = {}
 
 -- Command to start the tsgo language server
 M.cmd = {
-  tsgo_bin,
+  "typescript-language-server",
   "lsp",
   "--stdio",
 }
