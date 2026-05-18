@@ -3,7 +3,11 @@ return {
   dependencies = {
     "ray-x/guihua.lua",
   },
-  opts = {},
+  opts = {
+    lsp_inlay_hints = {
+      enable = false,
+    },
+  },
   event = { "CmdlineEnter" },
   ft = { "go", "gomod" },
   build = ':lua require("go.install").update_all_sync()',
