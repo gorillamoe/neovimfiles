@@ -46,6 +46,17 @@ return {
       },
     })
 
+    vim.lsp.config("lua_ls", {
+      settings = {
+        Lua = {
+          workspace = {
+            checkThirdParty = false,
+            library = vim.api.nvim_get_runtime_file("", true),
+          },
+        },
+      },
+    })
+
     vim.lsp.config("tsgo", {
       capabilities = capabilities,
       single_file_support = false,
