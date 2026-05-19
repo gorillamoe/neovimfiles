@@ -3,6 +3,7 @@ return {
   dependencies = { "nvim-tree/nvim-web-devicons" },
   ---@module 'render-markdown'
   ---@type render.md.UserConfig
+  ft = { "markdown", "kulala_ui" },
   opts = {
     heading = {
       width = "block",

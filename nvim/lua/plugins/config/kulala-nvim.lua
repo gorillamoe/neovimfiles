@@ -53,12 +53,6 @@ return {
           require("kulala.ui").show_body()
         end,
       },
-      ["Show headers and body"] = {
-        "<leader>a",
-        function()
-          require("kulala.ui").show_headers_body()
-        end,
-      },
       ["Show verbose"] = {
         "<leader>v",
         function()
@@ -69,12 +63,6 @@ return {
         "<leader>o",
         function()
           require("kulala.ui").show_script_output()
-        end,
-      },
-      ["Show stats"] = {
-        "<leader>s",
-        function()
-          require("kulala.ui").show_stats()
         end,
       },
       ["Show report"] = {
@@ -88,13 +76,6 @@ return {
         function()
           require("kulala.ui").toggle_filter()
         end,
-      },
-      ["Send WS message"] = {
-        "<C-l>",
-        function()
-          require("kulala.cmd.websocket").send()
-        end,
-        mode = { "n", "v" },
       },
       ["Interrupt requests"] = {
         "<C-c>",
