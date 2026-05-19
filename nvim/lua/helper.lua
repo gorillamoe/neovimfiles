@@ -39,13 +39,32 @@ function helper.filepath_exists(path)
 end
 
 --- Get directory path if it exists
---- @param path string
+--- @param path string|table A string path or a table of paths to check
 --- @returns string|nil
 function helper.get_dir_path_if_exists(path)
+  if type(path) == "table" then
+    for _, p in ipairs(path) do
+      if helper.filepath_exists(p) then
+        return p
+      end
+    end
+    return nil
+  end
   if helper.filepath_exists(path) then
     return path
   end
   return nil
+end
+
+--- Get project directory path if it exists in the default projects directory
+--- @param path string project name to check in the default projects directory
+--- @returns string|nil
+function helper.get_project_dir_path_if_exists(path)
+  local base = vim.fs.joinpath(os.getenv("HOME"), "%s", "%s")
+  return helper.get_dir_path_if_exists({
+    string.format(base, vim.fs.joinpath("projects", "personal"), path),
+    string.format(base, vim.fs.joinpath("Projects", "personal"), path),
+  })
 end
 
 return helper

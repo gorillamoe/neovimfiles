@@ -1,9 +1,9 @@
-local get_dir_path_if_exists = require("helper").get_dir_path_if_exists
+local get_dir = require("helper").get_project_dir_path_if_exists
 
 return {
   "mistweaverco/snap.nvim",
   version = "v1.5.0",
-  dir = get_dir_path_if_exists("/home/marco/projects/personal/snap.nvim"),
+  dir = get_dir("snap.nvim"),
   cmd = "Snap",
   event = "VeryLazy",
   ---@type SnapUserConfig

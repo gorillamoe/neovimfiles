@@ -1,6 +1,6 @@
-local get_dir_path_if_exists = require("helper").get_dir_path_if_exists
+local get_dir = require("helper").get_project_dir_path_if_exists
 
-local kulala_core_dir = get_dir_path_if_exists(os.getenv("HOME") .. "/projects/personal/kulala-core")
+local kulala_core_dir = get_dir("kulala-core")
 local kulala_core_path
 if kulala_core_dir then
   kulala_core_path = kulala_core_dir .. "/packages/core/dist/kulala-core"
@@ -10,7 +10,7 @@ end
 
 return {
   "mistweaverco/kulala.nvim",
-  dir = get_dir_path_if_exists(os.getenv("HOME") .. "/projects/personal/kulala.nvim"),
+  dir = get_dir("kulala.nvim"),
   ft = { "http", "rest" },
   opts = {
     kulala_core = {
