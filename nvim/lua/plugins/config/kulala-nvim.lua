@@ -4,6 +4,8 @@ local kulala_core_dir = get_dir_path_if_exists(os.getenv("HOME") .. "/projects/p
 local kulala_core_path
 if kulala_core_dir then
   kulala_core_path = kulala_core_dir .. "/packages/core/dist/kulala-core"
+else
+  kulala_core_path = nil
 end
 
 return {
