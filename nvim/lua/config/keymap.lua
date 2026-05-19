@@ -1,5 +1,10 @@
 local map = require("helper").mapKey
 
+-- Fuzzy path completion in insert mode with @@
+vim.keymap.set("i", "@@", function()
+  require("fzf-lua").complete_path()
+end, { silent = true })
+
 -- Move up/down by visual (wrapped) lines
 map("", "j", "gj")
 map("", "k", "gk")
