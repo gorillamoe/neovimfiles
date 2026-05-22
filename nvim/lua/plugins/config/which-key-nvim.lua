@@ -4,6 +4,17 @@ return {
     local wk = require("which-key")
     wk.add({
       mode = { "n" },
+      { "<leader>k", group = "Kulala.nvim 🐼" },
+      {
+        "<leader>kr",
+        function()
+          require("kulala").replay()
+        end,
+        desc = "Replay 🔁",
+      },
+    })
+    wk.add({
+      mode = { "n" },
       { "<leader>f", group = "Flash.nvim ⚡" },
       { "<leader>ff", "<Cmd>lua require('flash').jump()<CR>", desc = "Jump ⚡" },
     })
