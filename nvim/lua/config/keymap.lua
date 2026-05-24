@@ -32,8 +32,12 @@ map(
   { desc = "Toggle bafa", noremap = true, silent = true }
 )
 
--- Quickly swap between two files
-map("n", "<space>", ":lua require('bafa.api').switch_to_buffer(2)<CR>")
+-- Quickly toggle between the last two recent files
+map("n", "<space>", ":lua require('bafa.api').switch_to_buffer(2)<CR>", {
+  desc = "Quickly toggle between the last two recent files",
+  noremap = true,
+  silent = true,
+})
 
 -- File Explorer
 map("n", "<leader>e", ":NvimTreeFindFileToggle<CR>")
