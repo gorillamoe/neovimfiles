@@ -10,6 +10,7 @@ opt.hidden = true -- Enable background buffers
 opt.ignorecase = true -- Ignore case
 opt.joinspaces = false -- No double spaces with join
 opt.list = false -- Don't show invisible characters by default
+opt.backupcopy = "yes" -- Write to the original file, instead of making a copy and renaming it (for permissions)
 -- thsese are enable locally in indent.lua, if mixed indentation is detected
 opt.number = true -- Show line numbers
 opt.relativenumber = false -- Relative line numbers off by default
