@@ -45,7 +45,7 @@ return {
       },
       formatters_by_ft = {
         http = return_formatters_if_available({
-          { name = "kulala", cmd = "kulala-fmt" },
+          { name = "kulala-fmt", cmd = "kulala-fmt" },
         }),
         go = return_formatters_if_available({
           { name = "goimports", cmd = "goimports" },
