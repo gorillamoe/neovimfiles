@@ -11,7 +11,13 @@ end
 return {
   "mistweaverco/kulala.nvim",
   dir = get_dir("kulala.nvim"),
-  ft = { "http", "rest" },
+  ft = {
+    "http",
+    "javascript",
+    "lua",
+    "rest",
+    "typescript",
+  },
   opts = {
     kulala_core = {
       path = kulala_core_path,
@@ -93,15 +99,24 @@ return {
       ["Previous response"] = {
         "<C-p>",
         function()
-          require("kulala.ui").show_previous()
+          require("kulala.ui.ws_input").on_send_keymap()
         end,
       },
-      ["Jump to response"] = {
+      ["Send WS message"] = {
         "<C-j>",
+        function()
+          require("kulala.ui.ws_input").on_send_keymap()
+        end,
+        mode = { "n", "v", "i" },
+        desc = "Open WS message input (body view) / send from input overlay",
+        prefix = false,
+      },
+      ["Jump to response"] = {
+        "<C-b>",
         function()
           require("kulala.ui").jump_to_response()
         end,
-        desc = "also: Send WS message for WS connections",
+        desc = "also: show responses list",
       },
       ["Clear responses history"] = {
         "<leader>X",
