@@ -50,7 +50,7 @@ map("n", "<leader><leader>", function()
 end, { desc = "Toggle bafa", noremap = true, silent = true })
 -- Quickly toggle between the last two recent files
 map("n", "<space>", function()
-  require("bafa").switch_to_buffer(2)
+  require("bafa.api").switch_to_buffer(2)
 end, {
   desc = "Quickly toggle between the last two recent files",
   noremap = true,
