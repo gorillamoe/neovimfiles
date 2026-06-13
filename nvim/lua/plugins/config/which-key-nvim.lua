@@ -2,6 +2,7 @@ return {
   "folke/which-key.nvim",
   config = function()
     local wk = require("which-key")
+
     wk.add({
       mode = { "n" },
       { "<leader>k", group = "Kulala.nvim 🐼" },
@@ -13,29 +14,74 @@ return {
         desc = "Replay 🔁",
       },
     })
+
     wk.add({
       mode = { "n" },
-      { "<leader>f", group = "Flash.nvim ⚡" },
-      { "<leader>ff", "<Cmd>lua require('flash').jump()<CR>", desc = "Jump ⚡" },
+      {
+        "<leader>t",
+        function()
+          require("floaterm").toggle()
+        end,
+        desc = "Toggle Floaterm 🪁",
+      },
     })
+
+    wk.add({
+      mode = { "n" },
+      "<leader>f",
+      function()
+        require("flash").jump()
+      end,
+      desc = "Flash Jump ⚡",
+    })
+
     wk.add({
       {
         mode = { "v" },
         { "<leader>a", group = "Git 🐙" },
         { "<leader>as", group = "ndoo 🥷" },
-        { "<leader>asO", "<Cmd>lua require('ndoo').open({ v = true, commit = true })<CR>", desc = "Open commit" },
-        { "<leader>aso", "<Cmd>lua require('ndoo').open({ v = true })<CR>", desc = "Open" },
+        {
+          "<leader>asO",
+          function()
+            require("ndoo").open({ v = true, commit = true })
+          end,
+          desc = "Open commit",
+        },
+        {
+          "<leader>aso",
+          function()
+            require("ndoo").open({ v = true })
+          end,
+          desc = "Open",
+        },
       },
     })
 
     wk.add({
       {
         mode = { "n" },
-        { "<leader>u", group = "Time Machine" },
-        { "<leader>uu", "<cmd>TimeMachineToggle<CR>", desc = "[Time Machine] Toggle Tree" },
-        { "<leader>ux", "<cmd>TimeMachinePurgeCurrent<CR>", desc = "[Time Machine] Purge Current" },
-        { "<leader>uX", "<cmd>TimeMachinePurgeAll<CR>", desc = "[Time Machine] Purge All" },
-        { "<leader>ul", "<cmd>TimeMachineLogShow<CR>", desc = "[Time Machine] Show Log" },
+        {
+          "<leader>u",
+          function()
+            -- since undotree only supports .open(),
+            -- we iterate over the windows to check if undotree is already open, and close it if it is
+            local undotree_win = nil
+            for _, win in ipairs(vim.api.nvim_list_wins()) do
+              local buf = vim.api.nvim_win_get_buf(win)
+              local buf_name = vim.api.nvim_buf_get_name(buf)
+              if buf_name:match("undotree") then
+                undotree_win = win
+                break
+              end
+            end
+            if undotree_win then
+              vim.api.nvim_win_close(undotree_win, true)
+            else
+              require("undotree").open()
+            end
+          end,
+          desc = "Toggle UndoTree 🕰️🌳",
+        },
       },
     })
 
@@ -49,40 +95,146 @@ return {
       mode = { "n" },
       { "<leader>a", group = "Git 🐙" },
       { "<leader>ab", "<Cmd>BlameToggle window<CR>", desc = "Blame 😠" },
-      { "<leader>ad", "<Cmd>:DiffConflicts<CR>", desc = "Diff Conflicts ⚔️" },
+      {
+        "<leader>ad",
+        function()
+          require("diffconflicts").show()
+        end,
+        desc = "Diff Conflicts ⚔️",
+      },
       { "<leader>as", group = "ndoo 🥷" },
-      { "<leader>asO", "<Cmd>lua require('ndoo').open({ commit = true })<CR>", desc = "Open commit" },
-      { "<leader>asa", "<Cmd>lua require('ndoo').pipelines()<CR>", desc = "Pipelines" },
-      { "<leader>asc", "<Cmd>lua require('ndoo').commit()<CR>", desc = "Commit" },
-      { "<leader>asi", "<Cmd>lua require('ndoo').issues()<CR>", desc = "Issues" },
-      { "<leader>asl", "<Cmd>lua require('ndoo').labels()<CR>", desc = "Labels" },
-      { "<leader>aso", "<Cmd>lua require('ndoo').open()<CR>", desc = "Open" },
-      { "<leader>asp", "<Cmd>lua require('ndoo').pulls()<CR>", desc = "Pulls" },
-      { "<leader>asr", "<Cmd>lua require('ndoo').repo()<CR>", desc = "Repo" },
+      {
+        "<leader>asO",
+        function()
+          require("ndoo").open({ commit = true })
+        end,
+        desc = "Open commit",
+      },
+      {
+        "<leader>asa",
+        function()
+          require("ndoo").pipelines()
+        end,
+        desc = "Pipelines",
+      },
+      {
+        "<leader>asc",
+        function()
+          require("ndoo").commit()
+        end,
+        desc = "Commit",
+      },
+      {
+        "<leader>asi",
+        function()
+          require("ndoo").issues()
+        end,
+        desc = "Issues",
+      },
+      {
+        "<leader>asl",
+        function()
+          return require("ndoo").labels()
+        end,
+        desc = "Labels",
+      },
+      {
+        "<leader>aso",
+        function()
+          return require("ndoo").open()
+        end,
+        desc = "Open",
+      },
+      {
+        "<leader>asp",
+        function()
+          return require("ndoo").pulls()
+        end,
+        desc = "Pulls",
+      },
+      {
+        "<leader>asr",
+        function()
+          return require("ndoo").repo()
+        end,
+        desc = "Repo",
+      },
     })
 
     wk.add({
       mode = { "n" },
       { "<leader>g", group = "Goto" },
-      { "<leader>gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", desc = "Declaration" },
-      { "<leader>gd", "<Cmd>lua require('fzf-lua').lsp_definitions()<CR>", desc = "Definitions" },
-      { "<leader>gg", "<Cmd>lua require('fzf-lua').live_grep({ resume = true })<CR>", desc = "Live Grep" },
-      { "<leader>gi", "<Cmd>lua require('fzf-lua').lsp_implementations()<CR>", desc = "Implementations" },
-      { "<leader>gk", "<Cmd>lua vim.lsp.buf.hover()<CR>", desc = "Show Function Docs" },
-      { "<leader>gr", "<Cmd>lua require('fzf-lua').lsp_references()<CR>", desc = "References" },
-      { "<leader>gR", "<Cmd>lua vim.lsp.buf.rename()<CR>", desc = "Rename" },
+      {
+        "<leader>gD",
+        function()
+          return vim.lsp.buf.declaration()
+        end,
+        desc = "Declaration",
+      },
+      {
+        "<leader>gd",
+        function()
+          return require("fzf-lua").lsp_definitions()
+        end,
+        desc = "Definitions",
+      },
+      {
+        "<leader>gg",
+        function()
+          return require("fzf-lua").live_grep({ resume = true })
+        end,
+        desc = "Live Grep",
+      },
+      {
+        "<leader>gi",
+        function()
+          return require("fzf-lua").lsp_implementations()
+        end,
+        desc = "Implementations",
+      },
+      {
+        "<leader>gk",
+        function()
+          return vim.lsp.buf.hover()
+        end,
+        desc = "Show Function Docs",
+      },
+      {
+        "<leader>gr",
+        function()
+          return require("fzf-lua").lsp_references()
+        end,
+        desc = "References",
+      },
+      {
+        "<leader>gR",
+        function()
+          return vim.lsp.buf.rename()
+        end,
+        desc = "Rename",
+      },
       { "<leader>gs", group = "Symbols" },
       {
         "<leader>gsw",
-        "<Cmd>lua require('fzf-lua').lsp_workspace_symbols()<CR>",
+        function()
+          return require("fzf-lua").lsp_workspace_symbols()
+        end,
         desc = "Workspace Symbols",
       },
       {
         "<leader>gsd",
-        "<Cmd>lua require('fzf-lua').lsp_document_symbols()<CR>",
+        function()
+          return require("fzf-lua").lsp_document_symbols()
+        end,
         desc = "Document Symbols",
       },
-      { "<leader>gt", "<Cmd>lua require('fzf-lua').lsp_typedefs()<CR>", desc = "Type Definitions" },
+      {
+        "<leader>gt",
+        function()
+          return require("fzf-lua").lsp_typedefs()
+        end,
+        desc = "Type Definitions",
+      },
     })
 
     wk.add({
@@ -90,21 +242,33 @@ return {
       { "<leader>d", group = "Debug" },
       {
         "<leader>dt",
-        "<cmd>TodoTrouble<cr>",
+        function()
+          return require("trouble").toggle({ mode = "todo" })
+        end,
         desc = "ToDo",
         icon = "",
       },
       { "<leader>d", group = "Debug" },
       {
         "<leader>dd",
-        "<cmd>lua require('trouble').toggle({ mode = 'diagnostics', filter = { buf = 0 } })<cr>",
+        function()
+          require("trouble").toggle({ mode = "diagnostics", filter = { buf = 0 } })
+        end,
         desc = "Document Diagnostics",
       },
-      { "<leader>de", "<cmd>lua vim.diagnostic.open_float(0, {scope='line'})<CR>", desc = "Show error in float" },
+      {
+        "<leader>de",
+        function()
+          vim.diagnostic.open_float(0, { scope = "line" })
+        end,
+        desc = "Show error in float",
+      },
       {
         "<leader>dw",
-        "<cmd>lua require('trouble').toggle({ mode = 'diagnostics' })<cr>",
-        desc = "Workspace Diagnostics",
+        function()
+          require("trouble").toggle({ mode = "diagnostics" })
+        end,
+        desc = "Workspace Diagnostics 🔍",
       },
       {
         "<leader>db",
@@ -142,23 +306,23 @@ return {
 
     wk.add({
       mode = { "n" },
-      { "<leader>c", group = "Code" },
-      { "<leader>ca", "<cmd>lua require('tiny-code-action').code_action()<CR>", desc = "Actions" },
-    })
-
-    wk.add({
-      mode = { "n" },
-      { "<leader>z", group = "Zen" },
-      { "<leader>zz", "<cmd>:ZenMode<CR>", desc = "ZenMode" },
-    })
-
-    wk.add({
-      mode = { "n" },
-      { "<leader>y", group = "Yank buffer as..." },
       {
-        "<leader>yh",
-        "<CMD>w !pandoc --standalone | xclip -target text/html -selection clip<CR>",
-        desc = "Yank as rich text",
+        "<leader>c",
+        function()
+          return require("tiny-code-action").code_action()
+        end,
+        desc = "Code Action 💡",
+      },
+    })
+
+    wk.add({
+      mode = { "n" },
+      {
+        "<leader>z",
+        function()
+          return require("zen-mode").toggle()
+        end,
+        desc = "ZenMode 🧘",
       },
     })
   end,
