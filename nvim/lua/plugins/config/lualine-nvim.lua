@@ -62,7 +62,7 @@ return {
       sections = {
         lualine_a = { "mode" },
         lualine_b = {},
-        lualine_c = { "filename", diff, diagnostics, "kulala" },
+        lualine_c = { "floaterm", "filename", diff, diagnostics, "kulala" },
         lualine_x = { "branch", "encoding", "fileformat", filetype },
         lualine_y = { "progress" },
         lualine_z = { "location" },
