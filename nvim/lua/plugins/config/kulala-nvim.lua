@@ -99,7 +99,7 @@ return {
       ["Previous response"] = {
         "<C-p>",
         function()
-          require("kulala.ui.ws_input").on_send_keymap()
+          require("kulala.ui").show_previous()
         end,
       },
       ["Send WS message"] = {
