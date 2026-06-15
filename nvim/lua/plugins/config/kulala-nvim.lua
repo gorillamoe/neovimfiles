@@ -24,7 +24,7 @@ return {
     },
     global_keymaps = {
       ["Search requests"] = {
-        "<leader>t",
+        "<leader>S",
         function()
           require("kulala").search()
         end,
