@@ -133,7 +133,7 @@ return {
     },
     request_timeout = nil,
     ui = {
-      display_mode = "float",
+      display_mode = "split",
       win_opts = {
         wo = { foldmethod = "manual" },
       },
