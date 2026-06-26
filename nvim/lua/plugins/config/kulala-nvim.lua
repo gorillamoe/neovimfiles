@@ -22,6 +22,11 @@ return {
     kulala_core = {
       path = kulala_core_path,
     },
+    response_format = {
+      indent = 2,
+      expand_tabs = true,
+      sort_keys = true,
+    },
     global_keymaps = {
       ["Search requests"] = {
         "<leader>S",
