@@ -21,6 +21,7 @@ return {
   opts = {
     kulala_core = {
       path = kulala_core_path,
+      timeout = 0,
     },
     response_format = {
       indent = 2,
@@ -136,7 +137,6 @@ return {
         end,
       },
     },
-    request_timeout = nil,
     ui = {
       display_mode = "split",
       win_opts = {
