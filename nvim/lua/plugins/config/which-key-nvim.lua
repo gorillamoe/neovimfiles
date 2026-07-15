@@ -94,6 +94,7 @@ return {
     wk.add({
       mode = { "n" },
       { "<leader>a", group = "Git 🐙" },
+      { "<leader>aa", require("jujutsu").open, desc = "Jujutsu 🥋" },
       { "<leader>ab", "<Cmd>BlameToggle window<CR>", desc = "Blame 😠" },
       {
         "<leader>ad",

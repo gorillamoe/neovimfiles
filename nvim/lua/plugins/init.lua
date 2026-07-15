@@ -60,6 +60,8 @@ require("lazy").setup({
   -- Formatters 💄 and Linters 🧹
   require("plugins.config.conform-nvim"),
   require("plugins.config.nvim-lint"),
+  -- Jujutsu
+  require("plugins.config.jujutsu-nvim"),
   -- Git Integration
   require("plugins.config.diffview-nvim"),
   require("plugins.config.gitsigns-nvim"),
