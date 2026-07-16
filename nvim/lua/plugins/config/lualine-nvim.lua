@@ -41,13 +41,13 @@ return {
       sections = {
         lualine_a = { "mode" },
         lualine_b = {},
-        lualine_c = require("jujutsu.lualine").append({ "floaterm", "filename", diagnostics }),
-        lualine_x = {
+        lualine_c = { "floaterm", "filename", diagnostics },
+        lualine_x = require("jujutsu.lualine").prepend({
           "kulala",
           "encoding",
           "fileformat",
           filetype,
-        },
+        }),
         lualine_y = { "progress" },
         lualine_z = { "location" },
       },
