@@ -23,27 +23,6 @@ return {
       always_visible = false,
     }
 
-    local diff = {
-      "diff",
-      source = function()
-        local gitsigns = vim.b.gitsigns_status_dict
-        if gitsigns then
-          return {
-            added = gitsigns.added,
-            modified = gitsigns.changed,
-            removed = gitsigns.removed,
-          }
-        end
-      end,
-      symbols = {
-        added = icon.git.LineAdded .. " ",
-        modified = icon.git.LineModified .. " ",
-        removed = icon.git.LineRemoved .. " ",
-      },
-      colored = true,
-      always_visible = false,
-    }
-
     require("lualine").setup({
       options = {
         icons_enabled = true,
@@ -62,8 +41,13 @@ return {
       sections = {
         lualine_a = { "mode" },
         lualine_b = {},
-        lualine_c = { "floaterm", "filename", diff, diagnostics, "kulala" },
-        lualine_x = { "branch", "encoding", "fileformat", filetype },
+        lualine_c = require("jujutsu.lualine").append({ "floaterm", "filename", diagnostics }),
+        lualine_x = {
+          "kulala",
+          "encoding",
+          "fileformat",
+          filetype,
+        },
         lualine_y = { "progress" },
         lualine_z = { "location" },
       },
