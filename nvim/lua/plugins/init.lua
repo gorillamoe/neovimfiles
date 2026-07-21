@@ -96,7 +96,7 @@ require("lazy").setup({
   -- File explorer
   require("plugins.config.nvim-tree"),
   -- Cocconut oil 🥥 for neovim
-  require("plugins.config.oil-nvim"),
+  require("plugins.config.fyler-nvim"),
   -- Fancy Markdown rendering
   require("plugins.config.render-markdown-nvim"),
   -- Customized 🌈 vim status line
