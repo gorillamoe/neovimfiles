@@ -14,8 +14,13 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Install Plugins
 require("lazy").setup({
-  -- Floaterm
-  require("plugins.config.floaterm"),
+  -- Tabby
+  -- A highly configurable tabline plugin.
+  require("plugins.config.tabby-nvim"),
+  -- floaterm.nvim
+  -- A minimal Neovim plugin that provides a
+  -- single floating terminal.
+  require("plugins.config.floaterm-nvim"),
   -- Zen mode
   -- A distraction-free coding mode for Neovim
   require("plugins.config.zen-mode-nvim"),

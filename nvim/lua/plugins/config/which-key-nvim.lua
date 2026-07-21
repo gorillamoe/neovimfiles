@@ -164,6 +164,16 @@ return {
 
     wk.add({
       mode = { "n" },
+      {
+        "<leader>j",
+        "<cmd>Tabby jump_to_tab<cr>",
+        silent = true,
+        desc = "Jump to tab",
+      },
+    })
+
+    wk.add({
+      mode = { "n" },
       { "<leader>g", group = "Goto" },
       {
         "<leader>gD",
