@@ -2,14 +2,14 @@
 
 ![logo][logo]
 
-# Gorilla Moe's Neovim configuration files
+# Gorilla Moe's Neovim Configuration Files
 
 [![Made with love][badge-made-with-love]][contributors]
 
 [List of Terms](#terms-used-in-this-readme) •
 [Install](#install) •
 [Features](#features) •
-[Language servers and treesitter](#language-servers-and-treesitter)
+[Language servers and Tree-sitter](#language-servers-and-treesitter)
 
 <p></p>
 
@@ -20,20 +20,20 @@ but these are my personal Neovim configuration files.
 
 </div>
 
-## Terms used in this README
+## Terms Used in This README
 
 - Version Control System (VCS)
   A system that tracks changes to files over time.
   Examples include Git, Jujutsu, Mercurial, and Subversion.
 - Representational State Transfer (REST)
 - Language Server Protocol (LSP)
-- Treesitter: A syntax parser and highlighter
+- Tree-sitter: A syntax parser and highlighter
 - Greatest Of All Time (GOAT)
 - In My Opinion (IMO)
 - In My Humble Opinion (IMHO)
 - Video Home System (VHS)
-  Pretty much obsolete technology for storing and playing video cassettes.
-  Mainly used in the 80s and 90s.
+  Pretty much obsolete technology for storing and playing videocassettes.
+  Mainly used in the '80s and 90's.
 
 ## Install
 
@@ -42,7 +42,7 @@ There are some **prerequisites** you need to have installed.
 - Neovim 0.11.5+ (tested, might work on older versions, but not guaranteed)
 - Node.js 22+ (for most LSP servers)
 
-### Clone this repository
+### Clone This Repository
 
 Clone this repository to your local machine:
 
@@ -51,7 +51,7 @@ mkdir -p ~/projects/personal
 git clone https://github.com/gorillamoe/neovimfiles ~/projects/personal/neovimfiles
 ```
 
-### Symlink the configuration
+### Symlink the Configuration
 
 I use [shazam.sh] to [symlink all my dotfiles][my-shazam],
 but you can just run this command manually:
@@ -60,7 +60,7 @@ but you can just run this command manually:
 ln -s ~/projects/personal/neovimfiles ~/.config/nvim
 ```
 
-### Install external dependencies
+### Install External Dependencies
 
 I use [zana] to
 [manage most of my LSP servers, linters and formatters][my-zana].
@@ -68,7 +68,7 @@ I use [zana] to
 You should use whatever floats your boat.
 Zana works great for me, but your mileage may vary.
 
-### Start neovim
+### Start Neovim
 
 You should see a _"Installing lazy.nvim.."_ and
 popup installing the plugins on the first run
@@ -138,10 +138,10 @@ but these are some of the main ones:
   - [todo-comments.nvim] as todo comments highlighter.
   - [ts-comments.nvim] to enhance native comments.
 
-## Language servers and treesitter
+## Language Servers and Tree-Sitter
 
 I have [some][supported-treesitter-languages] languages configured
-for treesitter that I use regularly.
+for Tree-sitter that I use regularly.
 
 I [also use][supported-lsp-servers] some LSP servers for
 languages I use regularly.

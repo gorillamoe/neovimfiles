@@ -63,9 +63,6 @@ return {
       lua = return_formatters_if_available({
         "luacheck",
       }),
-      markdown = return_formatters_if_available({
-        "vale",
-      }),
       php = return_formatters_if_available({
         "phpcs",
       }),

@@ -17,6 +17,7 @@ return {
       "dockerls",
       "eslint",
       "gopls",
+      "harper_ls",
       "html",
       "intelephense",
       "jsonls",
