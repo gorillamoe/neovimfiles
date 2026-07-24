@@ -37,28 +37,6 @@ return {
 
     wk.add({
       {
-        mode = { "v" },
-        { "<leader>a", group = "Git 🐙" },
-        { "<leader>as", group = "ndoo 🥷" },
-        {
-          "<leader>asO",
-          function()
-            require("ndoo").open({ v = true, commit = true })
-          end,
-          desc = "Open commit",
-        },
-        {
-          "<leader>aso",
-          function()
-            require("ndoo").open({ v = true })
-          end,
-          desc = "Open",
-        },
-      },
-    })
-
-    wk.add({
-      {
         mode = { "n" },
         {
           "<leader>u",
@@ -91,74 +69,29 @@ return {
       { "<leader>ww", "<cmd>lua require('nvim-window').pick()<cr>", desc = "Jump to window" },
     })
 
+    local is_diffview_open = false
+
     wk.add({
       mode = { "n" },
-      { "<leader>a", group = "Git 🐙" },
+      { "<leader>a", group = "VCS" },
       { "<leader>aa", require("jujutsu").open, desc = "Jujutsu 🥋" },
-      { "<leader>ab", "<Cmd>BlameToggle window<CR>", desc = "Blame 😠" },
+      {
+        "<leader>ab",
+        "<cmd>:BlameToggle<cr>",
+        desc = "Blame 🫵",
+      },
       {
         "<leader>ad",
         function()
-          require("diffconflicts").show()
+          if is_diffview_open then
+            require("diffview").close()
+            is_diffview_open = false
+          else
+            require("diffview").open()
+            is_diffview_open = true
+          end
         end,
-        desc = "Diff Conflicts ⚔️",
-      },
-      { "<leader>as", group = "ndoo 🥷" },
-      {
-        "<leader>asO",
-        function()
-          require("ndoo").open({ commit = true })
-        end,
-        desc = "Open commit",
-      },
-      {
-        "<leader>asa",
-        function()
-          require("ndoo").pipelines()
-        end,
-        desc = "Pipelines",
-      },
-      {
-        "<leader>asc",
-        function()
-          require("ndoo").commit()
-        end,
-        desc = "Commit",
-      },
-      {
-        "<leader>asi",
-        function()
-          require("ndoo").issues()
-        end,
-        desc = "Issues",
-      },
-      {
-        "<leader>asl",
-        function()
-          return require("ndoo").labels()
-        end,
-        desc = "Labels",
-      },
-      {
-        "<leader>aso",
-        function()
-          return require("ndoo").open()
-        end,
-        desc = "Open",
-      },
-      {
-        "<leader>asp",
-        function()
-          return require("ndoo").pulls()
-        end,
-        desc = "Pulls",
-      },
-      {
-        "<leader>asr",
-        function()
-          return require("ndoo").repo()
-        end,
-        desc = "Repo",
+        desc = "Diff View 📝",
       },
     })
 

@@ -6,7 +6,6 @@ return {
 
   dependencies = {
     {
-      "Kaiser-Yang/blink-cmp-git",
       dependencies = { "nvim-lua/plenary.nvim" },
     },
   },
@@ -53,18 +52,6 @@ return {
         "lsp",
         "path",
         "buffer",
-        "git",
-      },
-      providers = {
-        git = {
-          enabled = function()
-            -- enable for gitcommit, gitrebase,
-            return vim.tbl_contains({ "gitcommit" }, vim.bo.filetype)
-          end,
-          module = "blink-cmp-git",
-          name = "Git",
-          opts = {},
-        },
       },
     },
   },

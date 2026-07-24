@@ -72,8 +72,6 @@ require("lazy").setup({
   require("plugins.config.gitsigns-nvim"),
   require("plugins.config.blame-nvim"),
   require("plugins.config.diffconflicts-nvim"),
-  -- Github, GitLab and Bitbucket Integration 🐙
-  require("plugins.config.ndoo-nvim"),
   -- Bafa, Buffer management on steroids 💊
   require("plugins.config.bafa-nvim"),
   -- Trailing whitespace highlighting & automatic fixing
