@@ -4,12 +4,6 @@ return {
   build = "cargo build --release",
   version = "*",
 
-  dependencies = {
-    {
-      dependencies = { "nvim-lua/plenary.nvim" },
-    },
-  },
-
   ---@module 'blink.cmp'
   ---@type blink.cmp.Config
   opts = {
