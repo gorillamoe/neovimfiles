@@ -116,7 +116,7 @@ nvpm_bootstrapper().setup({
   -- Search on steroids with ripgrep
   require("plugins.config.grug-far-nvim"),
   -- Neovim DAP (Debug Adapter Protocol)
-  -- require("plugins.config.nvim-dap"),
+  require("plugins.config.nvim-dap"),
   -- Minimal screenshot 📸 plugin for Neovim
   require("plugins.config.snap-nvim"),
 })

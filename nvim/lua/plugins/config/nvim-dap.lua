@@ -4,20 +4,12 @@ return {
     { "theHamsta/nvim-dap-virtual-text" },
     {
       "microsoft/vscode-js-debug",
-      -- Because vscode-js-debug comes with a postinstall script that
-      -- automatically downloads pre-built binaries, which may not be
-      -- compatible with the user's system, we remove it before building.
-      build = "jq 'del(.scripts.postinstall)' package.json > package.json.patch && mv package.json.patch package.json && npm install && gulp dapDebugServer",
     },
     {
       "igorlfs/nvim-dap-view",
-      ---@module 'dap-view'
-      ---@type dapview.Config
-      opts = {},
     },
   },
   config = function()
-    local debugger_location = vim.fn.stdpath("data") .. "/lazy/vscode-js-debug"
     local dap, dapview, vt = require("dap"), require("dap-view"), require("nvim-dap-virtual-text")
     vt.setup()
     dap.listeners.before.attach.dapview_config = function()
@@ -34,7 +26,7 @@ return {
         port = "${port}",
         executable = {
           command = "node",
-          args = { debugger_location .. "/dist/src/dapDebugServer.js", "${port}" },
+          args = { "js-debug-adapter", "${port}" },
         },
       }
     end
