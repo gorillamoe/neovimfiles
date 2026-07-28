@@ -3,7 +3,6 @@ local function nvpm_bootstrapper()
   if not data or data == "" then
     data = vim.fs.joinpath(vim.env.HOME, ".local", "share", "nvpm")
   end
-  print(data)
   local roots = {
     vim.fs.joinpath(data, "plugins", "github", "mistweaverco_nvpm.nvim"),
     vim.fs.joinpath(data, "packages", "github", "mistweaverco_nvpm.nvim"),

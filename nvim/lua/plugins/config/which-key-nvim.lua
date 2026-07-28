@@ -74,7 +74,13 @@ return {
     wk.add({
       mode = { "n" },
       { "<leader>a", group = "VCS" },
-      { "<leader>aa", require("jujutsu").open, desc = "Jujutsu 🥋" },
+      {
+        "<leader>aa",
+        function()
+          require("jujutsu").open()
+        end,
+        desc = "Jujutsu 🥋"
+      },
       {
         "<leader>ab",
         "<cmd>:BlameToggle<cr>",

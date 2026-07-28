@@ -1,6 +1,5 @@
 return {
   "FylerOrg/fyler.nvim",
-  lazy = true,
   keys = {
     {
       "-",
