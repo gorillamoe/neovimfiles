@@ -76,5 +76,3 @@ end, {
 vim.keymap.set("i", "<C-e>", function()
   require("fzf-symbols").open()
 end, { desc = "Insert emoji or gitmoji", silent = true })
-
-vim.keymap.set("n", "-", require("fyler").open, { desc = "Open parent directory", silent = true })

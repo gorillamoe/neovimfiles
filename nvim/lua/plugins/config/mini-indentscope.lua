@@ -1,5 +1,5 @@
 return {
   "echasnovski/mini.indentscope",
-  version = "*",
+  event = "VeryLazy",
   opts = {},
 }

@@ -1,4 +1,5 @@
 return {
   "mrcjkb/rustaceanvim",
-  version = "9.0.1",
+  lazy = true,
+  ft = { "rust" },
 }

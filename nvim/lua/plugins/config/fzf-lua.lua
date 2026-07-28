@@ -3,11 +3,13 @@ return {
   dependencies = {
     "nvim-tree/nvim-web-devicons",
   },
-  opts = {
-    keymap = {
-      fzf = {
-        ["ctrl-q"] = "select-all+accept",
+  opts = function()
+    return {
+      keymap = {
+        fzf = {
+          ["ctrl-q"] = "select-all+accept",
+        },
       },
-    },
-  },
+    }
+  end,
 }

@@ -1,19 +1,29 @@
--- Bootstrapping lazy.nvim
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
+local function nvpm_bootstrapper()
+  local data = vim.env.NVPM_HOME
+  if not data or data == "" then
+    data = vim.fs.joinpath(vim.env.HOME, ".local", "share", "nvpm")
+  end
+  print(data)
+  local roots = {
+    vim.fs.joinpath(data, "plugins", "github", "mistweaverco_nvpm.nvim"),
+    vim.fs.joinpath(data, "packages", "github", "mistweaverco_nvpm.nvim"),
+  }
+  local bootstrap
+  for _, root in ipairs(roots) do
+    local path = vim.fs.joinpath(root, "lua", "nvpm", "bootstrap.lua")
+    bootstrap = loadfile(path)
+    if bootstrap then
+      break
+    end
+  end
+  if not bootstrap then
+    error("nvpm.nvim is not installed; run: nvpm add --plugin neovim github:mistweaverco/nvpm.nvim", 0)
+  end
+  return bootstrap()
 end
-vim.opt.rtp:prepend(lazypath)
 
--- Install Plugins
-require("lazy").setup({
+-- Configure plugins
+nvpm_bootstrapper().setup({
   -- Tabby
   -- A highly configurable tabline plugin.
   require("plugins.config.tabby-nvim"),
@@ -40,8 +50,6 @@ require("lazy").setup({
   require("plugins.config.blink-cmp"),
   -- Code Analysis
   require("plugins.config.nvim-lspconfig"),
-  -- Show Function Signature while entering parameters
-  require("plugins.config.lsp_signature-nvim"),
   -- Supercharge my Rust 🦀 experience
   require("plugins.config.rustaceanvim"),
   -- Code Actions (based on lsp)
@@ -104,13 +112,11 @@ require("lazy").setup({
   -- Easily surround stuff
   require("plugins.config.vim-surround"),
   -- Add Golang support
-  require("plugins.config.go-nvim"),
-  -- Database 🗃️ support
-  require("plugins.config.nvim-dbee"),
+  require("plugins.config.vim-go"),
   -- Search on steroids with ripgrep
   require("plugins.config.grug-far-nvim"),
   -- Neovim DAP (Debug Adapter Protocol)
-  require("plugins.config.nvim-dap"),
+  -- require("plugins.config.nvim-dap"),
   -- Minimal screenshot 📸 plugin for Neovim
   require("plugins.config.snap-nvim"),
 })
