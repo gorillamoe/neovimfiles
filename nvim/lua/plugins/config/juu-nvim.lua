@@ -6,4 +6,5 @@ require("vim._core.ui2").enable({})
 return {
   "mistweaverco/juu.nvim",
   dir = get_dir("juu.nvim"),
+  opts = {},
 }

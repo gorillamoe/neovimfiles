@@ -48,7 +48,7 @@ nvpm_bootstrapper().setup({
   -- Autocompletion
   require("plugins.config.blink-cmp"),
   -- Code Analysis
-  require("plugins.config.nvim-lspconfig"),
+  -- require("plugins.config.nvim-lspconfig"),
   -- Supercharge my Rust 🦀 experience
   require("plugins.config.rustaceanvim"),
   -- Code Actions (based on lsp)
