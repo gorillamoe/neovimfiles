@@ -4,4 +4,13 @@ return {
   "mistweaverco/jujutsu.nvim",
   dir = get_dir("jujutsu.nvim"),
   opts = {},
+  keys = {
+    {
+      "<leader>aa",
+      function()
+        require("jujutsu").open()
+      end,
+      desc = "Jujutsu",
+    },
+  },
 }

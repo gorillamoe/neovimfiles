@@ -4,7 +4,7 @@
 
 -- luacheck: ignore 631
 
-local util = require("lspconfig.util")
+local util = require("nvpm.lsp.util")
 
 local function oxlint_conf_mentions_typescript(root_dir)
   local fn = vim.fs.joinpath(root_dir, ".oxlintrc.json")

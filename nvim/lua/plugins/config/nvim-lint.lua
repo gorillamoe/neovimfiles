@@ -92,7 +92,7 @@ return {
         local filetype = vim.api.nvim_get_option_value("filetype", { buf = args.buf })
         local names_override = nil
         if vim.tbl_contains(js_filetypes, filetype) then
-          if require("lspconfig.util").root_pattern("deno.json", "deno.jsonc")(args.buf) then
+          if require("nvpm.lsp.util").root_pattern("deno.json", "deno.jsonc")(args.buf) then
             names_override = { "deno" }
           end
         end

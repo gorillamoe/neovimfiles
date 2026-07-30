@@ -2,7 +2,7 @@
 --- https://github.com/hrsh7th/vscode-langservers-extracted
 --- Refer to https://github.com/Microsoft/vscode-eslint#settings-options for documentation.
 
-local util = require("lspconfig.util")
+local util = require("nvpm.lsp.util")
 local lsp = vim.lsp
 
 local eslint_config_files = {

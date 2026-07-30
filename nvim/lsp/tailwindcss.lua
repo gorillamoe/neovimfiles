@@ -1,7 +1,7 @@
 ---@brief
 --- https://github.com/tailwindlabs/tailwindcss-intellisense
 
-local util = require("lspconfig.util")
+local util = require("nvpm.lsp.util")
 
 ---@type vim.lsp.Config
 return {

@@ -75,9 +75,7 @@ nvpm_bootstrapper().setup({
   -- Jujutsu
   require("plugins.config.jujutsu-nvim"),
   -- Git Integration
-  require("plugins.config.diffview-nvim"),
   require("plugins.config.gitsigns-nvim"),
-  require("plugins.config.blame-nvim"),
   require("plugins.config.diffconflicts-nvim"),
   -- Bafa, Buffer management on steroids 💊
   require("plugins.config.bafa-nvim"),

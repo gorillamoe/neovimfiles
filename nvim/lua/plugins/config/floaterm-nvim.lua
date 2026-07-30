@@ -4,4 +4,13 @@ return {
   "mistweaverco/floaterm.nvim",
   dir = get_dir("floaterm.nvim"),
   opts = {},
+  keys = {
+    {
+      "<leader>t",
+      function()
+        require("floatterm").toggle()
+      end,
+      desc = "floaterm",
+    },
+  },
 }
