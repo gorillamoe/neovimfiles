@@ -41,8 +41,8 @@ return {
         {
           "<leader>u",
           function()
-            -- since undotree only supports .open(),
-            -- we iterate over the windows to check if undotree is already open, and close it if it is
+            -- Since `undotree` only supports `.open()`,
+            -- we iterate over the windows to check if `undotree` is already open, and close it if it is
             local undotree_win = nil
             for _, win in ipairs(vim.api.nvim_list_wins()) do
               local buf = vim.api.nvim_win_get_buf(win)
@@ -69,8 +69,6 @@ return {
       { "<leader>ww", "<cmd>lua require('nvim-window').pick()<cr>", desc = "Jump to window" },
     })
 
-    local is_diffview_open = false
-
     wk.add({
       mode = { "n" },
       { "<leader>a", group = "VCS" },
@@ -79,25 +77,14 @@ return {
         function()
           require("jujutsu").open()
         end,
-        desc = "Jujutsu 🥋"
+        desc = "Jujutsu 🥋",
       },
       {
         "<leader>ab",
-        "<cmd>:BlameToggle<cr>",
-        desc = "Blame 🫵",
-      },
-      {
-        "<leader>ad",
         function()
-          if is_diffview_open then
-            require("diffview").close()
-            is_diffview_open = false
-          else
-            require("diffview").open()
-            is_diffview_open = true
-          end
+          require("jujutsu").annotate()
         end,
-        desc = "Diff View 📝",
+        desc = "Blame 🫵",
       },
     })
 

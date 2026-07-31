@@ -12,5 +12,12 @@ return {
       end,
       desc = "Jujutsu",
     },
+    {
+      "<leader>ab",
+      function()
+        require("jujutsu").annotate()
+      end,
+      desc = "Blame 🫵",
+    },
   },
 }
