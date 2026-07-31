@@ -24,11 +24,9 @@ end
 -- Configure plugins
 nvpm_bootstrapper().setup({
   -- Tabby
-  -- A highly configurable tabline plugin.
+  -- A highly configurable tab-line plugin.
   require("plugins.config.tabby-nvim"),
-  -- floaterm.nvim
-  -- A minimal Neovim plugin that provides a
-  -- single floating terminal.
+  -- `floaterm.nvim` A minimal Neovim plugin that provides a single floating terminal.
   require("plugins.config.floaterm-nvim"),
   -- Zen mode
   -- A distraction-free coding mode for Neovim
@@ -36,60 +34,55 @@ nvpm_bootstrapper().setup({
   -- A tiny Neovim plugin that adds subtle animations to
   -- various operations.
   require("plugins.config.tiny-glimmer-nvim"),
-  -- Juu 🦄 - beautiful ui inputs and notifications
+  -- `Juu.nvim` 🦄 - beautiful UI inputs and notifications
   require("plugins.config.juu-nvim"),
   -- Visualize and work with indent scope
   require("plugins.config.mini-indentscope"),
   -- Mustache and Handlebars support
   require("plugins.config.vim-mustache-handlebars"),
-  -- Neovim development for the lazy
-  -- Causing issues for me at the moment
-  -- require("plugins.config.lazydev-nvim"),
   -- Autocompletion
   require("plugins.config.blink-cmp"),
   -- Code Analysis
-  -- require("plugins.config.nvim-lspconfig"),
   -- Supercharge my Rust 🦀 experience
   require("plugins.config.rustaceanvim"),
-  -- Code Actions (based on lsp)
+  -- Code Actions (based on LSP)
   require("plugins.config.tiny-code-action-nvim"),
   -- Show inline diagnostics
   require("plugins.config.tiny-inline-diagnostic-nvim"),
   -- Show LSP diagnostics
   require("plugins.config.trouble-nvim"),
-  -- Navigate code on steroids with flash.nvim ⚡
+  -- Navigate code on steroids with `flash.nvim` ⚡
   require("plugins.config.flash-nvim"),
-  -- Navigate windows on steroids with nvim-window
+  -- Navigate windows on steroids
   require("plugins.config.nvim-window"),
-  -- This is 🔥 github copilot
+  -- This is 🔥 GitHub copilot
   require("plugins.config.copilot-vim"),
   -- Simple HTTP Client 🐼
   require("plugins.config.kulala-nvim"),
   -- Minimal session management
   require("plugins.config.kikao-nvim"),
-  -- Keybindings
+  -- Key-bindings
   require("plugins.config.which-key-nvim"),
   -- Formatters 💄 and Linters 🧹
   require("plugins.config.conform-nvim"),
   require("plugins.config.nvim-lint"),
-  -- Jujutsu
+  -- `Jujutsu` - a fast, featureful VCS for the command line
   require("plugins.config.jujutsu-nvim"),
   -- Git Integration
-  require("plugins.config.gitsigns-nvim"),
   require("plugins.config.diffconflicts-nvim"),
-  -- Bafa, Buffer management on steroids 💊
+  -- `bafa.nvim`, Buffer management on steroids 💊
   require("plugins.config.bafa-nvim"),
   -- Trailing whitespace highlighting & automatic fixing
   require("plugins.config.vim-better-whitespace"),
-  -- FZF
+  -- `FZF`
   require("plugins.config.fzf-lua"),
-  --Emoji and Gitmoji via fzf-lua
+  --Emoji via `fzf-lua`
   require("plugins.config.fzf-symbols"),
   -- Terraform 🌍
   require("plugins.config.vim-terraform"),
-  -- .. also flex on Discord
+  -- Flex on Discord
   require("plugins.config.discord-nvim"),
-  -- Colorscheme
+  -- Color-scheme
   require("plugins.config.vhs-era-theme-nvim"),
   -- Color highlighting
   require("plugins.config.nvim-highlight-colors"),
@@ -98,7 +91,7 @@ nvpm_bootstrapper().setup({
   require("plugins.config.ts-comments-nvim"),
   -- File explorer
   require("plugins.config.nvim-tree"),
-  -- Cocconut oil 🥥 for neovim
+  -- Coconut oil 🥥 for Neovim
   require("plugins.config.fyler-nvim"),
   -- Fancy Markdown rendering
   require("plugins.config.render-markdown-nvim"),
@@ -110,9 +103,9 @@ nvpm_bootstrapper().setup({
   require("plugins.config.vim-surround"),
   -- Add Golang support
   require("plugins.config.vim-go"),
-  -- Search on steroids with ripgrep
+  -- Search on steroids with `ripgrep` and `fzf`
   require("plugins.config.grug-far-nvim"),
-  -- Neovim DAP (Debug Adapter Protocol)
+  -- Neovim `DAP` (Debug Adapter Protocol)
   require("plugins.config.nvim-dap"),
   -- Minimal screenshot 📸 plugin for Neovim
   require("plugins.config.snap-nvim"),
