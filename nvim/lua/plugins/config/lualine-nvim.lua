@@ -3,6 +3,7 @@ return {
   dependencies = {
     "kyazdani42/nvim-web-devicons",
     "mistweaverco/jujutsu.nvim",
+    "mistweaverco/floaterm.nvim",
     "mistweaverco/vhs-era-theme.nvim",
   },
   opts = {
