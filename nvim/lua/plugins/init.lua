@@ -23,6 +23,9 @@ end
 
 -- Configure plugins
 nvpm_bootstrapper().setup({
+  pkg = {
+    loader = true,
+  },
   -- Tabby
   -- A highly configurable tab-line plugin.
   require("plugins.config.tabby-nvim"),
