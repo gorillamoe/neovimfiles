@@ -9,6 +9,10 @@ end, { silent = true })
 map("", "j", "gj")
 map("", "k", "gk")
 
+-- Neovim Tabs navigation
+map("n", "<C-h>", ":tabprev<CR>", { desc = "Go to previous tab", silent = true })
+map("n", "<C-l>", ":tabnext<CR>", { desc = "Go to next tab", silent = true })
+
 -- q for buffer delete, only if buffer is not modified
 map("n", "<leader>q", function()
   if vim.bo.modified then
