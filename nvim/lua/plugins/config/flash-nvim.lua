@@ -1,20 +1,8 @@
 return {
   "folke/flash.nvim",
-  keys = {
-    {
-      "r", -- The GOAT - remote ops
-      mode = { "o" },
-      function()
-        require("flash").remote()
-      end,
-      desc = "Flash",
+  opts = {
+    modes = {
+      char = { enabled = false },
     },
   },
-  config = function()
-    require("flash").setup({
-      modes = {
-        char = { enabled = false },
-      },
-    })
-  end,
 }

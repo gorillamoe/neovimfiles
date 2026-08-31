@@ -13,6 +13,11 @@ map("", "k", "gk")
 map("n", "<C-h>", ":tabprev<CR>", { desc = "Go to previous tab", silent = true })
 map("n", "<C-l>", ":tabnext<CR>", { desc = "Go to next tab", silent = true })
 
+-- The GOAT - remote ops via `flash.nvim`
+map("o", "r", function()
+  require("flash").remote()
+end, { desc = "Flash", silent = true })
+
 -- q for buffer delete, only if buffer is not modified
 map("n", "<leader>q", function()
   if vim.bo.modified then
