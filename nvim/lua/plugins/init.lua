@@ -95,7 +95,7 @@ nvpm_bootstrapper().setup({
   -- File explorer
   require("plugins.config.nvim-tree"),
   -- Coconut oil 🥥 for Neovim
-  require("plugins.config.oil-nvim"),
+  require("plugins.config.canola-nvim"),
   -- Fancy Markdown rendering
   require("plugins.config.render-markdown-nvim"),
   -- Customized 🌈 vim status line

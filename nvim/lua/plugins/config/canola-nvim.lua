@@ -52,7 +52,8 @@ local function oil_win_title(winid)
 end
 
 return {
-  "stevearc/oil.nvim",
+  "barrettruth/canola.nvim",
+  name = "oil",
   opts = {
     view_options = {
       show_hidden = true,
