@@ -53,7 +53,7 @@ vim.keymap.set("n", "<C-p>", function()
 end, { desc = "Fuzzy find files", silent = true })
 
 -- Session switcher for the lazy 🦥
-map("n", "<leader>p", function()
+map("n", "<leader>G", function()
   require("kikao.api").pick()
 end, { desc = "Toggle session switcher", noremap = true, silent = true })
 -- Quickly toggle between the last two recent files
