@@ -52,6 +52,19 @@ vim.keymap.set("n", "<C-p>", function()
   require("fzf-lua").files()
 end, { desc = "Fuzzy find files", silent = true })
 
+-- Session switcher for the lazy 🦥
+map("n", "<leader>p", function()
+  require("kikao.api").pick()
+end, { desc = "Toggle session switcher", noremap = true, silent = true })
+-- Quickly toggle between the last two recent files
+map("n", "<space>", function()
+  require("bafa.api").switch_to_buffer(2)
+end, {
+  desc = "Quickly toggle between the last two recent files",
+  noremap = true,
+  silent = true,
+})
+
 -- Buffer management for the lazy 🦥
 -- bafa.nvim.forthelazy.dev
 map("n", "<leader><leader>", function()
