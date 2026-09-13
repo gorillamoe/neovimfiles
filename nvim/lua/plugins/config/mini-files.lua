@@ -1,6 +1,10 @@
 return {
   "nvim-mini/mini.files",
-  opts = {},
+  opts = {
+    mappings = {
+      synchronize = "<CR>",
+    },
+  },
   keys = {
     {
       "-",
