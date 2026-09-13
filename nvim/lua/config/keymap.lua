@@ -98,7 +98,3 @@ end, {
 vim.keymap.set("i", "<C-e>", function()
   require("fzf-symbols").open()
 end, { desc = "Insert emoji or gitmoji", silent = true })
-
-map("n", "-", function()
-  require("oil").open_float()
-end, { desc = "Save file", silent = true })
