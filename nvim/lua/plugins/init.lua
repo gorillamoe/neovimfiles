@@ -112,4 +112,6 @@ nvpm_bootstrapper().setup({
   require("plugins.config.nvim-dap"),
   -- Minimal screenshot 📸 plugin for Neovim
   require("plugins.config.snap-nvim"),
+  -- Roslyn for Neovim
+  require("plugins.config.roslyn-nvim"),
 })
