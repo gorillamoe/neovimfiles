@@ -59,7 +59,7 @@ return {
           MiniFiles.open(vim.fn.getcwd())
         end
       end,
-      desc = "Bafa",
+      desc = "File-Navigation",
     },
   },
 }
