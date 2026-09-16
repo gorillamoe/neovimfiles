@@ -5,19 +5,23 @@
 vim.api.nvim_create_autocmd("User", {
   pattern = "MiniFilesBufferCreate",
   callback = function(args)
-    vim.api.nvim_create_autocmd("BufWriteCmd", {
-      buffer = args.data.buf_id,
-      callback = function()
-        require("mini.files").synchronize()
-      end,
-    })
+    local buf = args.data.buf_id
     vim.api.nvim_buf_set_keymap(
-      args.data.buf_id,
+      buf,
       "n",
       "<Esc>",
       ":lua require('mini.files').close()<CR>",
       { noremap = true, silent = true }
     )
+    --- INFO:
+    --- Allow `:w` to reach `BufWriteCmd`
+    vim.bo[buf].buftype = "acwrite"
+    vim.api.nvim_create_autocmd("BufWriteCmd", {
+      buffer = buf,
+      callback = function()
+        require("mini.files").synchronize()
+      end,
+    })
   end,
 })
 
