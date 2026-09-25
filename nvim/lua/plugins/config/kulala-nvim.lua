@@ -9,7 +9,7 @@ else
 end
 
 return {
-  "mistweaverco/kulala.nvim",
+  "dont-be-evil-company/kulala.nvim",
   dir = get_dir("kulala.nvim"),
   ft = {
     "http",
