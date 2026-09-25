@@ -100,6 +100,25 @@ return {
 
     wk.add({
       mode = { "n" },
+      { "<leader>T", group = "Symbols" },
+      {
+        "<leader>Tw",
+        function()
+          return require("fzf-lua").lsp_workspace_symbols()
+        end,
+        desc = "Workspace Symbols",
+      },
+      {
+        "<leader>Td",
+        function()
+          return require("fzf-lua").lsp_document_symbols()
+        end,
+        desc = "Document Symbols",
+      },
+    })
+
+    wk.add({
+      mode = { "n" },
       { "<leader>g", group = "Goto" },
       {
         "<leader>gD",
