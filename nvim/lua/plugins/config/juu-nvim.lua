@@ -4,7 +4,7 @@ local get_dir = require("helper").get_project_dir_path_if_exists
 require("vim._core.ui2").enable({})
 
 return {
-  "mistweaverco/juu.nvim",
+  "dont-be-evil-company/juu.nvim",
   dir = get_dir("juu.nvim"),
   opts = {},
 }

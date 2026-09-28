@@ -4,8 +4,8 @@ local function nvpm_bootstrapper()
     data = vim.fs.joinpath(vim.env.HOME, ".local", "share", "nvpm")
   end
   local roots = {
-    vim.fs.joinpath(data, "plugins", "github", "mistweaverco_nvpm.nvim"),
-    vim.fs.joinpath(data, "packages", "github", "mistweaverco_nvpm.nvim"),
+    vim.fs.joinpath(data, "plugins", "github", "dont-be-evil-company_nvpm.nvim"),
+    vim.fs.joinpath(data, "packages", "github", "dont-be-evil-company_nvpm.nvim"),
   }
   local bootstrap
   for _, root in ipairs(roots) do
@@ -16,7 +16,7 @@ local function nvpm_bootstrapper()
     end
   end
   if not bootstrap then
-    error("nvpm.nvim is not installed; run: nvpm add --plugin neovim github:mistweaverco/nvpm.nvim", 0)
+    error("nvpm.nvim is not installed; run: nvpm add --plugin neovim github:dont-be-evil-company/nvpm.nvim", 0)
   end
   return bootstrap()
 end
@@ -37,6 +37,8 @@ nvpm_bootstrapper().setup({
   -- A tiny Neovim plugin that adds subtle animations to
   -- various operations.
   require("plugins.config.tiny-glimmer-nvim"),
+  -- `nakala.nvim` copy and paste for the lazy 🦥 dev
+  require("plugins.config.nakala-nvim"),
   -- `Juu.nvim` 🦄 - beautiful UI inputs and notifications
   require("plugins.config.juu-nvim"),
   -- Visualize and work with indent scope

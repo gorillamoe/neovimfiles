@@ -1,7 +1,7 @@
 local get_dir = require("helper").get_project_dir_path_if_exists
 
 return {
-  "mistweaverco/bafa.nvim",
+  "dont-be-evil-company/bafa.nvim",
   dir = get_dir("bafa.nvim"),
   keys = {
     {

@@ -1,7 +1,7 @@
 local get_dir = require("helper").get_project_dir_path_if_exists
 
 return {
-  "mistweaverco/diffconflicts.nvim",
+  "dont-be-evil-company/diffconflicts.nvim",
   dir = get_dir("diffconflicts.nvim"),
   opts = {
     keymaps = {

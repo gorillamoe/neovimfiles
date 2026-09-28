@@ -1,7 +1,7 @@
 local get_dir = require("helper").get_project_dir_path_if_exists
 
 return {
-  "mistweaverco/floaterm.nvim",
+  "dont-be-evil-company/floaterm.nvim",
   dir = get_dir("floaterm.nvim"),
   opts = {},
   keys = {
