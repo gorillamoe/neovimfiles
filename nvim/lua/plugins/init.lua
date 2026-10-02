@@ -41,8 +41,6 @@ nvpm_bootstrapper().setup({
   require("plugins.config.nakala-nvim"),
   -- `Juu.nvim` 🦄 - beautiful UI inputs and notifications
   require("plugins.config.juu-nvim"),
-  -- Visualize and work with indent scope
-  require("plugins.config.mini-indentscope"),
   -- Mustache and Handlebars support
   require("plugins.config.vim-mustache-handlebars"),
   -- Autocompletion
