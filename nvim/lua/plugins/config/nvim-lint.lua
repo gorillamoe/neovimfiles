@@ -1,3 +1,4 @@
+-- INFO:
 -- In order to resolve the special path `SCRIPTDIR` in shellcheck's
 -- `source-path` directive it is necessary to pass the source as a filename
 -- rather than to stdin. To still be able to lint unnamed buffers we specify
@@ -18,8 +19,8 @@ end
 --- @param formatters table A list of formatter definitions
 --- @return string[] available_formatters list of available formatter names or an empty list if none are available
 --- @usage
---- local available = return_formatters_if_available({ "prettier", "oxlint", "eslint" })
-local return_formatters_if_available = function(formatters)
+--- `local available = get_fmt({ "prettier", "oxlint", "eslint" })`
+local get_fmt = function(formatters)
   local available_formatters = {}
   for _, formatter in pairs(formatters) do
     if type(formatter) == "string" then
@@ -36,50 +37,60 @@ local return_formatters_if_available = function(formatters)
   return available_formatters
 end
 
+local function patch_linters()
+  local lint = require("lint")
+  local has_vite_plus = vim.fn.executable("vp") == 1
+  local has_oxlint = vim.fn.executable("oxlint") == 1
+  -- Patch oxlint to use the correct command based on availability
+  if has_vite_plus and has_oxlint then
+    lint.linters.oxlint.cmd = "oxlint"
+    lint.linters.oxlint.args = { "--lsp" }
+  -- If only vite-plus is available, use vp as the command for oxlint
+  elseif has_vite_plus then
+    lint.linters.oxlint.cmd = "vp"
+    lint.linters.oxlint.args = { "lint", "--lsp" }
+    -- INFO: If neither is available, do not override
+  end
+  -- Patch shellcheck to also follow sourced files
+  lint.linters.shellcheck.args = {
+    "-x",
+    "--format",
+    "json1",
+    filename_or_stdin,
+  }
+  return lint
+end
+
 return {
   "mfussenegger/nvim-lint",
   config = function()
-    local lint = require("lint")
-
-    if vim.fn.executable("vp") == 1 then
-      lint.linters.oxlint.cmd = "vp"
-      lint.linters.oxlint.args = vim.list_extend({ "lint" }, lint.linters.oxlint.args)
-    end
-
-    -- patch shellcheck to also follow sourced files
-    lint.linters.shellcheck.args = {
-      "-x",
-      "--format",
-      "json1",
-      filename_or_stdin,
-    }
-
+    local lint = patch_linters()
     lint.linters_by_ft = {
-      javascript = return_formatters_if_available({
+      javascript = get_fmt({
         "oxlint",
         "eslint",
       }),
-      lua = return_formatters_if_available({
+      lua = get_fmt({
         "luacheck",
       }),
-      php = return_formatters_if_available({
+      php = get_fmt({
         "phpcs",
       }),
-      python = return_formatters_if_available({
+      python = get_fmt({
         "pylint",
       }),
-      sh = return_formatters_if_available({
+      sh = get_fmt({
         "shellcheck",
       }),
-      typescript = return_formatters_if_available({
+      typescript = get_fmt({
         "oxlint",
         "eslint",
       }),
-      typescriptreact = return_formatters_if_available({
+      typescriptreact = get_fmt({
         "oxlint",
         "eslint",
       }),
-      yaml = return_formatters_if_available({
+      yaml = get_fmt({
         "yamllint",
       }),
     }

@@ -19,9 +19,17 @@ end
 ---@type vim.lsp.Config
 return {
   cmd = function(dispatchers, config)
-    local is_vite_plus = vim.fn.executable("vp") == 1
-    local cmd = is_vite_plus and "vp" or "oxlint"
-    local args = is_vite_plus and { "lint", "--lsp" } or { "--lsp" }
+    local has_vite_plus = vim.fn.executable("vp") == 1
+    local has_oxlint = vim.fn.executable("oxlint") == 1
+    local cmd = (has_vite_plus and has_oxlint) and "oxlint" or "vp"
+    local args
+    if has_vite_plus and has_oxlint then
+      args = { "--lsp" }
+    elseif has_vite_plus then
+      args = { "lint", "--lsp" }
+    else
+      args = { "--lsp" }
+    end
     if (config or {}).root_dir then
       local local_cmd = vim.fs.joinpath(config.root_dir, "node_modules/.bin", cmd)
       if vim.fn.executable(local_cmd) == 1 then

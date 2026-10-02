@@ -18,16 +18,15 @@ local needs_exclusion = function(formatter)
   return false
 end
 
+local has_vite_plus = vim.fn.executable("vp") == 1
+local has_oxlint = vim.fn.executable("oxlint") == 1
+
 --- A function to check for available formatters
 --- @param formatters FormatterDefinition[] formatters A list of formatter definitions to check for availability
 --- @return table|nil available_formatters A list of available formatter names or nil if none are available
 --- @usage
---- local available = return_formatters_if_available({
----  { name = "prettier", cmd = "prettier", excluded_if = { "oxfmt" } },
----  { name = "eslint", cmd = "eslint", excluded_if = { "oxfmt" } },
----  { name = "nonexistent", cmd = "nonexistent-cmd" },
----  })
-local return_formatters_if_available = function(formatters)
+--- `local available = get_fmt({ { name = "prettier", cmd = "prettier", excluded_if = { "oxfmt" } }, { name = "eslint", cmd = "eslint", excluded_if = { "oxfmt" } }, })`
+local get_fmt = function(formatters)
   local available_formatters = {}
   for _, formatter in pairs(formatters) do
     local name = formatter.name
@@ -39,8 +38,13 @@ local return_formatters_if_available = function(formatters)
       if not needs_exclusion(formatter) then
         if vim.fn.executable(formatter.cmd) == 1 then
           if name == "oxfmt" and vim.fn.executable("vp") == 1 then
-            table.insert(available_formatters, "vp")
-            cache_available_formatters[name] = "vp"
+            if has_vite_plus and has_oxlint then
+              table.insert(available_formatters, "oxfmt")
+              cache_available_formatters[name] = "oxfmt"
+            elseif has_vite_plus then
+              table.insert(available_formatters, "vp")
+              cache_available_formatters[name] = "vp"
+            end
           else
             table.insert(available_formatters, name)
             cache_available_formatters[name] = name
@@ -64,42 +68,42 @@ return {
         },
       },
       formatters_by_ft = {
-        http = return_formatters_if_available({
+        http = get_fmt({
           { name = "kulala-fmt", cmd = "kulala-fmt" },
         }),
-        go = return_formatters_if_available({
+        go = get_fmt({
           { name = "goimports", cmd = "goimports" },
           { name = "gofmt", cmd = "gofmt" },
         }),
-        javascript = return_formatters_if_available({
+        javascript = get_fmt({
           { name = "deno_fmt", cmd = "deno", excluded_if = { "oxfmt", "vp" } },
           { name = "eslint", cmd = "eslint", excluded_if = { "oxfmt", "vp" } },
           { name = "oxfmt", cmd = "oxfmt" },
           { name = "prettier", cmd = "prettier", excluded_if = { "oxfmt", "vp" } },
         }),
-        lua = return_formatters_if_available({
+        lua = get_fmt({
           { name = "stylua", cmd = "stylua" },
         }),
-        python = return_formatters_if_available({
+        python = get_fmt({
           { name = "autoflake", cmd = "isort" },
           { name = "black", cmd = "black" },
           { name = "isort", cmd = "isort" },
         }),
-        terraform = return_formatters_if_available({
+        terraform = get_fmt({
           { name = "terraform_fmt", cmd = "terraform" },
         }),
-        svelte = return_formatters_if_available({
+        svelte = get_fmt({
           { name = "oxfmt", cmd = "oxfmt" },
           { name = "eslint", cmd = "eslint", excluded_if = { "oxfmt", "vp" } },
           { name = "prettier", cmd = "prettier", excluded_if = { "oxfmt", "vp" } },
         }),
-        typescript = return_formatters_if_available({
+        typescript = get_fmt({
           { name = "deno_fmt", cmd = "deno", excluded_if = { "oxfmt", "vp" } },
           { name = "eslint", cmd = "eslint", excluded_if = { "oxfmt", "vp" } },
           { name = "oxfmt", cmd = "oxfmt" },
           { name = "prettier", cmd = "prettier", excluded_if = { "oxfmt", "vp" } },
         }),
-        typescriptreact = return_formatters_if_available({
+        typescriptreact = get_fmt({
           { name = "deno_fmt", cmd = "deno", excluded_if = { "oxfmt", "vp" } },
           { name = "eslint", cmd = "eslint", excluded_if = { "oxfmt", "vp" } },
           { name = "oxfmt", cmd = "oxfmt" },
