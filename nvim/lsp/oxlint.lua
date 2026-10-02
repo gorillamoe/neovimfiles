@@ -19,14 +19,16 @@ end
 ---@type vim.lsp.Config
 return {
   cmd = function(dispatchers, config)
-    local cmd = "oxlint"
+    local is_vite_plus = vim.fn.executable("vp") == 1
+    local cmd = is_vite_plus and "vp" or "oxlint"
+    local args = is_vite_plus and { "lint", "--lsp" } or { "--lsp" }
     if (config or {}).root_dir then
       local local_cmd = vim.fs.joinpath(config.root_dir, "node_modules/.bin", cmd)
       if vim.fn.executable(local_cmd) == 1 then
         cmd = local_cmd
       end
     end
-    return vim.lsp.rpc.start({ cmd, "--lsp" }, dispatchers)
+    return vim.lsp.rpc.start({ cmd, args }, dispatchers)
   end,
   filetypes = {
     "javascript",
