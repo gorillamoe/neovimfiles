@@ -3,6 +3,17 @@
 --- makes `mini.files` almost behave like `oil.nvim` 🥥.
 
 vim.api.nvim_create_autocmd("User", {
+  pattern = "MiniFilesWindowUpdate",
+  callback = function(args)
+    local config = vim.api.nvim_win_get_config(args.data.win_id)
+    local width = math.min(vim.o.columns - 4, 120)
+    config.width = width
+    config.col = math.floor((vim.o.columns - width) / 2)
+    vim.api.nvim_win_set_config(args.data.win_id, config)
+  end,
+})
+
+vim.api.nvim_create_autocmd("User", {
   pattern = "MiniFilesBufferCreate",
   callback = function(args)
     local buf = args.data.buf_id
@@ -47,8 +58,7 @@ return {
     },
     windows = {
       preview = false,
-      width_focus = 30,
-      width_nofocus = 15,
+      max_number = 1,
     },
   },
   keys = {
