@@ -56,14 +56,6 @@ end, { desc = "Fuzzy find files", silent = true })
 map("n", "<leader>G", function()
   require("kikao.api").pick()
 end, { desc = "Toggle session switcher", noremap = true, silent = true })
--- Quickly toggle between the last two recent files
-map("n", "<space>", function()
-  require("bafa.api").switch_to_buffer(2)
-end, {
-  desc = "Quickly toggle between the last two recent files",
-  noremap = true,
-  silent = true,
-})
 
 -- Buffer management for the lazy 🦥
 -- bafa.nvim.forthelazy.dev
@@ -71,13 +63,6 @@ map("n", "<leader><leader>", function()
   require("bafa").toggle()
 end, { desc = "Toggle bafa", noremap = true, silent = true })
 -- Quickly toggle between the last two recent files
-map("n", "<space>", function()
-  require("bafa.api").switch_to_buffer(2)
-end, {
-  desc = "Quickly toggle between the last two recent files",
-  noremap = true,
-  silent = true,
-})
 
 -- File Explorer
 map("n", "<leader>e", function()
