@@ -6,9 +6,12 @@ vim.api.nvim_create_autocmd("User", {
   pattern = "MiniFilesWindowUpdate",
   callback = function(args)
     local config = vim.api.nvim_win_get_config(args.data.win_id)
-    local width = math.min(vim.o.columns - 4, 120)
+    local width = math.min(vim.o.columns - 10, 80)
+    local height = math.min(vim.o.lines - 10, 20)
     config.width = width
+    config.height = height
     config.col = math.floor((vim.o.columns - width) / 2)
+    config.row = math.floor((vim.o.lines - height) / 2)
     vim.api.nvim_win_set_config(args.data.win_id, config)
   end,
 })
