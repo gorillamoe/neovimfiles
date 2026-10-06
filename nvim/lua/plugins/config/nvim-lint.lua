@@ -1,3 +1,7 @@
+if vim.env.NVIM_AS_SCROLLBACK_PAGER then
+  return {}
+end
+
 -- INFO:
 -- In order to resolve the special path `SCRIPTDIR` in shellcheck's
 -- `source-path` directive it is necessary to pass the source as a filename

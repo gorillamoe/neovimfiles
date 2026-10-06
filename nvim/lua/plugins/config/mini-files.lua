@@ -1,3 +1,7 @@
+if vim.env.NVIM_AS_SCROLLBACK_PAGER then
+  return {}
+end
+
 --- INFO:
 --- This setup (the complete file)
 --- makes `mini.files` almost behave like `oil.nvim` 🥥.

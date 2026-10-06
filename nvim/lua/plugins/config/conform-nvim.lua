@@ -1,3 +1,7 @@
+if vim.env.NVIM_AS_SCROLLBACK_PAGER then
+  return {}
+end
+
 ---@class FormatterDefinition
 ---@field name string The name of the formatter
 ---@field cmd string The command to check for the formatter's availability
