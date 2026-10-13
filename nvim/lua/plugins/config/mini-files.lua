@@ -1,6 +1,4 @@
-if vim.env.NVIM_AS_SCROLLBACK_PAGER then
-  return {}
-end
+if vim.env.NVIM_AS_SCROLLBACK_PAGER then return {} end
 
 --- INFO:
 --- This setup (the complete file)
@@ -36,9 +34,7 @@ vim.api.nvim_create_autocmd("User", {
     vim.bo[buf].buftype = "acwrite"
     vim.api.nvim_create_autocmd("BufWriteCmd", {
       buffer = buf,
-      callback = function()
-        require("mini.files").synchronize()
-      end,
+      callback = function() require("mini.files").synchronize() end,
     })
   end,
 })

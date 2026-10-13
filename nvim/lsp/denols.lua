@@ -4,17 +4,13 @@
 local lsp = vim.lsp
 
 local function virtual_text_document_handler(uri, res, client)
-  if not res then
-    return nil
-  end
+  if not res then return nil end
 
   local lines = vim.split(res.result, "\n")
   local bufnr = vim.uri_to_bufnr(uri)
 
   local current_buf = vim.api.nvim_buf_get_lines(bufnr, 0, -1, false)
-  if #current_buf ~= 0 then
-    return nil
-  end
+  if #current_buf ~= 0 then return nil end
 
   vim.api.nvim_buf_set_lines(bufnr, 0, -1, false, lines)
   vim.api.nvim_set_option_value("readonly", true, { buf = bufnr })
@@ -34,9 +30,7 @@ local function virtual_text_document(uri, client)
 end
 
 local function denols_handler(err, result, ctx, config)
-  if not result or vim.tbl_isempty(result) then
-    return nil
-  end
+  if not result or vim.tbl_isempty(result) then return nil end
 
   local client = vim.lsp.get_client_by_id(ctx.client_id)
   for _, res in pairs(result) do

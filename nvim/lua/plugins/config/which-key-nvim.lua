@@ -8,9 +8,7 @@ return {
       { "<leader>k", group = "Kulala.nvim 🐼" },
       {
         "<leader>kr",
-        function()
-          require("kulala").replay()
-        end,
+        function() require("kulala").replay() end,
         desc = "Replay 🔁",
       },
     })
@@ -19,9 +17,7 @@ return {
       mode = { "n" },
       {
         "<leader>t",
-        function()
-          require("floaterm").toggle()
-        end,
+        function() require("floaterm").toggle() end,
         desc = "Toggle Floaterm 🪁",
       },
     })
@@ -29,9 +25,7 @@ return {
     wk.add({
       mode = { "n" },
       "<leader>f",
-      function()
-        require("flash").jump()
-      end,
+      function() require("flash").jump() end,
       desc = "Flash Jump ⚡",
     })
 
@@ -74,16 +68,12 @@ return {
       { "<leader>a", group = "VCS" },
       {
         "<leader>aa",
-        function()
-          require("jujutsu").open()
-        end,
+        function() require("jujutsu").open() end,
         desc = "Jujutsu 🥋",
       },
       {
         "<leader>ab",
-        function()
-          require("jujutsu").annotate()
-        end,
+        function() require("jujutsu").annotate() end,
         desc = "Blame 🫵",
       },
     })
@@ -103,16 +93,12 @@ return {
       { "<leader>T", group = "Symbols" },
       {
         "<leader>Tw",
-        function()
-          return require("fzf-lua").lsp_workspace_symbols()
-        end,
+        function() return require("fzf-lua").lsp_workspace_symbols() end,
         desc = "Workspace Symbols",
       },
       {
         "<leader>Td",
-        function()
-          return require("fzf-lua").lsp_document_symbols()
-        end,
+        function() return require("fzf-lua").lsp_document_symbols() end,
         desc = "Document Symbols",
       },
     })
@@ -122,73 +108,53 @@ return {
       { "<leader>g", group = "Goto" },
       {
         "<leader>gD",
-        function()
-          return vim.lsp.buf.declaration()
-        end,
+        function() return vim.lsp.buf.declaration() end,
         desc = "Declaration",
       },
       {
         "<leader>gd",
-        function()
-          return require("fzf-lua").lsp_definitions()
-        end,
+        function() return require("fzf-lua").lsp_definitions() end,
         desc = "Definitions",
       },
       {
         "<leader>gg",
-        function()
-          return require("fzf-lua").live_grep({ resume = true })
-        end,
+        function() return require("fzf-lua").live_grep({ resume = true }) end,
         desc = "Live Grep",
       },
       {
         "<leader>gi",
-        function()
-          return require("fzf-lua").lsp_implementations()
-        end,
+        function() return require("fzf-lua").lsp_implementations() end,
         desc = "Implementations",
       },
       {
         "<leader>gk",
-        function()
-          return vim.lsp.buf.hover()
-        end,
+        function() return vim.lsp.buf.hover() end,
         desc = "Show Function Docs",
       },
       {
         "<leader>gr",
-        function()
-          return require("fzf-lua").lsp_references()
-        end,
+        function() return require("fzf-lua").lsp_references() end,
         desc = "References",
       },
       {
         "<leader>gR",
-        function()
-          return vim.lsp.buf.rename()
-        end,
+        function() return vim.lsp.buf.rename() end,
         desc = "Rename",
       },
       { "<leader>gs", group = "Symbols" },
       {
         "<leader>gsw",
-        function()
-          return require("fzf-lua").lsp_workspace_symbols()
-        end,
+        function() return require("fzf-lua").lsp_workspace_symbols() end,
         desc = "Workspace Symbols",
       },
       {
         "<leader>gsd",
-        function()
-          return require("fzf-lua").lsp_document_symbols()
-        end,
+        function() return require("fzf-lua").lsp_document_symbols() end,
         desc = "Document Symbols",
       },
       {
         "<leader>gt",
-        function()
-          return require("fzf-lua").lsp_typedefs()
-        end,
+        function() return require("fzf-lua").lsp_typedefs() end,
         desc = "Type Definitions",
       },
     })
@@ -198,63 +164,47 @@ return {
       { "<leader>d", group = "Debug" },
       {
         "<leader>dt",
-        function()
-          return require("trouble").toggle({ mode = "todo" })
-        end,
+        function() return require("trouble").toggle({ mode = "todo" }) end,
         desc = "ToDo",
         icon = "",
       },
       { "<leader>d", group = "Debug" },
       {
         "<leader>dd",
-        function()
-          require("trouble").toggle({ mode = "diagnostics", filter = { buf = 0 } })
-        end,
+        function() require("trouble").toggle({ mode = "diagnostics", filter = { buf = 0 } }) end,
         desc = "Document Diagnostics",
       },
       {
         "<leader>de",
-        function()
-          vim.diagnostic.open_float(0, { scope = "line" })
-        end,
+        function() vim.diagnostic.open_float(0, { scope = "line" }) end,
         desc = "Show error in float",
       },
       {
         "<leader>dw",
-        function()
-          require("trouble").toggle({ mode = "diagnostics" })
-        end,
+        function() require("trouble").toggle({ mode = "diagnostics" }) end,
         desc = "Workspace Diagnostics 🔍",
       },
       {
         "<leader>db",
-        function()
-          require("dap").toggle_breakpoint()
-        end,
+        function() require("dap").toggle_breakpoint() end,
         desc = "Toggle Breakpoint",
         icon = "🔴",
       },
       {
         "<leader>dc",
-        function()
-          require("dap").continue()
-        end,
+        function() require("dap").continue() end,
         desc = "Continue",
         icon = "▶️",
       },
       {
         "<leader>dC",
-        function()
-          require("dap").run_to_cursor()
-        end,
+        function() require("dap").run_to_cursor() end,
         desc = "Run to Cursor",
         icon = "🖱️",
       },
       {
         "<leader>dT",
-        function()
-          require("dap").terminate()
-        end,
+        function() require("dap").terminate() end,
         desc = "Terminate",
         icon = "💀",
       },
@@ -264,9 +214,7 @@ return {
       mode = { "n" },
       {
         "<leader>c",
-        function()
-          return require("tiny-code-action").code_action()
-        end,
+        function() return require("tiny-code-action").code_action() end,
         desc = "Code Action 💡",
       },
     })
@@ -275,9 +223,7 @@ return {
       mode = { "n" },
       {
         "<leader>z",
-        function()
-          return require("zen-mode").toggle()
-        end,
+        function() return require("zen-mode").toggle() end,
         desc = "ZenMode 🧘",
       },
     })

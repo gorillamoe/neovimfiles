@@ -13,12 +13,8 @@ return not vim.env.NVIM_AS_SCROLLBACK_PAGER
       config = function()
         local dap, dapview, vt = require("dap"), require("dap-view"), require("nvim-dap-virtual-text")
         vt.setup()
-        dap.listeners.before.attach.dapview_config = function()
-          dapview.open()
-        end
-        dap.listeners.before.launch.dapview_config = function()
-          dapview.open()
-        end
+        dap.listeners.before.attach.dapview_config = function() dapview.open() end
+        dap.listeners.before.launch.dapview_config = function() dapview.open() end
 
         if not dap.adapters["pwa-node"] then
           require("dap").adapters["pwa-node"] = {
@@ -33,9 +29,7 @@ return not vim.env.NVIM_AS_SCROLLBACK_PAGER
         end
         if not dap.adapters["node"] then
           dap.adapters["node"] = function(cb, config)
-            if config.type == "node" then
-              config.type = "pwa-node"
-            end
+            if config.type == "node" then config.type = "pwa-node" end
             local nativeAdapter = dap.adapters["pwa-node"]
             if type(nativeAdapter) == "function" then
               nativeAdapter(cb, config)

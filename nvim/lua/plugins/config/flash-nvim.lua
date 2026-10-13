@@ -4,17 +4,13 @@ return {
     {
       "s",
       mode = { "x", "o" },
-      function()
-        require("flash").jump()
-      end,
+      function() require("flash").jump() end,
       desc = "Flash",
     },
     {
       "r",
       mode = "o",
-      function()
-        require("flash").remote()
-      end,
+      function() require("flash").remote() end,
       desc = "Remote Flash",
     },
   },

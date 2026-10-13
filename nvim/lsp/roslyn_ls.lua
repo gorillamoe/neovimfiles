@@ -22,9 +22,7 @@ local function on_init_project(client, project_files)
   vim.notify("Initializing: projects", vim.log.levels.TRACE, { title = "roslyn_ls" })
   ---@diagnostic disable-next-line: param-type-mismatch
   client:notify("project/open", {
-    projects = vim.tbl_map(function(file)
-      return vim.uri_from_fname(file)
-    end, project_files),
+    projects = vim.tbl_map(function(file) return vim.uri_from_fname(file) end, project_files),
   })
 end
 
@@ -32,9 +30,7 @@ end
 local function refresh_diagnostics(client)
   local capabilities = vim
     .iter(client.dynamic_capabilities.capabilities.diagnosticProvider or {})
-    :map(function(cap)
-      return cap.registerOptions.identifier
-    end)
+    :map(function(cap) return cap.registerOptions.identifier end)
     :totable()
 
   for buf, _ in pairs(client.attached_buffers) do
@@ -72,21 +68,15 @@ end
 ---@return boolean
 local function is_decompiled(bufname)
   local _, endpos = bufname:find("[/\\]MetadataAsSource[/\\]")
-  if endpos == nil then
-    return false
-  end
+  if endpos == nil then return false end
   return vim.fn.finddir(bufname:sub(1, endpos), uv.os_tmpdir()) ~= ""
 end
 
 ---@param client vim.lsp.Client
 ---@param action table
 local function apply_action(client, action)
-  if action.edit then
-    vim.lsp.util.apply_workspace_edit(action.edit, client.offset_encoding)
-  end
-  if action.command then
-    client:exec_cmd(action.command)
-  end
+  if action.edit then vim.lsp.util.apply_workspace_edit(action.edit, client.offset_encoding) end
+  if action.command then client:exec_cmd(action.command) end
 end
 
 ---@param client vim.lsp.Client
@@ -108,9 +98,7 @@ local function handle_fix_all_action(client, command, bufnr)
   vim.ui.select(flavors, {
     prompt = "Fix All Scope:",
   }, function(chosen_scope)
-    if not chosen_scope then
-      return
-    end
+    if not chosen_scope then return end
 
     ---@diagnostic disable-next-line: param-type-mismatch
     client:request("codeAction/resolveFixAll", {
@@ -125,9 +113,7 @@ local function handle_fix_all_action(client, command, bufnr)
         )
         return
       end
-      if resolved then
-        apply_action(client, resolved)
-      end
+      if resolved then apply_action(client, resolved) end
     end, bufnr)
   end)
 end
@@ -184,9 +170,7 @@ return {
       end
 
       local function handle(action)
-        if not action then
-          return
-        end
+        if not action then return end
 
         if action.data and not action.edit and not action.command then
           client:request("codeAction/resolve", action, function(err, resolved)
@@ -194,9 +178,7 @@ return {
               vim.notify(err.message or tostring(err), vim.log.levels.ERROR)
               return
             end
-            if resolved then
-              handle(resolved)
-            end
+            if resolved then handle(resolved) end
           end, ctx.bufnr)
           return
         end
@@ -214,13 +196,9 @@ return {
 
         vim.ui.select(nested, {
           prompt = action.title or "Select code action",
-          format_item = function(item)
-            return item.title or (item.command and item.command.title) or "Unnamed action"
-          end,
+          format_item = function(item) return item.title or (item.command and item.command.title) or "Unnamed action" end,
         }, function(choice)
-          if choice then
-            handle(choice)
-          end
+          if choice then handle(choice) end
         end)
       end
 
@@ -239,20 +217,14 @@ return {
     -- outside of the project
     if not is_decompiled(bufname) then
       -- Try to find solutions root first
-      local root_dir = fs.root(bufnr, function(fname, _)
-        return fname:match("%.sln[x]?$") ~= nil
-      end)
+      local root_dir = fs.root(bufnr, function(fname, _) return fname:match("%.sln[x]?$") ~= nil end)
 
       if not root_dir then
         -- Try to find projects root
-        root_dir = fs.root(bufnr, function(fname, _)
-          return fname:match("%.csproj$") ~= nil
-        end)
+        root_dir = fs.root(bufnr, function(fname, _) return fname:match("%.csproj$") ~= nil end)
       end
 
-      if root_dir then
-        cb(root_dir)
-      end
+      if root_dir then cb(root_dir) end
     else
       -- Decompiled code
       -- (example: `/tmp/MetadataAsSource/f2bfba/DecompilationMetadataAsSourceFileProvider/d5782a/Console.cs`)
@@ -261,9 +233,7 @@ return {
         name = "roslyn_ls",
         bufnr = prev_buf ~= 1 and prev_buf or nil,
       })[1]
-      if client then
-        cb(client.config.root_dir)
-      end
+      if client then cb(client.config.root_dir) end
     end
   end,
   on_init = {
@@ -289,16 +259,12 @@ return {
 
   on_attach = function(client, bufnr)
     -- Avoid duplicate `autocmds` for same buffer
-    if vim.api.nvim_get_autocmds({ buffer = bufnr, group = group })[1] then
-      return
-    end
+    if vim.api.nvim_get_autocmds({ buffer = bufnr, group = group })[1] then return end
 
     vim.api.nvim_create_autocmd({ "BufWritePost", "InsertLeave" }, {
       group = group,
       buffer = bufnr,
-      callback = function()
-        refresh_diagnostics(client)
-      end,
+      callback = function() refresh_diagnostics(client) end,
       desc = "roslyn_ls: refresh diagnostics",
     })
   end,

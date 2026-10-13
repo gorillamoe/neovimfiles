@@ -7,9 +7,7 @@ return {
     local cmd = "svelteserver"
     if (config or {}).root_dir then
       local local_cmd = vim.fs.joinpath(config.root_dir, "node_modules/.bin", cmd)
-      if vim.fn.executable(local_cmd) == 1 then
-        cmd = local_cmd
-      end
+      if vim.fn.executable(local_cmd) == 1 then cmd = local_cmd end
     end
     return vim.lsp.rpc.start({ cmd, "--stdio" }, dispatchers)
   end,
@@ -52,12 +50,17 @@ return {
         client:notify("$/onDidChangeTsOrJsFile", { uri = ctx.match })
       end,
     })
-    vim.api.nvim_buf_create_user_command(bufnr, "LspMigrateToSvelte5", function()
-      client:exec_cmd({
-        title = "Migrate Component to Svelte 5 Syntax",
-        command = "migrate_to_svelte_5",
-        arguments = { vim.uri_from_bufnr(bufnr) },
-      })
-    end, { desc = "Migrate Component to Svelte 5 Syntax" })
+    vim.api.nvim_buf_create_user_command(
+      bufnr,
+      "LspMigrateToSvelte5",
+      function()
+        client:exec_cmd({
+          title = "Migrate Component to Svelte 5 Syntax",
+          command = "migrate_to_svelte_5",
+          arguments = { vim.uri_from_bufnr(bufnr) },
+        })
+      end,
+      { desc = "Migrate Component to Svelte 5 Syntax" }
+    )
   end,
 }

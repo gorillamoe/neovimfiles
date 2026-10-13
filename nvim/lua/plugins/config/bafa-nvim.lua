@@ -7,9 +7,7 @@ return not vim.env.NVIM_AS_SCROLLBACK_PAGER
       keys = {
         {
           "<leader>,,",
-          function()
-            require("bafa.ui").toggle()
-          end,
+          function() require("bafa.ui").toggle() end,
           desc = "Bafa",
         },
       },

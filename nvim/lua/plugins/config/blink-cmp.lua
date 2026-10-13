@@ -4,9 +4,7 @@ return not vim.env.NVIM_AS_SCROLLBACK_PAGER
       dependencies = {
         "saghen/blink.lib",
       },
-      build = function()
-        require("blink.cmp").build():pwait()
-      end,
+      build = function() require("blink.cmp").build():pwait() end,
       ---@module 'blink.cmp'
       ---@type blink.cmp.Config
       opts = {

@@ -16,9 +16,7 @@ helper.MapKeyModes = {
 --- @param opts table|nil Additional options
 function helper.mapKey(mode, lhs, rhs, opts)
   local options = { noremap = true }
-  if opts then
-    options = vim.tbl_extend("force", options, opts)
-  end
+  if opts then options = vim.tbl_extend("force", options, opts) end
   if type(rhs) == "function" then
     vim.keymap.set(mode, lhs, rhs, options)
   else
@@ -44,15 +42,11 @@ end
 function helper.get_dir_path_if_exists(path)
   if type(path) == "table" then
     for _, p in ipairs(path) do
-      if helper.filepath_exists(p) then
-        return p
-      end
+      if helper.filepath_exists(p) then return p end
     end
     return nil
   end
-  if helper.filepath_exists(path) then
-    return path
-  end
+  if helper.filepath_exists(path) then return path end
   return nil
 end
 

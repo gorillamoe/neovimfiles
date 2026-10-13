@@ -8,16 +8,12 @@ return not vim.env.NVIM_AS_SCROLLBACK_PAGER
       keys = {
         {
           "<leader>aa",
-          function()
-            require("jujutsu").open()
-          end,
+          function() require("jujutsu").open() end,
           desc = "Jujutsu",
         },
         {
           "<leader>ab",
-          function()
-            require("jujutsu").annotate()
-          end,
+          function() require("jujutsu").annotate() end,
           desc = "Blame 🫵",
         },
       },

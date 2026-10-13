@@ -1,8 +1,6 @@
 local function nvpm_bootstrapper()
   local data = vim.env.NVPM_HOME
-  if not data or data == "" then
-    data = vim.fs.joinpath(vim.env.HOME, ".local", "share", "nvpm")
-  end
+  if not data or data == "" then data = vim.fs.joinpath(vim.env.HOME, ".local", "share", "nvpm") end
   local roots = {
     vim.fs.joinpath(data, "plugins", "github", "dont-be-evil-company_nvpm.nvim"),
     vim.fs.joinpath(data, "packages", "github", "dont-be-evil-company_nvpm.nvim"),
@@ -11,9 +9,7 @@ local function nvpm_bootstrapper()
   for _, root in ipairs(roots) do
     local path = vim.fs.joinpath(root, "lua", "nvpm", "bootstrap.lua")
     bootstrap = loadfile(path)
-    if bootstrap then
-      break
-    end
+    if bootstrap then break end
   end
   if not bootstrap then
     error("nvpm.nvim is not installed; run: nvpm add --plugin neovim github:dont-be-evil-company/nvpm.nvim", 0)
@@ -67,8 +63,7 @@ nvpm_bootstrapper().setup({
   -- Key-bindings
   require("plugins.config.which-key-nvim"),
   -- Formatters 💄 and Linters 🧹
-  require("plugins.config.conform-nvim"),
-  require("plugins.config.nvim-lint"),
+  require("plugins.config.ducktools-nvim"),
   -- `Jujutsu` - a fast, featureful VCS for the command line
   require("plugins.config.jujutsu-nvim"),
   -- Git Integration

@@ -11,7 +11,5 @@ return {
       showReferencesCommandId = "client.showReferences",
     },
   },
-  on_attach = function(_, bufnr)
-    vim.lsp.codelens.enable(false, { bufnr = bufnr })
-  end,
+  on_attach = function(_, bufnr) vim.lsp.codelens.enable(false, { bufnr = bufnr }) end,
 }

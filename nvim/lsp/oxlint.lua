@@ -9,9 +9,7 @@ local util = require("nvpm.lsp.util")
 local function oxlint_conf_mentions_typescript(root_dir)
   local fn = vim.fs.joinpath(root_dir, ".oxlintrc.json")
   for line in io.lines(fn) do
-    if line:find("typescript") then
-      return true
-    end
+    if line:find("typescript") then return true end
   end
   return false
 end
@@ -32,9 +30,7 @@ return {
     end
     if (config or {}).root_dir then
       local local_cmd = vim.fs.joinpath(config.root_dir, "node_modules/.bin", cmd)
-      if vim.fn.executable(local_cmd) == 1 then
-        cmd = local_cmd
-      end
+      if vim.fn.executable(local_cmd) == 1 then cmd = local_cmd end
     end
     return vim.lsp.rpc.start({ cmd, args }, dispatchers)
   end,
@@ -67,15 +63,20 @@ return {
   end,
   workspace_required = true,
   on_attach = function(client, bufnr)
-    vim.api.nvim_buf_create_user_command(bufnr, "LspOxlintFixAll", function()
-      client:exec_cmd({
-        title = "Apply Oxlint automatic fixes",
-        command = "oxc.fixAll",
-        arguments = { { uri = vim.uri_from_bufnr(bufnr) } },
-      })
-    end, {
-      desc = "Apply Oxlint automatic fixes",
-    })
+    vim.api.nvim_buf_create_user_command(
+      bufnr,
+      "LspOxlintFixAll",
+      function()
+        client:exec_cmd({
+          title = "Apply Oxlint automatic fixes",
+          command = "oxc.fixAll",
+          arguments = { { uri = vim.uri_from_bufnr(bufnr) } },
+        })
+      end,
+      {
+        desc = "Apply Oxlint automatic fixes",
+      }
+    )
   end,
 
   ---@class lspconfig.oxlint.settings
@@ -96,9 +97,7 @@ return {
     end
     if settings.typeAware == nil and has_tsgolint then
       local ok, res = pcall(oxlint_conf_mentions_typescript, config.root_dir)
-      if ok and res then
-        settings = vim.tbl_extend("force", settings, { typeAware = true })
-      end
+      if ok and res then settings = vim.tbl_extend("force", settings, { typeAware = true }) end
     end
     local init_options = config.init_options or {}
     init_options.settings = vim.tbl_extend("force", init_options.settings or {} --[[@as table]], settings)

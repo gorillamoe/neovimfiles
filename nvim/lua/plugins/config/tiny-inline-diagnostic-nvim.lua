@@ -1,6 +1,4 @@
-if vim.env.NVIM_AS_SCROLLBACK_PAGER then
-  return {}
-end
+if vim.env.NVIM_AS_SCROLLBACK_PAGER then return {} end
 
 -- disable default virtual text diagnostics and
 -- use tiny-inline-diagnostic.nvim instead

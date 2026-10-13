@@ -31,16 +31,12 @@ return {
     global_keymaps = {
       ["Search requests"] = {
         "<leader>S",
-        function()
-          require("kulala").search()
-        end,
+        function() require("kulala").search() end,
         ft = { "http", "rest" },
       },
       ["Toggle split/float"] = {
         "<leader>T",
-        function()
-          require("kulala.ui").toggle_display_mode()
-        end,
+        function() require("kulala.ui").toggle_display_mode() end,
         prefix = false,
         ft = { "http", "rest" },
       },
@@ -48,93 +44,65 @@ return {
     kulala_keymaps = {
       ["Toggle headers/body"] = {
         "<leader>T",
-        function()
-          require("kulala").toggle_view()
-        end,
+        function() require("kulala").toggle_view() end,
         ft = { "http", "rest" },
       },
       ["Show headers"] = {
         "<leader>h",
-        function()
-          require("kulala.ui").show_headers()
-        end,
+        function() require("kulala.ui").show_headers() end,
       },
       ["Show body"] = {
         "<leader>b",
-        function()
-          require("kulala.ui").show_body()
-        end,
+        function() require("kulala.ui").show_body() end,
       },
       ["Show verbose"] = {
         "<leader>v",
-        function()
-          require("kulala.ui").show_verbose()
-        end,
+        function() require("kulala.ui").show_verbose() end,
       },
       ["Show script output"] = {
         "<leader>o",
-        function()
-          require("kulala.ui").show_script_output()
-        end,
+        function() require("kulala.ui").show_script_output() end,
       },
       ["Show report"] = {
         "<leader>r",
-        function()
-          require("kulala.ui").show_report()
-        end,
+        function() require("kulala.ui").show_report() end,
       },
       ["Show filter"] = {
         "<leader>f",
-        function()
-          require("kulala.ui").toggle_filter()
-        end,
+        function() require("kulala.ui").toggle_filter() end,
       },
       ["Interrupt requests"] = {
         "<C-c>",
-        function()
-          require("kulala.cmd.websocket").close()
-        end,
+        function() require("kulala.cmd.websocket").close() end,
         desc = "also: CLose WS connection",
       },
       ["Next response"] = {
         "<C-n>",
-        function()
-          require("kulala.ui").show_next()
-        end,
+        function() require("kulala.ui").show_next() end,
       },
       ["Previous response"] = {
         "<C-p>",
-        function()
-          require("kulala.ui").show_previous()
-        end,
+        function() require("kulala.ui").show_previous() end,
       },
       ["Send WS message"] = {
         "<C-j>",
-        function()
-          require("kulala.ui.ws_input").on_send_keymap()
-        end,
+        function() require("kulala.ui.ws_input").on_send_keymap() end,
         mode = { "n", "v", "i" },
         desc = "Open WS message input (body view) / send from input overlay",
         prefix = false,
       },
       ["Jump to response"] = {
         "<C-b>",
-        function()
-          require("kulala.ui").jump_to_response()
-        end,
+        function() require("kulala.ui").jump_to_response() end,
         desc = "also: show responses list",
       },
       ["Clear responses history"] = {
         "<leader>X",
-        function()
-          require("kulala.ui").clear_responses_history()
-        end,
+        function() require("kulala.ui").clear_responses_history() end,
       },
       ["Close"] = {
         "q",
-        function()
-          require("kulala.ui").close_kulala_buffer()
-        end,
+        function() require("kulala.ui").close_kulala_buffer() end,
       },
     },
     ui = {
