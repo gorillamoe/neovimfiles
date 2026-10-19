@@ -19,7 +19,11 @@ map("n", "<leader>q", function()
   if vim.bo.modified then
     vim.notify("Buffer is modified.\nPlease save or discard changes before closing.", vim.log.levels.WARN)
   else
-    vim.cmd("bd")
+    if vim.fn.len(vim.fn.filter(vim.fn.getbufinfo({ buflisted = 1 }), "v:val.hidden == 0")) == 1 then
+      vim.cmd("bd | q")
+    else
+      vim.cmd("bd")
+    end
   end
 end, { desc = "Close buffer", silent = true, noremap = true })
 

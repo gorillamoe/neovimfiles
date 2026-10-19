@@ -107,9 +107,6 @@ return {
     },
     ui = {
       display_mode = "split",
-      win_opts = {
-        wo = { foldmethod = "manual" },
-      },
     },
   },
 }
