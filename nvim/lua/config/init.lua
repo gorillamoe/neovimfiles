@@ -29,8 +29,8 @@ opt.wrap = false -- This option changes how text is displayed
 opt.undofile = true -- Save undo history
 opt.timeoutlen = 500 -- Time in milliseconds to wait for a mapped sequence to complete.
 opt.clipboard = "unnamedplus"
-opt.foldmethod = "indent"
-opt.foldlevel = 3
+opt.foldmethod = "manual"
+opt.foldlevel = 99
 
 -- Colorscheme
 cmd("colorscheme vhs-era-theme")
