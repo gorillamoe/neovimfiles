@@ -32,7 +32,9 @@ return {
       local local_cmd = vim.fs.joinpath(config.root_dir, "node_modules/.bin", cmd)
       if vim.fn.executable(local_cmd) == 1 then cmd = local_cmd end
     end
-    return vim.lsp.rpc.start({ cmd, args }, dispatchers)
+    local argv = { cmd }
+    vim.list_extend(argv, args)
+    return vim.lsp.rpc.start(argv, dispatchers)
   end,
   filetypes = {
     "javascript",
