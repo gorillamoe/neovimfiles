@@ -101,7 +101,7 @@ return {
         function() require("kulala.ui").clear_responses_history() end,
       },
       ["Close"] = {
-        "q",
+        "<leader>q",
         function() require("kulala.ui").close_kulala_buffer() end,
       },
     },
