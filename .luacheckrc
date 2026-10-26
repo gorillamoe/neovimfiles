@@ -7,7 +7,6 @@ std = "lua51+nvim"
 max_line_length = false
 
 read_globals = {
-  "vim",
   "describe",
   "it",
   "before_each",
@@ -21,13 +20,5 @@ globals = {
   "std",
   "globals",
   "read_globals",
-  "vim.g",
-  "vim.b",
-  "vim.w",
-  "vim.o",
-  "vim.bo",
-  "vim.wo",
-  "vim.go",
-  "vim.env",
-  "vim.opt",
+  "vim",
 }
