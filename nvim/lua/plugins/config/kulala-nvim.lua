@@ -29,6 +29,11 @@ return {
       sort_keys = true,
     },
     global_keymaps = {
+      ["Send request"] = {
+        "<C-l>",
+        function() require("kulala").run() end,
+        ft = { "http", "rest" },
+      },
       ["Search requests"] = {
         "<leader>S",
         function() require("kulala").search() end,
