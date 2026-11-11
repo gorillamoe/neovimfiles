@@ -45,6 +45,11 @@ return {
         prefix = false,
         ft = { "http", "rest" },
       },
+      ["Select environment"] = {
+        "<leader>se",
+        function() require("kulala").set_selected_env() end,
+        ft = { "http", "rest" },
+      },
     },
     kulala_keymaps = {
       ["Toggle headers/body"] = {
